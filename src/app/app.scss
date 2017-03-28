@@ -83,7 +83,6 @@
 
 //Style forward nav buttons
 .style-forward-nav-button {
-  text-align: center;
   color: #ffffff;
   cursor: pointer;
   float: right;
@@ -91,10 +90,16 @@
 
 //Style backwardnav buttons
 .style-backward-nav-button {
-  text-align: center;
   color: #ffffff;
   cursor: pointer;
   float: left;
+}
+
+//Style header icons
+.style-header-icons {
+  text-align: center;
+  color: #ffffff;
+  cursor: pointer;
 }
 
 //Create hide class to hide elements when required
@@ -121,6 +126,7 @@
   margin: 0;
   border-radius: 6px;
 }
+
 
 //Set maximum width of app
 .maximum-app-width {
@@ -180,4 +186,35 @@
   border-bottom: 1px solid red;
   margin: 0;
   padding: 5px;
+}
+
+//Style account menu text
+.account-menu-text {
+  margin: 0;
+  font-size: 20px;
+  padding: 10px;
+  opacity: 0.5;
+}
+
+//Style account menu icon
+.style-account-menu-icon {
+  color: red;
+  text-align: center;
+  font-size: 28px;
+  padding: 10px;
+}
+
+//Style account menu icon
+.style-account-menu-nav-icon {
+  color: red;
+  text-align: center;
+  font-size: 28px;
+  padding: 10px;
+  float: right;
+}
+
+//Style account menu divider
+.account-menu-divider {
+  border-top: 1px solid #AC97F0;
+  cursor: pointer;
 }
