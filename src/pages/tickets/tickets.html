@@ -7,12 +7,59 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>tickets</ion-title>
+    <ion-title>Tickets</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-
-<ion-content padding>
-
+<!-- Create Holder for list of available tickets -->
+<ion-content>
+  <ion-grid class="standard-grid-padding maximum-grid-width">
+    <ion-row class="header-style">
+      <ion-col col-1>
+        <ion-icon name="film" class="style-pause-button"></ion-icon>
+      </ion-col>
+      <ion-col col-10>
+        <p class="header-text">Tickets</p>
+      </ion-col>
+      <ion-col col-1>
+      </ion-col>
+    </ion-row>
+    <ion-row class="style-placeholder">
+      <ion-grid>
+        <ion-row class="inner-header-style">
+          <ion-col col-1>
+            <ion-icon name="film" class="style-pause-button"></ion-icon>
+          </ion-col>
+          <ion-col col-10>
+            <p class="header-text">Test Ticket</p>
+          </ion-col>
+          <ion-col col-1>
+            <ion-icon name="ios-arrow-forward" class="style-forward-nav-button"></ion-icon>
+          </ion-col>
+        </ion-row>
+        <ion-row class="style-placeholder">
+          <ion-col col-3>
+            <img src="https://api.appery.io/rest/1/db/files/5518394be4b085114003daf6/7f241c97-d10f-4350-9e74-b5eb5e3709cb.thisdayburns.jpg" class="style-radio-image">
+          </ion-col>
+          <ion-col col-6>
+            <p class="ticket-text ellipsis-text">Pig & Whistle Pub Bullshit Street</p>
+            <p class="ticket-text ellipsis-text">Gold Street</p>
+          </ion-col>
+          <ion-col col-3>
+            <p class="available-text">Available</p>
+            <p class="available-amount-text">30</p>
+          </ion-col>
+        </ion-row>
+        <ion-row class="style-footer">
+          <ion-col col-12>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-row>
+    <ion-row class="style-footer">
+      <ion-col col-12>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

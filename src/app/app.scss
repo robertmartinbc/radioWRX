@@ -30,6 +30,14 @@
   border-top-right-radius: 6px;
 }
 
+//Style header for Radio Player
+.inner-header-style {
+  background-color: #AC97F0;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  margin: 0;
+}
+
 //Style left and right borders for place holders
 .style-placeholder {
   border-left: 1px solid #AC97F0;
@@ -59,17 +67,34 @@
   padding: 10px;
 }
 
-//Style all nav buttons
+//Style pause button
 .style-pause-button {
   text-align: center;
   color: #ffffff;
   cursor: pointer;
 }
 
+//Style play button
 .style-play-button {
   text-align: center;
   color: #ffffff;
   cursor: pointer;
+}
+
+//Style forward nav buttons
+.style-forward-nav-button {
+  text-align: center;
+  color: #ffffff;
+  cursor: pointer;
+  float: right;
+}
+
+//Style backwardnav buttons
+.style-backward-nav-button {
+  text-align: center;
+  color: #ffffff;
+  cursor: pointer;
+  float: left;
 }
 
 //Create hide class to hide elements when required
@@ -114,4 +139,45 @@
 //Set Dummy text
 .dummy-text {
   text-align: center;
+}
+
+//Set ticket text
+.ticket-text {
+  font-size: 10px;
+  margin: 0;
+}
+
+//Set ellipsis text
+.ellipsis-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+//Set available text
+.available-text {
+  font-size: 8px;
+  text-align: center;
+  padding: 5px;
+  background-color: red;
+  color: #ffffff;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  font-weight: bold;
+  margin: 0;
+  margin-top: 25px
+}
+
+//Set available text
+.available-amount-text {
+  font-size: 8px;
+  text-align: center;
+  color: red;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-left: 1px solid red;
+  border-right: 1px solid red;
+  border-bottom: 1px solid red;
+  margin: 0;
+  padding: 5px;
 }

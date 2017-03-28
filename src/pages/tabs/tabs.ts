@@ -3,8 +3,8 @@ import { Component } from '@angular/core';
 import { HomePage } from '../home/home';
 import { AboutPage } from '../about/about';
 import { ContactPage } from '../contact/contact';
-import { TicketsPage } from '../tickets/tickets';
 import { RadioPage } from '../radio/radio';
+import { TicketsPage } from '../tickets/tickets';
 import { MusicPage } from '../music/music';
 import { AccountPage } from '../account/account';
 
@@ -14,8 +14,8 @@ import { AccountPage } from '../account/account';
 export class TabsPage {
   // this tells the tabs component which Pages
   // should be each tab's root Page
-  tab1Root: any = TicketsPage;
-  tab2Root: any = RadioPage;
+  tab1Root: any = RadioPage;
+  tab2Root: any = TicketsPage;
   tab3Root: any = MusicPage;
   tab4Root: any = AccountPage;
 
