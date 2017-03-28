@@ -218,3 +218,50 @@
   border-top: 1px solid #AC97F0;
   cursor: pointer;
 }
+
+//Style music navigation
+.style-music-nav {
+  border: 1px solid red;
+  border-radius: 6px;
+  padding: 0;
+  margin: 0;
+}
+
+//Style music nav text
+.music-nav-text {
+  color: red;
+  margin: 0;
+  padding: 5px;
+  font-size: 12px;
+  text-align: center;
+  border-right: 1px solid red;
+  cursor: pointer;
+}
+
+//Style music nav text
+.music-nav-text-playlist {
+  color: red;
+  margin: 0;
+  padding: 5px;
+  font-size: 12px;
+  text-align: center;
+  cursor: pointer;
+}
+
+//Remove nav padding
+.remove-music-nav-padding {
+  padding: 0;
+}
+
+//Style music text
+.music-text {
+  color: #000000;
+  font-size: 10px !important;
+  opacity: 0.5;
+}
+
+//Style more button
+.style-more-button {
+  float: right !important;
+  font-size: 10px !important;
+}
