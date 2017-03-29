@@ -13,6 +13,11 @@ import { MyAlbumsPage } from '../pages/my-albums/my-albums';
 import { MyArtistsPage } from '../pages/my-artists/my-artists';
 import { MySongsPage } from '../pages/my-songs/my-songs';
 import { MyPlaylistsPage } from '../pages/my-playlists/my-playlists';
+import { MyBandsByFansPage } from '../pages/my-bands-by-fans/my-bands-by-fans';
+import { MyCDFundsPage } from '../pages/my-cd-funds/my-cd-funds';
+import { MyPortfolioPage } from '../pages/my-portfolio/my-portfolio';
+import { MyPrivatePartyPage } from '../pages/my-private-party/my-private-party';
+import { MyTicketsPage } from '../pages/my-tickets/my-tickets';
 
 
 
@@ -33,7 +38,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyAlbumsPage,
     MyArtistsPage,
     MySongsPage,
-    MyPlaylistsPage
+    MyPlaylistsPage,
+    MyBandsByFansPage,
+    MyCDFundsPage,
+    MyPortfolioPage,
+    MyPrivatePartyPage,
+    MyTicketsPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -52,7 +62,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyAlbumsPage,
     MyArtistsPage,
     MySongsPage,
-    MyPlaylistsPage
+    MyPlaylistsPage,
+    MyBandsByFansPage,
+    MyCDFundsPage,
+    MyPortfolioPage,
+    MyPrivatePartyPage,
+    MyTicketsPage
   ],
   providers: [
     StatusBar,
