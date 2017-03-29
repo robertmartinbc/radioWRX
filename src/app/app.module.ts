@@ -31,6 +31,9 @@ import { ViewMyPresentBandsByFansPage } from '../pages/view-my-present-bands-by-
 import { ViewMyPresentCDFundsPage } from '../pages/view-my-present-cd-funds/view-my-present-cd-funds';
 import { ViewMyPresentPrivatePartyPage } from '../pages/view-my-present-private-party/view-my-present-private-party';
 import { ViewMyUpcomingTicketsPage } from '../pages/view-my-upcoming-tickets/view-my-upcoming-tickets';
+import { ViewAllTrendingArtistsPage } from '../pages/view-all-trending-artists/view-all-trending-artists';
+import { ViewAllTrendingVideosPage } from '../pages/view-all-trending-videos/view-all-trending-videos';
+import { ViewAllTrendingEventsPage } from '../pages/view-all-trending-events/view-all-trending-events';
 
 
 
@@ -69,7 +72,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ViewMyPresentBandsByFansPage,
     ViewMyPresentCDFundsPage,
     ViewMyPresentPrivatePartyPage,
-    ViewMyUpcomingTicketsPage
+    ViewMyUpcomingTicketsPage,
+    ViewAllTrendingArtistsPage,
+    ViewAllTrendingVideosPage,
+    ViewAllTrendingEventsPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -106,7 +112,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ViewMyPresentBandsByFansPage,
     ViewMyPresentCDFundsPage,
     ViewMyPresentPrivatePartyPage,
-    ViewMyUpcomingTicketsPage
+    ViewMyUpcomingTicketsPage,
+    ViewAllTrendingArtistsPage,
+    ViewAllTrendingVideosPage,
+    ViewAllTrendingEventsPage
   ],
   providers: [
     StatusBar,
