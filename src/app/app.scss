@@ -239,8 +239,31 @@
 }
 
 //Style music nav text
+.music-nav-text-active {
+  color: #ffffff;
+  background-color: red;
+  margin: 0;
+  padding: 5px;
+  font-size: 12px;
+  text-align: center;
+  border-right: 1px solid red;
+  cursor: pointer;
+}
+
+//Style music nav text
 .music-nav-text-playlist {
   color: red;
+  margin: 0;
+  padding: 5px;
+  font-size: 12px;
+  text-align: center;
+  cursor: pointer;
+}
+
+//Style music active nav text
+.music-nav-text-playlist-active {
+  color: #ffffff;
+  background-color: red;
   margin: 0;
   padding: 5px;
   font-size: 12px;
@@ -264,4 +287,11 @@
 .style-more-button {
   float: right !important;
   font-size: 10px !important;
+}
+
+//Set active status for music nav bar
+.music-nav-active {
+    background-color: #EF473A;
+    color: #ffffff;
+    cursor: pointer;
 }

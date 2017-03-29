@@ -1,30 +1,27 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { MyAlbumsPage } from '../my-albums/my-albums';
-import { MyArtistsPage } from '../my-artists/my-artists';
 import { MySongsPage } from '../my-songs/my-songs';
+import { MyArtistsPage } from '../my-artists/my-artists';
 import { MyPlaylistsPage } from '../my-playlists/my-playlists';
 
 /*
-  Generated class for the Music page.
+  Generated class for the MyAlbums page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
 @Component({
-  selector: 'page-music',
-  templateUrl: 'music.html'
+  selector: 'page-my-albums',
+  templateUrl: 'my-albums.html'
 })
-export class MusicPage {
+export class MyAlbumsPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
-  albumsPage = MyAlbumsPage;
   artistsPage = MyArtistsPage;
   songsPage = MySongsPage;
   playlistsPage = MyPlaylistsPage;
-
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MusicPage');
+    console.log('ionViewDidLoad MyAlbumsPage');
   }
 
 }

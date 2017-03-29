@@ -9,6 +9,11 @@ import { TicketsPage } from '../pages/tickets/tickets';
 import { RadioPage } from '../pages/radio/radio';
 import { MusicPage } from '../pages/music/music';
 import { AccountPage } from '../pages/account/account';
+import { MyAlbumsPage } from '../pages/my-albums/my-albums';
+import { MyArtistsPage } from '../pages/my-artists/my-artists';
+import { MySongsPage } from '../pages/my-songs/my-songs';
+import { MyPlaylistsPage } from '../pages/my-playlists/my-playlists';
+
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -24,7 +29,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TicketsPage,
     RadioPage,
     MusicPage,
-    AccountPage
+    AccountPage,
+    MyAlbumsPage,
+    MyArtistsPage,
+    MySongsPage,
+    MyPlaylistsPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -39,7 +48,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TicketsPage,
     RadioPage,
     MusicPage,
-    AccountPage
+    AccountPage,
+    MyAlbumsPage,
+    MyArtistsPage,
+    MySongsPage,
+    MyPlaylistsPage
   ],
   providers: [
     StatusBar,
