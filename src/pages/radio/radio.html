@@ -46,11 +46,11 @@
       <ion-col col-8>
         <p class="header-text">Trending Artists</p>
       </ion-col>
-      <ion-col col-2>
+      <ion-col col-2 [navPush]="viewAllTrendingArtists">
         <p class="style-nav-text">See All</p>
       </ion-col>
     </ion-row>
-    <ion-row class="style-placeholder">
+    <ion-row class="style-placeholder" [navPush]="fansViewBandsPortfolio">
       <ion-col col-12>
         <p class="dummy-text">Trending Artists Carousel will go here!</p>
       </ion-col>
@@ -69,7 +69,7 @@
       <ion-col col-8>
         <p class="header-text">Trending Videos</p>
       </ion-col>
-      <ion-col col-2>
+      <ion-col col-2 [navPush]="viewAllTrendingVideos">
         <p class="style-nav-text">See All</p>
       </ion-col>
     </ion-row>
@@ -93,7 +93,7 @@
         <p class="header-text">Trending Events</p>
       </ion-col>
       <ion-col col-2>
-        <p class="style-nav-text">See All</p>
+        <p class="style-nav-text" [navPush]="viewAllTrendingEvents">See All</p>
       </ion-col>
     </ion-row>
     <ion-row class="style-placeholder">

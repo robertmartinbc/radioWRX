@@ -126,6 +126,7 @@
   padding: 5px;
   margin: 0;
   border-radius: 6px;
+  cursor: pointer;
 }
 
 
@@ -152,6 +153,13 @@
 .ticket-text {
   font-size: 10px;
   margin: 0;
+}
+
+.profile-text {
+  font-size: 12px;
+  margin: 0;
+  color: #000000;
+  opacity: 0.5;
 }
 
 //Set ellipsis text
@@ -295,4 +303,38 @@
     background-color: #EF473A;
     color: #ffffff;
     cursor: pointer;
+}
+
+//Style Service Header text
+.service-header-text {
+  padding: 5px;
+  background-color: #AC97F0;
+  color: #ffffff;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  text-align: center;
+  font-size: 12px;
+  margin: 0;
+}
+
+//Style Bands Services Icon
+.style-service-icon {
+  text-align: center;
+  color: #AC97F0;
+  padding: 10px;
+  font-size: 24px;
+}
+
+//Style bands services counter
+.style-service-counter {
+  text-align: center;
+  color: #AC97F0;
+  font-size: 18px;
+  margin: 0;
+  padding-bottom: 5px;
+  border-left: 1px solid #AC97F0;
+  border-right: 1px solid #AC97F0;
+  border-bottom: 1px solid #AC97F0;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
