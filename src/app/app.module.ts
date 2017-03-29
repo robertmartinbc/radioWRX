@@ -18,6 +18,19 @@ import { MyCDFundsPage } from '../pages/my-cd-funds/my-cd-funds';
 import { MyPortfolioPage } from '../pages/my-portfolio/my-portfolio';
 import { MyPrivatePartyPage } from '../pages/my-private-party/my-private-party';
 import { MyTicketsPage } from '../pages/my-tickets/my-tickets';
+import { FansViewBandsByFansPage } from '../pages/fans-view-bands-by-fans/fans-view-bands-by-fans';
+import { FansViewBandsMembersPage } from '../pages/fans-view-bands-members/fans-view-bands-members';
+import { FansViewBandsPortfolioPage } from '../pages/fans-view-bands-portfolio/fans-view-bands-portfolio';
+import { FansViewBandsPrivatePartyPage } from '../pages/fans-view-bands-private-party/fans-view-bands-private-party';
+import { ViewMyAttendedTicketsPage } from '../pages/view-my-attended-tickets/view-my-attended-tickets';
+import { ViewMyCanceledTicketsPage } from '../pages/view-my-canceled-tickets/view-my-canceled-tickets';
+import { ViewMyPastBandsByFansPage } from '../pages/view-my-past-bands-by-fans/view-my-past-bands-by-fans';
+import { ViewMyPastCDFundsPage } from '../pages/view-my-past-cd-funds/view-my-past-cd-funds';
+import { ViewMyPastPrivatePartyPage } from '../pages/view-my-past-private-party/view-my-past-private-party';
+import { ViewMyPresentBandsByFansPage } from '../pages/view-my-present-bands-by-fans/view-my-present-bands-by-fans';
+import { ViewMyPresentCDFundsPage } from '../pages/view-my-present-cd-funds/view-my-present-cd-funds';
+import { ViewMyPresentPrivatePartyPage } from '../pages/view-my-present-private-party/view-my-present-private-party';
+import { ViewMyUpcomingTicketsPage } from '../pages/view-my-upcoming-tickets/view-my-upcoming-tickets';
 
 
 
@@ -43,7 +56,20 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyCDFundsPage,
     MyPortfolioPage,
     MyPrivatePartyPage,
-    MyTicketsPage
+    MyTicketsPage,
+    FansViewBandsByFansPage,
+    FansViewBandsMembersPage,
+    FansViewBandsPortfolioPage,
+    FansViewBandsPrivatePartyPage,
+    ViewMyAttendedTicketsPage,
+    ViewMyCanceledTicketsPage,
+    ViewMyPastBandsByFansPage,
+    ViewMyPastCDFundsPage,
+    ViewMyPastPrivatePartyPage,
+    ViewMyPresentBandsByFansPage,
+    ViewMyPresentCDFundsPage,
+    ViewMyPresentPrivatePartyPage,
+    ViewMyUpcomingTicketsPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -67,7 +93,20 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyCDFundsPage,
     MyPortfolioPage,
     MyPrivatePartyPage,
-    MyTicketsPage
+    MyTicketsPage,
+    FansViewBandsByFansPage,
+    FansViewBandsMembersPage,
+    FansViewBandsPortfolioPage,
+    FansViewBandsPrivatePartyPage,
+    ViewMyAttendedTicketsPage,
+    ViewMyCanceledTicketsPage,
+    ViewMyPastBandsByFansPage,
+    ViewMyPastCDFundsPage,
+    ViewMyPastPrivatePartyPage,
+    ViewMyPresentBandsByFansPage,
+    ViewMyPresentCDFundsPage,
+    ViewMyPresentPrivatePartyPage,
+    ViewMyUpcomingTicketsPage
   ],
   providers: [
     StatusBar,
