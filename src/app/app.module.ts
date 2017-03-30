@@ -22,6 +22,8 @@ import { FansViewBandsByFansPage } from '../pages/fans-view-bands-by-fans/fans-v
 import { FansViewBandsMembersPage } from '../pages/fans-view-bands-members/fans-view-bands-members';
 import { FansViewBandsPortfolioPage } from '../pages/fans-view-bands-portfolio/fans-view-bands-portfolio';
 import { FansViewBandsPrivatePartyPage } from '../pages/fans-view-bands-private-party/fans-view-bands-private-party';
+import { FansViewBandsCDFundsPage } from '../pages/fans-view-bands-cd-funds/fans-view-bands-cd-funds';
+import { FansViewBandsEventsPage } from '../pages/fans-view-bands-events/fans-view-bands-events';
 import { ViewMyAttendedTicketsPage } from '../pages/view-my-attended-tickets/view-my-attended-tickets';
 import { ViewMyCanceledTicketsPage } from '../pages/view-my-canceled-tickets/view-my-canceled-tickets';
 import { ViewMyPastBandsByFansPage } from '../pages/view-my-past-bands-by-fans/view-my-past-bands-by-fans';
@@ -64,6 +66,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     FansViewBandsMembersPage,
     FansViewBandsPortfolioPage,
     FansViewBandsPrivatePartyPage,
+    FansViewBandsCDFundsPage,
+    FansViewBandsEventsPage,
     ViewMyAttendedTicketsPage,
     ViewMyCanceledTicketsPage,
     ViewMyPastBandsByFansPage,
@@ -104,6 +108,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     FansViewBandsMembersPage,
     FansViewBandsPortfolioPage,
     FansViewBandsPrivatePartyPage,
+    FansViewBandsCDFundsPage,
+    FansViewBandsEventsPage,
     ViewMyAttendedTicketsPage,
     ViewMyCanceledTicketsPage,
     ViewMyPastBandsByFansPage,

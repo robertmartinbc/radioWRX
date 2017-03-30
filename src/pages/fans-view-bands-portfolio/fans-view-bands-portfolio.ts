@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { FansViewBandsByFansPage } from '../fans-view-bands-by-fans/fans-view-bands-by-fans';
+import { FansViewBandsCDFundsPage } from '../fans-view-bands-cd-funds/fans-view-bands-cd-funds';
+import { FansViewBandsMembersPage } from '../fans-view-bands-members/fans-view-bands-members';
+import { FansViewBandsPrivatePartyPage } from '../fans-view-bands-private-party/fans-view-bands-private-party';
+import { FansViewBandsEventsPage } from '../fans-view-bands-events/fans-view-bands-events';
 
 /*
   Generated class for the FansViewBandsPortfolio page.
@@ -14,6 +19,11 @@ import { NavController, NavParams } from 'ionic-angular';
 export class FansViewBandsPortfolioPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  fansViewBandsByFans = FansViewBandsByFansPage;
+  fansViewBandsCDFunds = FansViewBandsCDFundsPage;
+  fansViewBandsMembers = FansViewBandsMembersPage;
+  fansViewBandsPrivateParty = FansViewBandsPrivatePartyPage;
+  fansViewBandsEvents = FansViewBandsEventsPage;
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FansViewBandsPortfolioPage');

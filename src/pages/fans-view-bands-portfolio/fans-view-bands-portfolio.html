@@ -37,14 +37,14 @@
       </ion-col>
     </ion-row>
     <ion-row class="style-placeholder">
-      <ion-col col-6>
+      <ion-col col-6 [navPush]="fansViewBandsByFans">
         <p class="service-header-text">Bands By Fans</p>
         <div class="style-placeholder style-service-icon">
           <ion-icon name="people"></ion-icon>
         </div>
         <p class="style-service-counter">0</p>
       </ion-col>
-      <ion-col col-6>
+      <ion-col col-6 [navPush]="fansViewBandsPrivateParty">
         <p class="service-header-text">Private Party</p>
         <div class="style-placeholder style-service-icon">
           <ion-icon name="home"></ion-icon>
@@ -52,7 +52,7 @@
         <p class="style-service-counter">0</p>
       </ion-col>
     </ion-row>
-    <ion-row class="style-placeholder">
+    <ion-row class="style-placeholder" [navPush]="fansViewBandsCDFunds">
       <ion-col col-6>
         <p class="service-header-text">CD Funds</p>
         <div class="style-placeholder style-service-icon">
@@ -61,7 +61,7 @@
         <p class="style-service-counter">0</p>
       </ion-col>
       <ion-col col-6>
-        <p class="service-header-text">Events</p>
+        <p class="service-header-text" [navPush]="fansViewBandsEvents">Events</p>
         <div class="style-placeholder style-service-icon">
           <ion-icon name="ios-calendar"></ion-icon>
         </div>
@@ -100,7 +100,7 @@
       <ion-col col-1>
       </ion-col>
     </ion-row>
-    <ion-row class="style-placeholder">
+    <ion-row class="style-placeholder" [navPush]="fansViewBandsMembers">
       <ion-col col-12>
         <p class="dummy-text">Band Members will go here</p>
       </ion-col>
