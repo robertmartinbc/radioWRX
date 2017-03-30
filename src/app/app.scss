@@ -44,6 +44,14 @@
   border-right: 1px solid #AC97F0;
 }
 
+//Style select placeholder
+.style-select-placeholder {
+  border-left: 1px solid #AC97F0;
+  border-right: 1px solid #AC97F0;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
 //Style footer for placeholders
 .style-footer {
   background-color: #ffffff;
@@ -285,6 +293,11 @@
   padding: 0;
 }
 
+//Remove nav padding
+.remove-margin {
+  margin: 0 !important;
+}
+
 //Style music text
 .music-text {
   color: #000000;
@@ -337,4 +350,63 @@
   border-bottom: 1px solid #AC97F0;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
+}
+
+//Style Bands By Fans text
+.bands-by-fans-text {
+  font-size: 14px;
+  color: #000000;
+  opacity: 0.5;
+  text-align: justify;
+  margin: 0;
+  padding: 2px;
+}
+
+//Center text
+.center-text {
+  text-align: center;
+  font-size: 12px;
+  color: #000000;
+  opacity: 0.5;
+  text-align: center;
+  margin: 0;
+  padding: 2px;
+}
+
+//Set select text
+.select-text {
+  text-align: center;
+  font-size: 10px;
+  color: #000000;
+  opacity: 0.5;
+  text-align: center;
+  margin: 0;
+  padding: 2px;
+}
+
+//Style ticket price
+.style-ticket-price {
+  font-size: 30px;
+  color: #AC97F0;
+  text-align: center;
+  margin: 0;
+}
+
+//Style ticket required
+.style-ticket-required {
+  font-size: 30px;
+  color: #AC97F0;
+  text-align: center;
+  margin: 0;
+}
+
+//Style select tickets button
+.style-select-tickets-button {
+  text-align: center;
+
+}
+
+//Style input field
+.style-input {
+  max-width: 30px;
 }

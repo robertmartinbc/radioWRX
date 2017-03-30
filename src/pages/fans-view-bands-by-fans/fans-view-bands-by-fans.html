@@ -14,5 +14,132 @@
 
 
 <ion-content>
-
+  <ion-grid class="standard-grid-padding maximum-grid-width">
+    <ion-row class="header-style">
+      <ion-col col-1>
+        <ion-icon name="people" class="style-pause-button"></ion-icon>
+      </ion-col>
+      <ion-col col-10>
+        <p class="header-text">Bands By Fans</p>
+      </ion-col>
+      <ion-col col-1>
+      </ion-col>
+    </ion-row>
+    <ion-row class="style-placeholder">
+      <ion-col>
+        <p class="center-text">Would you like to see this band in your town?</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="style-placeholder">
+      <ion-col>
+        <p class="bands-by-fans-text">If a band receives enough requests they may choose to
+          perform in your town or city. You have the unique opportunity to crowd fund the
+          band and guarantee your ticket. It's easy.</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="style-placeholder">
+      <ion-col col-6>
+        <p class="service-header-text">Countries</p>
+        <div class="style-select-placeholder">
+          <ion-list class="remove-margin">
+            <ion-item>
+              <ion-label class="select-text">Select Country</ion-label>
+              <ion-select [(ngModel)]="countries" multiple="true">
+                <ion-option value="canada">Canada</ion-option>
+                <ion-option value="usa">USA</ion-option>
+                <ion-option value="uk">UK</ion-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
+      </div>
+      <ion-row class="style-footer">
+        <ion-col col-6>
+        </ion-col>
+      </ion-row>
+      </ion-col>
+      <ion-col col-6>
+        <p class="service-header-text">Towns</p>
+        <div class="style-select-placeholder">
+          <ion-list class="remove-margin">
+            <ion-item>
+              <ion-label class="select-text">Select Town</ion-label>
+              <ion-select [(ngModel)]="towns" multiple="true">
+                <ion-option value="victoria">Victoria</ion-option>
+                <ion-option value="la">Los Angeles</ion-option>
+                <ion-option value="farnham">Farnham</ion-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
+        </div>
+        <ion-row class="style-footer">
+          <ion-col col-6>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row class="style-placeholder">
+      <ion-col col-6>
+        <p class="service-header-text">Ticket Price</p>
+        <ion-row class="style-footer">
+          <ion-col col-12>
+            <p class="style-ticket-price">$30</p>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col col-6>
+        <p class="service-header-text">Required Tickets</p>
+        <ion-row class="style-footer">
+          <ion-col col-12>
+            <p class="style-ticket-required">30</p>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row class="style-footer">
+      <ion-col col-12>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="standard-grid-padding maximum-grid-width">
+    <ion-row class="header-style ">
+      <ion-col col-1>
+        <ion-icon name="film" class="style-pause-button"></ion-icon>
+      </ion-col>
+      <ion-col col-10>
+        <p class="header-text">Tickets Required</p>
+      </ion-col>
+      <ion-col col-1>
+      </ion-col>
+    </ion-row>
+    <ion-row class="style-placeholder">
+      <ion-col col-3 class="style-select-tickets-button">
+        <button ion-button small outline color="danger">1</button>
+      </ion-col>
+      <ion-col col-3 class="style-select-tickets-button">
+        <button ion-button small outline color="danger">2</button>
+      </ion-col>
+      <ion-col col-3 class="style-select-tickets-button">
+        <button ion-button small outline color="danger">3</button>
+      </ion-col>
+      <ion-col col-3 class="style-select-tickets-button">
+        <button ion-button small outline color="danger">4</button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="style-placeholder">
+      <ion-col col-3>
+      </ion-col>
+      <ion-col col-3>
+        <p class="bands-by-fans-text">Total:</p>
+      </ion-col>
+      <ion-col col-3>
+        <input type="text" class="style-input" />
+      </ion-col>
+      <ion-col col-3>
+      </ion-col>
+    </ion-row>
+    <ion-row class="style-footer">
+      <ion-col col-12>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
