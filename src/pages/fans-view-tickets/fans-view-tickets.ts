@@ -1,23 +1,22 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { FansViewTicketsPage } from '../fans-view-tickets/fans-view-tickets';
 
 /*
-  Generated class for the Tickets page.
+  Generated class for the FansViewTickets page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
 @Component({
-  selector: 'page-tickets',
-  templateUrl: 'tickets.html'
+  selector: 'page-fans-view-tickets',
+  templateUrl: 'fans-view-tickets.html'
 })
-export class TicketsPage {
+export class FansViewTicketsPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
-  fansViewTickets = FansViewTicketsPage;
+
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TicketsPage');
+    console.log('ionViewDidLoad FansViewTicketsPage');
   }
 
 }

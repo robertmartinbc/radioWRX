@@ -1,6 +1,7 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+import { Geolocation} from '@ionic-native/geolocation';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
@@ -24,6 +25,7 @@ import { FansViewBandsPortfolioPage } from '../pages/fans-view-bands-portfolio/f
 import { FansViewBandsPrivatePartyPage } from '../pages/fans-view-bands-private-party/fans-view-bands-private-party';
 import { FansViewBandsCDFundsPage } from '../pages/fans-view-bands-cd-funds/fans-view-bands-cd-funds';
 import { FansViewBandsEventsPage } from '../pages/fans-view-bands-events/fans-view-bands-events';
+import { FansViewTicketsPage } from '../pages/fans-view-tickets/fans-view-tickets';
 import { ViewMyAttendedTicketsPage } from '../pages/view-my-attended-tickets/view-my-attended-tickets';
 import { ViewMyCanceledTicketsPage } from '../pages/view-my-canceled-tickets/view-my-canceled-tickets';
 import { ViewMyPastBandsByFansPage } from '../pages/view-my-past-bands-by-fans/view-my-past-bands-by-fans';
@@ -41,6 +43,14 @@ import { ViewAllTrendingEventsPage } from '../pages/view-all-trending-events/vie
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
+
+const cloudSettings: CloudSettings = {
+  'core': {
+    'app_id': '9ca70990'
+  }
+};
+
 
 @NgModule({
   declarations: [
@@ -68,6 +78,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     FansViewBandsPrivatePartyPage,
     FansViewBandsCDFundsPage,
     FansViewBandsEventsPage,
+    FansViewTicketsPage,
     ViewMyAttendedTicketsPage,
     ViewMyCanceledTicketsPage,
     ViewMyPastBandsByFansPage,
@@ -82,7 +93,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ViewAllTrendingEventsPage
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    CloudModule.forRoot(cloudSettings)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -110,6 +122,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     FansViewBandsPrivatePartyPage,
     FansViewBandsCDFundsPage,
     FansViewBandsEventsPage,
+    FansViewTicketsPage,
     ViewMyAttendedTicketsPage,
     ViewMyCanceledTicketsPage,
     ViewMyPastBandsByFansPage,
@@ -126,6 +139,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
+    Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
