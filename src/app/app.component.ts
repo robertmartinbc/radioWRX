@@ -20,6 +20,25 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
 
+      this.geolocation.getCurrentPosition().then((resp) => {
+         resp.coords.latitude
+         resp.coords.longitude
+        }).catch((error) => {
+          console.log('Error getting location', error);
+        });
+
+        let watch = this.geolocation.watchPosition();
+        watch.subscribe((data) => {
+         // data can be a set of coordinates, or an error (if an error occurred).
+         data.coords.latitude
+         data.coords.longitude
+         console.log(data.coords.latitude);
+         console.log(data.coords.longitude);
+        });
+
     });
   }
 }
+//Android - AIzaSyDn4CFFQAEBdhwkUCx5bZS2F0lhlb13BzU
+
+//ios - AIzaSyBswvHwGCAYm76QOTQyyc9dCW2DKuz78xw
