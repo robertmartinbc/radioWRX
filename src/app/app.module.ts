@@ -38,7 +38,7 @@ import { ViewMyUpcomingTicketsPage } from '../pages/view-my-upcoming-tickets/vie
 import { ViewAllTrendingArtistsPage } from '../pages/view-all-trending-artists/view-all-trending-artists';
 import { ViewAllTrendingVideosPage } from '../pages/view-all-trending-videos/view-all-trending-videos';
 import { ViewAllTrendingEventsPage } from '../pages/view-all-trending-events/view-all-trending-events';
-
+import { AgmCoreModule } from 'angular2-google-maps/core';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -94,7 +94,10 @@ const cloudSettings: CloudSettings = {
   ],
   imports: [
     IonicModule.forRoot(MyApp),
-    CloudModule.forRoot(cloudSettings)
+    CloudModule.forRoot(cloudSettings),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAKj5BhowrnUd4vk2nKqPeAPNobldSdFhw'
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
