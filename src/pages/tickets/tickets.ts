@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { FansViewTicketsPage } from '../fans-view-tickets/fans-view-tickets';
 
+
 /*
   Generated class for the Tickets page.
 

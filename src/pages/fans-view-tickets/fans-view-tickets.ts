@@ -13,9 +13,6 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class FansViewTicketsPage {
 
-  latitude: number = -123.36564440000001;
-  longitude: number = 48.4284207;
-
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
