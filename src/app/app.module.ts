@@ -38,7 +38,7 @@ import { ViewMyUpcomingTicketsPage } from '../pages/view-my-upcoming-tickets/vie
 import { ViewAllTrendingArtistsPage } from '../pages/view-all-trending-artists/view-all-trending-artists';
 import { ViewAllTrendingVideosPage } from '../pages/view-all-trending-videos/view-all-trending-videos';
 import { ViewAllTrendingEventsPage } from '../pages/view-all-trending-events/view-all-trending-events';
-import { FansSignInModalPage } from '../pages/fans-sign-in-modal/fans-sign-in-modal';
+import { SignInModalPage } from '../pages/sign-in-modal/sign-in-modal';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -91,7 +91,7 @@ const cloudSettings: CloudSettings = {
     ViewAllTrendingArtistsPage,
     ViewAllTrendingVideosPage,
     ViewAllTrendingEventsPage,
-    FansSignInModalPage
+    SignInModalPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -136,7 +136,7 @@ const cloudSettings: CloudSettings = {
     ViewAllTrendingArtistsPage,
     ViewAllTrendingVideosPage,
     ViewAllTrendingEventsPage,
-    FansSignInModalPage
+    SignInModalPage
   ],
   providers: [
     StatusBar,

@@ -8,10 +8,10 @@ import { NavController, NavParams, ViewController } from 'ionic-angular';
   Ionic pages and navigation.
 */
 @Component({
-  selector: 'page-fans-sign-in-modal',
-  templateUrl: 'fans-sign-in-modal.html'
+  selector: 'page-sign-in-modal',
+  templateUrl: 'sign-in-modal.html'
 })
-export class FansSignInModalPage {
+export class SignInModalPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {}
 
@@ -19,8 +19,13 @@ export class FansSignInModalPage {
     this.viewCtrl.dismiss();
   }
 
+  openNew() {
+    this.viewCtrl.dismiss();
+    alert("Bollocks!");
+  }
+
   ionViewDidLoad() {
-    console.log('ionViewDidLoad FansSignInModalPage');
+    console.log('ionViewDidLoad SignInModalPage');
   }
 
 }
