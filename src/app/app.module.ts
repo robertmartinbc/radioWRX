@@ -39,6 +39,8 @@ import { ViewAllTrendingArtistsPage } from '../pages/view-all-trending-artists/v
 import { ViewAllTrendingVideosPage } from '../pages/view-all-trending-videos/view-all-trending-videos';
 import { ViewAllTrendingEventsPage } from '../pages/view-all-trending-events/view-all-trending-events';
 import { SignInModalPage } from '../pages/sign-in-modal/sign-in-modal';
+import { FansSignInModalPage } from '../pages/fans-sign-in-modal/fans-sign-in-modal';
+import { BandsSignInModalPage } from '../pages/bands-sign-in-modal/bands-sign-in-modal';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -91,7 +93,9 @@ const cloudSettings: CloudSettings = {
     ViewAllTrendingArtistsPage,
     ViewAllTrendingVideosPage,
     ViewAllTrendingEventsPage,
-    SignInModalPage
+    SignInModalPage,
+    FansSignInModalPage,
+    BandsSignInModalPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -136,7 +140,9 @@ const cloudSettings: CloudSettings = {
     ViewAllTrendingArtistsPage,
     ViewAllTrendingVideosPage,
     ViewAllTrendingEventsPage,
-    SignInModalPage
+    SignInModalPage,
+    FansSignInModalPage,
+    BandsSignInModalPage
   ],
   providers: [
     StatusBar,

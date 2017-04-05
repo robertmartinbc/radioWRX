@@ -5,6 +5,7 @@ import { ViewAllTrendingArtistsPage } from '../view-all-trending-artists/view-al
 import { ViewAllTrendingVideosPage } from '../view-all-trending-videos/view-all-trending-videos';
 import { ViewAllTrendingEventsPage } from '../view-all-trending-events/view-all-trending-events';
 import { SignInModalPage } from '../sign-in-modal/sign-in-modal';
+
 /*
   Generated class for the Radio page.
 
@@ -23,7 +24,7 @@ export class RadioPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public viewCtrl: ViewController) {}
 
-  presentModal() {
+  presentSignInModal() {
     let modal = this.modalCtrl.create(SignInModalPage);
     modal.present();
   }
