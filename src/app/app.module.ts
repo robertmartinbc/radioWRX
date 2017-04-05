@@ -41,6 +41,8 @@ import { ViewAllTrendingEventsPage } from '../pages/view-all-trending-events/vie
 import { SignInModalPage } from '../pages/sign-in-modal/sign-in-modal';
 import { FansSignInModalPage } from '../pages/fans-sign-in-modal/fans-sign-in-modal';
 import { BandsSignInModalPage } from '../pages/bands-sign-in-modal/bands-sign-in-modal';
+import { FansSignUpModalPage } from '../pages/fans-sign-up-modal/fans-sign-up-modal';
+import { BandsSignUpModalPage } from '../pages/bands-sign-up-modal/bands-sign-up-modal';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -95,7 +97,9 @@ const cloudSettings: CloudSettings = {
     ViewAllTrendingEventsPage,
     SignInModalPage,
     FansSignInModalPage,
-    BandsSignInModalPage
+    BandsSignInModalPage,
+    FansSignUpModalPage,
+    BandsSignUpModalPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -142,7 +146,9 @@ const cloudSettings: CloudSettings = {
     ViewAllTrendingEventsPage,
     SignInModalPage,
     FansSignInModalPage,
-    BandsSignInModalPage
+    BandsSignInModalPage,
+    FansSignUpModalPage,
+    BandsSignUpModalPage
   ],
   providers: [
     StatusBar,

@@ -6,9 +6,17 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>fansSignUpModal</ion-title>
-  </ion-navbar>
+  <ion-toolbar>
+    <ion-title>
+      Fans Sign Up
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <!--<span ion-text color="primary" showWhen="ios">Cancel</span>-->
+        <ion-icon name="md-close" showWhen="ios" color="danger" right></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
 
 </ion-header>
 

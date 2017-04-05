@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ViewController } from 'ionic-angular';
-
+import { NavController, NavParams, ViewController, ModalController } from 'ionic-angular';
+import { FansSignUpModalPage } from '../fans-sign-up-modal/fans-sign-up-modal';
 /*
   Generated class for the FansSignInModal page.
 
@@ -13,10 +13,16 @@ import { NavController, NavParams, ViewController } from 'ionic-angular';
 })
 export class FansSignInModalPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, public modalCtrl: ModalController) {}
 
   dismiss() {
     this.viewCtrl.dismiss();
+  }
+
+  presentFansSignUpModal() {
+    this.viewCtrl.dismiss();
+    let modal = this.modalCtrl.create(FansSignUpModalPage);
+  modal.present();
   }
 
   ionViewDidLoad() {
