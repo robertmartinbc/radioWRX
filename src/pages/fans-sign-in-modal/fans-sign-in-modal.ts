@@ -22,7 +22,7 @@ export class FansSignInModalPage {
   presentFansSignUpModal() {
     this.viewCtrl.dismiss();
     let modal = this.modalCtrl.create(FansSignUpModalPage);
-  modal.present();
+    modal.present();
   }
 
   ionViewDidLoad() {
