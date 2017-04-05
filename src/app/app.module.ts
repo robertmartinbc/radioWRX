@@ -43,6 +43,14 @@ import { FansSignInModalPage } from '../pages/fans-sign-in-modal/fans-sign-in-mo
 import { BandsSignInModalPage } from '../pages/bands-sign-in-modal/bands-sign-in-modal';
 import { FansSignUpModalPage } from '../pages/fans-sign-up-modal/fans-sign-up-modal';
 import { BandsSignUpModalPage } from '../pages/bands-sign-up-modal/bands-sign-up-modal';
+import { BandsViewBandsProfilePage } from '../pages/bands-view-bands-profile/bands-view-bands-profile';
+import { EditBandsAlbumDetailsPage } from '../pages/edit-bands-album-details/edit-bands-album-details';
+import { EditBandsMembersDetailsPage } from '../pages/edit-bands-members-details/edit-bands-members-details';
+import { EditBandsSongsDetailsPage } from '../pages/edit-bands-songs-details/edit-bands-songs-details';
+import { LockedFeaturesModalPage } from '../pages/locked-features-modal/locked-features-modal';
+import { RegisterBandsAlbumDetailsPage } from '../pages/register-bands-album-details/register-bands-album-details';
+import { RegisterBandsMembersDetailsPage } from '../pages/register-bands-members-details/register-bands-members-details';
+import { RegisterBandsSongsDetailsPage } from '../pages/register-bands-songs-details/register-bands-songs-details';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -99,7 +107,15 @@ const cloudSettings: CloudSettings = {
     FansSignInModalPage,
     BandsSignInModalPage,
     FansSignUpModalPage,
-    BandsSignUpModalPage
+    BandsSignUpModalPage,
+    BandsViewBandsProfilePage,
+    EditBandsAlbumDetailsPage,
+    EditBandsMembersDetailsPage,
+    EditBandsSongsDetailsPage,
+    LockedFeaturesModalPage,
+    RegisterBandsAlbumDetailsPage,
+    RegisterBandsMembersDetailsPage,
+    RegisterBandsSongsDetailsPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -148,7 +164,15 @@ const cloudSettings: CloudSettings = {
     FansSignInModalPage,
     BandsSignInModalPage,
     FansSignUpModalPage,
-    BandsSignUpModalPage
+    BandsSignUpModalPage,
+    BandsViewBandsProfilePage,
+    EditBandsAlbumDetailsPage,
+    EditBandsMembersDetailsPage,
+    EditBandsSongsDetailsPage,
+    LockedFeaturesModalPage,
+    RegisterBandsAlbumDetailsPage,
+    RegisterBandsMembersDetailsPage,
+    RegisterBandsSongsDetailsPage
   ],
   providers: [
     StatusBar,
