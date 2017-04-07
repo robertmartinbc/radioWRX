@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { RegisterBandsAlbumDetailsPage } from '../register-bands-album-details/register-bands-album-details';
 
 /*
   Generated class for the BandsViewBandsProfile page.
@@ -15,6 +16,7 @@ export class BandsViewBandsProfilePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
+  registerBandsAlbumDetails = RegisterBandsAlbumDetailsPage;
   ionViewDidLoad() {
     console.log('ionViewDidLoad BandsViewBandsProfilePage');
   }
