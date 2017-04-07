@@ -51,7 +51,11 @@ import { LockedFeaturesModalPage } from '../pages/locked-features-modal/locked-f
 import { RegisterBandsAlbumDetailsPage } from '../pages/register-bands-album-details/register-bands-album-details';
 import { RegisterBandsMembersDetailsPage } from '../pages/register-bands-members-details/register-bands-members-details';
 import { RegisterBandsSongsDetailsPage } from '../pages/register-bands-songs-details/register-bands-songs-details';
-
+import { BandsViewBandsByFansPage } from '../pages/bands-view-bands-by-fans/bands-view-bands-by-fans';
+import { BandsViewBandsCDFundsPage } from '../pages/bands-view-bands-cd-funds/bands-view-bands-cd-funds';
+import { BandsViewBandsEventsPage } from '../pages/bands-view-bands-events/bands-view-bands-events';
+import { BandsViewBandsMembersPage } from '../pages/bands-view-bands-members/bands-view-bands-members';
+import { BandsViewBandsPrivatePartyPage } from '../pages/bands-view-bands-private-party/bands-view-bands-private-party';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -59,7 +63,7 @@ import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
 
 const cloudSettings: CloudSettings = {
   'core': {
-    'app_id': '9ca70990'
+    'app_id': 'c8b30f66'
   }
 };
 
@@ -115,7 +119,12 @@ const cloudSettings: CloudSettings = {
     LockedFeaturesModalPage,
     RegisterBandsAlbumDetailsPage,
     RegisterBandsMembersDetailsPage,
-    RegisterBandsSongsDetailsPage
+    RegisterBandsSongsDetailsPage,
+    BandsViewBandsByFansPage,
+    BandsViewBandsCDFundsPage,
+    BandsViewBandsEventsPage,
+    BandsViewBandsMembersPage,
+    BandsViewBandsPrivatePartyPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -172,7 +181,12 @@ const cloudSettings: CloudSettings = {
     LockedFeaturesModalPage,
     RegisterBandsAlbumDetailsPage,
     RegisterBandsMembersDetailsPage,
-    RegisterBandsSongsDetailsPage
+    RegisterBandsSongsDetailsPage,
+    BandsViewBandsByFansPage,
+    BandsViewBandsCDFundsPage,
+    BandsViewBandsEventsPage,
+    BandsViewBandsMembersPage,
+    BandsViewBandsPrivatePartyPage
   ],
   providers: [
     StatusBar,

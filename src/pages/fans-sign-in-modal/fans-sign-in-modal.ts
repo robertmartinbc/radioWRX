@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController, ModalController } from 'ionic-angular';
 import { FansSignUpModalPage } from '../fans-sign-up-modal/fans-sign-up-modal';
+import { BandsViewBandsProfilePage } from '../bands-view-bands-profile/bands-view-bands-profile';
 /*
   Generated class for the FansSignInModal page.
 
@@ -14,7 +15,7 @@ import { FansSignUpModalPage } from '../fans-sign-up-modal/fans-sign-up-modal';
 export class FansSignInModalPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, public modalCtrl: ModalController) {}
-
+  bandsViewBandsProfile = BandsViewBandsProfilePage;
   dismiss() {
     this.viewCtrl.dismiss();
   }
