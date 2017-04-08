@@ -7,6 +7,7 @@ import { RadioPage } from '../radio/radio';
 import { TicketsPage } from '../tickets/tickets';
 import { MusicPage } from '../music/music';
 import { AccountPage } from '../account/account';
+import { BandsViewBandsProfilePage } from '../bands-view-bands-profile/bands-view-bands-profile';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -17,7 +18,7 @@ export class TabsPage {
   tab1Root: any = RadioPage;
   tab2Root: any = TicketsPage;
   tab3Root: any = MusicPage;
-  tab4Root: any = AccountPage;
+  tab4Root: any = BandsViewBandsProfilePage;
 
   constructor() {
 

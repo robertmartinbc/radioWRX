@@ -25,45 +25,53 @@
       <ion-col col-1>
       </ion-col>
     </ion-row>
-    <ion-row class="style-placeholder account-menu-divider" [navPush]="albumsPage">
+    <ion-row class="style-placeholder account-menu-divider">
       <ion-col col-2>
         <ion-icon name="disc" class="style-account-menu-icon"></ion-icon>
       </ion-col>
       <ion-col col-8>
-        <p class="account-menu-text">My Albums</p>
+        <button ion-button clear [navPush]="albumsPage">
+          <p class="account-menu-text">My Albums</p>
+        </button>
       </ion-col>
       <ion-col col-2>
         <ion-icon name="ios-arrow-forward" class="style-account-menu-nav-icon"></ion-icon>
       </ion-col>
     </ion-row>
-    <ion-row class="style-placeholder account-menu-divider" [navPush]="artistsPage">
+    <ion-row class="style-placeholder account-menu-divider">
       <ion-col col-2>
         <ion-icon name="people" class="style-account-menu-icon"></ion-icon>
       </ion-col>
       <ion-col col-8>
-        <p class="account-menu-text">My Artists</p>
+        <button ion-button clear [navPush]="artistsPage">
+          <p class="account-menu-text">My Artists</p>
+        </button>
       </ion-col>
       <ion-col col-2>
         <ion-icon name="ios-arrow-forward" class="style-account-menu-nav-icon"></ion-icon>
       </ion-col>
     </ion-row>
-    <ion-row class="style-placeholder account-menu-divider" [navPush]="songsPage">
+    <ion-row class="style-placeholder account-menu-divider">
       <ion-col col-2>
         <ion-icon name="musical-note" class="style-account-menu-icon"></ion-icon>
       </ion-col>
       <ion-col col-8>
-        <p class="account-menu-text">My Songs</p>
+        <button ion-button clear [navPush]="songsPage">
+          <p class="account-menu-text">My Songs</p>
+        </button>
       </ion-col>
       <ion-col col-2>
         <ion-icon name="ios-arrow-forward" class="style-account-menu-nav-icon"></ion-icon>
       </ion-col>
     </ion-row>
-    <ion-row class="style-placeholder account-menu-divider" [navPush]="playlistsPage">
+    <ion-row class="style-placeholder account-menu-divider">
       <ion-col col-2>
         <ion-icon name="list" class="style-account-menu-icon"></ion-icon>
       </ion-col>
       <ion-col col-8>
-        <p class="account-menu-text">My Playlists</p>
+        <button ion-button clear [navPush]="playlistsPage">
+          <p class="account-menu-text">My Playlists</p>
+        </button>
       </ion-col>
       <ion-col col-2>
         <ion-icon name="ios-arrow-forward" class="style-account-menu-nav-icon"></ion-icon>

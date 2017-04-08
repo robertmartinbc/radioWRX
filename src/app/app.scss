@@ -207,8 +207,9 @@
 .account-menu-text {
   margin: 0;
   font-size: 20px;
-  padding: 10px;
+  padding: 0;
   opacity: 0.5;
+  color: #000000
 }
 
 //Style account menu icon
@@ -422,12 +423,19 @@
   font-size: 12px;
 }
 
-.sign-in-icon {
+.fans-sign-in-icon {
   text-align: center;
-  font-size: 80px;
+  font-size: 40px;
   color: red;
-  margin: 20px;
-  margin-top: 80px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.bands-sign-in-icon {
+  text-align: center;
+  font-size: 45px;
+  color: red;
+  margin-top: 20px;
   cursor: pointer;
 }
 
@@ -467,4 +475,9 @@
 }
 .position-add-button {
   float: right;
+}
+
+.size-icon {
+  font-size: 40px;
+  margin-top: 60px;
 }

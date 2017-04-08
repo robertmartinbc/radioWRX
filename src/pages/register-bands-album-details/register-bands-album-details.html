@@ -12,5 +12,56 @@
 
 
 <ion-content>
-
+  <ion-grid class="standard-grid-padding maximum-grid-width">
+    <ion-row class="header-style">
+      <ion-col col-1>
+      </ion-col>
+      <ion-col col-10>
+        <p class="header-text">Create Band Member</p>
+      </ion-col>
+      <ion-col col-1>
+      </ion-col>
+    </ion-row>
+    <ion-row class="style-placeholder">
+      <ion-col col-12>
+        <form>
+          <ion-list>
+            <ion-item>
+              <ion-label floating>Name</ion-label>
+              <ion-input type="text" clearInput></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label floating>Biography</ion-label>
+              <ion-textarea type="text" clearInput></ion-textarea>
+            </ion-item>
+            <ion-item>
+              <ion-label>Vocals</ion-label>
+              <ion-checkbox color="danger"></ion-checkbox>
+            </ion-item>
+            <ion-item>
+              <ion-label>Guitar</ion-label>
+              <ion-checkbox color="danger"></ion-checkbox>
+            </ion-item>
+            <ion-item>
+              <ion-label>Base</ion-label>
+              <ion-checkbox color="danger"></ion-checkbox>
+            </ion-item>
+            <ion-item>
+              <ion-label>Drums</ion-label>
+              <ion-checkbox color="danger"></ion-checkbox>
+            </ion-item>
+            <ion-item>
+              <ion-label>Piano</ion-label>
+              <ion-checkbox color="danger"></ion-checkbox>
+            </ion-item>
+          </ion-list>
+          <button ion-button block color="danger" outline>Create Band Member</button>
+        </form>
+      </ion-col>
+    </ion-row>
+    <ion-row class="style-footer">
+      <ion-col col-12>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

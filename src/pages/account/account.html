@@ -25,56 +25,66 @@
       <ion-col col-1>
       </ion-col>
     </ion-row>
-    <ion-row class="style-placeholder account-menu-divider" [navPush]="myTicketsPage">
+    <ion-row class="style-placeholder account-menu-divider">
       <ion-col col-2>
         <ion-icon name="film" class="style-account-menu-icon"></ion-icon>
       </ion-col>
       <ion-col col-8>
-        <p class="account-menu-text">My Tickets</p>
+        <button ion-button clear [navPush]="myTicketsPage">
+          <p class="account-menu-text">My Tickets</p>
+        </button>
       </ion-col>
       <ion-col col-2>
         <ion-icon name="ios-arrow-forward" class="style-account-menu-nav-icon"></ion-icon>
       </ion-col>
     </ion-row>
-    <ion-row class="style-placeholder account-menu-divider" [navPush]="cdFundsPage">
+    <ion-row class="style-placeholder account-menu-divider">
       <ion-col col-2>
         <ion-icon name="disc" class="style-account-menu-icon"></ion-icon>
       </ion-col>
       <ion-col col-8>
-        <p class="account-menu-text">My CD Funds</p>
+        <button ion-button clear [navPush]="cdFundsPage">
+          <p class="account-menu-text">My CD Funds</p>
+        </button>
       </ion-col>
       <ion-col col-2>
         <ion-icon name="ios-arrow-forward" class="style-account-menu-nav-icon"></ion-icon>
       </ion-col>
     </ion-row>
-    <ion-row class="style-placeholder account-menu-divider" [navPush]="bandsByFansPage">
+    <ion-row class="style-placeholder account-menu-divider">
       <ion-col col-2>
         <ion-icon name="people" class="style-account-menu-icon"></ion-icon>
       </ion-col>
       <ion-col col-8>
-        <p class="account-menu-text">My Bands By Fans</p>
+        <button ion-button clear [navPush]="bandsByFansPage">
+          <p class="account-menu-text">My Bands By Fans</p>
+        </button>
       </ion-col>
       <ion-col col-2>
         <ion-icon name="ios-arrow-forward" class="style-account-menu-nav-icon"></ion-icon>
       </ion-col>
     </ion-row>
-    <ion-row class="style-placeholder account-menu-divider" [navPush]="privatePartyPage">
+    <ion-row class="style-placeholder account-menu-divider">
       <ion-col col-2>
         <ion-icon name="home" class="style-account-menu-icon"></ion-icon>
       </ion-col>
       <ion-col col-8>
-        <p class="account-menu-text">My Private Party</p>
+        <button ion-button clear [navPush]="privatePartyPage">
+          <p class="account-menu-text">My Private Party</p>
+        </button>
       </ion-col>
       <ion-col col-2>
         <ion-icon name="ios-arrow-forward" class="style-account-menu-nav-icon"></ion-icon>
       </ion-col>
     </ion-row>
-    <ion-row class="style-placeholder account-menu-divider" [navPush]="portfolioPage">
+    <ion-row class="style-placeholder account-menu-divider">
       <ion-col col-2>
         <ion-icon name="contact" class="style-account-menu-icon"></ion-icon>
       </ion-col>
       <ion-col col-8>
-        <p class="account-menu-text">My Profile</p>
+        <button ion-button clear [navPush]="portfolioPage">
+          <p class="account-menu-text">My Profile</p>
+        </button>
       </ion-col>
       <ion-col col-2>
         <ion-icon name="ios-arrow-forward" class="style-account-menu-nav-icon"></ion-icon>
