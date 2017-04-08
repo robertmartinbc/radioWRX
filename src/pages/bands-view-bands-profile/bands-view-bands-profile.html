@@ -96,7 +96,7 @@
         <ion-icon name="people" class="style-pause-button"></ion-icon>
       </ion-col>
       <ion-col col-8>
-        <p class="header-text">Band Members</p>
+        <p class="header-text">Music</p>
       </ion-col>
       <ion-col col-2>
         <button class="position-add-button" ion-button icon-only color="light" clear small [navPush]="registerBandsAlbumDetails">
@@ -104,7 +104,31 @@
         </button>
       </ion-col>
     </ion-row>
-    <ion-row class="style-placeholder" [navPush]="fansViewBandsMembers">
+    <ion-row class="style-placeholder" [navPush]="">
+      <ion-col col-12>
+        <p class="dummy-text">Band Members will go here</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="style-footer">
+      <ion-col col-12>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="standard-grid-padding maximum-grid-width">
+    <ion-row class="header-style">
+      <ion-col col-2>
+        <ion-icon name="people" class="style-pause-button"></ion-icon>
+      </ion-col>
+      <ion-col col-8>
+        <p class="header-text">Band Members</p>
+      </ion-col>
+      <ion-col col-2>
+        <button class="position-add-button" ion-button icon-only color="light" clear small [navPush]="registerBandsMembersDetails">
+          <ion-icon name="md-add"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="style-placeholder" [navPush]="fansViewBandsMember">
       <ion-col col-12>
         <p class="dummy-text">Band Members will go here</p>
       </ion-col>

@@ -17,7 +17,7 @@
       <ion-col col-1>
       </ion-col>
       <ion-col col-10>
-        <p class="header-text">Create Band Member</p>
+        <p class="header-text">Create Album</p>
       </ion-col>
       <ion-col col-1>
       </ion-col>
@@ -27,35 +27,38 @@
         <form>
           <ion-list>
             <ion-item>
-              <ion-label floating>Name</ion-label>
+              <ion-label floating>Album Title</ion-label>
               <ion-input type="text" clearInput></ion-input>
             </ion-item>
             <ion-item>
-              <ion-label floating>Biography</ion-label>
-              <ion-textarea type="text" clearInput></ion-textarea>
+              <ion-label floating>Year Released</ion-label>
+              <ion-input type="text" clearInput></ion-input>
             </ion-item>
             <ion-item>
-              <ion-label>Vocals</ion-label>
-              <ion-checkbox color="danger"></ion-checkbox>
+              <ion-label floating> Total No. Songs</ion-label>
+              <ion-input type="text" clearInput></ion-input>
             </ion-item>
             <ion-item>
-              <ion-label>Guitar</ion-label>
-              <ion-checkbox color="danger"></ion-checkbox>
+              <ion-label floating>Album Duration</ion-label>
+              <ion-input type="text" clearInput></ion-input>
             </ion-item>
             <ion-item>
-              <ion-label>Base</ion-label>
-              <ion-checkbox color="danger"></ion-checkbox>
+              <ion-label floating>UPC/EAN Code</ion-label>
+              <ion-input type="text" clearInput></ion-input>
             </ion-item>
             <ion-item>
-              <ion-label>Drums</ion-label>
-              <ion-checkbox color="danger"></ion-checkbox>
-            </ion-item>
-            <ion-item>
-              <ion-label>Piano</ion-label>
-              <ion-checkbox color="danger"></ion-checkbox>
+              <ion-label>Genre</ion-label>
+              <ion-select multiple="true">
+                <ion-option>Rock</ion-option>
+                <ion-option>Pop</ion-option>
+                <ion-option>Classical</ion-option>
+                <ion-option>Alternative</ion-option>
+                <ion-option>Jazz</ion-option>
+                <ion-option>Blues</ion-option>
+              </ion-select>
             </ion-item>
           </ion-list>
-          <button ion-button block color="danger" outline>Create Band Member</button>
+          <button ion-button block color="danger" outline>Create Album</button>
         </form>
       </ion-col>
     </ion-row>
