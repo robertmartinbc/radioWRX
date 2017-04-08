@@ -4,15 +4,75 @@
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 -->
+<!--
+  Generated template for the RegisterBandsAlbumDetails page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>editBandsEventsDetails</ion-title>
+    <ion-title>Edit Band Event</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content>
+  <ion-grid class="standard-grid-padding maximum-grid-width">
+    <ion-row class="header-style">
+      <ion-col col-1>
+      </ion-col>
+      <ion-col col-10>
+        <p class="header-text">Edit Band Event</p>
+      </ion-col>
+      <ion-col col-1>
+      </ion-col>
+    </ion-row>
+    <ion-row class="style-placeholder">
+      <ion-col col-12>
+        <form>
+          <ion-list>
+            <ion-item>
+              <ion-label floating>Event Title</ion-label>
+              <ion-input type="text" clearInput></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label floating>Event Venue</ion-label>
+              <ion-input type="text" clearInput></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label floating>Town</ion-label>
+              <ion-input type="text" clearInput></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label floating>Zip/Postal Code</ion-label>
+              <ion-input type="text" clearInput></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label floating>Available Tickets</ion-label>
+              <ion-input type="text" clearInput></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label floating>Ticket Price</ion-label>
+              <ion-input type="text" clearInput></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>Start Date</ion-label>
+              <ion-datetime displayFormat="MMM DD YYYY"></ion-datetime>
+            </ion-item>
+            <ion-item>
+              <ion-label>Start Time</ion-label>
+              <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A"></ion-datetime>
+            </ion-item>
+          </ion-list>
+          <button ion-button block color="danger" outline>Update Event</button>
+        </form>
+      </ion-col>
+    </ion-row>
+    <ion-row class="style-footer">
+      <ion-col col-12>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
+<ion-header>

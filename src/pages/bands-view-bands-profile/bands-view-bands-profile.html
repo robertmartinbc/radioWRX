@@ -140,13 +140,16 @@
   </ion-grid>
   <ion-grid class="standard-grid-padding maximum-grid-width">
     <ion-row class="header-style">
-      <ion-col col-1>
+      <ion-col col-2>
         <ion-icon name="ios-videocam" class="style-pause-button"></ion-icon>
       </ion-col>
-      <ion-col col-10>
+      <ion-col col-8>
         <p class="header-text">Videos</p>
       </ion-col>
-      <ion-col col-1>
+      <ion-col col-2>
+        <button class="position-add-button" ion-button icon-only color="light" clear small [navPush]="registerBandsVideosDetails">
+          <ion-icon name="md-add"></ion-icon>
+        </button>
       </ion-col>
     </ion-row>
     <ion-row class="style-placeholder">
@@ -161,13 +164,16 @@
   </ion-grid>
   <ion-grid class="standard-grid-padding maximum-grid-width">
     <ion-row class="header-style">
-      <ion-col col-1>
+      <ion-col col-2>
         <ion-icon name="ios-calendar" class="style-pause-button"></ion-icon>
       </ion-col>
-      <ion-col col-10>
+      <ion-col col-8>
         <p class="header-text">Events</p>
       </ion-col>
-      <ion-col col-1>
+      <ion-col col-2>
+        <button class="position-add-button" ion-button icon-only color="light" clear small [navPush]="registerBandsEventsDetails">
+          <ion-icon name="md-add"></ion-icon>
+        </button>
       </ion-col>
     </ion-row>
     <ion-row class="style-placeholder">

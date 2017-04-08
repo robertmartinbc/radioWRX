@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { RegisterBandsAlbumDetailsPage } from '../register-bands-album-details/register-bands-album-details';
 import { RegisterBandsMembersDetailsPage } from '../register-bands-members-details/register-bands-members-details';
+import { RegisterBandsVideosDetailsPage } from '../register-bands-videos-details/register-bands-videos-details';
+import { RegisterBandsEventsDetailsPage } from '../register-bands-events-details/register-bands-events-details';
 
 
 /*
@@ -20,6 +22,8 @@ export class BandsViewBandsProfilePage {
 
   registerBandsAlbumDetails = RegisterBandsAlbumDetailsPage;
   registerBandsMembersDetails = RegisterBandsMembersDetailsPage;
+  registerBandsVideosDetails = RegisterBandsVideosDetailsPage;
+  registerBandsEventsDetails = RegisterBandsEventsDetailsPage;
   ionViewDidLoad() {
     console.log('ionViewDidLoad BandsViewBandsProfilePage');
   }
