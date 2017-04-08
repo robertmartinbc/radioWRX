@@ -56,6 +56,10 @@ import { BandsViewBandsCDFundsPage } from '../pages/bands-view-bands-cd-funds/ba
 import { BandsViewBandsEventsPage } from '../pages/bands-view-bands-events/bands-view-bands-events';
 import { BandsViewBandsMembersPage } from '../pages/bands-view-bands-members/bands-view-bands-members';
 import { BandsViewBandsPrivatePartyPage } from '../pages/bands-view-bands-private-party/bands-view-bands-private-party';
+import { RegisterBandsEventsDetailsPage } from '../pages/register-bands-events-details/register-bands-events-details';
+import { RegisterBandsVideosDetailsPage } from '../pages/register-bands-videos-details/register-bands-videos-details';
+import { EditBandsEventsDetailsPage } from '../pages/edit-bands-events-details/edit-bands-events-details';
+import { EditBandsVideosDetailsPage } from '../pages/edit-bands-videos-details/edit-bands-videos-details';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -124,7 +128,11 @@ const cloudSettings: CloudSettings = {
     BandsViewBandsCDFundsPage,
     BandsViewBandsEventsPage,
     BandsViewBandsMembersPage,
-    BandsViewBandsPrivatePartyPage
+    BandsViewBandsPrivatePartyPage,
+    RegisterBandsEventsDetailsPage,
+    RegisterBandsVideosDetailsPage,
+    EditBandsEventsDetailsPage,
+    EditBandsVideosDetailsPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -186,7 +194,11 @@ const cloudSettings: CloudSettings = {
     BandsViewBandsCDFundsPage,
     BandsViewBandsEventsPage,
     BandsViewBandsMembersPage,
-    BandsViewBandsPrivatePartyPage
+    BandsViewBandsPrivatePartyPage,
+    RegisterBandsEventsDetailsPage,
+    RegisterBandsVideosDetailsPage,
+    EditBandsEventsDetailsPage,
+    EditBandsVideosDetailsPage
   ],
   providers: [
     StatusBar,
