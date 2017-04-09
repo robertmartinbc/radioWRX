@@ -24,19 +24,17 @@
     </ion-row>
     <ion-row class="style-placeholder">
       <ion-col col-12>
-        <form>
-          <ion-list>
-            <ion-item>
-              <ion-label floating>Title</ion-label>
-              <ion-input type="text" clearInput></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label floating>Video URL</ion-label>
-              <ion-input type="text" clearInput></ion-input>
-            </ion-item>
-          </ion-list>
-          <button ion-button block color="danger" outline>Create Video</button>
-        </form>
+        <ion-list>
+          <ion-item>
+            <ion-label floating>Title</ion-label>
+            <ion-input type="text" [(ngModel)]="video.videoTitle" clearInput></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Video URL</ion-label>
+            <ion-input type="text" [(ngModel)]="video.videoURL" clearInput></ion-input>
+          </ion-item>
+        </ion-list>
+        <button ion-button block color="danger" outline (click)="submit()">Create Video</button>
       </ion-col>
     </ion-row>
     <ion-row class="style-footer">

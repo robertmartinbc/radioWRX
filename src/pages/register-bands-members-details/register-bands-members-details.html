@@ -24,39 +24,37 @@
     </ion-row>
     <ion-row class="style-placeholder">
       <ion-col col-12>
-        <form>
-          <ion-list>
-            <ion-item>
-              <ion-label floating>Name</ion-label>
-              <ion-input type="text" clearInput></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label floating>Biography</ion-label>
-              <ion-textarea type="text" clearInput></ion-textarea>
-            </ion-item>
-            <ion-item>
-              <ion-label>Vocals</ion-label>
-              <ion-checkbox color="danger"></ion-checkbox>
-            </ion-item>
-            <ion-item>
-              <ion-label>Guitar</ion-label>
-              <ion-checkbox color="danger"></ion-checkbox>
-            </ion-item>
-            <ion-item>
-              <ion-label>Base</ion-label>
-              <ion-checkbox color="danger"></ion-checkbox>
-            </ion-item>
-            <ion-item>
-              <ion-label>Drums</ion-label>
-              <ion-checkbox color="danger"></ion-checkbox>
-            </ion-item>
-            <ion-item>
-              <ion-label>Piano</ion-label>
-              <ion-checkbox color="danger"></ion-checkbox>
-            </ion-item>
-          </ion-list>
-          <button ion-button block color="danger" outline>Create Band Member</button>
-        </form>
+        <ion-list>
+          <ion-item>
+            <ion-label floating>Name</ion-label>
+            <ion-input type="text" [(ngModel)]="member.memberName" clearInput ngRequired></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Biography</ion-label>
+            <ion-textarea type="text" [(ngModel)]="member.memberBiography" clearInput></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-label>Vocals</ion-label>
+            <ion-checkbox [(ngModel)]="member.vocals" color="danger"></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>Guitar</ion-label>
+            <ion-checkbox [(ngModel)]="member.guitar" color="danger"></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>Bass</ion-label>
+            <ion-checkbox [(ngModel)]="member.bass" color="danger"></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>Drums</ion-label>
+            <ion-checkbox [(ngModel)]="member.drums" color="danger"></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>Piano</ion-label>
+            <ion-checkbox [(ngModel)]="member.piano" color="danger"></ion-checkbox>
+          </ion-item>
+        </ion-list>
+        <button ion-button block color="danger" outline (click)="submit()">Create Band Member</button>
       </ion-col>
     </ion-row>
     <ion-row class="style-footer">

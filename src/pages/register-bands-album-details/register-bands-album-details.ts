@@ -11,8 +11,13 @@ import { AngularFire } from 'angularfire2';
 */
 
 class Album {
-  title: string
-  body: string
+  albumTitle: string
+  albumYearReleased: string
+  albumTotalSongs: string
+  albumDuration: string
+  albumUPCCode: string
+  albumGenre: string
+  userId: string
   id: string
 
   constructor() {}

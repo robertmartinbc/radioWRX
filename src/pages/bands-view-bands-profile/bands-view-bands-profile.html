@@ -109,9 +109,15 @@
         <ion-card *ngFor="let card of albums | async">
           <ion-card-content>
             <ion-card-title>
-              {{card.title}}
+              {{card.albumTitle}}
             </ion-card-title>
-            <p>{{card.body}}</p>
+            <p>{{card.albumYearReleased}}</p>
+            <p>{{card.albumTotalSongs}}</p>
+            <p>{{card.albumDuration}}</p>
+            <p>{{card.albumUPCCode}}</p>
+            <p>{{card.albumGenre}}</p>
+            <p>{{card.Id}}</p>
+            <p>{{card.userId}}</p>
           </ion-card-content>
         </ion-card>
         <p class="dummy-text">Albums will go here</p>
@@ -138,6 +144,21 @@
     </ion-row>
     <ion-row class="style-placeholder" [navPush]="fansViewBandsMember">
       <ion-col col-12>
+        <ion-card *ngFor="let card of members | async">
+          <ion-card-content>
+            <ion-card-title>
+              <p>{{card.memberName}}</p>
+            </ion-card-title>
+            <p>{{card.memberBiography}}</p>
+            <p>{{card.vocals}}</p>
+            <p>{{card.guitar}}</p>
+            <p>{{card.bass}}</p>
+            <p>{{card.drums}}</p>
+            <p>{{card.piano}}</p>
+            <p>{{card.Id}}</p>
+            <p>{{card.userId}}</p>
+          </ion-card-content>
+        </ion-card>
         <p class="dummy-text">Band Members will go here</p>
       </ion-col>
     </ion-row>
@@ -167,6 +188,16 @@
     </ion-row>
     <ion-row class="style-footer">
       <ion-col col-12>
+        <ion-card *ngFor="let card of videos | async">
+          <ion-card-content>
+            <ion-card-title>
+              {{card.videoTitle}}
+            </ion-card-title>
+            <p>{{card.videoURL}}</p>
+            <p>{{card.Id}}</p>
+            <p>{{card.userId}}</p>
+          </ion-card-content>
+        </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -186,6 +217,22 @@
     </ion-row>
     <ion-row class="style-placeholder">
       <ion-col col-12>
+        <ion-card *ngFor="let card of events | async">
+          <ion-card-content>
+            <ion-card-title>
+              {{card.eventTitle}}
+            </ion-card-title>
+            <p>{{card.eventVenue}}</p>
+            <p>{{card.eventTown}}</p>
+            <p>{{card.eventZip}}</p>
+            <p>{{card.eventAvailableTickets}}</p>
+            <p>{{card.eventTicketPrice}}</p>
+            <p>{{card.eventStartDate}}</p>
+            <p>{{card.eventStartTime}}</p>
+            <p>{{card.Id}}</p>
+            <p>{{card.userId}}</p>
+          </ion-card-content>
+        </ion-card>
         <p class="dummy-text">Events will go here</p>
       </ion-col>
     </ion-row>

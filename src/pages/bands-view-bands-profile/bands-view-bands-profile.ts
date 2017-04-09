@@ -18,9 +18,17 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 })
 export class BandsViewBandsProfilePage {
 
+//This code makes sure the database lists are visible in the Bands profile
   albums: FirebaseListObservable<any>
+  members: FirebaseListObservable<any>
+  videos: FirebaseListObservable<any>
+  events: FirebaseListObservable<any>
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {
     this.albums = af.database.list('/albums')
+    this.members = af.database.list('/members')
+    this.videos = af.database.list('/videos')
+    this.events = af.database.list('/events')
   }
 
   registerBandsAlbumDetails = RegisterBandsAlbumDetailsPage;

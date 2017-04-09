@@ -27,27 +27,27 @@
         <ion-list>
           <ion-item>
             <ion-label floating>Album Title</ion-label>
-            <ion-input type="text" [(ngModel)]="album.title" clearInput></ion-input>
+            <ion-input type="text" [(ngModel)]="album.albumTitle" clearInput></ion-input>
           </ion-item>
           <ion-item>
             <ion-label floating>Year Released</ion-label>
-            <ion-input type="text" [(ngModel)]="album.body" clearInput></ion-input>
+            <ion-input type="text" [(ngModel)]="album.albumYearReleased" clearInput></ion-input>
           </ion-item>
           <ion-item>
             <ion-label floating> Total No. Songs</ion-label>
-            <ion-input type="text" clearInput></ion-input>
+            <ion-input type="text" [(ngModel)]="album.albumTotalSongs" clearInput></ion-input>
           </ion-item>
           <ion-item>
             <ion-label floating>Album Duration</ion-label>
-            <ion-input type="text" clearInput></ion-input>
+            <ion-input type="text" [(ngModel)]="album.albumDuration" clearInput></ion-input>
           </ion-item>
           <ion-item>
             <ion-label floating>UPC/EAN Code</ion-label>
-            <ion-input type="text" clearInput></ion-input>
+            <ion-input type="text" [(ngModel)]="album.albumUPCCode" clearInput></ion-input>
           </ion-item>
           <ion-item>
             <ion-label>Genre</ion-label>
-            <ion-select multiple="true">
+            <ion-select [(ngModel)]="album.albumGenre" multiple="true">
               <ion-option>Rock</ion-option>
               <ion-option>Pop</ion-option>
               <ion-option>Classical</ion-option>

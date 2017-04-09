@@ -24,43 +24,41 @@
     </ion-row>
     <ion-row class="style-placeholder">
       <ion-col col-12>
-        <form>
-          <ion-list>
-            <ion-item>
-              <ion-label floating>Event Title</ion-label>
-              <ion-input type="text" clearInput></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label floating>Event Venue</ion-label>
-              <ion-input type="text" clearInput></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label floating>Town</ion-label>
-              <ion-input type="text" clearInput></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label floating>Zip/Postal Code</ion-label>
-              <ion-input type="text" clearInput></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label floating>Available Tickets</ion-label>
-              <ion-input type="text" clearInput></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label floating>Ticket Price</ion-label>
-              <ion-input type="text" clearInput></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label>Start Date</ion-label>
-              <ion-datetime displayFormat="MMM DD YYYY"></ion-datetime>
-            </ion-item>
-            <ion-item>
-              <ion-label>Start Time</ion-label>
-              <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A"></ion-datetime>
-            </ion-item>
-          </ion-list>
-          <button ion-button block color="danger" outline>Create Event</button>
-        </form>
+        <ion-list>
+          <ion-item>
+            <ion-label floating>Event Title</ion-label>
+            <ion-input type="text" [(ngModel)]="event.eventTitle" clearInput></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Event Venue</ion-label>
+            <ion-input type="text" [(ngModel)]="event.eventVenue" clearInput></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Town</ion-label>
+            <ion-input type="text" [(ngModel)]="event.eventTown" clearInput></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Zip/Postal Code</ion-label>
+            <ion-input type="text" [(ngModel)]="event.eventZip" clearInput></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Available Tickets</ion-label>
+            <ion-input type="text" [(ngModel)]="event.eventAvailableTickets" clearInput></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Ticket Price</ion-label>
+            <ion-input type="text" [(ngModel)]="event.eventTicketPrice" clearInput></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Start Date</ion-label>
+            <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="event.eventStartDate"></ion-datetime>
+          </ion-item>
+          <ion-item>
+            <ion-label>Start Time</ion-label>
+            <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="event.eventStartTime"></ion-datetime>
+          </ion-item>
+        </ion-list>
+        <button ion-button block color="danger" outline (click)="submit()">Create Event</button>
       </ion-col>
     </ion-row>
     <ion-row class="style-footer">
