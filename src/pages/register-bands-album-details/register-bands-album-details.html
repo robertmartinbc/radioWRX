@@ -24,42 +24,40 @@
     </ion-row>
     <ion-row class="style-placeholder">
       <ion-col col-12>
-        <form>
-          <ion-list>
-            <ion-item>
-              <ion-label floating>Album Title</ion-label>
-              <ion-input type="text" clearInput></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label floating>Year Released</ion-label>
-              <ion-input type="text" clearInput></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label floating> Total No. Songs</ion-label>
-              <ion-input type="text" clearInput></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label floating>Album Duration</ion-label>
-              <ion-input type="text" clearInput></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label floating>UPC/EAN Code</ion-label>
-              <ion-input type="text" clearInput></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label>Genre</ion-label>
-              <ion-select multiple="true">
-                <ion-option>Rock</ion-option>
-                <ion-option>Pop</ion-option>
-                <ion-option>Classical</ion-option>
-                <ion-option>Alternative</ion-option>
-                <ion-option>Jazz</ion-option>
-                <ion-option>Blues</ion-option>
-              </ion-select>
-            </ion-item>
-          </ion-list>
-          <button ion-button block color="danger" outline>Create Album</button>
-        </form>
+        <ion-list>
+          <ion-item>
+            <ion-label floating>Album Title</ion-label>
+            <ion-input type="text" [(ngModel)]="album.title" clearInput></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Year Released</ion-label>
+            <ion-input type="text" [(ngModel)]="album.body" clearInput></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating> Total No. Songs</ion-label>
+            <ion-input type="text" clearInput></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Album Duration</ion-label>
+            <ion-input type="text" clearInput></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>UPC/EAN Code</ion-label>
+            <ion-input type="text" clearInput></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Genre</ion-label>
+            <ion-select multiple="true">
+              <ion-option>Rock</ion-option>
+              <ion-option>Pop</ion-option>
+              <ion-option>Classical</ion-option>
+              <ion-option>Alternative</ion-option>
+              <ion-option>Jazz</ion-option>
+              <ion-option>Blues</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+        <button ion-button block color="danger" outline (click)="submit()">Create Album</button>
       </ion-col>
     </ion-row>
     <ion-row class="style-footer">

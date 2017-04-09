@@ -106,6 +106,14 @@
     </ion-row>
     <ion-row class="style-placeholder" [navPush]="">
       <ion-col col-12>
+        <ion-card *ngFor="let card of albums | async">
+          <ion-card-content>
+            <ion-card-title>
+              {{card.title}}
+            </ion-card-title>
+            <p>{{card.body}}</p>
+          </ion-card-content>
+        </ion-card>
         <p class="dummy-text">Albums will go here</p>
       </ion-col>
     </ion-row>

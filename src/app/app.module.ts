@@ -60,10 +60,22 @@ import { RegisterBandsEventsDetailsPage } from '../pages/register-bands-events-d
 import { RegisterBandsVideosDetailsPage } from '../pages/register-bands-videos-details/register-bands-videos-details';
 import { EditBandsEventsDetailsPage } from '../pages/edit-bands-events-details/edit-bands-events-details';
 import { EditBandsVideosDetailsPage } from '../pages/edit-bands-videos-details/edit-bands-videos-details';
-
+import { Data } from '../providers/data';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
+
+import { AngularFireModule } from 'angularfire2';
+
+// Initialize Firebase
+const config = {
+  apiKey: "AIzaSyCJ3HKc5Ti34FyORcTomcqVodN-TP58bOs",
+  authDomain: "radiowrx-1490879559537.firebaseapp.com",
+  databaseURL: "https://radiowrx-1490879559537.firebaseio.com",
+  projectId: "radiowrx-1490879559537",
+  storageBucket: "radiowrx-1490879559537.appspot.com",
+  messagingSenderId: "626931278467"
+};
 
 const cloudSettings: CloudSettings = {
   'core': {
@@ -137,6 +149,7 @@ const cloudSettings: CloudSettings = {
   imports: [
     IonicModule.forRoot(MyApp),
     CloudModule.forRoot(cloudSettings),
+    AngularFireModule.initializeApp(config)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -204,7 +217,8 @@ const cloudSettings: CloudSettings = {
     StatusBar,
     SplashScreen,
     Geolocation,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    Data
   ]
 })
 export class AppModule {}

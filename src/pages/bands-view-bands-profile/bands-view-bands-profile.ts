@@ -4,7 +4,7 @@ import { RegisterBandsAlbumDetailsPage } from '../register-bands-album-details/r
 import { RegisterBandsMembersDetailsPage } from '../register-bands-members-details/register-bands-members-details';
 import { RegisterBandsVideosDetailsPage } from '../register-bands-videos-details/register-bands-videos-details';
 import { RegisterBandsEventsDetailsPage } from '../register-bands-events-details/register-bands-events-details';
-
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 /*
   Generated class for the BandsViewBandsProfile page.
@@ -18,7 +18,10 @@ import { RegisterBandsEventsDetailsPage } from '../register-bands-events-details
 })
 export class BandsViewBandsProfilePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  albums: FirebaseListObservable<any>
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {
+    this.albums = af.database.list('/albums')
+  }
 
   registerBandsAlbumDetails = RegisterBandsAlbumDetailsPage;
   registerBandsMembersDetails = RegisterBandsMembersDetailsPage;
