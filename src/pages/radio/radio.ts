@@ -5,6 +5,7 @@ import { ViewAllTrendingArtistsPage } from '../view-all-trending-artists/view-al
 import { ViewAllTrendingVideosPage } from '../view-all-trending-videos/view-all-trending-videos';
 import { ViewAllTrendingEventsPage } from '../view-all-trending-events/view-all-trending-events';
 import { SignInModalPage } from '../sign-in-modal/sign-in-modal';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 /*
   Generated class for the Radio page.
@@ -22,7 +23,19 @@ export class RadioPage {
   viewAllTrendingVideos = ViewAllTrendingVideosPage;
   viewAllTrendingEvents = ViewAllTrendingEventsPage;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public viewCtrl: ViewController) {}
+  //This code makes sure the database lists are visible in the Bands profile
+    albums: FirebaseListObservable<any>
+    members: FirebaseListObservable<any>
+    videos: FirebaseListObservable<any>
+    events: FirebaseListObservable<any>
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public viewCtrl: ViewController, public af: AngularFire) {
+
+  this.albums = af.database.list('/albums')
+  this.members = af.database.list('/members')
+  this.videos = af.database.list('/videos')
+  this.events = af.database.list('/events')
+  }
 
   presentSignInModal() {
     let modal = this.modalCtrl.create(SignInModalPage);

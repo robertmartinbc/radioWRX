@@ -76,6 +76,16 @@
     </ion-row>
     <ion-row class="style-placeholder">
       <ion-col col-12>
+        <ion-card *ngFor="let card of videos | async">
+          <ion-card-content>
+            <ion-card-title>
+              {{card.videoTitle}}
+            </ion-card-title>
+            <p>{{card.videoURL}}</p>
+            <p>{{card.Id}}</p>
+            <p>{{card.userId}}</p>
+          </ion-card-content>
+        </ion-card>
         <p class="dummy-text">Trending Videos Carousel will go here</p>
       </ion-col>
     </ion-row>

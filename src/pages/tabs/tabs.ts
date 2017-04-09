@@ -15,7 +15,7 @@ import { BandsViewBandsProfilePage } from '../bands-view-bands-profile/bands-vie
 export class TabsPage {
   // this tells the tabs component which Pages
   // should be each tab's root Page
-  tab1Root: any = BandsViewBandsProfilePage;
+  tab1Root: any = RadioPage;
   tab2Root: any = TicketsPage;
   tab3Root: any = MusicPage;
   tab4Root: any = AccountPage;
