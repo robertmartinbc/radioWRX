@@ -67,8 +67,8 @@ import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
 
 import { AngularFireModule } from 'angularfire2';
 
-// Initialize Firebase
-const config = {
+// Initialize Firebase database for RadioWRX
+const configRadioWRX = {
   apiKey: "AIzaSyCJ3HKc5Ti34FyORcTomcqVodN-TP58bOs",
   authDomain: "radiowrx-1490879559537.firebaseapp.com",
   databaseURL: "https://radiowrx-1490879559537.firebaseio.com",
@@ -77,6 +77,16 @@ const config = {
   messagingSenderId: "626931278467"
 };
 
+/*
+var configMobileWRX = {
+    apiKey: "AIzaSyDCtLeyN5Iws9bxWJId-kkKkmr-4Jh5PqQ",
+    authDomain: "mobilewrx-87fb9.firebaseapp.com",
+    databaseURL: "https://mobilewrx-87fb9.firebaseio.com",
+    projectId: "mobilewrx-87fb9",
+    storageBucket: "mobilewrx-87fb9.appspot.com",
+    messagingSenderId: "243282432155"
+  };
+*/
 const cloudSettings: CloudSettings = {
   'core': {
     'app_id': 'c8b30f66'
@@ -149,7 +159,8 @@ const cloudSettings: CloudSettings = {
   imports: [
     IonicModule.forRoot(MyApp),
     CloudModule.forRoot(cloudSettings),
-    AngularFireModule.initializeApp(config)
+    AngularFireModule.initializeApp(configRadioWRX)
+    //AngularFireModule.initializeApp(configMobileWRX),
   ],
   bootstrap: [IonicApp],
   entryComponents: [

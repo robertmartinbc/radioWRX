@@ -31,23 +31,13 @@ export class RadioPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public viewCtrl: ViewController, public af: AngularFire) {
 
-  if(!this.isLoggedIn()) {
-    console.log('You are not logged in');
-    this.navCtrl.push(RadioPage);
-  }
-
   this.albums = af.database.list('/albums')
   this.members = af.database.list('/members')
   this.videos = af.database.list('/videos')
   this.events = af.database.list('/events')
   }
 
-  isLoggedIn() {
-    if(window.localStorage.getItem('currentuser')) {
-      return true;
-    }
-  }
-
+//Present Sign Modal for RadioWRX User
   presentSignInModal() {
     let modal = this.modalCtrl.create(SignInModalPage);
     modal.present();
