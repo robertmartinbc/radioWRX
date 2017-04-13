@@ -33,18 +33,18 @@
         <form>
           <ion-item>
             <ion-label floating>Email</ion-label>
-            <ion-input type="text" name="email" [(ngModel)]="email"></ion-input>
+            <ion-input type="text" name="email" [(ngModel)]="this.email"></ion-input>
           </ion-item>
           <ion-item>
             <ion-label floating>Password</ion-label>
-            <ion-input type="password" name="password" [(ngModel)]="password"></ion-input>
+            <ion-input type="password" name="password" [(ngModel)]="this.password"></ion-input>
           </ion-item>
         </form>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
-        <button ion-button color="danger" outline block (click)="login()">Sign In</button>
+        <button ion-button color="danger" outline block (click)="signInUser()">Sign In</button>
       </ion-col>
     </ion-row>
     <ion-row>

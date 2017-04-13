@@ -66,6 +66,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
 
 import { AngularFireModule } from 'angularfire2';
+import { AuthService } from '../services/auth';
 
 // Initialize Firebase database for RadioWRX
 const configRadioWRX = {
@@ -229,7 +230,8 @@ const cloudSettings: CloudSettings = {
     SplashScreen,
     Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    Data
+    Data,
+    AuthService
   ]
 })
 export class AppModule {}

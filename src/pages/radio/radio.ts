@@ -6,6 +6,8 @@ import { ViewAllTrendingVideosPage } from '../view-all-trending-videos/view-all-
 import { ViewAllTrendingEventsPage } from '../view-all-trending-events/view-all-trending-events';
 import { SignInModalPage } from '../sign-in-modal/sign-in-modal';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import * as firebase from 'firebase';
+import { AuthService } from '../../services/auth';
 
 /*
   Generated class for the Radio page.
@@ -18,7 +20,7 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
   templateUrl: 'radio.html'
 })
 export class RadioPage {
-  fansViewBandsPortfolio = FansViewBandsPortfolioPage;
+  //fansViewBandsPortfolio = FansViewBandsPortfolioPage;
   viewAllTrendingArtists = ViewAllTrendingArtistsPage;
   viewAllTrendingVideos = ViewAllTrendingVideosPage;
   viewAllTrendingEvents = ViewAllTrendingEventsPage;
@@ -29,7 +31,8 @@ export class RadioPage {
     videos: FirebaseListObservable<any>
     events: FirebaseListObservable<any>
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public viewCtrl: ViewController, public af: AngularFire) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController,
+  public viewCtrl: ViewController, public af: AngularFire, public authService: AuthService) {
 
   this.albums = af.database.list('/albums')
   this.members = af.database.list('/members')
@@ -45,6 +48,10 @@ export class RadioPage {
 
   dismiss() {
     this.viewCtrl.dismiss();
+  }
+
+  goToArtistView() {
+    this.navCtrl.push(FansViewBandsPortfolioPage, this.videos);
   }
 
   ionViewDidLoad() {

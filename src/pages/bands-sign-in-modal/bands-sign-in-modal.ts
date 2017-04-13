@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ViewController, ModalController } from 'ionic-angular';
+import { NavController, NavParams, ViewController, ModalController, AlertController, LoadingController } from 'ionic-angular';
 import { BandsSignUpModalPage } from '../bands-sign-up-modal/bands-sign-up-modal';
 import { AuthProviders, AuthMethods, AngularFire } from 'angularfire2';
+import * as firebase from 'firebase';
 
 /*
   Generated class for the BandsSignInModal page.
@@ -13,32 +14,35 @@ import { AuthProviders, AuthMethods, AngularFire } from 'angularfire2';
   selector: 'page-bands-sign-in-modal',
   templateUrl: 'bands-sign-in-modal.html'
 })
+
 export class BandsSignInModalPage {
-  email: any
-  password: any
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, public modalCtrl: ModalController, public af: AngularFire) {}
+  email: string;
+  password: string;
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+  public viewCtrl: ViewController, public modalCtrl: ModalController,
+  public af: AngularFire, private loadingCtrl: LoadingController, private alertCtrl: AlertController) {}
 
-
-
-//Login code for Bands with form login
-  login () {
-    this.af.auth.login ({
-      email: this.email,
-      password: this.password
-    },
-    {
-      provider: AuthProviders.Password,
-      method: AuthMethods.Password
-    }).then((response) => {
-      console.log('Login success' + JSON.stringify(response));
-      let currentuser = {
-        email: response.auth.email,
-        picture: response.auth.photoURL
-      };
-      window.localStorage.setItem('currentuser', JSON.stringify(currentuser));
-      this.navCtrl.pop();
+//Sign in user and check to see if there is existing account and present error
+signInUser() {
+  const loading = this.loadingCtrl.create({
+  content: 'Signing you in...'
+});
+loading.present()
+  firebase.auth().signInWithEmailAndPassword(this.email, this.password)
+  .then(data => {
+    loading.dismiss()
+  })
+  .catch(error => {
+    loading.dismiss();
+    const alert = this.alertCtrl.create ({
+      title: 'Signin failed!',
+      message: error.message,
+      buttons: ['Ok']
     })
-  }
+    alert.present();
+  });
+  this.viewCtrl.dismiss();
+}
 
 //Login code for Bands using Twitter
   twitterlogin(){

@@ -26,7 +26,7 @@ export class FansViewBandsPortfolioPage {
   fansViewBandsEvents = FansViewBandsEventsPage;
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad FansViewBandsPortfolioPage');
+    console.log(this.navParams.data);
   }
 
 }
