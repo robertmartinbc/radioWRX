@@ -7,7 +7,6 @@ import { ViewAllTrendingEventsPage } from '../view-all-trending-events/view-all-
 import { SignInModalPage } from '../sign-in-modal/sign-in-modal';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import * as firebase from 'firebase';
-import { AuthService } from '../../services/auth';
 
 /*
   Generated class for the Radio page.
@@ -20,7 +19,7 @@ import { AuthService } from '../../services/auth';
   templateUrl: 'radio.html'
 })
 export class RadioPage {
-  //fansViewBandsPortfolio = FansViewBandsPortfolioPage;
+  fansViewBandsPortfolio = FansViewBandsPortfolioPage;
   viewAllTrendingArtists = ViewAllTrendingArtistsPage;
   viewAllTrendingVideos = ViewAllTrendingVideosPage;
   viewAllTrendingEvents = ViewAllTrendingEventsPage;
@@ -31,13 +30,17 @@ export class RadioPage {
     videos: FirebaseListObservable<any>
     events: FirebaseListObservable<any>
 
+    video
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController,
-  public viewCtrl: ViewController, public af: AngularFire, public authService: AuthService) {
+  public viewCtrl: ViewController, public af: AngularFire) {
 
   this.albums = af.database.list('/albums')
   this.members = af.database.list('/members')
   this.videos = af.database.list('/videos')
   this.events = af.database.list('/events')
+
+  console.log(this.videos);
   }
 
 //Present Sign Modal for RadioWRX User
@@ -51,7 +54,7 @@ export class RadioPage {
   }
 
   goToArtistView() {
-    this.navCtrl.push(FansViewBandsPortfolioPage, this.videos);
+    this.navCtrl.push(FansViewBandsPortfolioPage);
   }
 
   ionViewDidLoad() {

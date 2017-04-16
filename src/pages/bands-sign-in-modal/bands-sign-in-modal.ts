@@ -3,6 +3,7 @@ import { NavController, NavParams, ViewController, ModalController, AlertControl
 import { BandsSignUpModalPage } from '../bands-sign-up-modal/bands-sign-up-modal';
 import { AuthProviders, AuthMethods, AngularFire } from 'angularfire2';
 import * as firebase from 'firebase';
+import { AuthService } from '../../services/auth';
 
 /*
   Generated class for the BandsSignInModal page.
@@ -20,15 +21,16 @@ export class BandsSignInModalPage {
   password: string;
   constructor(public navCtrl: NavController, public navParams: NavParams,
   public viewCtrl: ViewController, public modalCtrl: ModalController,
-  public af: AngularFire, private loadingCtrl: LoadingController, private alertCtrl: AlertController) {}
+  public af: AngularFire, private loadingCtrl: LoadingController, private alertCtrl: AlertController,
+  private authService: AuthService) {}
 
 //Sign in user and check to see if there is existing account and present error
-signInUser() {
+onSignIn() {
   const loading = this.loadingCtrl.create({
   content: 'Signing you in...'
 });
 loading.present()
-  firebase.auth().signInWithEmailAndPassword(this.email, this.password)
+  this.authService.signin(this.email, this.password)
   .then(data => {
     loading.dismiss()
   })
