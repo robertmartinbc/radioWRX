@@ -60,6 +60,8 @@ import { RegisterBandsEventsDetailsPage } from '../pages/register-bands-events-d
 import { RegisterBandsVideosDetailsPage } from '../pages/register-bands-videos-details/register-bands-videos-details';
 import { EditBandsEventsDetailsPage } from '../pages/edit-bands-events-details/edit-bands-events-details';
 import { EditBandsVideosDetailsPage } from '../pages/edit-bands-videos-details/edit-bands-videos-details';
+import { BandsViewAlbumPage } from '../pages/bands-view-album/bands-view-album';
+
 import { Data } from '../providers/data';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -155,7 +157,8 @@ const cloudSettings: CloudSettings = {
     RegisterBandsEventsDetailsPage,
     RegisterBandsVideosDetailsPage,
     EditBandsEventsDetailsPage,
-    EditBandsVideosDetailsPage
+    EditBandsVideosDetailsPage,
+    BandsViewAlbumPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -223,7 +226,8 @@ const cloudSettings: CloudSettings = {
     RegisterBandsEventsDetailsPage,
     RegisterBandsVideosDetailsPage,
     EditBandsEventsDetailsPage,
-    EditBandsVideosDetailsPage
+    EditBandsVideosDetailsPage,
+    BandsViewAlbumPage
   ],
   providers: [
     StatusBar,

@@ -30,17 +30,19 @@ export class RadioPage {
     videos: FirebaseListObservable<any>
     events: FirebaseListObservable<any>
 
-    video
+    //video
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController,
   public viewCtrl: ViewController, public af: AngularFire) {
 
-  this.albums = af.database.list('/albums')
-  this.members = af.database.list('/members')
-  this.videos = af.database.list('/videos')
-  this.events = af.database.list('/events')
+    this.albums = af.database.list('/albums')
+    this.members = af.database.list('/members')
+    this.videos = af.database.list('/videos')
+    this.events = af.database.list('/events')
 
-  console.log(this.videos);
+    console.log('aaaaaaaaaaaaa');
+    //console.log(this.albums);
+    console.log('aaaaaaaaaaaaa');
   }
 
 //Present Sign Modal for RadioWRX User
@@ -53,12 +55,15 @@ export class RadioPage {
     this.viewCtrl.dismiss();
   }
 
-  goToArtistView() {
-    this.navCtrl.push(FansViewBandsPortfolioPage);
+  goToArtistView(item) {
+    console.log('sssss');
+    console.log(item);
+    this.navCtrl.push(FansViewBandsPortfolioPage, item);
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RadioPage');
+    //console.log(this.navParams.data);
   }
 
 }

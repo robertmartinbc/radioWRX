@@ -1,9 +1,11 @@
+import * as firebase from 'firebase';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { RegisterBandsAlbumDetailsPage } from '../register-bands-album-details/register-bands-album-details';
 import { RegisterBandsMembersDetailsPage } from '../register-bands-members-details/register-bands-members-details';
 import { RegisterBandsVideosDetailsPage } from '../register-bands-videos-details/register-bands-videos-details';
 import { RegisterBandsEventsDetailsPage } from '../register-bands-events-details/register-bands-events-details';
+import { BandsViewAlbumPage } from '../bands-view-album/bands-view-album';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 /*
@@ -25,10 +27,15 @@ export class BandsViewBandsProfilePage {
   events: FirebaseListObservable<any>
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {
-    this.albums = af.database.list('/albums')
-    this.members = af.database.list('/members')
-    this.videos = af.database.list('/videos')
-    this.events = af.database.list('/events')
+    //console.log('currentUser.id:');
+    //console.log(firebase.auth().currentUser.uid);
+    //if (firebase.auth().currentUser){
+      //this.albums = af.database.list('/albums', {query: {orderByChild : "userId", equalTo: firebase.auth().currentUser.uid}})
+      this.albums = af.database.list('/albums', {query: {orderByChild : "userId", equalTo: 'PzrVDzKNGqfSkznM6nCbfsLY0X12'}})
+      this.members = af.database.list('/members')
+      this.videos = af.database.list('/videos')
+      this.events = af.database.list('/events')
+    //}
   }
 
   registerBandsAlbumDetails = RegisterBandsAlbumDetailsPage;
@@ -37,6 +44,10 @@ export class BandsViewBandsProfilePage {
   registerBandsEventsDetails = RegisterBandsEventsDetailsPage;
   ionViewDidLoad() {
     console.log('ionViewDidLoad BandsViewBandsProfilePage');
+  }
+
+  displayAlbum(item) {
+    this.navCtrl.push(BandsViewAlbumPage, item);
   }
 
 }

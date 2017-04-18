@@ -49,8 +49,8 @@ loading.present()
 //Login code for Bands using Twitter
   twitterlogin(){
     this.af.auth.login({
-    provider: AuthProviders.Twitter,
-    method: AuthMethods.Popup
+      provider: AuthProviders.Twitter,
+      method: AuthMethods.Popup
     }).then((response) => {
       console.log('Login successful with Twitter' + JSON.stringify(response));
       let currentuser = {

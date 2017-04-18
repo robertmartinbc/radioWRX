@@ -16,7 +16,14 @@ import { FansViewBandsEventsPage } from '../fans-view-bands-events/fans-view-ban
   selector: 'page-fans-view-bands-portfolio',
   templateUrl: 'fans-view-bands-portfolio.html'
 })
+
 export class FansViewBandsPortfolioPage {
+
+  albumTitle: string = this.navParams.get('albumTitle');
+  albumDuration: string = this.navParams.get('albumDuration');
+
+
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
   fansViewBandsByFans = FansViewBandsByFansPage;

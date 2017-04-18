@@ -48,13 +48,21 @@
       <ion-col col-8>
         <p class="header-text">Trending Artists</p>
       </ion-col>
-      <ion-col col-2 [navPush]="viewAllTrendingArtists">
+      <ion-col col-2>
         <p class="style-nav-text">See All</p>
       </ion-col>
     </ion-row>
-    <ion-row class="style-placeholder" [navPush]="fansViewBandsPortfolio">
+    <ion-row class="style-placeholder">
       <ion-col col-12>
-        <p class="dummy-text">Trending Artists Carousel will go here!</p>
+        <ion-card *ngFor="let card of albums | async" (click)="goToArtistView(card)">
+          <ion-card-content>
+            <ion-card-title>
+              {{card.albumTitle}}
+            </ion-card-title>
+            <p>{{card.albumYearReleased}}</p>
+            <p>{{card.albumGenre}}</p>
+          </ion-card-content>
+        </ion-card>
       </ion-col>
     </ion-row>
     <ion-row class="style-footer">

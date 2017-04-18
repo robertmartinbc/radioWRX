@@ -106,7 +106,7 @@
     </ion-row>
     <ion-row class="style-placeholder" [navPush]="">
       <ion-col col-12>
-        <ion-card *ngFor="let card of albums | async">
+        <ion-card *ngFor="let card of albums | async" (click)="displayAlbum(card)">
           <ion-card-content>
             <ion-card-title>
               {{card.albumTitle}}
