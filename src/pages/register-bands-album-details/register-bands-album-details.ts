@@ -4,13 +4,7 @@ import * as firebase from 'firebase';
 import { BandsViewBandsProfilePage } from '../bands-view-bands-profile/bands-view-bands-profile';
 import { AngularFire } from 'angularfire2';
 
-/*
-  Generated class for the RegisterBandsAlbumDetails page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
-
+//Create class for a new album
 class Album {
   albumTitle: string
   albumYearReleased: string
@@ -32,7 +26,7 @@ export class RegisterBandsAlbumDetailsPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {
     //console.log('aaaaaaaaa');
     //console.log(firebase.auth().currentUser);
-    console.log('currentUser.id:');
+    //console.log('currentUser.id:');
     console.log(firebase.auth().currentUser.uid);
   }
 

@@ -22,9 +22,6 @@ export class FansViewBandsPortfolioPage {
   albumTitle: string = this.navParams.get('albumTitle');
   albumDuration: string = this.navParams.get('albumDuration');
 
-
-
-
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
   fansViewBandsByFans = FansViewBandsByFansPage;
   fansViewBandsCDFunds = FansViewBandsCDFundsPage;

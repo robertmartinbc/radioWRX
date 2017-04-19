@@ -7,12 +7,78 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>registerBandsSongsDetails</ion-title>
+    <ion-title>Add Song</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-
+<!-- Build form for adding new songs to albums -->
 <ion-content padding>
-
+  <ion-list>
+    <ion-item>
+      <ion-label color="primary" stacked>Song Title</ion-label>
+      <ion-input type="text" placeholder="Example: Two Worlds Collide" [(ngModel)]="song.songTitle" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" stacked>Song Number</ion-label>
+      <ion-input type="text" placeholder="Example: 1" [(ngModel)]="song.songNumber" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" stacked>Song Writers</ion-label>
+      <ion-input type="text" placeholder="Example: John Doe, Jane Doe" [(ngModel)]="song.songWriters" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" stacked>Song Duration Seconds</ion-label>
+      <ion-input type="text" placeholder="Example: 240" [(ngModel)]="song.songDurationSeconds" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" stacked>Total Song Duration</ion-label>
+      <ion-input type="text" placeholder="Example: 3.46" [(ngModel)]="song.totalSongDuration" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" stacked>Publisher Name</ion-label>
+      <ion-input type="text" placeholder="Example: Joe Blogs Inc." [(ngModel)]="song.publisherName" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" stacked>Bundle Name</ion-label>
+      <ion-input type="text" placeholder="Example: Bundle Name" [(ngModel)]="song.bundleName" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" stacked>ISRC Code</ion-label>
+      <ion-input type="text" placeholder="Example: 1245367489" [(ngModel)]="song.ISRCCode" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" stacked>Label Name</ion-label>
+      <ion-input type="text" placeholder="Example: Sony" [(ngModel)]="song.labelName" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" stacked>Product Catalogue Number</ion-label>
+      <ion-input type="text" placeholder="Example: 4567890" [(ngModel)]="song.productCatalogueNumber" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" stacked>Disc Number</ion-label>
+      <ion-input type="text" placeholder="Example: 3.46" [(ngModel)]="song.discNumber" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" stacked>GRID</ion-label>
+      <ion-input type="text" placeholder="Example: GRID" [(ngModel)]="song.GRID" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" stacked>ISWC</ion-label>
+      <ion-input type="text" placeholder="Example: ISWC" [(ngModel)]="song.ISWC" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" stacked>Bundle Id</ion-label>
+      <ion-input type="text" placeholder="Example: Bundle Id" [(ngModel)]="song.songBundleId" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" stacked>Physical Product Name</ion-label>
+      <ion-input type="text" placeholder="Example: Musical Disc" [(ngModel)]="song.physicalProductName" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" stacked>Album Id</ion-label>
+      <ion-input type="text" placeholder="Example: Musical Disc" [(ngModel)]="song.albumId" clearInput>Album Id Goes Here</ion-input>
+    </ion-item>
+    <button ion-button color="danger" outline block (click)="addSong()">Add Song</button>
+  </ion-list>
 </ion-content>
