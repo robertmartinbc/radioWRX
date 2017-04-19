@@ -7,12 +7,25 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>bandsViewBandsMembers</ion-title>
+    <ion-title>Band Member</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content>
+  <ion-card>
+    <img src="">
+    <ion-card-content>
+      <ion-card-title text-center>
+        {{memberName}}
+      </ion-card-title>
+      <ion-item>
+        <ion-card-title text-center>
+          Biography
+        </ion-card-title>
+      </ion-item>
+      <p>{{memberBiography}}</p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

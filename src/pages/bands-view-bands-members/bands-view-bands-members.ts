@@ -1,5 +1,7 @@
+import * as firebase from 'firebase';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 /*
   Generated class for the BandsViewBandsMembers page.
@@ -13,7 +15,13 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class BandsViewBandsMembersPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+//This code makes sure the database members lists are visible in the Bands profile
+  members: FirebaseListObservable<any>
+
+  memberName: string = this.navParams.get('memberName');
+  memberBiography: string = this.navParams.get('memberBiography');
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad BandsViewBandsMembersPage');

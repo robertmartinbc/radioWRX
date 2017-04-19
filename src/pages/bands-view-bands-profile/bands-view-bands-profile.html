@@ -144,7 +144,7 @@
     </ion-row>
     <ion-row class="style-placeholder" [navPush]="fansViewBandsMember">
       <ion-col col-12>
-        <ion-card *ngFor="let card of members | async">
+        <ion-card *ngFor="let card of members | async" (click)="displayMember(card)">
           <ion-card-content>
             <ion-card-title>
               <p>{{card.memberName}}</p>
@@ -217,7 +217,7 @@
     </ion-row>
     <ion-row class="style-placeholder">
       <ion-col col-12>
-        <ion-card *ngFor="let card of events | async">
+        <ion-card *ngFor="let card of events | async" (click)="displayEvents(card)">
           <ion-card-content>
             <ion-card-title>
               {{card.eventTitle}}

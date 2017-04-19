@@ -7,12 +7,36 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>bandsViewBandsEvents</ion-title>
+    <ion-title>Event</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content>
+  <ion-card>
+    <ion-row>
+      <ion-col col-10>
+      </ion-col>
+      <ion-col col-2>
+        <button ion-button clear color="danger">
+          <ion-icon name="md-create"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-card-content>
+      <ion-card-title>
+        {{eventTitle}}
+      </ion-card-title>
+      <p>{{eventVenue}}</p>
+      <p>{{eventTown}}</p>
+      <p>{{eventZip}}</p>
+      <p>{{eventAvailableTickets}}</p>
+      <p>{{eventTicketPrice}}</p>
+      <p>{{eventStartDate}}</p>
+      <p>{{eventStartTime}}</p>
+      <p>{{Id}}</p>
+      <p>{{userId}}</p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

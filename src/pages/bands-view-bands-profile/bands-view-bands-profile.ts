@@ -6,6 +6,8 @@ import { RegisterBandsMembersDetailsPage } from '../register-bands-members-detai
 import { RegisterBandsVideosDetailsPage } from '../register-bands-videos-details/register-bands-videos-details';
 import { RegisterBandsEventsDetailsPage } from '../register-bands-events-details/register-bands-events-details';
 import { BandsViewAlbumPage } from '../bands-view-album/bands-view-album';
+import { BandsViewBandsMembersPage } from '../bands-view-bands-members/bands-view-bands-members';
+import { BandsViewBandsEventsPage } from '../bands-view-bands-events/bands-view-bands-events';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 /*
@@ -48,8 +50,19 @@ export class BandsViewBandsProfilePage {
     console.log('ionViewDidLoad BandsViewBandsProfilePage');
   }
 
+//Go to view album page and pass Album data
   displayAlbum(item) {
     this.navCtrl.push(BandsViewAlbumPage, item);
+  }
+
+//Go to view members page and pass Album data
+  displayMember(item) {
+    this.navCtrl.push(BandsViewBandsMembersPage, item);
+  }
+
+//Go to view members page and pass Album data
+  displayEvents(item) {
+    this.navCtrl.push(BandsViewBandsEventsPage, item);
   }
 
 }
