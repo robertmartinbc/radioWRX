@@ -2,6 +2,7 @@ import * as firebase from 'firebase';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { RegisterBandsSongsDetailsPage } from '../register-bands-songs-details/register-bands-songs-details';
+import { EditBandsSongsDetailsPage } from '../edit-bands-songs-details/edit-bands-songs-details';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 /*
@@ -31,7 +32,7 @@ export class BandsViewAlbumPage {
 
     this.songs = af.database.list('/songs')
   }
-
+  
   test() {
     alert("This button was pressed!");
   }
@@ -41,5 +42,6 @@ export class BandsViewAlbumPage {
   }
 
   registerBandsSongsDetails = RegisterBandsSongsDetailsPage;
+  editBandsSongsDetails = EditBandsSongsDetailsPage;
 
 }

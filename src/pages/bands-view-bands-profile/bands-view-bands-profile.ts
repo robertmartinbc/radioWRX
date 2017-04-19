@@ -38,10 +38,12 @@ export class BandsViewBandsProfilePage {
     //}
   }
 
+//Set up links to Bands pages
   registerBandsAlbumDetails = RegisterBandsAlbumDetailsPage;
   registerBandsMembersDetails = RegisterBandsMembersDetailsPage;
   registerBandsVideosDetails = RegisterBandsVideosDetailsPage;
   registerBandsEventsDetails = RegisterBandsEventsDetailsPage;
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad BandsViewBandsProfilePage');
   }

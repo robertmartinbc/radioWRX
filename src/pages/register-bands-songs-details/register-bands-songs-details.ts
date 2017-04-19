@@ -23,7 +23,7 @@ class Song {
   songBundleId: string
   songPhysicalProductName
   userId: string
-
+  albumId: string
 }
 
 @Component({
