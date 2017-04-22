@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams, ModalController, ViewController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { NavController, NavParams, ModalController, ViewController, Slides } from 'ionic-angular';
 import { FansViewBandsPortfolioPage } from '../fans-view-bands-portfolio/fans-view-bands-portfolio';
 import { ViewAllTrendingArtistsPage } from '../view-all-trending-artists/view-all-trending-artists';
 import { ViewAllTrendingVideosPage } from '../view-all-trending-videos/view-all-trending-videos';
@@ -19,6 +19,8 @@ import * as firebase from 'firebase';
   templateUrl: 'radio.html'
 })
 export class RadioPage {
+  @ViewChild('picSlider') viewer: Slides;
+
   fansViewBandsPortfolio = FansViewBandsPortfolioPage;
   viewAllTrendingArtists = ViewAllTrendingArtistsPage;
   viewAllTrendingVideos = ViewAllTrendingVideosPage;
@@ -47,6 +49,13 @@ export class RadioPage {
     this.videos = af.database.list('/videos')
     this.events = af.database.list('/events')
   }
+
+ngAfterViewInit() {
+  this.viewer.speed = 750;
+  this.viewer.pager = true;
+  this.viewer.slidesPerView = 4;
+
+}
 
 //Present Sign Modal for RadioWRX User
   presentSignInModal() {

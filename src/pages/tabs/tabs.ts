@@ -16,9 +16,9 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 })
 export class TabsPage {
 
-  tab1Root: any = BandsViewBandsProfilePage;
+  //tab1Root: any = BandsViewBandsProfilePage;
   // Root
-  // tab1Root: any = RadioPage;
+  tab1Root: any = RadioPage;
   tab2Root: any = TicketsPage;
   tab3Root: any = MusicPage;
   tab4Root: any = AccountPage;
@@ -26,7 +26,7 @@ export class TabsPage {
   userProfile: FirebaseListObservable<any>
 
   constructor(public af: AngularFire) {
-    // FIXME: userProfile.kind is undefinned 
+    // FIXME: userProfile.kind is undefinned
     // firebase.auth().onAuthStateChanged(function(user) {
     //   if (user){
     //     this.userProfile = af.database.list('/userProfiles', {query: {orderByChild : "userId", equalTo: user.uid}})

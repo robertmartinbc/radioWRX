@@ -21,8 +21,9 @@ export class BandsSignUpModalPage {
   //Set variables for Firebase authentication Sign Up New User
   private data: any;
   public fireAuth: any;
-  public email: string;  
+  public email: string;
   public password: string;
+  public kind: string;
   public profiles: FirebaseListObservable<any>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
@@ -39,7 +40,7 @@ export class BandsSignUpModalPage {
     });
     loading.present();
 
-    this.authService.signup(this.email, this.password, 'band')
+    this.authService.signup(this.email, this.password)
     .then(function () {
       user = firebase.auth().currentUser;
       db = af.database.list('/userProfiles');
