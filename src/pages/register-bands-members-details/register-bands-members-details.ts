@@ -30,9 +30,10 @@ export class RegisterBandsMembersDetailsPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {}
 
   submit(){
-  this.af.database.list('/members').push(this.member)
-  this.member = new Member()
-  this.navCtrl.pop(RegisterBandsMembersDetailsPage)
+    this.member.userId = firebase.auth().currentUser.uid;
+    this.af.database.list('/members').push(this.member)
+    this.member = new Member()
+    this.navCtrl.pop(RegisterBandsMembersDetailsPage)
   }
 
   ionViewDidLoad() {

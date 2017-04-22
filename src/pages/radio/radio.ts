@@ -25,24 +25,27 @@ export class RadioPage {
   viewAllTrendingEvents = ViewAllTrendingEventsPage;
 
   //This code makes sure the database lists are visible in the Bands profile
-    albums: FirebaseListObservable<any>
-    members: FirebaseListObservable<any>
-    videos: FirebaseListObservable<any>
-    events: FirebaseListObservable<any>
+  albums: FirebaseListObservable<any>
+  members: FirebaseListObservable<any>
+  videos: FirebaseListObservable<any>
+  events: FirebaseListObservable<any>
 
     //video
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController,
   public viewCtrl: ViewController, public af: AngularFire) {
 
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user)
+        var is_logged_in = true
+      else
+        var is_logged_in = false
+    });
+
     this.albums = af.database.list('/albums')
     this.members = af.database.list('/members')
     this.videos = af.database.list('/videos')
     this.events = af.database.list('/events')
-
-    console.log('aaaaaaaaaaaaa');
-    //console.log(this.albums);
-    console.log('aaaaaaaaaaaaa');
   }
 
 //Present Sign Modal for RadioWRX User

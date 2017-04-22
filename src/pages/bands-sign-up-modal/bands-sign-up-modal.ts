@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController, ModalController } from 'ionic-angular';
 import { BandsSignInModalPage } from '../bands-sign-in-modal/bands-sign-in-modal';
-import { AuthProviders, AuthMethods, AngularFire } from 'angularfire2';
+import { AuthProviders, AuthMethods, AngularFire, FirebaseListObservable } from 'angularfire2';
 import * as firebase from 'firebase';
 import { LoadingController, AlertController } from "ionic-angular";
 import { AuthService } from '../../services/auth';
@@ -18,42 +18,47 @@ import { AuthService } from '../../services/auth';
 })
 export class BandsSignUpModalPage {
 
-//Set variables for Firebase authentication Sign Up New User
-private data: any;
-public fireAuth: any;
-public userProfile: any;
-public email: string;
-public password: string;
+  //Set variables for Firebase authentication Sign Up New User
+  private data: any;
+  public fireAuth: any;
+  public email: string;  
+  public password: string;
+  public profiles: FirebaseListObservable<any>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
   public viewCtrl: ViewController, public modalCtrl: ModalController,
   public af: AngularFire, private loadingCtrl: LoadingController,
   private alertCtrl: AlertController, public authService: AuthService) {
-
     this.fireAuth = firebase.auth();
-    //this.userProfile = firebase.database('users');
   }
 
-onSignUp() {
-  const loading = this.loadingCtrl.create({
-    content: 'Signing you up'
-  });
-  loading.present();
-  this.authService.signup(this.email, this.password)
-  .then(data => {
-    loading.dismiss();
-    this.viewCtrl.dismiss();
-  })
-  .catch(error => {
-    loading.dismiss();
-    const alert = this.alertCtrl.create({
-      title: 'Signup failed!',
-      message: error.message,
-      buttons: ['Ok']
+  onSignUp(af, db) {
+    var user = null;
+    const loading = this.loadingCtrl.create({
+      content: 'Signing you up'
+    });
+    loading.present();
+
+    this.authService.signup(this.email, this.password, 'band')
+    .then(function () {
+      user = firebase.auth().currentUser;
+      db = af.database.list('/userProfiles');
+      db.push({userId:user.uid, kind:'band'});
     })
-    alert.present();
-  });
-}
+    .then(data => {
+      loading.dismiss();
+      this.viewCtrl.dismiss();
+    })
+    .catch(error => {
+      loading.dismiss();
+      const alert = this.alertCtrl.create({
+        title: 'Signup failed!',
+        message: error.message,
+        buttons: ['Ok']
+      })
+      alert.present();
+    });
+  }
 /*
 //Sign up new user
   signUpUser() {

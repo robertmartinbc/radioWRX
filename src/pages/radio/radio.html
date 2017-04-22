@@ -8,8 +8,8 @@
 
   <ion-navbar>
     <ion-title>Radio</ion-title>
-    <button class="style-sign-in-button" ion-button color="danger" (click)="presentSignInModal()" clear start>Sign In</button>
-    <button class="style-sign-in-button" ion-button color="danger" (click)="logout()" clear end>Sign Out</button>
+    <button *ngIf='!is_logged_in' class="style-sign-in-button" ion-button color="danger" (click)="presentSignInModal()" clear start>Sign In</button>
+    <button *ngIf='is_logged_in' class="style-sign-in-button" ion-button color="danger" (click)="logout()" clear end>Sign Out</button>
   </ion-navbar>
 
 </ion-header>

@@ -25,6 +25,7 @@ export class RegisterBandsVideosDetailsPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {}
 
   submit() {
+    this.video.userId = firebase.auth().currentUser.uid;
     this.af.database.list('/videos').push(this.video)
     this.video = new Video()
     this.navCtrl.pop(RegisterBandsVideosDetailsPage)

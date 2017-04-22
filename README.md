@@ -15,3 +15,8 @@ $ ionic serve
 ```bash
 $ ionic build android
 ```
+
+
+# TODO
+
+* Show RootPage for users and BandsViewBandsProfilePage to a Band user (src/pages/tabs/tabs.ts)
