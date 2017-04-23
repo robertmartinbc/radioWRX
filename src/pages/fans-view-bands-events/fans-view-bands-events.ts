@@ -13,6 +13,16 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class FansViewBandsEventsPage {
 
+  eventTitle: string = this.navParams.get('eventTitle');
+  eventVenue: string = this.navParams.get('eventVenue');
+  eventTown: string = this.navParams.get('eventTown');
+  eventAvailableTickets: string = this.navParams.get('eventAvailableTickets');
+  eventTicketPrice: string = this.navParams.get('eventTicketPrice');
+  eventZip: string = this.navParams.get('eventZip');
+  eventStartTime: string = this.navParams.get('eventStartTime');
+  eventStartDate: string = this.navParams.get('eventStartDate');
+
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {

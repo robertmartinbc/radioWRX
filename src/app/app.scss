@@ -87,6 +87,8 @@ p {
   cursor: pointer;
 }
 
+
+
 //Style play button
 .style-play-button {
   text-align: center;
@@ -114,6 +116,8 @@ p {
   padding: 0;
   color: #ffffff;
   cursor: pointer;
+  font-size: 20px;
+  padding: 5px
 }
 
 //Create hide class to hide elements when required
@@ -184,7 +188,7 @@ p {
 
 //Set available text
 .available-text {
-  font-size: 8px;
+  font-size: 12px;
   text-align: center;
   padding: 5px;
   background-color: red;
@@ -197,7 +201,7 @@ p {
 
 //Set available text
 .available-amount-text {
-  font-size: 8px;
+  font-size: 12px;
   text-align: center;
   color: red;
   border-bottom-left-radius: 6px;
@@ -206,6 +210,7 @@ p {
   border-right: 1px solid red;
   border-bottom: 1px solid red;
   margin: 0;
+  padding: 5px
 }
 
 //Style account menu text
