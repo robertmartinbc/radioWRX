@@ -58,7 +58,7 @@ ngAfterViewInit() {
   this.viewer.slidesPerView = 3;
   this.viewer1.speed = 750;
   this.viewer1.pager = true;
-  this.viewer1.slidesPerView = 3;
+  this.viewer1.slidesPerView = 2;
 }
 
 //Present Sign Modal for RadioWRX User

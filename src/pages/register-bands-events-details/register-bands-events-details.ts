@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import * as firebase from 'firebase';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 /*
@@ -31,7 +32,7 @@ export class RegisterBandsEventsDetailsPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {}
 
   submit() {
-    this.event.userId = firebase.auth().currentUser.uid;
+    //this.event.userId = firebase.auth().currentUser.uid;
     this.af.database.list('/events').push(this.event)
     this.event = new Event()
     this.navCtrl.pop(RegisterBandsEventsDetailsPage)
