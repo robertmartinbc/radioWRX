@@ -21,7 +21,8 @@ import * as firebase from 'firebase';
 })
 export class RadioPage {
   @ViewChild('picSlider') viewer: Slides;
-  @ViewChild('eventSlider') viewer1: Slides;
+  @ViewChild('videoSlider') viewer1: Slides;
+  @ViewChild('eventSlider') viewer2: Slides;
 
   fansViewBandsPortfolio = FansViewBandsPortfolioPage;
   viewAllTrendingArtists = ViewAllTrendingArtistsPage;
@@ -53,12 +54,17 @@ export class RadioPage {
   }
 
 ngAfterViewInit() {
+//Parameters for Artists Carosusel
   this.viewer.speed = 750;
   this.viewer.pager = true;
   this.viewer.slidesPerView = 3;
+//Parameters for Video Carousel
   this.viewer1.speed = 750;
   this.viewer1.pager = true;
-  this.viewer1.slidesPerView = 2;
+//Parameters for Events Carousel
+  this.viewer2.speed = 750;
+  this.viewer2.pager = true;
+  this.viewer2.slidesPerView = 2;
 }
 
 //Present Sign Modal for RadioWRX User

@@ -98,17 +98,16 @@
     </ion-row>
     <ion-row class="style-placeholder">
       <ion-col col-12>
-        <ion-card *ngFor="let card of videos | async" (click)="goToArtistView()">
-          <ion-card-content>
-            <ion-card-title>
-              {{card.videoTitle}}
-            </ion-card-title>
-            <p>{{card.videoURL}}</p>
-            <p>{{card.Id}}</p>
-            <p>{{card.userId}}</p>
-          </ion-card-content>
-        </ion-card>
-        <p class="dummy-text">Trending Videos Carousel will go here</p>
+        <ion-slides #videoSlider (ionSlideDidChange)="onSlideMoved()">
+          <ion-slide *ngFor="let video of videos | async" class="carousel-individual-slide">
+            <ion-item no-lines>
+              <iframe width="100%" height="200"
+                src="https://www.youtube.com/embed/XGSy3_Czz8k">
+              </iframe>
+              <p class="carousel-header-text elipsis">{{ video.videoTitle}}</p>
+            </ion-item>
+          </ion-slide>
+        </ion-slides>
       </ion-col>
     </ion-row>
     <ion-row class="style-footer">
@@ -136,11 +135,10 @@
             <ion-item no-lines>
               <img src="https://api.appery.io/rest/1/db/files/5518394be4b085114003daf6/7f241c97-d10f-4350-9e74-b5eb5e3709cb.thisdayburns.jpg">
               <p class="carousel-header-text elipsis">{{ event.eventVenue }}</p>
-              <p class="carousel-text elipsis"></p>
+              <p class="carousel-text elipsis">{{ event.eventTown }}</p>
             </ion-item>
           </ion-slide>
         </ion-slides>
-        <p class="dummy-text">Trending Events Carousel will go here</p>
       </ion-col>
     </ion-row>
     <ion-row class="style-footer">
