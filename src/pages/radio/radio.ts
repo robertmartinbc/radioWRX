@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavController, NavParams, ModalController, ViewController, Slides } from 'ionic-angular';
 import { FansViewBandsPortfolioPage } from '../fans-view-bands-portfolio/fans-view-bands-portfolio';
+import { FansViewBandsEventsPage } from '../fans-view-bands-events/fans-view-bands-events';
 import { ViewAllTrendingArtistsPage } from '../view-all-trending-artists/view-all-trending-artists';
 import { ViewAllTrendingVideosPage } from '../view-all-trending-videos/view-all-trending-videos';
 import { ViewAllTrendingEventsPage } from '../view-all-trending-events/view-all-trending-events';
@@ -20,6 +21,7 @@ import * as firebase from 'firebase';
 })
 export class RadioPage {
   @ViewChild('picSlider') viewer: Slides;
+  @ViewChild('eventSlider') viewer1: Slides;
 
   fansViewBandsPortfolio = FansViewBandsPortfolioPage;
   viewAllTrendingArtists = ViewAllTrendingArtistsPage;
@@ -53,8 +55,10 @@ export class RadioPage {
 ngAfterViewInit() {
   this.viewer.speed = 750;
   this.viewer.pager = true;
-  this.viewer.slidesPerView = 4;
-
+  this.viewer.slidesPerView = 3;
+  this.viewer1.speed = 750;
+  this.viewer1.pager = true;
+  this.viewer1.slidesPerView = 3;
 }
 
 //Present Sign Modal for RadioWRX User
@@ -71,6 +75,12 @@ ngAfterViewInit() {
     console.log('sssss');
     console.log(item);
     this.navCtrl.push(FansViewBandsPortfolioPage, item);
+  }
+
+  goToEventView(item) {
+    console.log('sssss');
+    console.log(item);
+    this.navCtrl.push(FansViewBandsEventsPage, item);
   }
 
   ionViewDidLoad() {

@@ -27,7 +27,7 @@ export class RegisterBandsAlbumDetailsPage {
   }
 
   submit() {
-    this.album.userId = firebase.auth().currentUser.uid;
+    //this.album.userId = firebase.auth().currentUser.uid;
     this.af.database.list('/albums').push(this.album)
     this.album = new Album()
     this.navCtrl.pop(RegisterBandsAlbumDetailsPage)

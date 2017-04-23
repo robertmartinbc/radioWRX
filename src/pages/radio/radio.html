@@ -54,12 +54,12 @@
     </ion-row>
     <ion-row class="style-placeholder">
       <ion-col col-12>
-        <ion-slides #picSlider (ionSlideDideChange)="onSlideMoced()">
-          <ion-slide *ngFor="let slide of albums | async" (click)="goToArtistView(slide)">
-            <ion-item>
+        <ion-slides #picSlider (ionSlideDideChange)="onSlideMoved()">
+          <ion-slide *ngFor="let slide of albums | async" (click)="goToArtistView(slide)" class="carousel-individual-slide">
+            <ion-item no-lines>
               <img src="https://api.appery.io/rest/1/db/files/5518394be4b085114003daf6/7f241c97-d10f-4350-9e74-b5eb5e3709cb.thisdayburns.jpg">
-              <p>{{ slide.albumTitle }}</p>
-              <p>{{ slide.albumYearReleased }}</p>
+              <p class="carousel-header-text elipsis">{{ slide.albumTitle }}</p>
+              <p class="carousel-text elipsis">{{ slide.albumYearReleased }}</p>
             </ion-item>
           </ion-slide>
         </ion-slides>
@@ -131,6 +131,15 @@
     </ion-row>
     <ion-row class="style-placeholder">
       <ion-col col-12>
+        <ion-slides #eventSlider (ionSlideDidChange)="onSlideMoved()">
+          <ion-slide *ngFor="let event of events | async" (click)="goToEventView(event)" class="carousel-individual-slide">
+            <ion-item no-lines>
+              <img src="https://api.appery.io/rest/1/db/files/5518394be4b085114003daf6/7f241c97-d10f-4350-9e74-b5eb5e3709cb.thisdayburns.jpg">
+              <p class="carousel-header-text elipsis">{{ event.eventVenue }}</p>
+              <p class="carousel-text elipsis"></p>
+            </ion-item>
+          </ion-slide>
+        </ion-slides>
         <p class="dummy-text">Trending Events Carousel will go here</p>
       </ion-col>
     </ion-row>

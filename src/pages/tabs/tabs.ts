@@ -26,7 +26,7 @@ export class TabsPage {
   userProfile: FirebaseListObservable<any>
 
   constructor(public af: AngularFire) {
-    // FIXME: userProfile.kind is undefinned
+    // FIXME: userProfile.kind is undefined
     // firebase.auth().onAuthStateChanged(function(user) {
     //   if (user){
     //     this.userProfile = af.database.list('/userProfiles', {query: {orderByChild : "userId", equalTo: user.uid}})
