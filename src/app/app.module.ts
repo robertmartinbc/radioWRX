@@ -26,6 +26,7 @@ import { FansViewBandsPrivatePartyPage } from '../pages/fans-view-bands-private-
 import { FansViewBandsCDFundsPage } from '../pages/fans-view-bands-cd-funds/fans-view-bands-cd-funds';
 import { FansViewBandsEventsPage } from '../pages/fans-view-bands-events/fans-view-bands-events';
 import { FansViewTicketsPage } from '../pages/fans-view-tickets/fans-view-tickets';
+import { FansViewBandsAlbumPage } from '../pages/fans-view-bands-album/fans-view-bands-album';
 import { ViewMyAttendedTicketsPage } from '../pages/view-my-attended-tickets/view-my-attended-tickets';
 import { ViewMyCanceledTicketsPage } from '../pages/view-my-canceled-tickets/view-my-canceled-tickets';
 import { ViewMyPastBandsByFansPage } from '../pages/view-my-past-bands-by-fans/view-my-past-bands-by-fans';
@@ -124,6 +125,7 @@ const cloudSettings: CloudSettings = {
     FansViewBandsCDFundsPage,
     FansViewBandsEventsPage,
     FansViewTicketsPage,
+    FansViewBandsAlbumPage,
     ViewMyAttendedTicketsPage,
     ViewMyCanceledTicketsPage,
     ViewMyPastBandsByFansPage,
@@ -193,6 +195,7 @@ const cloudSettings: CloudSettings = {
     FansViewBandsCDFundsPage,
     FansViewBandsEventsPage,
     FansViewTicketsPage,
+    FansViewBandsAlbumPage,
     ViewMyAttendedTicketsPage,
     ViewMyCanceledTicketsPage,
     ViewMyPastBandsByFansPage,
