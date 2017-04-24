@@ -37,33 +37,41 @@
       </ion-col>
     </ion-row>
     <ion-row class="style-placeholder">
-      <ion-col col-6 [navPush]="fansViewBandsByFans">
+      <ion-col col-6>
         <p class="service-header-text">Bands By Fans</p>
         <div class="style-placeholder style-service-icon">
-          <ion-icon name="people"></ion-icon>
+          <button ion-button icon-only clear large color="placid" (click)="showBandsByFansToast()">
+            <ion-icon name="people"></ion-icon>
+          </button>
         </div>
         <p class="style-service-counter">0</p>
       </ion-col>
-      <ion-col col-6 [navPush]="fansViewBandsPrivateParty">
+      <ion-col col-6>
         <p class="service-header-text">Private Party</p>
         <div class="style-placeholder style-service-icon">
-          <ion-icon name="home"></ion-icon>
+          <button ion-button icon-only clear large color="placid" (click)="showPrivatePartyToast()">
+            <ion-icon name="home"></ion-icon>
+          </button>
         </div>
         <p class="style-service-counter">0</p>
       </ion-col>
     </ion-row>
     <ion-row class="style-placeholder">
-      <ion-col col-6 [navPush]="fansViewBandsCDFunds">
+      <ion-col col-6>
         <p class="service-header-text">CD Funds</p>
         <div class="style-placeholder style-service-icon">
-          <ion-icon name="disc"></ion-icon>
+          <button ion-button icon-only clear large color="placid" (click)="showPrivatePartyToast()">
+            <ion-icon name="disc"></ion-icon>
+          </button>
         </div>
         <p class="style-service-counter">0</p>
       </ion-col>
-      <ion-col col-6 [navPush]="fansViewBandsEvents">
+      <ion-col col-6>
         <p class="service-header-text">Events</p>
         <div class="style-placeholder style-service-icon">
-          <ion-icon name="ios-calendar"></ion-icon>
+          <button ion-button icon-only clear large color="placid" (click)="showEventsToast()">
+            <ion-icon name="calendar"></ion-icon>
+          </button>
         </div>
         <p class="style-service-counter">0</p>
       </ion-col>
@@ -72,14 +80,18 @@
       <ion-col col-6>
         <p class="service-header-text">Likes</p>
         <div class="style-placeholder style-service-icon">
-          <ion-icon name="ios-thumbs-up"></ion-icon>
+          <button ion-button icon-only clear large color="placid" (click)="showLikesToast()">
+            <ion-icon name="thumbs-up"></ion-icon>
+          </button>
         </div>
         <p class="style-service-counter">0</p>
       </ion-col>
       <ion-col col-6>
         <p class="service-header-text">Comments</p>
         <div class="style-placeholder style-service-icon">
-          <ion-icon name="ios-text"></ion-icon>
+          <button ion-button icon-only clear large color="placid" (click)="showCommentsToast()">
+            <ion-icon name="text"></ion-icon>
+          </button>
         </div>
         <p class="style-service-counter">0</p>
       </ion-col>

@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { NavController, NavParams, Slides } from 'ionic-angular';
+import { NavController, NavParams, Slides, ToastController } from 'ionic-angular';
 import { FansViewBandsByFansPage } from '../fans-view-bands-by-fans/fans-view-bands-by-fans';
 import { FansViewBandsCDFundsPage } from '../fans-view-bands-cd-funds/fans-view-bands-cd-funds';
 import { FansViewBandsMembersPage } from '../fans-view-bands-members/fans-view-bands-members';
@@ -37,7 +37,8 @@ export class FansViewBandsPortfolioPage {
   albumTitle: string = this.navParams.get('albumTitle');
   albumDuration: string = this.navParams.get('albumDuration');
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire,
+  public toastCtrl: ToastController) {
 
     this.albums = af.database.list('/albums')
     this.members = af.database.list('/members')
@@ -77,6 +78,66 @@ export class FansViewBandsPortfolioPage {
 
   goToEventView(item) {
     this.navCtrl.push(FansViewBandsEventsPage, item);
+  }
+
+  showBandsByFansToast() {
+    let toast = this.toastCtrl.create({
+      message: 'You need to become a registered RadioWRX customer to access Bands By Fans Features!',
+      duration: 4000,
+      position: 'middle',
+      cssClass: 'style-toast',
+    });
+    toast.present();
+  }
+
+  showPrivatePartyToast() {
+    let toast = this.toastCtrl.create({
+      message: 'You need to become a registered RadioWRX customer to access Private Party Features!',
+      duration: 4000,
+      position: 'middle',
+      cssClass: 'style-toast',
+    });
+    toast.present();
+  }
+
+  showCDFundsToast() {
+    let toast = this.toastCtrl.create({
+      message: 'You need to become a registered RadioWRX customer to access Private Party Features!',
+      duration: 4000,
+      position: 'middle',
+      cssClass: 'style-toast',
+    });
+    toast.present();
+  }
+
+  showEventsToast() {
+    let toast = this.toastCtrl.create({
+      message: 'You need to become a registered RadioWRX customer to access Events Features!',
+      duration: 4000,
+      position: 'middle',
+      cssClass: 'style-toast',
+    });
+    toast.present();
+  }
+
+  showLikesToast() {
+    let toast = this.toastCtrl.create({
+      message: 'You need to become a registered RadioWRX customer to Like a band!',
+      duration: 4000,
+      position: 'middle',
+      cssClass: 'style-toast',
+    });
+    toast.present();
+  }
+
+  showCommentsToast() {
+    let toast = this.toastCtrl.create({
+      message: 'You need to become a registered RadioWRX customer to comment on a band!',
+      duration: 4000,
+      position: 'middle',
+      cssClass: 'style-toast',
+    });
+    toast.present();
   }
 
 
