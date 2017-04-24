@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Bands Members</ion-title>
+    <ion-title>Band Member</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -16,18 +16,23 @@
 <ion-content>
   <ion-grid class="standard-grid-padding maximum-grid-width">
     <ion-row class="header-style">
-      <ion-col col-1>
-        <ion-icon name="person" class="style-pause-button"></ion-icon>
+      <ion-col col-1 class="style-header-icons">
+        <ion-icon name="person"></ion-icon>
       </ion-col>
       <ion-col col-10>
-        <p class="header-text">Members Name</p>
+        <p class="header-text">{{ memberName}}</p>
       </ion-col>
       <ion-col col-1>
       </ion-col>
     </ion-row>
     <ion-row class="style-placeholder">
       <ion-col col-12>
-        <p class="dummy-text">Band Members data will go here</p>
+        <img src="https://api.appery.io/rest/1/db/files/5518394be4b085114003daf6/7f241c97-d10f-4350-9e74-b5eb5e3709cb.thisdayburns.jpg">
+      </ion-col>
+    </ion-row>
+    <ion-row class="style-placeholder">
+      <ion-col col-12>
+        <p class="dummy-text">{{ memberBiography }}</p>
       </ion-col>
     </ion-row>
     <ion-row class="style-footer">

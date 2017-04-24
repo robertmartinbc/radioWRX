@@ -15,6 +15,9 @@ export class FansViewBandsMembersPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
+  memberName = this.navParams.get('memberName');
+  memberBiography = this.navParams.get('memberBiography');
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad FansViewBandsMembersPage');
   }

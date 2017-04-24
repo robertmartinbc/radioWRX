@@ -71,6 +71,14 @@ export class FansViewBandsPortfolioPage {
     this.navCtrl.push(FansViewBandsAlbumPage, item);
   }
 
+  goToMemberView(item) {
+    this.navCtrl.push(FansViewBandsMembersPage, item);
+  }
+
+  goToEventView(item) {
+    this.navCtrl.push(FansViewBandsEventsPage, item);
+  }
+
 
   fansViewBandsByFans = FansViewBandsByFansPage;
   fansViewBandsCDFunds = FansViewBandsCDFundsPage;
