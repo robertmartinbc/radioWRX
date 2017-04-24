@@ -80,6 +80,9 @@ export class FansViewBandsPortfolioPage {
     this.navCtrl.push(FansViewBandsEventsPage, item);
   }
 
+
+/*
+//Create toasts to advise customers to register to access features
   showBandsByFansToast() {
     let toast = this.toastCtrl.create({
       message: 'You need to become a registered RadioWRX customer to access Bands By Fans Features!',
@@ -139,6 +142,7 @@ export class FansViewBandsPortfolioPage {
     });
     toast.present();
   }
+*/
 
 
   fansViewBandsByFans = FansViewBandsByFansPage;
