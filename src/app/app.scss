@@ -24,7 +24,7 @@ p {
 .header-text {
   text-align: center;
   color: #ffffff;
-  margin: 0;
+  margin-top: 5px;
   font-size: 18px
 }
 
@@ -117,7 +117,8 @@ p {
   color: #ffffff;
   cursor: pointer;
   font-size: 20px;
-  padding: 5px
+  padding: 5px;
+  margin-top: 5px;
 }
 
 //Create hide class to hide elements when required
@@ -335,8 +336,8 @@ p {
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
   text-align: center;
-  font-size: 12px;
-  margin: 0;
+  font-size: 14px;
+  margin-top: 5px;
 }
 
 //Style Bands Services Icon

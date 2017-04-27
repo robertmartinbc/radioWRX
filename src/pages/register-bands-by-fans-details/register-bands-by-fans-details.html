@@ -1,18 +1,55 @@
-<!--
-  Generated template for the RegisterBandsByFansDetails page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>RegisterBandsByFansDetails</ion-title>
+    <ion-title>Bands By Fans</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content>
+  <ion-grid class="standard-grid-padding maximum-grid-width">
+    <ion-row class="header-style">
+      <ion-col col-1>
+      </ion-col>
+      <ion-col col-10>
+        <p class="header-text">Create Bands By Fans</p>
+      </ion-col>
+      <ion-col col-1>
+      </ion-col>
+    </ion-row>
+    <ion-row class="style-placeholder">
+      <ion-col col-12>
+        <ion-list>
+          <ion-item>
+            <ion-label>Select Country</ion-label>
+            <ion-select [(ngModel)]="bandsbyfans.chosenCountry" multiple="true">
+              <ion-option value="canada">Canada</ion-option>
+              <ion-option value="usa">USA</ion-option>
+              <ion-option value="uk">UK</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label>Select Town</ion-label>
+            <ion-select [(ngModel)]="bandsbyfans.chosenTown" multiple="true">
+              <ion-option value="victoria">Victoria</ion-option>
+              <ion-option value="la">Los Angeles</ion-option>
+              <ion-option value="farnham">Farnham</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label stacked>Ticket Price</ion-label>
+            <ion-input placeholder="Example: $50" [(ngModel)]="bandsbyfans.ticketPrice"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label stacked>Tickets Required</ion-label>
+            <ion-input placeholder="Example: 50" [(ngModel)]="bandsbyfans.ticketsRequired"></ion-input>
+          </ion-item>
+        </ion-list>
+        <button ion-button block color="danger" outline (click)="submit()">Create Bands By Fans</button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="style-footer">
+      <ion-col col-12>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

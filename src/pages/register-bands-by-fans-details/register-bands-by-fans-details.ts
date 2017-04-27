@@ -1,5 +1,16 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import * as firebase from 'firebase';
+import { BandsViewBandsProfilePage } from '../bands-view-bands-profile/bands-view-bands-profile';
+import { AngularFire } from 'angularfire2';
+
+//Create class for a new Bands By Fans Request
+class BandsByFans {
+  chosenCountry: string
+  chosenTown: string
+  ticketPrice: string
+  ticketsRequired: string
+}
 
 /*
   Generated class for the RegisterBandsByFansDetails page.
@@ -12,8 +23,15 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'register-bands-by-fans-details.html'
 })
 export class RegisterBandsByFansDetailsPage {
+  bandsbyfans: BandsByFans = new BandsByFans()
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {}
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  submit() {
+    //this.album.userId = firebase.auth().currentUser.uid;
+    this.af.database.list('/bandsbyfans').push(this.bandsbyfans)
+    this.bandsbyfans = new BandsByFans()
+    this.navCtrl.pop(BandsViewBandsProfilePage)
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterBandsByFansDetailsPage');
