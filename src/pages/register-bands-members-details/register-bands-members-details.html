@@ -53,6 +53,21 @@
             <ion-label>Piano</ion-label>
             <ion-checkbox [(ngModel)]="member.piano" color="danger"></ion-checkbox>
           </ion-item>
+          <ion-item>
+            <label>Upload Image</label>
+            <br>
+            <br>
+            <ion-row>
+              <ion-col col-9>
+                <input type="file" [(ngModel)]="member.image">
+              </ion-col>
+              <ion-col col-3>
+                <button ion-button clear icon-only color="danger" outline (click)="uploadMembersImage()">
+                  <ion-icon name="md-cloud-upload" color="danger"></ion-icon>
+                </button>
+              </ion-col>
+            </ion-row>
+          </ion-item>
         </ion-list>
         <button ion-button block color="danger" outline (click)="submit()">Create Band Member</button>
       </ion-col>

@@ -5,8 +5,14 @@ import { RegisterBandsAlbumDetailsPage } from '../register-bands-album-details/r
 import { RegisterBandsMembersDetailsPage } from '../register-bands-members-details/register-bands-members-details';
 import { RegisterBandsVideosDetailsPage } from '../register-bands-videos-details/register-bands-videos-details';
 import { RegisterBandsEventsDetailsPage } from '../register-bands-events-details/register-bands-events-details';
+import { RegisterBandsByFansDetailsPage } from '../register-bands-by-fans-details/register-bands-by-fans-details';
+import { RegisterBandsCDFundsDetailsPage } from '../register-bands-cd-funds-details/register-bands-cd-funds-details';
+import { RegisterBandsPrivatePartyDetailsPage } from '../register-bands-private-party-details/register-bands-private-party-details';
 import { BandsViewAlbumPage } from '../bands-view-album/bands-view-album';
 import { BandsViewBandsMembersPage } from '../bands-view-bands-members/bands-view-bands-members';
+import { BandsViewBandsByFansPage } from '../bands-view-bands-by-fans/bands-view-bands-by-fans';
+import { BandsViewBandsPrivatePartyPage } from '../bands-view-bands-private-party/bands-view-bands-private-party';
+import { BandsViewBandsCDFundsPage } from '../bands-view-bands-cd-funds/bands-view-bands-cd-funds';
 import { BandsViewBandsEventsPage } from '../bands-view-bands-events/bands-view-bands-events';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
@@ -46,6 +52,14 @@ export class BandsViewBandsProfilePage {
   registerBandsMembersDetails = RegisterBandsMembersDetailsPage;
   registerBandsVideosDetails = RegisterBandsVideosDetailsPage;
   registerBandsEventsDetails = RegisterBandsEventsDetailsPage;
+  registerBandsByFansDetails = RegisterBandsByFansDetailsPage;
+  registerBandsCDFundsDetails = RegisterBandsCDFundsDetailsPage;
+  registerBandsPrivatePartyDetails = RegisterBandsPrivatePartyDetailsPage;
+
+  bandsViewBandsByFans = BandsViewBandsByFansPage;
+  bandsViewBandsPrivateParty = BandsViewBandsPrivatePartyPage;
+  bandsViewBandsCDFunds = BandsViewBandsCDFundsPage;
+  bandsViewBandsEvents = BandsViewBandsEventsPage;
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad BandsViewBandsProfilePage');

@@ -59,6 +59,9 @@ import { BandsViewBandsMembersPage } from '../pages/bands-view-bands-members/ban
 import { BandsViewBandsPrivatePartyPage } from '../pages/bands-view-bands-private-party/bands-view-bands-private-party';
 import { RegisterBandsEventsDetailsPage } from '../pages/register-bands-events-details/register-bands-events-details';
 import { RegisterBandsVideosDetailsPage } from '../pages/register-bands-videos-details/register-bands-videos-details';
+import { RegisterBandsByFansDetailsPage } from '../pages/register-bands-by-fans-details/register-bands-by-fans-details';
+import { RegisterBandsCDFundsDetailsPage } from '../pages/register-bands-cd-funds-details/register-bands-cd-funds-details';
+import { RegisterBandsPrivatePartyDetailsPage } from '../pages/register-bands-private-party-details/register-bands-private-party-details';
 import { EditBandsEventsDetailsPage } from '../pages/edit-bands-events-details/edit-bands-events-details';
 import { EditBandsVideosDetailsPage } from '../pages/edit-bands-videos-details/edit-bands-videos-details';
 import { BandsViewAlbumPage } from '../pages/bands-view-album/bands-view-album';
@@ -160,7 +163,10 @@ const cloudSettings: CloudSettings = {
     RegisterBandsVideosDetailsPage,
     EditBandsEventsDetailsPage,
     EditBandsVideosDetailsPage,
-    BandsViewAlbumPage
+    BandsViewAlbumPage,
+    RegisterBandsByFansDetailsPage,
+    RegisterBandsCDFundsDetailsPage,
+    RegisterBandsPrivatePartyDetailsPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -230,7 +236,10 @@ const cloudSettings: CloudSettings = {
     RegisterBandsVideosDetailsPage,
     EditBandsEventsDetailsPage,
     EditBandsVideosDetailsPage,
-    BandsViewAlbumPage
+    BandsViewAlbumPage,
+    RegisterBandsByFansDetailsPage,
+    RegisterBandsCDFundsDetailsPage,
+    RegisterBandsPrivatePartyDetailsPage
   ],
   providers: [
     StatusBar,
