@@ -1,6 +1,5 @@
-import * as firebase from 'firebase';
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { NavController, NavParams, Slides, ToastController } from 'ionic-angular';
 import { RegisterBandsAlbumDetailsPage } from '../register-bands-album-details/register-bands-album-details';
 import { RegisterBandsMembersDetailsPage } from '../register-bands-members-details/register-bands-members-details';
 import { RegisterBandsVideosDetailsPage } from '../register-bands-videos-details/register-bands-videos-details';
@@ -28,14 +27,37 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 })
 export class BandsViewBandsProfilePage {
 
+  @ViewChild('bandMusicSlider') viewer: Slides;
+  @ViewChild('bandMemberSlider') viewer1: Slides;
+  @ViewChild('bandVideoSlider') viewer2: Slides;
+  @ViewChild('bandEventSlider') viewer3: Slides;
+  @ViewChild('bandsByFansSlider') viewer4: Slides;
+  @ViewChild('cdFundsSlider') viewer5: Slides;
+  @ViewChild('privatePartySlider') viewer6: Slides;
+
   //This code makes sure the database lists are visible in the Bands profile
   albums: FirebaseListObservable<any>
   members: FirebaseListObservable<any>
   videos: FirebaseListObservable<any>
   events: FirebaseListObservable<any>
+  bandsbyfans: FirebaseListObservable<any>
+  cdfunds: FirebaseListObservable<any>
+  privateparty: FirebaseListObservable<any>
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {
-    firebase.auth().onAuthStateChanged(function(user) {
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire,
+  public toastCtrl: ToastController) {
+
+    this.albums = af.database.list('/albums')
+    this.members = af.database.list('/members')
+    this.videos = af.database.list('/videos')
+    this.events = af.database.list('/events')
+    this.bandsbyfans = af.database.list('/bandsbyfans')
+    this.cdfunds = af.database.list('/cdfunds')
+    this.privateparty = af.database.list('/privateparty')
+
+//FIX ME User queries to show data only for specific band ID
+    /*firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
         this.albums = af.database.list('/albums', {query: {orderByChild : "userId", equalTo: user.uid}})
         this.members = af.database.list('/members', {query: {orderByChild : "userId", equalTo: user.uid}})
@@ -44,7 +66,45 @@ export class BandsViewBandsProfilePage {
       } else {
         // No user is signed in.
       }
-    });
+    });*/
+  }
+
+  ngAfterViewInit() {
+  //Parameters for Music Carosusel
+    this.viewer.speed = 750;
+    this.viewer.pager = true;
+    this.viewer.slidesPerView = 2;
+
+
+  //Parameters for Members Carousel
+    this.viewer1.speed = 750;
+    this.viewer1.pager = true;
+    this.viewer1.slidesPerView = 2;
+
+  //Parameters for Videos Carousel
+    this.viewer2.speed = 750;
+    this.viewer2.pager = true;
+    //this.viewer2.slidesPerView = 2;
+
+  //Parameters for Events Carousel
+    this.viewer3.speed = 750;
+    this.viewer3.pager = true;
+    this.viewer3.slidesPerView = 2;
+
+  //Parameters for Bands By Fans Carousel
+    this.viewer4.speed = 750;
+    this.viewer4.pager = true;
+    this.viewer4.slidesPerView = 2;
+
+  //Parameters for CD Funds Carousel
+    this.viewer5.speed = 750;
+    this.viewer5.pager = true;
+    this.viewer5.slidesPerView = 2;
+
+  //Parameters for Private Party Carousel
+    this.viewer6.speed = 750;
+    this.viewer6.pager = true;
+    this.viewer6.slidesPerView = 2;
   }
 
   //Set up links to Bands pages

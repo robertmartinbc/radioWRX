@@ -8,7 +8,6 @@ import { FansViewBandsEventsPage } from '../fans-view-bands-events/fans-view-ban
 import { FansViewBandsAlbumPage } from '../fans-view-bands-album/fans-view-bands-album';
 
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
-import * as firebase from 'firebase';
 
 /*
   Generated class for the FansViewBandsPortfolio page.
