@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import * as firebase from 'firebase';
 
 import { HomePage } from '../home/home';
 import { AboutPage } from '../about/about';

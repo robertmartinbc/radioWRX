@@ -119,7 +119,7 @@
     <ion-row class="style-placeholder" [navPush]="">
       <ion-col col-12>
         <ion-slides #bandMusicSlider (ionSlideDideChange)="onSlideMoved()">
-          <ion-slide *ngFor="let music of albums | async" (click)="goToAlbumView(music)" class="carousel-individual-slide">
+          <ion-slide *ngFor="let music of albums | async" (click)="goToBandsAlbumView(music)" class="carousel-individual-slide">
             <ion-item no-lines>
               <img src="https://api.appery.io/rest/1/db/files/5518394be4b085114003daf6/7f241c97-d10f-4350-9e74-b5eb5e3709cb.thisdayburns.jpg">
               <p class="music-carousel-text">{{ music.albumTitle }}</p>
@@ -150,7 +150,7 @@
     <ion-row class="style-placeholder" [navPush]="fansViewBandsMember">
       <ion-col col-12>
         <ion-slides #bandMemberSlider (ionSlideDideChange)="onSlideMoved()">
-          <ion-slide *ngFor="let member of members | async" (click)="goToMemberView(member)" class="carousel-individual-slide">
+          <ion-slide *ngFor="let member of members | async" (click)="goToBandsMemberView(member)" class="carousel-individual-slide">
             <ion-item no-lines>
               <img src="https://api.appery.io/rest/1/db/files/5518394be4b085114003daf6/7f241c97-d10f-4350-9e74-b5eb5e3709cb.thisdayburns.jpg">
               <p class="member-carousel-text">{{ member.memberName }}</p>
@@ -307,7 +307,7 @@
     <ion-row class="style-placeholder">
       <ion-col col-12>
         <ion-slides #bandEventSlider (ionSlideDidChange)="onSlideMoved()">
-          <ion-slide *ngFor="let event of events | async" (click)="goToEventView(event)" class="carousel-individual-slide">
+          <ion-slide *ngFor="let event of events | async" (click)="goToBandsEventsView(event)" class="carousel-individual-slide">
             <ion-item no-lines>
               <img src="https://api.appery.io/rest/1/db/files/5518394be4b085114003daf6/7f241c97-d10f-4350-9e74-b5eb5e3709cb.thisdayburns.jpg">
               <p class="carousel-header-text elipsis">{{ event.eventVenue }}</p>

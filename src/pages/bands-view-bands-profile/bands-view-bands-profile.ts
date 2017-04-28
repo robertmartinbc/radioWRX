@@ -126,17 +126,17 @@ export class BandsViewBandsProfilePage {
   }
 
   //Go to view album page and pass Album data
-  displayAlbum(item) {
+  goToBandsAlbumView(item) {
     this.navCtrl.push(BandsViewAlbumPage, item);
   }
 
   //Go to view members page and pass Album data
-  displayMember(item) {
+  goToBandsMemberView(item) {
     this.navCtrl.push(BandsViewBandsMembersPage, item);
   }
 
   //Go to view members page and pass Album data
-  displayEvents(item) {
+  goToBandsEventsView(item) {
     this.navCtrl.push(BandsViewBandsEventsPage, item);
   }
 
