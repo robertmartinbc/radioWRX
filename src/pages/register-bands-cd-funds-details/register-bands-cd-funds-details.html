@@ -1,18 +1,38 @@
-<!--
-  Generated template for the RegisterBandsCDFundsDetails page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>RegisterBandsCDFundsDetails</ion-title>
+    <ion-title>CD Funds</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content>
+  <ion-grid class="standard-grid-padding maximum-grid-width">
+    <ion-row class="header-style">
+      <ion-col col-1>
+      </ion-col>
+      <ion-col col-10>
+        <p class="header-text">Create CD Funds</p>
+      </ion-col>
+      <ion-col col-1>
+      </ion-col>
+    </ion-row>
+    <ion-row class="style-placeholder">
+      <ion-col col-12>
+        <p>Select a date and target amount that you need to cut a new CD.</p>
+          <ion-item>
+            <ion-label>Target Date</ion-label>
+              <ion-datetime displayFormat="MMM DD YYYY" min="2016" max="2020-10-31" [(ngModel)]="cdfunds.targetDate"></ion-datetime>
+            </ion-item>
+          <ion-item>
+            <ion-label stacked>Target</ion-label>
+            <ion-input placeholder="Example: 8000" [(ngModel)]="cdfunds.targetAmount"></ion-input>
+          </ion-item>
+        <button ion-button block color="danger" outline (click)="submit()">Create CD Fund</button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="style-footer">
+      <ion-col col-12>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
