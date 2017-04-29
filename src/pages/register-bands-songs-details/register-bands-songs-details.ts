@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { BandsViewAlbumPage } from '../bands-view-album/bands-view-album';
 
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
-import * as firebase from 'firebase';
+import { AngularFire } from 'angularfire2';
 
 //Create class for a song
 class Song {

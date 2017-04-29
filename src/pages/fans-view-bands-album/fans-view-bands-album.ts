@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
-import * as firebase from 'firebase';
 
 /*
   Generated class for the FansViewBandsAlbum page.

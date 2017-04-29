@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController, ModalController } from 'ionic-angular';
 import { BandsSignInModalPage } from '../bands-sign-in-modal/bands-sign-in-modal';
 import { AuthProviders, AuthMethods, AngularFire, FirebaseListObservable } from 'angularfire2';
-import * as firebase from 'firebase';
 import { LoadingController, AlertController } from "ionic-angular";
 import { AuthService } from '../../services/auth';
 

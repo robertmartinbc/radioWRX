@@ -1,7 +1,6 @@
-import * as firebase from 'firebase';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFire } from 'angularfire2';
 
 /*
   Generated class for the BandsViewBandsEvents page.
@@ -14,7 +13,6 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
   templateUrl: 'bands-view-bands-events.html'
 })
 export class BandsViewBandsEventsPage {
-  events: FirebaseListObservable<any>
 
   eventTitle: string = this.navParams.get('eventTitle');
   eventVenue: string = this.navParams.get('eventVenue');
