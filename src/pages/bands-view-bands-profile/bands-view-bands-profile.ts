@@ -130,13 +130,28 @@ export class BandsViewBandsProfilePage {
     this.navCtrl.push(BandsViewAlbumPage, item);
   }
 
-  //Go to view members page and pass Album data
+  //Go to view members page and pass member data
   goToBandsMemberView(item) {
     this.navCtrl.push(BandsViewBandsMembersPage, item);
   }
 
-  //Go to view members page and pass Album data
-  goToBandsEventsView(item) {
+  //Go to view bands by fans page and pass BBF data
+  goToBandsByFansView(item) {
+    this.navCtrl.push(BandsViewBandsByFansPage, item);
+  }
+
+  //Go to view bands by fans page and pass BBF data
+  goToCDFundsView(item) {
+    this.navCtrl.push(BandsViewBandsCDFundsPage, item);
+  }
+
+  //Go to view bands by fans page and pass BBF data
+  goToPrivatePartyView(item) {
+    this.navCtrl.push(BandsViewBandsPrivatePartyPage, item);
+  }
+
+  //Go to view events page and pass events data
+  goToBandsEventView(item) {
     this.navCtrl.push(BandsViewBandsEventsPage, item);
   }
 

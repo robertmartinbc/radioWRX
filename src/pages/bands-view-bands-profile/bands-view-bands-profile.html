@@ -22,7 +22,9 @@
         <p class="header-text">Bands Portfolio</p>
       </ion-col>
       <ion-col col-1>
-        <ion-icon name="md-create" class="style-header-icons"></ion-icon>
+        <button class="position-add-button" ion-button icon-only color="light" clear small>
+          <ion-icon name="md-create"></ion-icon>
+        </button>
       </ion-col>
     </ion-row>
     <ion-row class="style-placeholder">
@@ -210,7 +212,7 @@
     <ion-row class="style-placeholder">
       <ion-col col-12>
         <ion-slides #bandsByFansSlider (ionSlideDidChange)="onSlideMoved()">
-          <ion-slide *ngFor="let bbf of bandsbyfans | async" (click)="goToEventView(bbf)" class="carousel-individual-slide">
+          <ion-slide *ngFor="let bbf of bandsbyfans | async" (click)="goToBandsByFansView(bbf)" class="carousel-individual-slide">
             <ion-item no-lines>
               <img src="https://api.appery.io/rest/1/db/files/5518394be4b085114003daf6/7f241c97-d10f-4350-9e74-b5eb5e3709cb.thisdayburns.jpg">
               <p class="carousel-header-text elipsis">{{ bbf.chosenCountry }}</p>
@@ -242,7 +244,7 @@
     <ion-row class="style-placeholder">
       <ion-col col-12>
         <ion-slides #cdFundsSlider (ionSlideDidChange)="onSlideMoved()">
-          <ion-slide *ngFor="let funds of cdfunds | async" (click)="goToEventView(funds)" class="carousel-individual-slide">
+          <ion-slide *ngFor="let funds of cdfunds | async" (click)="goToCDFundsView(funds)" class="carousel-individual-slide">
             <ion-item no-lines>
               <img src="https://api.appery.io/rest/1/db/files/5518394be4b085114003daf6/7f241c97-d10f-4350-9e74-b5eb5e3709cb.thisdayburns.jpg">
               <p class="carousel-header-text elipsis">{{ funds.targetDate }}</p>
@@ -274,7 +276,7 @@
     <ion-row class="style-placeholder">
       <ion-col col-12>
         <ion-slides #privatePartySlider (ionSlideDidChange)="onSlideMoved()">
-          <ion-slide *ngFor="let fees of privateparty | async" (click)="goToEventView(fees)" class="carousel-individual-slide">
+          <ion-slide *ngFor="let fees of privateparty | async" (click)="goToPrivatePartyView(fees)" class="carousel-individual-slide">
             <ion-item no-lines>
               <img src="https://api.appery.io/rest/1/db/files/5518394be4b085114003daf6/7f241c97-d10f-4350-9e74-b5eb5e3709cb.thisdayburns.jpg">
               <p class="carousel-header-text elipsis">{{ fees.location }}</p>
@@ -282,7 +284,6 @@
             </ion-item>
           </ion-slide>
         </ion-slides>
-        <p class="dummy-text">Private Parties will go here</p>
       </ion-col>
     </ion-row>
     <ion-row class="style-footer">
@@ -307,7 +308,7 @@
     <ion-row class="style-placeholder">
       <ion-col col-12>
         <ion-slides #bandEventSlider (ionSlideDidChange)="onSlideMoved()">
-          <ion-slide *ngFor="let event of events | async" (click)="goToBandsEventsView(event)" class="carousel-individual-slide">
+          <ion-slide *ngFor="let event of events | async" (click)="goToBandsEventView(event)" class="carousel-individual-slide">
             <ion-item no-lines>
               <img src="https://api.appery.io/rest/1/db/files/5518394be4b085114003daf6/7f241c97-d10f-4350-9e74-b5eb5e3709cb.thisdayburns.jpg">
               <p class="carousel-header-text elipsis">{{ event.eventVenue }}</p>

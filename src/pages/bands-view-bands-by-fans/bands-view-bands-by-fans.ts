@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 /*
   Generated class for the BandsViewBandsByFans page.
@@ -13,7 +14,10 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class BandsViewBandsByFansPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  chosenCountry: string = this.navParams.get('chosenCountry');
+  ticketPrice: string = this.navParams.get('ticketPrice');
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad BandsViewBandsByFansPage');
