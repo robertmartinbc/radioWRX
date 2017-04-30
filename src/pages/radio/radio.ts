@@ -31,9 +31,27 @@ export class RadioPage {
   events: FirebaseListObservable<any>
 
 //Set up some audio.
+  myTracks: any[];
+  allTracks: any[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController,
   public viewCtrl: ViewController, public af: AngularFire, private _audioProvider: AudioProvider) {
+
+  //Build an array of some tracks.
+      this.myTracks = [{
+        src: 'https://archive.org/download/JM2013-10-05.flac16/V0/jm2013-10-05-t12-MP3-V0.mp3',
+        artist: 'John Mayer',
+        title: 'Why Georgia',
+        art: 'https://api.appery.io/rest/1/db/files/5518394be4b085114003daf6/7f241c97-d10f-4350-9e74-b5eb5e3709cb.thisdayburns.jpg',
+        preload: 'metadata' // tell the plugin to preload metadata such as duration for this track, set to 'none' to turn off
+      },
+      {
+        src: 'https://archive.org/download/JM2013-10-05.flac16/V0/jm2013-10-05-t30-MP3-V0.mp3',
+        artist: 'John Mayer',
+        title: 'Who Says',
+        art: 'https://api.appery.io/rest/1/db/files/5518394be4b085114003daf6/7f241c97-d10f-4350-9e74-b5eb5e3709cb.thisdayburns.jpg',
+        preload: 'metadata' // tell the plugin to preload metadata such as duration for this track,  set to 'none' to turn off
+      }];
 
     firebase.auth().onAuthStateChanged(function(user) {
       if (user)
@@ -87,6 +105,27 @@ ngAfterViewInit() {
   ionViewDidLoad() {
     console.log('ionViewDidLoad RadioPage');
     //console.log(this.navParams.data);
+  }
+
+  ngAfterContentInit() {
+    // get all tracks managed by AudioProvider so we can control playback via the API
+    this.allTracks = this._audioProvider.tracks;
+  }
+
+/*
+  playSelectedTrack() {
+    // use AudioProvider to control selected track
+    this._audioProvider.play(this.selectedTrack);
+  }
+
+  pauseSelectedTrack() {
+     // use AudioProvider to control selected track
+     this._audioProvider.pause(this.selectedTrack);
+  }
+*/  
+
+  onTrackFinished(track: any) {
+    console.log('Track finished', track)
   }
 
 }
