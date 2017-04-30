@@ -11,13 +11,13 @@
   <ion-grid class="standard-grid-padding maximum-grid-width">
     <ion-row class="header-style">
       <ion-col col-1 class="style-header-icons">
-        <ion-icon name="people"></ion-icon>
+        <ion-icon name="person"></ion-icon>
       </ion-col>
       <ion-col col-10>
         <p class="header-text">{{ memberName }}</p>
       </ion-col>
       <ion-col col-1>
-        <button class="position-add-button" ion-button icon-only color="light" clear small>
+        <button class="position-add-button" ion-button icon-only color="light" clear small (click)="goToEditBandsMembers()">
           <ion-icon name="md-create"></ion-icon>
         </button>
       </ion-col>

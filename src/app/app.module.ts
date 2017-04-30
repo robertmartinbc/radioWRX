@@ -64,6 +64,9 @@ import { RegisterBandsCDFundsDetailsPage } from '../pages/register-bands-cd-fund
 import { RegisterBandsPrivatePartyDetailsPage } from '../pages/register-bands-private-party-details/register-bands-private-party-details';
 import { EditBandsEventsDetailsPage } from '../pages/edit-bands-events-details/edit-bands-events-details';
 import { EditBandsVideosDetailsPage } from '../pages/edit-bands-videos-details/edit-bands-videos-details';
+import { EditBandsByFansDetailsPage } from '../pages/edit-bands-by-fans-details/edit-bands-by-fans-details';
+import { EditBandsCDFundsDetailsPage } from '../pages/edit-bands-cd-funds-details/edit-bands-cd-funds-details';
+import { EditBandsPrivatePartyDetailsPage } from '../pages/edit-bands-private-party-details/edit-bands-private-party-details';
 import { BandsViewAlbumPage } from '../pages/bands-view-album/bands-view-album';
 
 import { Data } from '../providers/data';
@@ -163,6 +166,9 @@ const cloudSettings: CloudSettings = {
     RegisterBandsVideosDetailsPage,
     EditBandsEventsDetailsPage,
     EditBandsVideosDetailsPage,
+    EditBandsByFansDetailsPage,
+    EditBandsCDFundsDetailsPage,
+    EditBandsPrivatePartyDetailsPage,
     BandsViewAlbumPage,
     RegisterBandsByFansDetailsPage,
     RegisterBandsCDFundsDetailsPage,
@@ -236,6 +242,9 @@ const cloudSettings: CloudSettings = {
     RegisterBandsVideosDetailsPage,
     EditBandsEventsDetailsPage,
     EditBandsVideosDetailsPage,
+    EditBandsByFansDetailsPage,
+    EditBandsCDFundsDetailsPage,
+    EditBandsPrivatePartyDetailsPage,
     BandsViewAlbumPage,
     RegisterBandsByFansDetailsPage,
     RegisterBandsCDFundsDetailsPage,

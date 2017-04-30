@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Edit Bands By Fans</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-grid class="standard-grid-padding maximum-grid-width">
+    <ion-row class="header-style">
+      <ion-col col-1 class="style-header-icons">
+        <ion-icon name="people"></ion-icon>
+      </ion-col>
+      <ion-col col-10>
+        <p class="header-text">Edit Bands By Fans</p>
+      </ion-col>
+      <ion-col col-1>
+      </ion-col>
+    </ion-row>
+    <ion-row class="style-placeholder">
+      <ion-col col-12>
+        <ion-list>
+          <ion-item>
+            <ion-label>Select Country</ion-label>
+            <ion-select multiple="true">
+              <ion-option value="canada">Canada</ion-option>
+              <ion-option value="usa">USA</ion-option>
+              <ion-option value="uk">UK</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label>Select Town</ion-label>
+            <ion-select multiple="true">
+              <ion-option value="victoria">Victoria</ion-option>
+              <ion-option value="la">Los Angeles</ion-option>
+              <ion-option value="farnham">Farnham</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label stacked>Ticket Price</ion-label>
+            <ion-input placeholder="Example: $50"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label stacked>Tickets Required</ion-label>
+            <ion-input placeholder="Example: 50"></ion-input>
+          </ion-item>
+        </ion-list>
+        <button ion-button block color="danger" outline (click)="submit()">Update Bands By Fans</button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="style-footer">
+      <ion-col col-12>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

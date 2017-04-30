@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Edit CD Funds</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-grid class="standard-grid-padding maximum-grid-width">
+    <ion-row class="header-style">
+      <ion-col col-1 class="style-header-icons">
+        <ion-icon name="disc"></ion-icon>
+      </ion-col>
+      <ion-col col-10>
+        <p class="header-text">Edit CD Funds</p>
+      </ion-col>
+      <ion-col col-1>
+      </ion-col>
+    </ion-row>
+    <ion-row class="style-placeholder">
+      <ion-col col-12>
+        <p>Select a date and target amount that you need to cut a new CD.</p>
+          <ion-item>
+            <ion-label>Target Date</ion-label>
+              <ion-datetime displayFormat="MMM DD YYYY" min="2016" max="2020-10-31"></ion-datetime>
+            </ion-item>
+          <ion-item>
+            <ion-label stacked>Target</ion-label>
+            <ion-input placeholder="Example: 8000"></ion-input>
+          </ion-item>
+        <button ion-button block color="danger" outline (click)="submit()">Update CD Fund</button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="style-footer">
+      <ion-col col-12>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

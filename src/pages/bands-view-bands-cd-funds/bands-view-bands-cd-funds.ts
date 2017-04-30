@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AngularFire } from 'angularfire2';
+import { EditBandsCDFundsDetailsPage } from '../edit-bands-cd-funds-details/edit-bands-cd-funds-details'
 
 /*
   Generated class for the BandsViewBandsCDFunds page.
@@ -18,6 +19,10 @@ export class BandsViewBandsCDFundsPage {
   targetAmount: string = this.navParams.get('targetAmount');
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {}
+
+  goToEditBandsCDFunds() {
+    this.navCtrl.push(EditBandsCDFundsDetailsPage);
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad BandsViewBandsCDFundsPage');

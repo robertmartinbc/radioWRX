@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 /*
   Generated class for the EditBandsAlbumDetails page.
@@ -12,11 +13,20 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'edit-bands-album-details.html'
 })
 export class EditBandsAlbumDetailsPage {
+  albums: FirebaseListObservable<any>
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  editAlbumTitle: string = this.navParams.get('editAlbumTitle');
+  editYearReleased: string = this.navParams.get('editYearReleased');
+  editAlbumTotalSongs: string = this.navParams.get('editAlbumTotalSongs');
+  editAlbumDuration: string = this.navParams.get('editAlbumDuration');
+  editAlbumUPCCode: string = this.navParams.get('editAlbumUPCCode');
+  editAlbumGenre: string = this.navParams.get('editAlbumGenre');
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EditBandsAlbumDetailsPage');
+    console.log(this.editAlbumTitle);
   }
 
 }

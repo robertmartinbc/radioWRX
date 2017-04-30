@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AngularFire } from 'angularfire2';
+import { EditBandsMembersDetailsPage } from '../edit-bands-members-details/edit-bands-members-details';
 
 /*
   Generated class for the BandsViewBandsMembers page.
@@ -20,6 +21,10 @@ export class BandsViewBandsMembersPage {
   memberBiography: string = this.navParams.get('memberBiography');
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {}
+
+  goToEditBandsMembers() {
+    this.navCtrl.push(EditBandsMembersDetailsPage);
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad BandsViewBandsMembersPage');

@@ -18,7 +18,7 @@
             <p class="header-text">{{ eventTitle }}</p>
           </ion-col>
           <ion-col col-1>
-            <button class="position-add-button" ion-button icon-only color="light" clear small>
+            <button class="position-add-button" ion-button icon-only color="light" clear small (click)="goToEditBandsEvent()">
               <ion-icon name="md-create"></ion-icon>
             </button>
           </ion-col>
@@ -54,52 +54,6 @@
           </ion-col>
         </ion-row>
         <ion-row>
-        </ion-row>
-        <ion-row class="style-footer">
-          <ion-col col-12>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-      <ion-grid>
-        <ion-row class="header-style ">
-          <ion-col col-1>
-          </ion-col>
-          <ion-col col-10>
-            <p class="header-text">Tickets Required</p>
-          </ion-col>
-          <ion-col col-1>
-          </ion-col>
-        </ion-row>
-        <ion-row class="style-placeholder">
-          <ion-col col-3 class="style-select-tickets-button">
-            <button ion-button small outline color="danger">1</button>
-          </ion-col>
-          <ion-col col-3 class="style-select-tickets-button">
-            <button ion-button small outline color="danger">2</button>
-          </ion-col>
-          <ion-col col-3 class="style-select-tickets-button">
-            <button ion-button small outline color="danger">3</button>
-          </ion-col>
-          <ion-col col-3 class="style-select-tickets-button">
-            <button ion-button small outline color="danger">4</button>
-          </ion-col>
-        </ion-row>
-        <ion-row class="style-placeholder">
-          <ion-col col-3>
-          </ion-col>
-          <ion-col col-3>
-            <p class="bands-by-fans-text">Total:</p>
-          </ion-col>
-          <ion-col col-3>
-            <input type="text" class="style-input" />
-          </ion-col>
-          <ion-col col-3>
-          </ion-col>
-        </ion-row>
-        <ion-row class="style-placeholder">
-          <ion-col col-12>
-            <button ion-button outline block color="danger">Purchase Tickets</button>
-          </ion-col>
         </ion-row>
         <ion-row class="style-footer">
           <ion-col col-12>
