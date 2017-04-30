@@ -15,9 +15,9 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 })
 export class TabsPage {
 
-  //tab1Root: any = BandsViewBandsProfilePage;
+  tab1Root: any = BandsViewBandsProfilePage;
   // Root
-  tab1Root: any = RadioPage;
+  //tab1Root: any = RadioPage;
   tab2Root: any = TicketsPage;
   tab3Root: any = MusicPage;
   tab4Root: any = AccountPage;

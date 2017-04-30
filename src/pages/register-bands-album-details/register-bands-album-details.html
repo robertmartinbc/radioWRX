@@ -26,27 +26,27 @@
       <ion-col col-12>
         <ion-list>
           <ion-item>
-            <ion-label floating>Album Title</ion-label>
-            <ion-input type="text" [(ngModel)]="album.albumTitle" clearInput></ion-input>
+            <ion-label stacked color="primary">Album Title</ion-label>
+            <ion-input type="text" placeholder="Example: Best Ever Hits!" [(ngModel)]="album.albumTitle" clearInput></ion-input>
           </ion-item>
           <ion-item>
-            <ion-label floating>Year Released</ion-label>
-            <ion-input type="text" [(ngModel)]="album.albumYearReleased" clearInput></ion-input>
+            <ion-label stacked color="primary">Year Released</ion-label>
+            <ion-input type="text" placeholder="Example: 2010" [(ngModel)]="album.albumYearReleased" clearInput></ion-input>
           </ion-item>
           <ion-item>
-            <ion-label floating> Total No. Songs</ion-label>
-            <ion-input type="text" [(ngModel)]="album.albumTotalSongs" clearInput></ion-input>
+            <ion-label stacked color="primary"> Total No. Songs</ion-label>
+            <ion-input type="text" placeholder="Example: 12" [(ngModel)]="album.albumTotalSongs" clearInput></ion-input>
           </ion-item>
           <ion-item>
-            <ion-label floating>Album Duration</ion-label>
-            <ion-input type="text" [(ngModel)]="album.albumDuration" clearInput></ion-input>
+            <ion-label stacked color="primary">Album Duration</ion-label>
+            <ion-input type="text" placeholder="Example: 0.49" [(ngModel)]="album.albumDuration" clearInput></ion-input>
           </ion-item>
           <ion-item>
-            <ion-label floating>UPC/EAN Code</ion-label>
-            <ion-input type="text" [(ngModel)]="album.albumUPCCode" clearInput></ion-input>
+            <ion-label stacked color="primary">UPC/EAN Code</ion-label>
+            <ion-input type="text" placeholder="Example: ZN-1234567890" [(ngModel)]="album.albumUPCCode" clearInput></ion-input>
           </ion-item>
           <ion-item>
-            <ion-label>Genre</ion-label>
+            <ion-label color="primary">Genre</ion-label>
             <ion-select [(ngModel)]="album.albumGenre" multiple="true">
               <ion-option>Rock</ion-option>
               <ion-option>Pop</ion-option>

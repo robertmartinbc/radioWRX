@@ -18,14 +18,14 @@
     </ion-row>
     <ion-row class="style-placeholder">
       <ion-col col-12>
-        <p>Provide a ZIP code and party fee to advise customers where you will play and how much.</p>
+        <p>Provide a ZIP code and party fee to advise customers where you will play and for how much.</p>
           <ion-item>
-            <ion-label stacked>Location</ion-label>
-            <ion-input placeholder="V8N2N1" [(ngModel)]="privateparty.location"></ion-input>
+            <ion-label stacked color="primary">Location</ion-label>
+            <ion-input placeholder="Example: V8N2N1" [(ngModel)]="privateparty.location" clearInput></ion-input>
             </ion-item>
           <ion-item>
-            <ion-label stacked>Fee</ion-label>
-            <ion-input placeholder="Example: 400" [(ngModel)]="privateparty.fee"></ion-input>
+            <ion-label stacked color="primary">Fee</ion-label>
+            <ion-input placeholder="Example: 400" [(ngModel)]="privateparty.fee" clearInput></ion-input>
           </ion-item>
         <button ion-button block color="danger" outline (click)="submit()">Create Private Party</button>
       </ion-col>

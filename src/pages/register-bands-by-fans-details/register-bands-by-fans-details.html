@@ -20,7 +20,7 @@
       <ion-col col-12>
         <ion-list>
           <ion-item>
-            <ion-label>Select Country</ion-label>
+            <ion-label color="primary">Select Country</ion-label>
             <ion-select [(ngModel)]="bandsbyfans.chosenCountry" multiple="true">
               <ion-option value="canada">Canada</ion-option>
               <ion-option value="usa">USA</ion-option>
@@ -28,7 +28,7 @@
             </ion-select>
           </ion-item>
           <ion-item>
-            <ion-label>Select Town</ion-label>
+            <ion-label color="primary">Select Town</ion-label>
             <ion-select [(ngModel)]="bandsbyfans.chosenTown" multiple="true">
               <ion-option value="victoria">Victoria</ion-option>
               <ion-option value="la">Los Angeles</ion-option>
@@ -36,12 +36,12 @@
             </ion-select>
           </ion-item>
           <ion-item>
-            <ion-label stacked>Ticket Price</ion-label>
-            <ion-input placeholder="Example: $50" [(ngModel)]="bandsbyfans.ticketPrice"></ion-input>
+            <ion-label stacked color="primary">Ticket Price</ion-label>
+            <ion-input placeholder="Example: $50" [(ngModel)]="bandsbyfans.ticketPrice" clearInput></ion-input>
           </ion-item>
           <ion-item>
-            <ion-label stacked>Tickets Required</ion-label>
-            <ion-input placeholder="Example: 50" [(ngModel)]="bandsbyfans.ticketsRequired"></ion-input>
+            <ion-label stacked color="primary">Tickets Required</ion-label>
+            <ion-input placeholder="Example: 30" [(ngModel)]="bandsbyfans.ticketsRequired" clearInput></ion-input>
           </ion-item>
         </ion-list>
         <button ion-button block color="danger" outline (click)="submit()">Create Bands By Fans</button>

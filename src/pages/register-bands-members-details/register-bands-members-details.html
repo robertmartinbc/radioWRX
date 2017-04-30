@@ -26,35 +26,35 @@
       <ion-col col-12>
         <ion-list>
           <ion-item>
-            <ion-label floating>Name</ion-label>
-            <ion-input type="text" [(ngModel)]="member.memberName" clearInput ngRequired></ion-input>
+            <ion-label stacked color="primary">Name</ion-label>
+            <ion-input type="text" placeholder="Example: Joe Blogs" [(ngModel)]="member.memberName" clearInput></ion-input>
           </ion-item>
           <ion-item>
-            <ion-label floating>Biography</ion-label>
-            <ion-textarea type="text" [(ngModel)]="member.memberBiography" clearInput></ion-textarea>
+            <ion-label stacked color="primary">Biography</ion-label>
+            <ion-textarea type="text" placeholder="Example: Greatest singer ever!" [(ngModel)]="member.memberBiography" clearInput></ion-textarea>
           </ion-item>
           <ion-item>
-            <ion-label>Vocals</ion-label>
+            <ion-label color="primary">Vocals</ion-label>
             <ion-checkbox [(ngModel)]="member.vocals" color="danger"></ion-checkbox>
           </ion-item>
           <ion-item>
-            <ion-label>Guitar</ion-label>
+            <ion-label color="primary">Guitar</ion-label>
             <ion-checkbox [(ngModel)]="member.guitar" color="danger"></ion-checkbox>
           </ion-item>
           <ion-item>
-            <ion-label>Bass</ion-label>
+            <ion-label color="primary">Bass</ion-label>
             <ion-checkbox [(ngModel)]="member.bass" color="danger"></ion-checkbox>
           </ion-item>
           <ion-item>
-            <ion-label>Drums</ion-label>
+            <ion-label color="primary">Drums</ion-label>
             <ion-checkbox [(ngModel)]="member.drums" color="danger"></ion-checkbox>
           </ion-item>
           <ion-item>
-            <ion-label>Piano</ion-label>
+            <ion-label color="primary">Piano</ion-label>
             <ion-checkbox [(ngModel)]="member.piano" color="danger"></ion-checkbox>
           </ion-item>
           <ion-item>
-            <label>Upload Image</label>
+            <label color="primary">Upload Image</label>
             <br>
             <br>
             <ion-row>

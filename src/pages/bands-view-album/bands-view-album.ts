@@ -22,8 +22,6 @@ export class BandsViewAlbumPage {
   songs: FirebaseListObservable<any>
   albums: FirebaseListObservable<any>
 
-  songTitle: string = this.navParams.get('songTitle');
-
   albumTitle: string = this.navParams.get('albumTitle');
   albumYearReleased: string = this.navParams.get('albumYearReleased');
   albumDuration: string = this.navParams.get('albumDuration');
@@ -40,6 +38,8 @@ export class BandsViewAlbumPage {
   public editAlbumGenre: any;
 
   public editSongTitle: any;
+
+  songTitle: string = this.navParams.get('songTitle');
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {
 
@@ -58,10 +58,11 @@ export class BandsViewAlbumPage {
     });
   }
 
-  goToEditSongsDetails() {
+  goToEditSongsDetails(songItem) {
     this.navCtrl.push(EditBandsSongsDetailsPage, {
       editSongTitle: this.songTitle
     });
+    alert(this.editSongTitle);
   }
 
   ionViewDidLoad() {
