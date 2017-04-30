@@ -128,8 +128,8 @@ export class BandsViewBandsProfilePage {
   }
 
   //Go to view album page and pass Album data
-  goToBandsAlbumView(item) {
-    this.navCtrl.push(BandsViewAlbumPage, item);
+  goToBandsAlbumView(albumItem) {
+    this.navCtrl.push(BandsViewAlbumPage, albumItem);
   }
 
   //Go to view members page and pass member data

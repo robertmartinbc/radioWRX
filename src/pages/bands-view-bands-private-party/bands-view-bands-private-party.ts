@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AngularFire } from 'angularfire2';
+import { EditBandsPrivatePartyDetailsPage } from '../edit-bands-private-party-details/edit-bands-private-party-details';
 
 /*
   Generated class for the BandsViewBandsPrivateParty page.
@@ -18,6 +19,10 @@ export class BandsViewBandsPrivatePartyPage {
   fee: string = this.navParams.get('fee');
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {}
+
+  goToEditPrivateParty() {
+    this.navCtrl.push(EditBandsPrivatePartyDetailsPage);
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad BandsViewBandsPrivatePartyPage');

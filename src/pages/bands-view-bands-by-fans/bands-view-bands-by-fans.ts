@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AngularFire } from 'angularfire2';
+import { EditBandsByFansDetailsPage } from '../edit-bands-by-fans-details/edit-bands-by-fans-details';
 
 /*
   Generated class for the BandsViewBandsByFans page.
@@ -18,6 +19,10 @@ export class BandsViewBandsByFansPage {
   ticketPrice: string = this.navParams.get('ticketPrice');
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {}
+
+  goToEditBandsByFans() {
+    this.navCtrl.push(EditBandsByFansDetailsPage);
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad BandsViewBandsByFansPage');

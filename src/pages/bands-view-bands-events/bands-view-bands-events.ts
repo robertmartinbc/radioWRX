@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AngularFire } from 'angularfire2';
+import { EditBandsEventsDetailsPage } from '../edit-bands-events-details/edit-bands-events-details';
 
 /*
   Generated class for the BandsViewBandsEvents page.
@@ -24,6 +25,10 @@ export class BandsViewBandsEventsPage {
   eventStartTime: string = this.navParams.get('eventStartTime');
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {}
+
+  goToEditBandsEvent() {
+    this.navCtrl.push(EditBandsEventsDetailsPage);
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad BandsViewBandsEventsPage');

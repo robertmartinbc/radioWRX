@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Private Party</ion-title>
+    <ion-title>Edit Private Party</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -8,10 +8,11 @@
 <ion-content>
   <ion-grid class="standard-grid-padding maximum-grid-width">
     <ion-row class="header-style">
-      <ion-col col-1>
+      <ion-col col-1 class="style-header-icons">
+        <ion-icon name="home"></ion-icon>
       </ion-col>
       <ion-col col-10>
-        <p class="header-text">Create Private Party</p>
+        <p class="header-text">Edit Private Party</p>
       </ion-col>
       <ion-col col-1>
       </ion-col>
@@ -21,13 +22,13 @@
         <p>Provide a ZIP code and party fee to advise customers where you will play and how much.</p>
           <ion-item>
             <ion-label stacked>Location</ion-label>
-            <ion-input placeholder="V8N2N1" [(ngModel)]="privateparty.location"></ion-input>
+            <ion-input placeholder="V8N2N1"></ion-input>
             </ion-item>
           <ion-item>
             <ion-label stacked>Fee</ion-label>
-            <ion-input placeholder="Example: 400" [(ngModel)]="privateparty.fee"></ion-input>
+            <ion-input placeholder="Example: 400"></ion-input>
           </ion-item>
-        <button ion-button block color="danger" outline (click)="submit()">Create Private Party</button>
+        <button ion-button block color="danger" outline (click)="submit()">Edit Private Party</button>
       </ion-col>
     </ion-row>
     <ion-row class="style-footer">

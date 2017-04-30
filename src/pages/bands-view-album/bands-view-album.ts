@@ -20,25 +20,48 @@ export class BandsViewAlbumPage {
 
 //This code makes sure the database lists are visible in the Bands profile
   songs: FirebaseListObservable<any>
+  albums: FirebaseListObservable<any>
+
+  songTitle: string = this.navParams.get('songTitle');
 
   albumTitle: string = this.navParams.get('albumTitle');
   albumYearReleased: string = this.navParams.get('albumYearReleased');
   albumDuration: string = this.navParams.get('albumDuration');
   albumTotalSongs: string = this.navParams.get('albumTotalSongs');
   albumGenre: string = this.navParams.get('albumGenre');
+  albumUPCCode: string = this.navParams.get('albumUPCCode');
   albumId: string = this.navParams.get('$key');
+
+  public editAlbumTitle: any;
+  public editYearReleased: any;
+  public editAlbumTotalSongs: any;
+  public editAlbumDuration: any;
+  public editAlbumUPCCode: any;
+  public editAlbumGenre: any;
+
+  public editSongTitle: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {
 
     this.songs = af.database.list('/songs')
+    this.albums = af.database.list('/albums')
   }
 
   goToEditAlbumDetails() {
-    this.navCtrl.push(EditBandsAlbumDetailsPage);
+    this.navCtrl.push(EditBandsAlbumDetailsPage, {
+      editAlbumTitle: this.albumTitle,
+      editYearReleased: this.albumYearReleased,
+      editAlbumTotalSongs: this.albumTotalSongs,
+      editAlbumDuration: this.albumDuration,
+      editAlbumUPCCode: this.albumUPCCode,
+      editAlbumGenre: this.albumGenre
+    });
   }
 
-  test() {
-    alert("This button was pressed!");
+  goToEditSongsDetails() {
+    this.navCtrl.push(EditBandsSongsDetailsPage, {
+      editSongTitle: this.songTitle
+    });
   }
 
   ionViewDidLoad() {
@@ -46,6 +69,6 @@ export class BandsViewAlbumPage {
   }
 
   registerBandsSongsDetails = RegisterBandsSongsDetailsPage;
-  editBandsSongsDetails = EditBandsSongsDetailsPage;
+  //editBandsSongsDetails = EditBandsSongsDetailsPage;
 
 }
