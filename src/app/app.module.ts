@@ -73,9 +73,11 @@ import { Data } from '../providers/data';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
+import { IonicAudioModule } from 'ionic-audio';
 
 import { AngularFireModule } from 'angularfire2';
 import { AuthService } from '../services/auth';
+import { BrowserModule } from '@angular/platform-browser';
 
 // Initialize Firebase database for RadioWRX
 const configRadioWRX = {
@@ -175,8 +177,10 @@ const cloudSettings: CloudSettings = {
     RegisterBandsPrivatePartyDetailsPage
   ],
   imports: [
+    BrowserModule,
     IonicModule.forRoot(MyApp),
     CloudModule.forRoot(cloudSettings),
+    IonicAudioModule.forRoot(),
     AngularFireModule.initializeApp(configRadioWRX)
     //AngularFireModule.initializeApp(configMobileWRX),
   ],

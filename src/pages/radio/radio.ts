@@ -8,13 +8,8 @@ import { ViewAllTrendingEventsPage } from '../view-all-trending-events/view-all-
 import { SignInModalPage } from '../sign-in-modal/sign-in-modal';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import * as firebase from 'firebase';
+import { AudioProvider } from 'ionic-audio';
 
-/*
-  Generated class for the Radio page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-radio',
   templateUrl: 'radio.html'
@@ -35,10 +30,10 @@ export class RadioPage {
   videos: FirebaseListObservable<any>
   events: FirebaseListObservable<any>
 
-    //video
+//Set up some audio.
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController,
-  public viewCtrl: ViewController, public af: AngularFire) {
+  public viewCtrl: ViewController, public af: AngularFire, private _audioProvider: AudioProvider) {
 
     firebase.auth().onAuthStateChanged(function(user) {
       if (user)
