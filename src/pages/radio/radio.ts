@@ -41,10 +41,13 @@ export class RadioPage {
   public viewCtrl: ViewController, public af: AngularFire) {
 
     firebase.auth().onAuthStateChanged(function(user) {
-      if (user)
+      if (user){
         var is_logged_in = true
-      else
+        console.log('YEAH, YOU ARE LOGGED IN');
+      }else{
         var is_logged_in = false
+        console.log('HMMM, YOU RE LOGGED OUT');
+      }
     });
 
     this.albums = af.database.list('/albums')
@@ -53,19 +56,19 @@ export class RadioPage {
     this.events = af.database.list('/events')
   }
 
-ngAfterViewInit() {
-//Parameters for Artists Carosusel
-  this.viewer.speed = 750;
-  this.viewer.pager = true;
-  this.viewer.slidesPerView = 3;
-//Parameters for Video Carousel
-  this.viewer1.speed = 750;
-  this.viewer1.pager = true;
-//Parameters for Events Carousel
-  this.viewer2.speed = 750;
-  this.viewer2.pager = true;
-  this.viewer2.slidesPerView = 2;
-}
+  ngAfterViewInit() {
+  //Parameters for Artists Carosusel
+    this.viewer.speed = 750;
+    this.viewer.pager = true;
+    this.viewer.slidesPerView = 3;
+  //Parameters for Video Carousel
+    this.viewer1.speed = 750;
+    this.viewer1.pager = true;
+  //Parameters for Events Carousel
+    this.viewer2.speed = 750;
+    this.viewer2.pager = true;
+    this.viewer2.slidesPerView = 2;
+  }
 
 //Present Sign Modal for RadioWRX User
   presentSignInModal() {
@@ -92,6 +95,14 @@ ngAfterViewInit() {
   ionViewDidLoad() {
     console.log('ionViewDidLoad RadioPage');
     //console.log(this.navParams.data);
+  }
+
+  logout(){
+    firebase.auth().signOut().then(function() {
+    // Sign-out successful.
+    }, function(error) {
+    // An error happened.
+    });
   }
 
 }

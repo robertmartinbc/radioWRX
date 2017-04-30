@@ -59,6 +59,8 @@ export class BandsViewBandsProfilePage {
 //FIX ME User queries to show data only for specific band ID
     /*firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
+        console.log('USER.UID:');
+        console.log(user.uid);
         this.albums = af.database.list('/albums', {query: {orderByChild : "userId", equalTo: user.uid}})
         this.members = af.database.list('/members', {query: {orderByChild : "userId", equalTo: user.uid}})
         this.videos = af.database.list('/videos', {query: {orderByChild : "userId", equalTo: user.uid}})
