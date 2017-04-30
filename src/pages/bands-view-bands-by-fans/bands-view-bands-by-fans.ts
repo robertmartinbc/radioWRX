@@ -3,12 +3,6 @@ import { NavController, NavParams } from 'ionic-angular';
 import { AngularFire } from 'angularfire2';
 import { EditBandsByFansDetailsPage } from '../edit-bands-by-fans-details/edit-bands-by-fans-details';
 
-/*
-  Generated class for the BandsViewBandsByFans page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-bands-view-bands-by-fans',
   templateUrl: 'bands-view-bands-by-fans.html'
@@ -16,12 +10,24 @@ import { EditBandsByFansDetailsPage } from '../edit-bands-by-fans-details/edit-b
 export class BandsViewBandsByFansPage {
 
   chosenCountry: string = this.navParams.get('chosenCountry');
+  chosenTown: string = this.navParams.get('chosenTown');
   ticketPrice: string = this.navParams.get('ticketPrice');
+  ticketsRequired: string = this.navParams.get('ticketsRequired');
+
+  public editChosenCountry: any;
+  public editChosenTown: any;
+  public editTicketPrice: any;
+  public editTicketsRequired: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {}
 
   goToEditBandsByFans() {
-    this.navCtrl.push(EditBandsByFansDetailsPage);
+    this.navCtrl.push(EditBandsByFansDetailsPage, {
+      editChosenCountry: this.chosenCountry,
+      editChosenTown: this.chosenTown,
+      editTicketPrice: this.ticketPrice,
+      editTicketsRequired: this.ticketsRequired
+    });
   }
 
   ionViewDidLoad() {

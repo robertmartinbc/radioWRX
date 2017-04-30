@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 /*
   Generated class for the EditBandsCDFundsDetails page.
@@ -12,8 +13,12 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'edit-bands-cd-funds-details.html'
 })
 export class EditBandsCDFundsDetailsPage {
+  cdfunds: FirebaseListObservable<any>
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  editTargetDate: string = this.navParams.get('editTargetDate');
+  editTargetAmount: string = this.navParams.get('editTargetAmount');
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EditBandsCDFundsDetailsPage');

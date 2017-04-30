@@ -6,6 +6,7 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
   selector: 'page-edit-bands-album-details',
   templateUrl: 'edit-bands-album-details.html'
 })
+
 export class EditBandsAlbumDetailsPage {
   albums: FirebaseListObservable<any>
 

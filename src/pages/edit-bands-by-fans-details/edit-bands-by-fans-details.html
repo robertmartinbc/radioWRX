@@ -38,11 +38,11 @@
           </ion-item>
           <ion-item>
             <ion-label stacked color="danger">Ticket Price</ion-label>
-            <ion-input placeholder="Example: $50"></ion-input>
+            <ion-input value="{{editTicketPrice}}" placeholder="Example: 50" clearInput></ion-input>
           </ion-item>
           <ion-item>
             <ion-label stacked color="danger">Tickets Required</ion-label>
-            <ion-input placeholder="Example: 50"></ion-input>
+            <ion-input value="{{editTicketsRequired}}" placeholder="Example: 50" clearInput></ion-input>
           </ion-item>
         </ion-list>
         <button ion-button block color="danger" outline (click)="submit()">Update Bands By Fans</button>

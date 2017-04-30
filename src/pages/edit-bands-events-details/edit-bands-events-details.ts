@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 /*
   Generated class for the EditBandsEventsDetails page.
@@ -12,8 +13,18 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'edit-bands-events-details.html'
 })
 export class EditBandsEventsDetailsPage {
+  events: FirebaseListObservable<any>
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  editEventTitle: string = this.navParams.get('editEventTitle');
+  editEventZip: string = this.navParams.get('editEventZip');
+  editEventTown: string = this.navParams.get('editEventTown');
+  editEventVenue: string = this.navParams.get('editEventVenue');
+  editEventAvailableTickets: string = this.navParams.get('editEventAvailableTickets');
+  editEventTicketPrice: string = this.navParams.get('editEventTicketPrice');
+  editEventStartDate: string = this.navParams.get('editEventStartDate');
+  editEventStartTime: string = this.navParams.get('editEventStartTime');
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EditBandsEventsDetailsPage');
