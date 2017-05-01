@@ -10,19 +10,26 @@
 <ion-content>
   <ion-grid class="standard-grid-padding maximum-grid-width">
     <ion-row class="header-style">
-      <ion-col col-1>
-        <ion-icon name="list" class="style-pause-button"></ion-icon>
+      <ion-col col-1 class="style-header-icons">
+        <ion-icon name="musical-note"></ion-icon>
       </ion-col>
       <ion-col col-10>
         <p class="header-text">My Songs</p>
       </ion-col>
       <ion-col col-1>
-        <ion-icon name="search" class="style-header-icons"></ion-icon>
       </ion-col>
     </ion-row>
     <ion-row class="style-placeholder">
       <ion-col col-12>
-        <p class="dummy-text">Songs Data will go here</p>
+        <ion-item *ngFor="let song of songs | async">
+          <ion-thumbnail item-left>
+            <img src="https://api.appery.io/rest/1/db/files/5518394be4b085114003daf6/7f241c97-d10f-4350-9e74-b5eb5e3709cb.thisdayburns.jpg">
+          </ion-thumbnail>
+          <p>{{song.songTitle}}</p>
+          <button ion-button clear item-right>
+            <ion-icon name="more" color="danger"></ion-icon>
+          </button>
+        </ion-item>
       </ion-col>
     </ion-row>
     <ion-row class="style-footer">
