@@ -34,46 +34,50 @@ export class RadioPage {
   members: FirebaseListObservable<any>
   videos: FirebaseListObservable<any>
   events: FirebaseListObservable<any>
-
-    //video
+  isLoggedIn: boolean = false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController,
-  public viewCtrl: ViewController, public af: AngularFire) {
-
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user){
-        var is_logged_in = true
-        console.log('YEAH, YOU ARE LOGGED IN');
-      }else{
-        var is_logged_in = false
-        console.log('HMMM, YOU RE LOGGED OUT');
-      }
-    });
-
+    public viewCtrl: ViewController, public af: AngularFire) {
     this.albums = af.database.list('/albums')
     this.members = af.database.list('/members')
     this.videos = af.database.list('/videos')
     this.events = af.database.list('/events')
+
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user)
+        this.isLoggedIn=true;
+      else
+        this.isLoggedIn=false;
+    });    
   }
 
   ngAfterViewInit() {
-  //Parameters for Artists Carosusel
+    //Parameters for Artists Carosusel
     this.viewer.speed = 750;
     this.viewer.pager = true;
     this.viewer.slidesPerView = 3;
-  //Parameters for Video Carousel
+
+    //Parameters for Video Carousel
     this.viewer1.speed = 750;
     this.viewer1.pager = true;
-  //Parameters for Events Carousel
+
+    //Parameters for Events Carousel
     this.viewer2.speed = 750;
     this.viewer2.pager = true;
     this.viewer2.slidesPerView = 2;
   }
 
-//Present Sign Modal for RadioWRX User
+  //Present Sign Modal for RadioWRX User
   presentSignInModal() {
+    var _self = this;
     let modal = this.modalCtrl.create(SignInModalPage);
     modal.present();
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user)
+        _self.isLoggedIn=true;
+      else
+        _self.isLoggedIn=false;
+    });
   }
 
   dismiss() {
@@ -81,13 +85,11 @@ export class RadioPage {
   }
 
   goToArtistView(item) {
-    console.log('sssss');
     console.log(item);
     this.navCtrl.push(FansViewBandsPortfolioPage, item);
   }
 
   goToEventView(item) {
-    console.log('sssss');
     console.log(item);
     this.navCtrl.push(FansViewBandsEventsPage, item);
   }
@@ -97,11 +99,13 @@ export class RadioPage {
     //console.log(this.navParams.data);
   }
 
-  logout(){
+  signOut(){
+    // FIXME: Consider when somewrong occur with signOut by firebase
+    this.isLoggedIn=false;
     firebase.auth().signOut().then(function() {
-    // Sign-out successful.
+      alert('Sign out success.');
     }, function(error) {
-    // An error happened.
+      alert('Error to sign out.');
     });
   }
 
