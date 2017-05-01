@@ -16,8 +16,8 @@
 <ion-content>
   <ion-grid class="standard-grid-padding maximum-grid-width">
     <ion-row class="header-style">
-      <ion-col col-1>
-        <ion-icon name="person" class="style-header-icons"></ion-icon>
+      <ion-col col-1 class="style-header-icons">
+        <ion-icon name="person"></ion-icon>
       </ion-col>
       <ion-col col-10>
         <p class="header-text">My Music</p>
@@ -30,7 +30,7 @@
         <ion-icon name="disc" class="style-account-menu-icon"></ion-icon>
       </ion-col>
       <ion-col col-8>
-        <button ion-button clear [navPush]="albumsPage">
+        <button ion-button clear (click)="goToMyAlbums()">
           <p class="account-menu-text">My Albums</p>
         </button>
       </ion-col>
@@ -56,7 +56,7 @@
         <ion-icon name="musical-note" class="style-account-menu-icon"></ion-icon>
       </ion-col>
       <ion-col col-8>
-        <button ion-button clear [navPush]="songsPage">
+        <button ion-button clear (click)="goToMySongs()">
           <p class="account-menu-text">My Songs</p>
         </button>
       </ion-col>

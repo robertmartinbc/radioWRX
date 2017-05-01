@@ -34,36 +34,36 @@
         <form>
           <ion-list>
             <ion-item>
-              <ion-label floating>Event Title</ion-label>
-              <ion-input type="text" clearInput></ion-input>
+              <ion-label stacked color="danger">Event Title</ion-label>
+              <ion-input type="text" value="{{editEventTitle}}" placeholder="Example: Retro Night" clearInput></ion-input>
             </ion-item>
             <ion-item>
-              <ion-label floating>Event Venue</ion-label>
-              <ion-input type="text" clearInput></ion-input>
+              <ion-label stacked color="danger">Event Venue</ion-label>
+              <ion-input type="text" value="{{editEventVenue}}" placeholder="Example: The Pig and Whistle" clearInput></ion-input>
             </ion-item>
             <ion-item>
-              <ion-label floating>Town</ion-label>
-              <ion-input type="text" clearInput></ion-input>
+              <ion-label stacked color="danger">Town</ion-label>
+              <ion-input type="text" value={{editEventTown}} placeholder="Example: Victoria" clearInput></ion-input>
             </ion-item>
             <ion-item>
-              <ion-label floating>Zip/Postal Code</ion-label>
-              <ion-input type="text" clearInput></ion-input>
+              <ion-label stacked color="danger">Zip/Postal Code</ion-label>
+              <ion-input type="text" value="{{editEventZip}}" placeholder="Example: V9B 7TS" clearInput></ion-input>
             </ion-item>
             <ion-item>
-              <ion-label floating>Available Tickets</ion-label>
-              <ion-input type="text" clearInput></ion-input>
+              <ion-label stacked color="danger">Available Tickets</ion-label>
+              <ion-input type="text" value="{{editEventAvailableTickets}}" placeholder="Example: 40" clearInput></ion-input>
             </ion-item>
             <ion-item>
-              <ion-label floating>Ticket Price</ion-label>
-              <ion-input type="text" clearInput></ion-input>
+              <ion-label stacked color="danger">Ticket Price</ion-label>
+              <ion-input type="text" value="{{editEventTicketPrice}}" placeholder="Example: 20" clearInput></ion-input>
             </ion-item>
             <ion-item>
-              <ion-label>Start Date</ion-label>
-              <ion-datetime displayFormat="MMM DD YYYY"></ion-datetime>
+              <ion-label stacked color="danger">Start Date</ion-label>
+              <ion-datetime placeholder="Choose Start Date" displayFormat="MMM DD YYYY"></ion-datetime>
             </ion-item>
             <ion-item>
-              <ion-label>Start Time</ion-label>
-              <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A"></ion-datetime>
+              <ion-label stacked color="danger">Start Time</ion-label>
+              <ion-datetime placeholder="Choose Start Time" displayFormat="h:mm A" pickerFormat="h mm A"></ion-datetime>
             </ion-item>
           </ion-list>
           <button ion-button block color="danger" outline>Update Event</button>

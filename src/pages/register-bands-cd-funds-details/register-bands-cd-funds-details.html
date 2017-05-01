@@ -20,12 +20,12 @@
       <ion-col col-12>
         <p>Select a date and target amount that you need to cut a new CD.</p>
           <ion-item>
-            <ion-label>Target Date</ion-label>
-              <ion-datetime displayFormat="MMM DD YYYY" min="2016" max="2020-10-31" [(ngModel)]="cdfunds.targetDate"></ion-datetime>
+            <ion-label color="primary" stacked>Target Date</ion-label>
+              <ion-datetime placeholder="Choose Target Date" displayFormat="MMM DD YYYY" min="2016" max="2020-10-31" [(ngModel)]="cdfunds.targetDate" clearInput></ion-datetime>
             </ion-item>
           <ion-item>
-            <ion-label stacked>Target</ion-label>
-            <ion-input placeholder="Example: 8000" [(ngModel)]="cdfunds.targetAmount"></ion-input>
+            <ion-label stacked color="primary">Target</ion-label>
+            <ion-input placeholder="Example: 8000" [(ngModel)]="cdfunds.targetAmount" clearInput></ion-input>
           </ion-item>
         <button ion-button block color="danger" outline (click)="submit()">Create CD Fund</button>
       </ion-col>

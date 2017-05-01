@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { AngularFire } from 'angularfire2';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { EditBandsMembersDetailsPage } from '../edit-bands-members-details/edit-bands-members-details';
 
 /*
@@ -16,14 +16,21 @@ import { EditBandsMembersDetailsPage } from '../edit-bands-members-details/edit-
 export class BandsViewBandsMembersPage {
 
 //This code makes sure the database members lists are visible in the Bands profile
+  members: FirebaseListObservable<any>
 
   memberName: string = this.navParams.get('memberName');
   memberBiography: string = this.navParams.get('memberBiography');
 
+  public editMemberName: any;
+  public editMemberBiography: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {}
 
   goToEditBandsMembers() {
-    this.navCtrl.push(EditBandsMembersDetailsPage);
+    this.navCtrl.push(EditBandsMembersDetailsPage, {
+      editMemberName: this.memberName,
+      editMemberBiography: this.memberBiography
+    });
   }
 
   ionViewDidLoad() {

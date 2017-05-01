@@ -18,10 +18,16 @@ export class BandsViewBandsCDFundsPage {
   targetDate: string = this.navParams.get('targetDate');
   targetAmount: string = this.navParams.get('targetAmount');
 
+  public editTargetDate: any;
+  public editTargetAmount: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {}
 
   goToEditBandsCDFunds() {
-    this.navCtrl.push(EditBandsCDFundsDetailsPage);
+    this.navCtrl.push(EditBandsCDFundsDetailsPage, {
+      editTargetDate: this.targetDate,
+      editTargetAmount: this.targetAmount
+    });
   }
 
   ionViewDidLoad() {

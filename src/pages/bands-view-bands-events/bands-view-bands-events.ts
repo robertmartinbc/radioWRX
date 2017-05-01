@@ -24,10 +24,28 @@ export class BandsViewBandsEventsPage {
   eventStartDate: string = this.navParams.get('eventStartDate');
   eventStartTime: string = this.navParams.get('eventStartTime');
 
+  public editEventTitle: any;
+  public editEventVenue: any;
+  public editEventTown: any;
+  public editEventZip: any;
+  public editEventAvailableTickets: any;
+  public editEventTicketPrice: any;
+  public editEventStartDate: any;
+  public editEventStartTime: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {}
 
   goToEditBandsEvent() {
-    this.navCtrl.push(EditBandsEventsDetailsPage);
+    this.navCtrl.push(EditBandsEventsDetailsPage, {
+      editEventTitle: this.eventTitle,
+      editEventVenue: this.eventVenue,
+      editEventTown: this.eventTown,
+      editEventZip: this.eventZip,
+      editEventAvailableTickets: this.eventAvailableTickets,
+      editEventTicketPrice: this.eventTicketPrice,
+      editEventStartDate: this.eventStartDate,
+      editEventStartTime: this.eventStartTime
+    });
   }
 
   ionViewDidLoad() {

@@ -534,3 +534,21 @@ p {
   margin: 0 !important;
   border-top: 1px solid #ccc;
 }
+
+.style-shuffle-row {
+  border-top: 1px solid #ccc;
+  padding: 5px;
+}
+
+.style-shuffle-text {
+  float: right;
+  color: red;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.style-shuffle-icon {
+  color: red;
+  font-size: 20px;
+  cursor: pointer;
+}

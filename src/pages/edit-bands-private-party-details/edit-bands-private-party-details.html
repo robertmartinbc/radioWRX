@@ -21,12 +21,12 @@
       <ion-col col-12>
         <p>Provide a ZIP code and party fee to advise customers where you will play and how much.</p>
           <ion-item>
-            <ion-label stacked>Location</ion-label>
-            <ion-input placeholder="V8N2N1"></ion-input>
+            <ion-label stacked color="danger">Location</ion-label>
+            <ion-input value="{{editLocation}}" placeholder="Example V9B 7TS" clearInput></ion-input>
             </ion-item>
           <ion-item>
-            <ion-label stacked>Fee</ion-label>
-            <ion-input placeholder="Example: 400"></ion-input>
+            <ion-label stacked color="danger">Fee</ion-label>
+            <ion-input value="{{editFee}}" placeholder="Example: 400" clearInput></ion-input>
           </ion-item>
         <button ion-button block color="danger" outline (click)="submit()">Edit Private Party</button>
       </ion-col>

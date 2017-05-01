@@ -68,14 +68,17 @@ import { EditBandsByFansDetailsPage } from '../pages/edit-bands-by-fans-details/
 import { EditBandsCDFundsDetailsPage } from '../pages/edit-bands-cd-funds-details/edit-bands-cd-funds-details';
 import { EditBandsPrivatePartyDetailsPage } from '../pages/edit-bands-private-party-details/edit-bands-private-party-details';
 import { BandsViewAlbumPage } from '../pages/bands-view-album/bands-view-album';
+import { ViewMyAlbum } from '../pages/view-my-album/view-my-album';
 
 import { Data } from '../providers/data';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
+import { IonicAudioModule } from 'ionic-audio';
 
 import { AngularFireModule } from 'angularfire2';
 import { AuthService } from '../services/auth';
+import { BrowserModule } from '@angular/platform-browser';
 
 // Initialize Firebase database for RadioWRX
 const configRadioWRX = {
@@ -172,11 +175,14 @@ const cloudSettings: CloudSettings = {
     BandsViewAlbumPage,
     RegisterBandsByFansDetailsPage,
     RegisterBandsCDFundsDetailsPage,
-    RegisterBandsPrivatePartyDetailsPage
+    RegisterBandsPrivatePartyDetailsPage,
+    ViewMyAlbum
   ],
   imports: [
+    BrowserModule,
     IonicModule.forRoot(MyApp),
     CloudModule.forRoot(cloudSettings),
+    IonicAudioModule.forRoot(),
     AngularFireModule.initializeApp(configRadioWRX)
     //AngularFireModule.initializeApp(configMobileWRX),
   ],
@@ -248,7 +254,8 @@ const cloudSettings: CloudSettings = {
     BandsViewAlbumPage,
     RegisterBandsByFansDetailsPage,
     RegisterBandsCDFundsDetailsPage,
-    RegisterBandsPrivatePartyDetailsPage
+    RegisterBandsPrivatePartyDetailsPage,
+    ViewMyAlbum
   ],
   providers: [
     StatusBar,

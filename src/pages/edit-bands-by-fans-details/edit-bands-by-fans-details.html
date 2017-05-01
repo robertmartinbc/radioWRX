@@ -21,7 +21,7 @@
       <ion-col col-12>
         <ion-list>
           <ion-item>
-            <ion-label>Select Country</ion-label>
+            <ion-label color="danger">Select Country</ion-label>
             <ion-select multiple="true">
               <ion-option value="canada">Canada</ion-option>
               <ion-option value="usa">USA</ion-option>
@@ -29,7 +29,7 @@
             </ion-select>
           </ion-item>
           <ion-item>
-            <ion-label>Select Town</ion-label>
+            <ion-label color="danger">Select Town</ion-label>
             <ion-select multiple="true">
               <ion-option value="victoria">Victoria</ion-option>
               <ion-option value="la">Los Angeles</ion-option>
@@ -37,12 +37,12 @@
             </ion-select>
           </ion-item>
           <ion-item>
-            <ion-label stacked>Ticket Price</ion-label>
-            <ion-input placeholder="Example: $50"></ion-input>
+            <ion-label stacked color="danger">Ticket Price</ion-label>
+            <ion-input value="{{editTicketPrice}}" placeholder="Example: 50" clearInput></ion-input>
           </ion-item>
           <ion-item>
-            <ion-label stacked>Tickets Required</ion-label>
-            <ion-input placeholder="Example: 50"></ion-input>
+            <ion-label stacked color="danger">Tickets Required</ion-label>
+            <ion-input value="{{editTicketsRequired}}" placeholder="Example: 50" clearInput></ion-input>
           </ion-item>
         </ion-list>
         <button ion-button block color="danger" outline (click)="submit()">Update Bands By Fans</button>

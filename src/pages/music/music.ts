@@ -23,6 +23,14 @@ export class MusicPage {
   songsPage = MySongsPage;
   playlistsPage = MyPlaylistsPage;
 
+  goToMyAlbums() {
+    this.navCtrl.push(MyAlbumsPage);
+  }
+
+  goToMySongs() {
+    this.navCtrl.push(MySongsPage);
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad MusicPage');
   }

@@ -43,6 +43,7 @@ export class BandsViewBandsProfilePage {
   bandsbyfans: FirebaseListObservable<any>
   cdfunds: FirebaseListObservable<any>
   privateparty: FirebaseListObservable<any>
+  songs: FirebaseListObservable<any>
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire,
@@ -55,6 +56,7 @@ export class BandsViewBandsProfilePage {
     this.bandsbyfans = af.database.list('/bandsbyfans')
     this.cdfunds = af.database.list('/cdfunds')
     this.privateparty = af.database.list('/privateparty')
+    this.songs = af.database.list('/songs')
 
 //FIX ME User queries to show data only for specific band ID
     /*firebase.auth().onAuthStateChanged(function(user) {
