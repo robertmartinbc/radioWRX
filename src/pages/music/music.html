@@ -30,7 +30,7 @@
         <ion-icon name="disc" class="style-account-menu-icon"></ion-icon>
       </ion-col>
       <ion-col col-8>
-        <button ion-button clear [navPush]="albumsPage">
+        <button ion-button clear (click)="goToMyAlbums()">
           <p class="account-menu-text">My Albums</p>
         </button>
       </ion-col>
