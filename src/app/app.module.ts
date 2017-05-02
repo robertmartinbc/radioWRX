@@ -69,6 +69,7 @@ import { EditBandsCDFundsDetailsPage } from '../pages/edit-bands-cd-funds-detail
 import { EditBandsPrivatePartyDetailsPage } from '../pages/edit-bands-private-party-details/edit-bands-private-party-details';
 import { BandsViewAlbumPage } from '../pages/bands-view-album/bands-view-album';
 import { ViewMyAlbum } from '../pages/view-my-album/view-my-album';
+import { ViewMyArtist } from '../pages/view-my-artist/view-my-artist';
 
 import { Data } from '../providers/data';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -176,7 +177,8 @@ const cloudSettings: CloudSettings = {
     RegisterBandsByFansDetailsPage,
     RegisterBandsCDFundsDetailsPage,
     RegisterBandsPrivatePartyDetailsPage,
-    ViewMyAlbum
+    ViewMyAlbum,
+    ViewMyArtist
   ],
   imports: [
     BrowserModule,
@@ -255,7 +257,8 @@ const cloudSettings: CloudSettings = {
     RegisterBandsByFansDetailsPage,
     RegisterBandsCDFundsDetailsPage,
     RegisterBandsPrivatePartyDetailsPage,
-    ViewMyAlbum
+    ViewMyAlbum,
+    ViewMyArtist
   ],
   providers: [
     StatusBar,

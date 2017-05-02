@@ -27,8 +27,16 @@ export class MusicPage {
     this.navCtrl.push(MyAlbumsPage);
   }
 
+  goToMyArtists() {
+    this.navCtrl.push(MyArtistsPage);
+  }
+
   goToMySongs() {
     this.navCtrl.push(MySongsPage);
+  }
+
+  goToMyPlaylists() {
+    this.navCtrl.push(MyPlaylistsPage);
   }
 
   ionViewDidLoad() {

@@ -7,12 +7,75 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>myTickets</ion-title>
+    <ion-title>My Tickets</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+  <ion-grid class="standard-grid-padding maximum-grid-width">
+    <ion-row class="header-style">
+      <ion-col col-1 class="style-header-icons">
+        <ion-icon name="list"></ion-icon>
+      </ion-col>
+      <ion-col col-10>
+        <p class="header-text">My Tickets</p>
+      </ion-col>
+      <ion-col col-1>
+      </ion-col>
+    </ion-row>
+    <ion-row class="style-placeholder">
+      <ion-col col-12>
+        <div>
+          <ion-segment color="danger" [(ngModel)]="tickets">
+            <ion-segment-button value="present">
+              Present
+            </ion-segment-button>
+            <ion-segment-button value="past">
+              Past
+            </ion-segment-button>
+            <ion-segment-button value="canceled">
+              Canceled
+            </ion-segment-button>
+          </ion-segment>
+        </div>
+        <div [ngSwitch]="tickets">
+          <ion-list *ngSwitchCase="'present'">
+            <ion-item>
+              <ion-thumbnail item-left>
+                <img src="img/thumbnail-puppy-1.jpg">
+              </ion-thumbnail>
+              <p>Hello</p>
+            </ion-item>
+            ...
+          </ion-list>
 
+          <ion-list *ngSwitchCase="'past'">
+            <ion-item>
+              <ion-thumbnail item-left>
+                <img src="img/thumbnail-kitten-1.jpg">
+              </ion-thumbnail>
+              <p>Help</p>
+            </ion-item>
+            ...
+          </ion-list>
+
+          <ion-list *ngSwitchCase="'canceled'">
+            <ion-item>
+              <ion-thumbnail item-left>
+                <img src="img/thumbnail-kitten-1.jpg">
+              </ion-thumbnail>
+              <p>Hallo</p>
+            </ion-item>
+            ...
+          </ion-list>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="style-footer">
+      <ion-col col-12>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

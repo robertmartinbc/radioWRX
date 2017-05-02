@@ -43,7 +43,7 @@
         <ion-icon name="people" class="style-account-menu-icon"></ion-icon>
       </ion-col>
       <ion-col col-8>
-        <button ion-button clear [navPush]="artistsPage">
+        <button ion-button clear (click)="goToMyArtists()">
           <p class="account-menu-text">My Artists</p>
         </button>
       </ion-col>
@@ -69,7 +69,7 @@
         <ion-icon name="list" class="style-account-menu-icon"></ion-icon>
       </ion-col>
       <ion-col col-8>
-        <button ion-button clear [navPush]="playlistsPage">
+        <button ion-button clear (click)="goToMyPlaylists()">
           <p class="account-menu-text">My Playlists</p>
         </button>
       </ion-col>

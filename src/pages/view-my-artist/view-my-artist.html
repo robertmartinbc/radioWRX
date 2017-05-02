@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>My Artists</ion-title>
+    <ion-title>View Artist</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -21,7 +21,7 @@
     </ion-row>
     <ion-row class="style-placeholder">
       <ion-col col-12>
-        <ion-item *ngFor="let artist of albums | async" (click)="goToViewMyArtist(artist)">
+        <ion-item *ngFor="let artist of albums | async" (click)="goToViewMyAlbum(artist)">
           <ion-thumbnail item-left>
             <img src="https://api.appery.io/rest/1/db/files/5518394be4b085114003daf6/7f241c97-d10f-4350-9e74-b5eb5e3709cb.thisdayburns.jpg">
           </ion-thumbnail>
