@@ -20,3 +20,7 @@ $ ionic build android
 # TODO
 
 * Show RootPage for users and BandsViewBandsProfilePage to a Band user (src/pages/tabs/tabs.ts)
+
+# Tools
+
+[Ionic-audio](https://arielfaur.github.io/ionic-audio/2.0/index.html)
