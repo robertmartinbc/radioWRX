@@ -9,7 +9,7 @@
 </ion-header>
 
 <!-- Create Placeholder for Song Image, Band Name and Current Song Playing -->
-<ion-content>
+<ion-content class="test-content-shits">
   <ion-grid class="standard-grid-padding maximum-grid-width">
     <ion-row class="header-style">
       <ion-col col-1>
@@ -17,12 +17,12 @@
       <ion-col col-10>
         <p class="header-text">This Day Burns</p>
       </ion-col>
-      <ion-col col-1>
-        <ion-icon name="pause" class="style-pause-button"></ion-icon>
-        <ion-icon name="play" class="style-play-button hide-shit"></ion-icon>
+      <ion-col col-1 class="style-header-icons">
+        <ion-icon name="pause"></ion-icon>
+        <ion-icon name="play" class="hide-shit"></ion-icon>
       </ion-col>
     </ion-row>
-    <ion-row class="style-placeholder">
+    <ion-row class="style-placeholder test-shits">
       <ion-col col-12>
         <img src="https://api.appery.io/rest/1/db/files/5518394be4b085114003daf6/7f241c97-d10f-4350-9e74-b5eb5e3709cb.thisdayburns.jpg" class="style-radio-image">
       </ion-col>
@@ -46,7 +46,7 @@
         <p class="style-nav-text">See All</p>
       </ion-col>
     </ion-row>
-    <ion-row class="style-placeholder test-shits">
+    <ion-row class="style-placeholder test-shits remove-padding">
       <ion-col col-12>
         <ion-slides #picSlider (ionSlideDideChange)="onSlideMoved()">
           <ion-slide *ngFor="let slide of albums | async" (click)="goToArtistView(slide)" class="carousel-individual-slide">
@@ -90,7 +90,7 @@
         <p class="style-nav-text">See All</p>
       </ion-col>
     </ion-row>
-    <ion-row class="style-placeholder">
+    <ion-row class="style-placeholder test-shits">
       <ion-col col-12>
         <ion-slides #videoSlider (ionSlideDidChange)="onSlideMoved()">
           <ion-slide *ngFor="let video of videos | async" class="carousel-individual-slide">
@@ -122,7 +122,7 @@
         <p class="style-nav-text" [navPush]="viewAllTrendingEvents">See All</p>
       </ion-col>
     </ion-row>
-    <ion-row class="style-placeholder">
+    <ion-row class="style-placeholder test-shits">
       <ion-col col-12>
         <ion-slides #eventSlider (ionSlideDidChange)="onSlideMoved()">
           <ion-slide *ngFor="let event of events | async" (click)="goToEventView(event)" class="carousel-individual-slide">
