@@ -40,15 +40,49 @@
             </ion-segment-button>
           </ion-segment>
         </div>
+        <br>
         <div [ngSwitch]="tickets">
           <ion-list *ngSwitchCase="'present'">
-            <ion-item>
+            <!--<ion-item>
               <ion-thumbnail item-left>
                 <img src="img/thumbnail-puppy-1.jpg">
               </ion-thumbnail>
               <p>Hello</p>
-            </ion-item>
-            ...
+            </ion-item>-->
+            <ion-row *ngFor="let event of events | async" (click)="goToViewEvent()">
+              <ion-col col-12>
+              <ion-row class="inner-header-style remove-padding">
+                <ion-col col-1 class="style-header-icons">
+                  <ion-icon name="film"></ion-icon>
+                </ion-col>
+                <ion-col col-10>
+                  <p class="header-text">{{event.eventTitle}}</p>
+                </ion-col>
+                <ion-col col-1>
+                </ion-col>
+              </ion-row>
+              <ion-row class="style-placeholder">
+                <ion-col col-3>
+                  <img src="https://api.appery.io/rest/1/db/files/5518394be4b085114003daf6/7f241c97-d10f-4350-9e74-b5eb5e3709cb.thisdayburns.jpg" class="style-radio-image">
+                </ion-col>
+                <ion-col col-6>
+                  <!--<p>Present Tickets</p>-->
+                  <p class="ticket-text ellipsis-text">{{event.eventVenue}}</p>
+                  <p class="ticket-text ellipsis-text">{{event.eventTown}}</p>
+                  <p class="ticket-text ellipsis-text">{{event.eventZip}}</p>
+                  <p class="ticket-text ellipsis-text">{{event.eventStartDate}}</p>
+                  <p class="ticket-text ellipsis-text">{{event.eventStartTime}}</p>
+                </ion-col>
+                <ion-col col-3>
+                  <ion-icon name="arrow-forward" class="style-account-menu-nav-icon"></ion-icon>
+                </ion-col>
+              </ion-row>
+              <ion-row class="style-footer">
+                <ion-col col-12>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            </ion-row>
           </ion-list>
 
           <ion-list *ngSwitchCase="'past'">
@@ -58,6 +92,16 @@
               </ion-thumbnail>
               <p>Help</p>
             </ion-item>
+            <ion-row *ngFor="let event of events | async">
+              <ion-col col-3>
+                <img src="https://api.appery.io/rest/1/db/files/5518394be4b085114003daf6/7f241c97-d10f-4350-9e74-b5eb5e3709cb.thisdayburns.jpg" class="style-radio-image">
+              </ion-col>
+              <ion-col col-6>
+                <p>Past Tickets</p>
+                <p class="ticket-text ellipsis-text">{{event.eventTitle}}</p>
+                <p class="ticket-text ellipsis-text">{{event.eventVenue}}</p>
+              </ion-col>
+            </ion-row>
             ...
           </ion-list>
 
