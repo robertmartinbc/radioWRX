@@ -42,12 +42,12 @@
     </ion-row>
     <ion-row *ngFor="let song of songs | async" class="style-songs-list style-placeholder">
       <ion-col col-1>
-        <button ion-button clear small>
+        <button ion-button clear small color="danger">
           {{ song.songNumber }}.
         </button>
       </ion-col>
       <ion-col col-10>
-        <button ion-button clear small class="remove-padding">
+        <button ion-button clear small class="remove-padding" color="danger">
           {{ song.songTitle }}
         </button>
       </ion-col>

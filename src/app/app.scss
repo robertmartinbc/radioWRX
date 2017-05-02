@@ -42,6 +42,7 @@ p {
   background-color: #000000;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
+  border: 1px solid #000000;
   margin: 0;
 }
 
@@ -61,7 +62,7 @@ p {
 
 //Style footer for placeholders
 .style-footer {
-  background-color: #000000;
+  background-color: #ffffff;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
   border-left: 1px solid #000000;
@@ -75,7 +76,7 @@ p {
 //Style footer text
 .footer-text {
   font-size: 14px;
-  color: #ffffff;
+  color: #000000;
   text-align: center;
   margin: 0
 }
@@ -143,7 +144,7 @@ p {
   font-size: 8px;
   text-align: center;
   cursor: pointer;
-  color: #000000;
+  color: #f53d3d;
   font-weight: bold;
   border: 1px solid #ffffff;
   padding: 5px;
@@ -337,8 +338,8 @@ p {
 //Style Service Header text
 .service-header-text {
   padding: 5px;
-  background-color: #ffffff;
-  color: #000000;
+  background-color: #000000;
+  color: #ffffff;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
   text-align: center;
@@ -349,20 +350,20 @@ p {
 //Style Bands Services Icon
 .style-service-icon {
   text-align: center;
-  color: #AC97F0;
+  color: #f53d3d;
   padding: 10px;
 }
 
 //Style bands services counter
 .style-service-counter {
   text-align: center;
-  color: #AC97F0;
+  color: #f53d3d;
   font-size: 18px;
   margin: 0;
   padding-bottom: 5px;
-  border-left: 1px solid #AC97F0;
-  border-right: 1px solid #AC97F0;
-  border-bottom: 1px solid #AC97F0;
+  border-left: 1px solid #000000;
+  border-right: 1px solid #000000;
+  border-bottom: 1px solid #000000;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
 }
@@ -508,7 +509,6 @@ p {
 
 .carousel-text {
   font-size: 8px !important;
-  opacity: 0.8;
 }
 
 .video-carousel-text {
@@ -523,7 +523,7 @@ p {
 
 .carousel-individual-slide {
   border-radius: 6px;
-  border: 1px solid #ffffff;
+  border: 1px solid #000000;
   padding: 1px;
   margin-right: 5px;
   background-color: #ffffff;
@@ -558,7 +558,7 @@ p {
 }
 
 .test-shits {
-  background-color: #000000;
+  background-color: #ffffff;
 }
 
 .test-content-shits {
