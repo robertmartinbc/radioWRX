@@ -23,13 +23,12 @@ export class BandsSignUpModalPage {
   public fireAuth: any;
   public email: string;
   public password: string;
-  public kind: string;
   public profiles: FirebaseListObservable<any>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-  public viewCtrl: ViewController, public modalCtrl: ModalController,
-  public af: AngularFire, private loadingCtrl: LoadingController,
-  private alertCtrl: AlertController, public authService: AuthService) {
+    public viewCtrl: ViewController, public modalCtrl: ModalController,
+    public af: AngularFire, private loadingCtrl: LoadingController,
+    private alertCtrl: AlertController, public authService: AuthService) {
     this.fireAuth = firebase.auth();
   }
 
@@ -87,7 +86,7 @@ export class BandsSignUpModalPage {
     this.viewCtrl.dismiss();
   }
 
-//Present Modal for Bands Sign In
+  //Present Modal for Bands Sign In
   presentBandsSignInModal1() {
     this.viewCtrl.dismiss();
     let modal = this.modalCtrl.create(BandsSignInModalPage);

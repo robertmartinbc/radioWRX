@@ -54,24 +54,18 @@ export class RadioPage {
       preload: 'metadata' // tell the plugin to preload metadata such as duration for this track,  set to 'none' to turn off
     }];
 
+    var _self = this;
     firebase.auth().onAuthStateChanged(function(user) {
       if (user)
-        var is_logged_in = true
+        _self.isLoggedIn=true;
       else
-        var is_logged_in = false
+        _self.isLoggedIn=false;
     });
 
     this.albums = af.database.list('/albums')
     this.members = af.database.list('/members')
     this.videos = af.database.list('/videos')
     this.events = af.database.list('/events')
-
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user)
-        this.isLoggedIn=true;
-      else
-        this.isLoggedIn=false;
-    });    
   }
 
   ngAfterViewInit() {
