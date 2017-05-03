@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
-import { ViewMyEvent} from '../view-my-event/view-my-event';
+import { ViewMyUpcomingEvent} from '../view-my-upcoming-event/view-my-upcoming-event';
+import { ViewMyAttendedEvent} from '../view-my-attended-event/view-my-attended-event';
+import { ViewMyCanceledEvent} from '../view-my-canceled-event/view-my-canceled-event';
 
 @Component({
   selector: 'page-my-tickets',
@@ -19,7 +21,7 @@ export class MyTicketsPage {
   eventStartDate = this.navParams.get('eventStartDate');
   eventStartTime = this.navParams.get('eventStartTime');
 
-  tickets: string = "present";
+  tickets: string = "upcoming";
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {
 
@@ -27,8 +29,16 @@ export class MyTicketsPage {
 
   }
 
-  goToViewEvent(item) {
-    this.navCtrl.push(ViewMyEvent, item);
+  goToViewUpcomingEvent(item) {
+    this.navCtrl.push(ViewMyUpcomingEvent, item);
+  }
+
+  goToViewAttendedEvent(item) {
+    this.navCtrl.push(ViewMyAttendedEvent, item);
+  }
+
+  goToViewCanceledEvent(item) {
+    this.navCtrl.push(ViewMyCanceledEvent, item);
   }
 
   ionViewDidLoad() {

@@ -28,7 +28,6 @@ import { FansViewBandsEventsPage } from '../pages/fans-view-bands-events/fans-vi
 import { FansViewTicketsPage } from '../pages/fans-view-tickets/fans-view-tickets';
 import { FansViewBandsAlbumPage } from '../pages/fans-view-bands-album/fans-view-bands-album';
 import { ViewMyAttendedTicketsPage } from '../pages/view-my-attended-tickets/view-my-attended-tickets';
-import { ViewMyCanceledTicketsPage } from '../pages/view-my-canceled-tickets/view-my-canceled-tickets';
 import { ViewMyPastBandsByFansPage } from '../pages/view-my-past-bands-by-fans/view-my-past-bands-by-fans';
 import { ViewMyPastCDFundsPage } from '../pages/view-my-past-cd-funds/view-my-past-cd-funds';
 import { ViewMyPastPrivatePartyPage } from '../pages/view-my-past-private-party/view-my-past-private-party';
@@ -70,7 +69,9 @@ import { EditBandsPrivatePartyDetailsPage } from '../pages/edit-bands-private-pa
 import { BandsViewAlbumPage } from '../pages/bands-view-album/bands-view-album';
 import { ViewMyAlbum } from '../pages/view-my-album/view-my-album';
 import { ViewMyArtist } from '../pages/view-my-artist/view-my-artist';
-import { ViewMyEvent } from '../pages/view-my-event/view-my-event';
+import { ViewMyUpcomingEvent } from '../pages/view-my-upcoming-event/view-my-upcoming-event';
+import { ViewMyAttendedEvent } from '../pages/view-my-attended-event/view-my-attended-event';
+import { ViewMyCanceledEvent } from '../pages/view-my-canceled-event/view-my-canceled-event';
 
 import { Data } from '../providers/data';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -138,7 +139,6 @@ const cloudSettings: CloudSettings = {
     FansViewTicketsPage,
     FansViewBandsAlbumPage,
     ViewMyAttendedTicketsPage,
-    ViewMyCanceledTicketsPage,
     ViewMyPastBandsByFansPage,
     ViewMyPastCDFundsPage,
     ViewMyPastPrivatePartyPage,
@@ -180,7 +180,10 @@ const cloudSettings: CloudSettings = {
     RegisterBandsPrivatePartyDetailsPage,
     ViewMyAlbum,
     ViewMyArtist,
-    ViewMyEvent
+    ViewMyUpcomingEvent,
+    ViewMyAttendedEvent,
+    ViewMyCanceledEvent
+
   ],
   imports: [
     BrowserModule,
@@ -219,7 +222,6 @@ const cloudSettings: CloudSettings = {
     FansViewTicketsPage,
     FansViewBandsAlbumPage,
     ViewMyAttendedTicketsPage,
-    ViewMyCanceledTicketsPage,
     ViewMyPastBandsByFansPage,
     ViewMyPastCDFundsPage,
     ViewMyPastPrivatePartyPage,
@@ -261,7 +263,9 @@ const cloudSettings: CloudSettings = {
     RegisterBandsPrivatePartyDetailsPage,
     ViewMyAlbum,
     ViewMyArtist,
-    ViewMyEvent
+    ViewMyUpcomingEvent,
+    ViewMyAttendedEvent,
+    ViewMyCanceledEvent
   ],
   providers: [
     StatusBar,

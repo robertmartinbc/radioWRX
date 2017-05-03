@@ -2,23 +2,23 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the ViewMyEvent page.
+ * Generated class for the ViewMyUpcomingEvent page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
 @IonicPage()
 @Component({
-  selector: 'page-view-my-event',
-  templateUrl: 'view-my-event.html',
+  selector: 'page-view-my-upcoming-event',
+  templateUrl: 'view-my-upcoming-event.html',
 })
-export class ViewMyEvent {
+export class ViewMyUpcomingEvent {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ViewMyEvent');
+    console.log('ionViewDidLoad ViewMyUpcomingEvent');
   }
 
 }

@@ -1,18 +1,129 @@
-<!--
-  Generated template for the MyCDFunds page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
-    <ion-title>myCDFunds</ion-title>
+    <ion-title>My CD Funds</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+  <ion-grid class="standard-grid-padding maximum-grid-width">
+    <ion-row class="header-style">
+      <ion-col col-1 class="style-header-icons">
+        <ion-icon name="disc"></ion-icon>
+      </ion-col>
+      <ion-col col-10>
+        <p class="header-text">My CD Funds</p>
+      </ion-col>
+      <ion-col col-1>
+      </ion-col>
+    </ion-row>
+    <ion-row class="style-placeholder">
+      <ion-col col-12>
+        <div>
+          <ion-segment color="danger" [(ngModel)]="cdfunds">
+            <ion-segment-button value="present">
+              Present
+            </ion-segment-button>
+            <ion-segment-button value="past">
+              Past
+            </ion-segment-button>
+          </ion-segment>
+        </div>
+        <br>
+        <div [ngSwitch]="cdfunds">
+          <ion-list *ngSwitchCase="'present'">
+            <!--<ion-item>
+              <ion-thumbnail item-left>
+                <img src="img/thumbnail-puppy-1.jpg">
+              </ion-thumbnail>
+              <p>Hello</p>
+            </ion-item>-->
+            <ion-row *ngFor="let event of events | async" (click)="goToViewPresentCDFunds(event)">
+              <ion-col col-12>
+                <ion-row class="inner-header-style remove-padding">
+                  <ion-col col-1 class="style-header-icons">
+                    <ion-icon name="disc"></ion-icon>
+                  </ion-col>
+                  <ion-col col-10>
+                    <p class="header-text">{{event.eventTitle}}</p>
+                  </ion-col>
+                  <ion-col col-1>
+                  </ion-col>
+                </ion-row>
+                <ion-row class="style-placeholder">
+                  <ion-col col-3>
+                    <img src="https://api.appery.io/rest/1/db/files/5518394be4b085114003daf6/7f241c97-d10f-4350-9e74-b5eb5e3709cb.thisdayburns.jpg" class="style-radio-image">
+                  </ion-col>
+                  <ion-col col-6>
+                    <p class="ticket-text ellipsis-text">Upcoming Tickets</p>
+                    <p class="ticket-text ellipsis-text">{{event.eventVenue}}</p>
+                    <p class="ticket-text ellipsis-text">{{event.eventTown}}</p>
+                    <p class="ticket-text ellipsis-text">{{event.eventZip}}</p>
+                    <p class="ticket-text ellipsis-text">{{event.eventStartDate}}</p>
+                    <p class="ticket-text ellipsis-text">{{event.eventStartTime}}</p>
+                  </ion-col>
+                  <ion-col col-3>
+                    <ion-icon name="arrow-forward" class="style-account-menu-nav-icon"></ion-icon>
+                  </ion-col>
+                </ion-row>
+                <ion-row class="style-footer">
+                  <ion-col col-12>
+                  </ion-col>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </ion-list>
 
+          <ion-list *ngSwitchCase="'past'">
+            <!--<ion-item>
+              <ion-thumbnail item-left>
+                <img src="img/thumbnail-kitten-1.jpg">
+              </ion-thumbnail>
+              <p>Help</p>
+            </ion-item>-->
+            <ion-row *ngFor="let event of events | async" (click)="goToViewPastCDFunds(event)">
+              <ion-col col-12>
+              <ion-row class="inner-header-style remove-padding">
+                <ion-col col-1 class="style-header-icons">
+                  <ion-icon name="disc"></ion-icon>
+                </ion-col>
+                <ion-col col-10>
+                  <p class="header-text">{{event.eventTitle}}</p>
+                </ion-col>
+                <ion-col col-1>
+                </ion-col>
+              </ion-row>
+              <ion-row class="style-placeholder">
+                <ion-col col-3>
+                  <img src="https://api.appery.io/rest/1/db/files/5518394be4b085114003daf6/7f241c97-d10f-4350-9e74-b5eb5e3709cb.thisdayburns.jpg" class="style-radio-image">
+                </ion-col>
+                <ion-col col-6>
+                  <p class="ticket-text ellipsis-text">Attended Tickets</p>
+                  <p class="ticket-text ellipsis-text">{{event.eventVenue}}</p>
+                  <p class="ticket-text ellipsis-text">{{event.eventTown}}</p>
+                  <p class="ticket-text ellipsis-text">{{event.eventZip}}</p>
+                  <p class="ticket-text ellipsis-text">{{event.eventStartDate}}</p>
+                  <p class="ticket-text ellipsis-text">{{event.eventStartTime}}</p>
+                </ion-col>
+                <ion-col col-3>
+                  <ion-icon name="arrow-forward" class="style-account-menu-nav-icon"></ion-icon>
+                </ion-col>
+              </ion-row>
+              <ion-row class="style-footer">
+                <ion-col col-12>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            </ion-row>
+          </ion-list>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="style-footer">
+      <ion-col col-12>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
