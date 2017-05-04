@@ -16,21 +16,17 @@ import { ViewMyPresentCDFundsPage } from '../view-my-present-cd-funds/view-my-pr
 })
 export class MyCDFundsPage {
 
-  events: FirebaseListObservable<any>
+  cdfunds: FirebaseListObservable<any>
 
-  eventTitle = this.navParams.get('eventTitle');
-  eventVenue = this.navParams.get('eventVenue');
-  eventAvailableTickets = this.navParams.get('eventAvailableTickets');
-  eventTown = this.navParams.get('eventTown');
-  eventZip = this.navParams.get('eventZip');
-  eventStartDate = this.navParams.get('eventStartDate');
-  eventStartTime = this.navParams.get('eventStartTime');
+  targetAmount = this.navParams.get('targetAmount');
+  targetDate = this.navParams.get('targetDate');
 
-  cdfunds: string = "present";
+
+  cdFunds: string = "present";
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {
 
-  this.events = af.database.list('/events')
+  this.cdfunds = af.database.list('/cdfunds')
 
   }
 

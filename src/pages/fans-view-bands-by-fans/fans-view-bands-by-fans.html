@@ -37,7 +37,7 @@
           <ion-list class="remove-margin">
             <ion-item>
               <ion-label class="select-text">Select Country</ion-label>
-              <ion-select [(ngModel)]="countries" multiple="true">
+              <ion-select [(ngModel)]="purchasebandsbyfans.fundedCountry" multiple="true">
                 <ion-option value="canada">Canada</ion-option>
                 <ion-option value="usa">USA</ion-option>
                 <ion-option value="uk">UK</ion-option>
@@ -56,7 +56,7 @@
           <ion-list class="remove-margin">
             <ion-item>
               <ion-label class="select-text">Select Town</ion-label>
-              <ion-select [(ngModel)]="towns" multiple="true">
+              <ion-select [(ngModel)]="purchasebandsbyfans.fundedCity" multiple="true">
                 <ion-option value="victoria">Victoria</ion-option>
                 <ion-option value="la">Los Angeles</ion-option>
                 <ion-option value="farnham">Farnham</ion-option>
@@ -76,6 +76,7 @@
         <ion-row class="style-footer">
           <ion-col col-12>
             <p class="style-ticket-price">$30</p>
+            <input type="text" [(ngModel)]="ticketPrice" class="style-input" />
           </ion-col>
         </ion-row>
       </ion-col>
@@ -106,16 +107,20 @@
     </ion-row>
     <ion-row class="style-placeholder">
       <ion-col col-3 class="style-select-tickets-button">
-        <button ion-button small outline color="danger">1</button>
+        <button ion-button small outline color="danger" (click)="getOneTicketValue()">1</button>
+        <input type="text" [(ngModel)]="oneTicket" class="style-input" />
       </ion-col>
       <ion-col col-3 class="style-select-tickets-button">
-        <button ion-button small outline color="danger">2</button>
+        <button ion-button small outline color="danger" (click)="getTwoTicketValue()">2</button>
+        <input type="text" [(ngModel)]="twoTicket" class="style-input" />
       </ion-col>
       <ion-col col-3 class="style-select-tickets-button">
-        <button ion-button small outline color="danger">3</button>
+        <button ion-button small outline color="danger" (click)="getThreeTicketValue()">3</button>
+        <input type="text" [(ngModel)]="threeTicket" class="style-input" />
       </ion-col>
       <ion-col col-3 class="style-select-tickets-button">
-        <button ion-button small outline color="danger">4</button>
+        <button ion-button small outline color="danger" (click)="getFourTicketValue()">4</button>
+        <input type="text" [(ngModel)]="fourTicket" class="style-input" />
       </ion-col>
     </ion-row>
     <ion-row class="style-placeholder">
@@ -125,14 +130,15 @@
         <p class="bands-by-fans-text">Total:</p>
       </ion-col>
       <ion-col col-3>
-        <input type="text" class="style-input" />
+        <input type="text" [(ngModel)]="purchasebandsbyfans.totalTicketsRequired" value="{{this.totalTicketsRequired}}" class="style-input" />
+        <input type="text" [(ngModel)]="purchasebandsbyfans.totalTicketAmount" value="{{this.totalTicketAmount}}" class="style-input" />
       </ion-col>
       <ion-col col-3>
       </ion-col>
     </ion-row>
     <ion-row class="style-placeholder">
       <ion-col col-12>
-        <button ion-button outline block color="danger">Confrim Funding</button>
+        <button ion-button outline block color="danger" (click)="submit()">Confrim Funding</button>
       </ion-col>
     </ion-row>
     <ion-row class="style-footer">

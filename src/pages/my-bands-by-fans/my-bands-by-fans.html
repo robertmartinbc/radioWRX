@@ -1,18 +1,129 @@
-<!--
-  Generated template for the MyBandsByFans page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
-    <ion-title>myBandsByFans</ion-title>
+    <ion-title>My Bands By Fans</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+  <ion-grid class="standard-grid-padding maximum-grid-width">
+    <ion-row class="header-style">
+      <ion-col col-1 class="style-header-icons">
+        <ion-icon name="disc"></ion-icon>
+      </ion-col>
+      <ion-col col-10>
+        <p class="header-text">My Bands By Fans</p>
+      </ion-col>
+      <ion-col col-1>
+      </ion-col>
+    </ion-row>
+    <ion-row class="style-placeholder">
+      <ion-col col-12>
+        <div>
+          <ion-segment color="danger" [(ngModel)]="bandsByFans">
+            <ion-segment-button value="present">
+              Present
+            </ion-segment-button>
+            <ion-segment-button value="past">
+              Past
+            </ion-segment-button>
+          </ion-segment>
+        </div>
+        <br>
+        <div [ngSwitch]="bandsByFans">
+          <ion-list *ngSwitchCase="'present'">
+            <!--<ion-item>
+              <ion-thumbnail item-left>
+                <img src="img/thumbnail-puppy-1.jpg">
+              </ion-thumbnail>
+              <p>Hello</p>
+            </ion-item>-->
+            <ion-row *ngFor="let bbf of bandsbyfans | async" (click)="goToViewPresentBandsByFans(bbf)">
+              <ion-col col-12>
+                <ion-row class="inner-header-style remove-padding">
+                  <ion-col col-1 class="style-header-icons">
+                    <ion-icon name="disc"></ion-icon>
+                  </ion-col>
+                  <ion-col col-10>
+                    <p class="header-text"></p>
+                  </ion-col>
+                  <ion-col col-1>
+                  </ion-col>
+                </ion-row>
+                <ion-row class="style-placeholder">
+                  <ion-col col-3>
+                    <img src="https://api.appery.io/rest/1/db/files/5518394be4b085114003daf6/7f241c97-d10f-4350-9e74-b5eb5e3709cb.thisdayburns.jpg" class="style-radio-image">
+                  </ion-col>
+                  <ion-col col-6>
+                    <p class="ticket-text ellipsis-text">Upcoming BBF</p>
+                    <p class="ticket-text ellipsis-text"></p>
+                    <p class="ticket-text ellipsis-text"></p>
+                    <p class="ticket-text ellipsis-text"></p>
+                    <p class="ticket-text ellipsis-text"></p>
+                    <p class="ticket-text ellipsis-text"></p>
+                  </ion-col>
+                  <ion-col col-3>
+                    <ion-icon name="arrow-forward" class="style-account-menu-nav-icon"></ion-icon>
+                  </ion-col>
+                </ion-row>
+                <ion-row class="style-footer">
+                  <ion-col col-12>
+                  </ion-col>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </ion-list>
 
+          <ion-list *ngSwitchCase="'past'">
+            <!--<ion-item>
+              <ion-thumbnail item-left>
+                <img src="img/thumbnail-kitten-1.jpg">
+              </ion-thumbnail>
+              <p>Help</p>
+            </ion-item>-->
+            <ion-row *ngFor="let bbf of bandsbyfans | async" (click)="goToViewPastBandsByFans(event)">
+              <ion-col col-12>
+              <ion-row class="inner-header-style remove-padding">
+                <ion-col col-1 class="style-header-icons">
+                  <ion-icon name="disc"></ion-icon>
+                </ion-col>
+                <ion-col col-10>
+                  <p class="header-text"></p>
+                </ion-col>
+                <ion-col col-1>
+                </ion-col>
+              </ion-row>
+              <ion-row class="style-placeholder">
+                <ion-col col-3>
+                  <img src="https://api.appery.io/rest/1/db/files/5518394be4b085114003daf6/7f241c97-d10f-4350-9e74-b5eb5e3709cb.thisdayburns.jpg" class="style-radio-image">
+                </ion-col>
+                <ion-col col-6>
+                  <p class="ticket-text ellipsis-text">Attended Tickets</p>
+                  <p class="ticket-text ellipsis-text"></p>
+                  <p class="ticket-text ellipsis-text"></p>
+                  <p class="ticket-text ellipsis-text"></p>
+                  <p class="ticket-text ellipsis-text"></p>
+                  <p class="ticket-text ellipsis-text"></p>
+                </ion-col>
+                <ion-col col-3>
+                  <ion-icon name="arrow-forward" class="style-account-menu-nav-icon"></ion-icon>
+                </ion-col>
+              </ion-row>
+              <ion-row class="style-footer">
+                <ion-col col-12>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            </ion-row>
+          </ion-list>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="style-footer">
+      <ion-col col-12>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
