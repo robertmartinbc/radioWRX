@@ -573,7 +573,7 @@ p {
 }
 
 .pledge-text {
-  font-size: 40px;
+  font-size: 38px;
   text-align: center;
   color: #f53d3d;
 }
@@ -581,4 +581,9 @@ p {
 .pledge-details-text {
   font-size: 12px;
   text-align: justify;
+}
+
+.style-package-buttons {
+  max-width: 80px;
+  text-align: center;
 }
