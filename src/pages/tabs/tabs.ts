@@ -17,11 +17,11 @@ import * as firebase from 'firebase';
 export class TabsPage {
 
   // Root
-  tab1Root: any = RadioPage;
+  tab1Root: any = BandsViewBandsProfilePage;
   tab2Root: any = TicketsPage;
   tab3Root: any = MusicPage;
   tab4Root: any = AccountPage;
-  tab5Root: any = BandsViewBandsProfilePage;
+  //tab5Root: any = BandsViewBandsProfilePage;
   isBand: boolean = false;
 
   userProfile: FirebaseListObservable<any>
@@ -29,7 +29,7 @@ export class TabsPage {
   constructor(public af: AngularFire) {
 
     // TODO: Show RootPage for users and BandsViewBandsProfilePage to a Band user
-    // FIXME: userProfile.kind is undefinned 
+    // FIXME: userProfile.kind is undefinned
     // firebase.auth().onAuthStateChanged(function(user) {
     //   if (user){
         // this.userProfile = af.database.object('/userProfile', {query: {orderByChild : "userId", equalTo: user.uid}})

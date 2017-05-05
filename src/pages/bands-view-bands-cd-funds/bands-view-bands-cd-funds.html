@@ -23,10 +23,23 @@
       </ion-col>
     </ion-row>
     <ion-row class="style-placeholder">
-      <ion-col col-12>
-        <p>{{ targetDate }}</p>
-        <p>{{ targetAmount }}</p>
+      <ion-col col-6>
+        <p class="service-header-text">Target Date</p>
+        <div class="style-placeholder style-service-icon">
+          <p>{{ targetDate }}</p>
+        </div>
+        <p class="style-service-counter"></p>
       </ion-col>
+      <ion-col col-6>
+        <p class="service-header-text">Target Amount</p>
+        <div class="style-placeholder style-service-icon">
+          <p>{{ targetAmount }}</p>
+        </div>
+        <p class="style-service-counter"></p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="style-placeholder">
+      <button ion-button clear right>Add Package</button>
     </ion-row>
     <ion-row class="style-footer">
       <ion-col col-12>
