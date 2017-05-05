@@ -6,8 +6,8 @@ import { AngularFire } from 'angularfire2';
 //Create class for a purchase of Bands By Fans request
 class PurchaseBandsByFans {
   bandName: string
-  totalTicketsRequiredBullshit: string
-  totalTicketAmountBullshit: string
+  totalTicketsRequired: string
+  totalTicketAmount: string
   fundedCity: string
   fundedCountry: string
   bandImage: string
@@ -22,11 +22,8 @@ class PurchaseBandsByFans {
 })
 export class FansViewBandsByFansPage {
 
-  //FIX ME --- Values not being parsed through the input field. Does not like the  use
-  //of purchasebandsbyfans.totalTicketsRequired and cannot add to value of input.
-  
-  totalTicketsRequired: number = 0;
-  totalTicketAmount: number = 0;
+  totalTicketsRequired;
+  totalTicketAmount;
   ticketPrice: number = 30;
   oneTicket: number = 1;
   twoTicket: number = 2;
@@ -37,41 +34,27 @@ export class FansViewBandsByFansPage {
 
   //Set value of tickets required and total ticket amount to be purchased.
 
-  getOneTicketValue() {
-    var ticketNumber = this.oneTicket;
-    var oneTicketPrice = this.ticketPrice;
-    this.totalTicketsRequired = ticketNumber;
-    this.totalTicketAmount = oneTicketPrice * ticketNumber;
-    alert(ticketNumber);
-    alert(oneTicketPrice);
-  }
-
-  getTwoTicketValue() {
-    var ticketNumber = this.twoTicket;
-    var twoTicketPrice = this.ticketPrice;
-    this.totalTicketsRequired = ticketNumber;
-    this.totalTicketAmount = twoTicketPrice * ticketNumber;
-    alert(ticketNumber);
-    alert(twoTicketPrice);
-  }
-
-  getThreeTicketValue() {
-    var ticketNumber = this.threeTicket;
-    var threeTicketPrice = this.ticketPrice;
-    this.totalTicketsRequired = ticketNumber;
-    this.totalTicketAmount = threeTicketPrice * ticketNumber;
-    alert(ticketNumber);
-    alert(threeTicketPrice);
-  }
-
-  getFourTicketValue() {
-    var ticketNumber = this.fourTicket;
-    var fourTicketPrice = this.ticketPrice;
-    this.totalTicketsRequired = ticketNumber;
-    this.totalTicketAmount = fourTicketPrice * ticketNumber;
-    alert(ticketNumber);
-    alert(fourTicketPrice);
-  }
+  getTicketValue() {
+    this.totalTicketsRequired = this.purchasebandsbyfans.totalTicketsRequired
+    console.log(this.totalTicketsRequired);
+      if(this.totalTicketsRequired === "1") {
+        this.totalTicketAmount = this.ticketPrice * this.totalTicketsRequired;
+        this.purchasebandsbyfans.totalTicketAmount = this.totalTicketAmount;
+        console.log("You are purchasing 2 tickets!" + this.totalTicketAmount);
+    } else if(this.totalTicketsRequired === "2") {
+        this.totalTicketAmount = this.ticketPrice * this.totalTicketsRequired;
+        this.purchasebandsbyfans.totalTicketAmount = this.totalTicketAmount;
+        console.log("You are purchasing 3 tickets!" + this.totalTicketAmount);
+    } else if(this.totalTicketsRequired === "3") {
+        this.totalTicketAmount = this.ticketPrice * this.totalTicketsRequired;
+        this.purchasebandsbyfans.totalTicketAmount = this.totalTicketAmount;
+        console.log("You are purchasing 4 tickets!" + this.totalTicketAmount);
+    } else if(this.totalTicketsRequired === "4") {
+        this.totalTicketAmount = this.ticketPrice * this.totalTicketsRequired;
+        this.purchasebandsbyfans.totalTicketAmount = this.totalTicketAmount;
+        console.log("You are purchasing 1 ticket!" + this.totalTicketAmount);
+      }
+    }
 
   submit() {
     //this.album.userId = firebase.auth().currentUser.uid;

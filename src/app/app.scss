@@ -403,7 +403,7 @@ p {
 //Style ticket price
 .style-ticket-price {
   font-size: 30px;
-  color: #AC97F0;
+  color: #f53d3d;
   text-align: center;
   margin: 0;
 }
@@ -411,7 +411,7 @@ p {
 //Style ticket required
 .style-ticket-required {
   font-size: 30px;
-  color: #AC97F0;
+  color: #f53d3d;
   text-align: center;
   margin: 0;
 }
@@ -586,4 +586,20 @@ p {
 .style-package-buttons {
   max-width: 80px;
   text-align: center;
+}
+
+.total-text {
+  font-size: 20px !important;
+  margin-top: 11px;
+  float: right;
+  color: #f53d3d;
+  font-weight: bold;
+}
+
+.total-ticket-amount {
+  float: left;
+  margin: 0;
+  font-size: 20px;
+  color: #f53d3d;
+  font-weight: bold;
 }

@@ -9,8 +9,8 @@
 <ion-content>
   <ion-grid class="standard-grid-padding maximum-grid-width">
     <ion-row class="header-style">
-      <ion-col col-1>
-        <ion-icon name="people" class="style-pause-button"></ion-icon>
+      <ion-col col-1 class="style-header-icons">
+        <ion-icon name="people"></ion-icon>
       </ion-col>
       <ion-col col-10>
         <p class="header-text">Bands By Fans</p>
@@ -76,7 +76,7 @@
         <ion-row class="style-footer">
           <ion-col col-12>
             <p class="style-ticket-price">$30</p>
-            <input type="text" [(ngModel)]="ticketPrice" class="style-input" />
+            <!--<input type="text" [(ngModel)]="ticketPrice" class="style-input" />-->
           </ion-col>
         </ion-row>
       </ion-col>
@@ -96,8 +96,8 @@
   </ion-grid>
   <ion-grid class="standard-grid-padding maximum-grid-width">
     <ion-row class="header-style ">
-      <ion-col col-1>
-        <ion-icon name="film" class="style-pause-button"></ion-icon>
+      <ion-col col-1 class="style-header-icons">
+        <ion-icon name="film"></ion-icon>
       </ion-col>
       <ion-col col-10>
         <p class="header-text">Tickets Required</p>
@@ -106,39 +106,31 @@
       </ion-col>
     </ion-row>
     <ion-row class="style-placeholder">
-      <ion-col col-3 class="style-select-tickets-button">
-        <button ion-button small outline color="danger" (click)="getOneTicketValue()">1</button>
-        <input type="text" [(ngModel)]="oneTicket" class="style-input" />
-      </ion-col>
-      <ion-col col-3 class="style-select-tickets-button">
-        <button ion-button small outline color="danger" (click)="getTwoTicketValue()">2</button>
-        <input type="text" [(ngModel)]="twoTicket" class="style-input" />
-      </ion-col>
-      <ion-col col-3 class="style-select-tickets-button">
-        <button ion-button small outline color="danger" (click)="getThreeTicketValue()">3</button>
-        <input type="text" [(ngModel)]="threeTicket" class="style-input" />
-      </ion-col>
-      <ion-col col-3 class="style-select-tickets-button">
-        <button ion-button small outline color="danger" (click)="getFourTicketValue()">4</button>
-        <input type="text" [(ngModel)]="fourTicket" class="style-input" />
+      <ion-col col-12>
+        <ion-list>
+          <ion-item>
+            <ion-label color="danger">Select Tickets</ion-label>
+            <ion-select [(ngModel)]="purchasebandsbyfans.totalTicketsRequired" (ngModelChange)="getTicketValue()" color="danger">
+              <ion-option value="1">1</ion-option>
+              <ion-option value="2">2</ion-option>
+              <ion-option value="3">3</ion-option>
+              <ion-option value="4">4</ion-option>
+            </ion-select>
+        </ion-item>
+      </ion-list>
       </ion-col>
     </ion-row>
     <ion-row class="style-placeholder">
-      <ion-col col-3>
+      <ion-col col-6>
+        <p class="total-text">Total: $</p>
       </ion-col>
-      <ion-col col-3>
-        <p class="bands-by-fans-text">Total:</p>
-      </ion-col>
-      <ion-col col-3>
-        <input type="text" [(ngModel)]="purchasebandsbyfans.totalTicketsRequired" value="{{this.totalTicketsRequired}}" class="style-input" />
-        <input type="text" [(ngModel)]="purchasebandsbyfans.totalTicketAmount" value="{{this.totalTicketAmount}}" class="style-input" />
-      </ion-col>
-      <ion-col col-3>
+      <ion-col col-6 class="total-ticket-amount">
+        <ion-input type="text" [(ngModel)]="purchasebandsbyfans.totalTicketAmount"></ion-input>
       </ion-col>
     </ion-row>
     <ion-row class="style-placeholder">
       <ion-col col-12>
-        <button ion-button outline block color="danger" (click)="submit()">Confrim Funding</button>
+        <button ion-button outline block color="danger" (click)="submit()">Confirm Funding</button>
       </ion-col>
     </ion-row>
     <ion-row class="style-footer">
