@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AngularFire } from 'angularfire2';
 import { EditBandsCDFundsDetailsPage } from '../edit-bands-cd-funds-details/edit-bands-cd-funds-details'
+import { RegisterCDFundsPackages } from '../register-cd-funds-packages/register-cd-funds-packages'
 
 /*
   Generated class for the BandsViewBandsCDFunds page.
@@ -28,6 +29,10 @@ export class BandsViewBandsCDFundsPage {
       editTargetDate: this.targetDate,
       editTargetAmount: this.targetAmount
     });
+  }
+
+  goToRegisterCDFundsPackages() {
+    this.navCtrl.push(RegisterCDFundsPackages);
   }
 
   ionViewDidLoad() {

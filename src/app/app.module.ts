@@ -51,6 +51,7 @@ import { LockedFeaturesModalPage } from '../pages/locked-features-modal/locked-f
 import { RegisterBandsAlbumDetailsPage } from '../pages/register-bands-album-details/register-bands-album-details';
 import { RegisterBandsMembersDetailsPage } from '../pages/register-bands-members-details/register-bands-members-details';
 import { RegisterBandsSongsDetailsPage } from '../pages/register-bands-songs-details/register-bands-songs-details';
+import { RegisterCDFundsPackages } from '../pages/register-cd-funds-packages/register-cd-funds-packages';
 import { BandsViewBandsByFansPage } from '../pages/bands-view-bands-by-fans/bands-view-bands-by-fans';
 import { BandsViewBandsCDFundsPage } from '../pages/bands-view-bands-cd-funds/bands-view-bands-cd-funds';
 import { BandsViewBandsEventsPage } from '../pages/bands-view-bands-events/bands-view-bands-events';
@@ -182,7 +183,8 @@ const cloudSettings: CloudSettings = {
     ViewMyArtist,
     ViewMyUpcomingEvent,
     ViewMyAttendedEvent,
-    ViewMyCanceledEvent
+    ViewMyCanceledEvent,
+    RegisterCDFundsPackages
 
   ],
   imports: [
@@ -265,7 +267,8 @@ const cloudSettings: CloudSettings = {
     ViewMyArtist,
     ViewMyUpcomingEvent,
     ViewMyAttendedEvent,
-    ViewMyCanceledEvent
+    ViewMyCanceledEvent,
+    RegisterCDFundsPackages
   ],
   providers: [
     StatusBar,
