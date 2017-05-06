@@ -11,12 +11,6 @@ import { SignInModalPage } from '../sign-in-modal/sign-in-modal';
 import * as firebase from 'firebase';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
-/*
-  Generated class for the FansViewBandsPortfolio page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-fans-view-bands-portfolio',
   templateUrl: 'fans-view-bands-portfolio.html'
