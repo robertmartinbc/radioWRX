@@ -8,6 +8,10 @@
 
   <ion-navbar>
     <ion-title>Bands Portfolio</ion-title>
+    <ion-buttons end>
+      <button *ngIf='!this.isLoggedIn' color="danger" class="style-sign-in-button" ion-button (click)="presentSignInModal()" clear end>Sign In</button>
+      <button *ngIf='this.isLoggedIn' color="danger" class="style-sign-in-button" ion-button (click)="signOut()" clear end>Sign Out</button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
