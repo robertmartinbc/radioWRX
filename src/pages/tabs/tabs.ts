@@ -17,11 +17,11 @@ import * as firebase from 'firebase';
 export class TabsPage {
 
   // Root
-  tab1Root: any = BandsViewBandsProfilePage;
+  tab1Root: any = RadioPage;
   tab2Root: any = TicketsPage;
   tab3Root: any = MusicPage;
   tab4Root: any = AccountPage;
-  //tab5Root: any = BandsViewBandsProfilePage;
+  tab5Root: any = BandsViewBandsProfilePage;
   isBand: boolean = false;
 
   userProfile: FirebaseListObservable<any>

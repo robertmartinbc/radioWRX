@@ -43,7 +43,53 @@
       </ion-col>
     </ion-row>
     <ion-row class="style-placeholder">
-      <button ion-button clear right color="danger" (click)="goToRegisterCDFundsPackages()">Add Package</button>
+      <ion-col col-6>
+        <p class="service-header-text">Days Left</p>
+        <div class="style-placeholder style-service-icon">
+          <p class="cd-funds-target-text">{{ targetDate }}</p>
+        </div>
+        <p class="style-service-counter"></p>
+      </ion-col>
+      <ion-col col-6>
+        <p class="service-header-text">% Achieved</p>
+        <div class="style-placeholder style-service-icon">
+          <p class="cd-funds-target-text">${{ targetAmount }}</p>
+        </div>
+        <p class="style-service-counter"></p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="style-placeholder">
+      <ion-col col-5>
+      </ion-col>
+      <ion-col col-4>
+        <button ion-button clear icon-right color="danger" (click)="goToRegisterCDFundsPackages()">Add Package
+          <ion-icon name="more"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let package of cdfundspackage | async" class="style-placeholder">
+      <ion-col col-12>
+        <ion-row class="header-style">
+          <ion-col col-1 class="style-header-icons">
+            <ion-icon name="cube"></ion-icon>
+          </ion-col>
+          <ion-col col-10>
+            <p class="header-text">${{package.selectedPackage}} Package</p>
+          </ion-col>
+          <ion-col col-1 col-1 class="style-header-icons">
+            <button class="position-add-button" ion-button icon-only color="light" clear small>
+              <ion-icon name="md-create"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+        <ion-row class="style-placeholder">
+          <p class="cd-funds-text">{{package.selectedPackageDescription}}</p>
+        </ion-row>
+        <ion-row class="style-footer">
+          <ion-col col-12>
+          </ion-col>
+        </ion-row>
+      </ion-col>
     </ion-row>
     <ion-row class="style-footer">
       <ion-col col-12>
