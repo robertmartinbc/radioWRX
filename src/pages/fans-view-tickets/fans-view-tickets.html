@@ -1,70 +1,55 @@
-<!--
-  Generated template for the FansViewTickets page.
+<ion-header color="light">
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
+  <ion-navbar color="light">
     <ion-title>View Event</ion-title>
+    <ion-buttons end>
+      <button *ngIf='!this.isLoggedIn' color="danger" class="style-sign-in-button" ion-button (click)="presentSignInModal()" clear end>Sign In</button>
+      <!--<button *ngIf='this.isLoggedIn' color="danger" class="style-sign-in-button" ion-button (click)="signOut()" clear end>Sign Out</button>-->
+    </ion-buttons>
+    <ion-buttons end>
+      <!--><button *ngIf='!this.isLoggedIn' color="danger" class="style-sign-in-button" ion-button (click)="presentSignInModal()" clear>Sign In</button>-->
+      <!--<button *ngIf='this.isLoggedIn' color="danger" class="style-sign-in-button" ion-button (click)="signOut()" clear end>Sign Out</button>-->
+      <button *ngIf='this.isLoggedIn' color="danger" class="style-sign-in-button" ion-button clear><ion-icon name="menu"></ion-icon></button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content>
-  <ion-grid class="standard-grid-padding maximum-grid-width">
-    <ion-row class="header-style">
-      <ion-col col-1>
-        <ion-icon name="film" class="style-pause-button"></ion-icon>
+  <ion-grid class="standard-grid-padding maximum-grid-width" [navPush]="fansViewTickets">
+    <ion-row class="inner-header-style">
+      <ion-col col-1 class="style-header-icons">
+        <ion-icon name="film"></ion-icon>
       </ion-col>
       <ion-col col-10>
-        <p class="header-text">Tickets</p>
+        <p class="header-text">Test Ticket</p>
       </ion-col>
       <ion-col col-1>
+        <ion-icon name="ios-arrow-forward"></ion-icon>
       </ion-col>
     </ion-row>
     <ion-row class="style-placeholder">
-      <ion-grid [navPush]="fansViewTickets">
-        <ion-row class="inner-header-style">
-          <ion-col col-1>
-            <ion-icon name="film" class="style-pause-button"></ion-icon>
-          </ion-col>
-          <ion-col col-10>
-            <p class="header-text">Test Ticket</p>
-          </ion-col>
-          <ion-col col-1>
-            <ion-icon name="ios-arrow-forward" class="style-forward-nav-button"></ion-icon>
-          </ion-col>
-        </ion-row>
-        <ion-row class="style-placeholder">
-          <ion-col col-4>
-            <img src="https://api.appery.io/rest/1/db/files/5518394be4b085114003daf6/7f241c97-d10f-4350-9e74-b5eb5e3709cb.thisdayburns.jpg" class="style-radio-image">
-          </ion-col>
-          <ion-col col-8>
-            <p class="ticket-text ellipsis-text">Pig & Whistle Pub Bullshit Street</p>
-            <p class="ticket-text ellipsis-text">Gold Street</p>
-          </ion-col>
-        </ion-row>
-        <ion-row class="style-placeholder">
-          <ion-col col-6>
-            <ion-col>
-              <p class="available-text">Price</p>
-              <p class="available-amount-text">$30</p>
-              <p class="available-text">Available</p>
-              <p class="available-amount-text">30</p>
-            </ion-col>
-          </ion-col>
-          <ion-col col-6>
-            
-          </ion-col>
-        </ion-row>
-        <ion-row class="style-footer">
-          <ion-col col-12>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
+      <ion-col col-4>
+        <img src="https://api.appery.io/rest/1/db/files/5518394be4b085114003daf6/7f241c97-d10f-4350-9e74-b5eb5e3709cb.thisdayburns.jpg" class="style-radio-image">
+      </ion-col>
+      <ion-col col-8>
+        <p class="ticket-text ellipsis-text">Pig & Whistle Pub Bullshit Street</p>
+        <p class="ticket-text ellipsis-text">Gold Street</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="style-placeholder">
+      <ion-col col-6>
+        <ion-col>
+          <p class="available-text">Price</p>
+          <p class="available-amount-text">$30</p>
+          <p class="available-text">Available</p>
+          <p class="available-amount-text">30</p>
+        </ion-col>
+      </ion-col>
+      <ion-col col-6>
+
+      </ion-col>
     </ion-row>
     <ion-row class="style-footer">
       <ion-col col-12>

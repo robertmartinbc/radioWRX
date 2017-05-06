@@ -3,16 +3,12 @@ import { NavController, NavParams } from 'ionic-angular';
 import { AngularFire } from 'angularfire2';
 import { EditBandsEventsDetailsPage } from '../edit-bands-events-details/edit-bands-events-details';
 
-/*
-  Generated class for the BandsViewBandsEvents page.
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-bands-view-bands-events',
   templateUrl: 'bands-view-bands-events.html'
 })
+
 export class BandsViewBandsEventsPage {
 
   eventTitle: string = this.navParams.get('eventTitle');

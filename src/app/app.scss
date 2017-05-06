@@ -176,8 +176,9 @@ p {
 
 //Set ticket text
 .ticket-text {
-  font-size: 10px;
+  font-size: 12px;
   margin: 0;
+  opacity: 0.5
 }
 
 .profile-text {
@@ -589,7 +590,7 @@ p {
 }
 
 .total-text {
-  font-size: 20px !important;
+  font-size: 24px !important;
   margin-top: 11px;
   float: right;
   color: #f53d3d;
@@ -599,7 +600,7 @@ p {
 .total-ticket-amount {
   float: left;
   margin: 0;
-  font-size: 20px;
+  font-size: 24px;
   color: #f53d3d;
   font-weight: bold;
 }
@@ -615,4 +616,12 @@ p {
   font-size: 20px;
   color: #f53d3d;
   text-align: center;
+}
+
+.header-styling {
+  background-color: red;
+}
+
+.style-tab-buttons {
+  color: #f53d3d !important;
 }

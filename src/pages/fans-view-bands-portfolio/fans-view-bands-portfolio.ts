@@ -1,12 +1,14 @@
 import { Component, ViewChild } from '@angular/core';
-import { NavController, NavParams, Slides, ToastController } from 'ionic-angular';
+import { NavController, NavParams, Slides, ToastController, ModalController } from 'ionic-angular';
 import { FansViewBandsByFansPage } from '../fans-view-bands-by-fans/fans-view-bands-by-fans';
 import { FansViewBandsCDFundsPage } from '../fans-view-bands-cd-funds/fans-view-bands-cd-funds';
 import { FansViewBandsMembersPage } from '../fans-view-bands-members/fans-view-bands-members';
 import { FansViewBandsPrivatePartyPage } from '../fans-view-bands-private-party/fans-view-bands-private-party';
 import { FansViewBandsEventsPage } from '../fans-view-bands-events/fans-view-bands-events';
 import { FansViewBandsAlbumPage } from '../fans-view-bands-album/fans-view-bands-album';
+import { SignInModalPage } from '../sign-in-modal/sign-in-modal';
 
+import * as firebase from 'firebase';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 /*
@@ -32,12 +34,22 @@ export class FansViewBandsPortfolioPage {
   members: FirebaseListObservable<any>
   videos: FirebaseListObservable<any>
   events: FirebaseListObservable<any>
+  isLoggedIn: boolean = false;
 
   albumTitle: string = this.navParams.get('albumTitle');
   albumDuration: string = this.navParams.get('albumDuration');
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire,
-  public toastCtrl: ToastController) {
+  public toastCtrl: ToastController, public modalCtrl: ModalController) {
+
+    //Check to see if user is logged in
+    var _self = this;
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user)
+        _self.isLoggedIn=true;
+      else
+        _self.isLoggedIn=false;
+    });
 
     this.albums = af.database.list('/albums')
     this.members = af.database.list('/members')
@@ -77,6 +89,19 @@ export class FansViewBandsPortfolioPage {
 
   goToEventView(item) {
     this.navCtrl.push(FansViewBandsEventsPage, item);
+  }
+
+  //Present Sign Modal for RadioWRX User
+  presentSignInModal() {
+    var _self = this;
+    let modal = this.modalCtrl.create(SignInModalPage);
+    modal.present();
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user)
+        _self.isLoggedIn=true;
+      else
+        _self.isLoggedIn=false;
+    });
   }
 
 

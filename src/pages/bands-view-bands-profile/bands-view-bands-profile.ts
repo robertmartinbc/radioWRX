@@ -15,16 +15,11 @@ import { BandsViewBandsCDFundsPage } from '../bands-view-bands-cd-funds/bands-vi
 import { BandsViewBandsEventsPage } from '../bands-view-bands-events/bands-view-bands-events';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
-/*
-  Generated class for the BandsViewBandsProfile page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-bands-view-bands-profile',
   templateUrl: 'bands-view-bands-profile.html'
 })
+
 export class BandsViewBandsProfilePage {
 
   @ViewChild('bandMusicSlider') viewer: Slides;
@@ -48,6 +43,7 @@ export class BandsViewBandsProfilePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire,
   public toastCtrl: ToastController) {
+
 
     this.albums = af.database.list('/albums')
     this.members = af.database.list('/members')

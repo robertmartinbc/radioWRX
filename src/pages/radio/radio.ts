@@ -14,6 +14,7 @@ import { AudioProvider } from 'ionic-audio';
   selector: 'page-radio',
   templateUrl: 'radio.html'
 })
+
 export class RadioPage {
   @ViewChild('picSlider') viewer: Slides;
   @ViewChild('videoSlider') viewer1: Slides;
@@ -117,7 +118,7 @@ export class RadioPage {
   }
 
   signOut(){
-    // FIXME: Consider when somewrong occur with signOut by firebase
+    // FIXME: Consider when some wrong occur with signOut by firebase
     this.isLoggedIn=false;
     firebase.auth().signOut().then(function() {
       alert('Sign out success.');
@@ -141,10 +142,9 @@ export class RadioPage {
      // use AudioProvider to control selected track
      this._audioProvider.pause(this.selectedTrack);
   }
-*/  
+*/
 
   onTrackFinished(track: any) {
     console.log('Track finished', track)
   }
-
 }
