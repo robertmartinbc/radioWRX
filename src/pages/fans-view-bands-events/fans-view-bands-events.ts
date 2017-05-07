@@ -173,6 +173,20 @@ export class FansViewBandsEventsPage {
      zoom: 18,
      tilt: 30
    };
+   // move the map's camera to position
+   map.moveCamera(position);
+
+   // create new marker
+   let markerOptions: MarkerOptions = {
+     position: ionic,
+     title: 'Ionic'
+   };
+
+   const marker: Marker = map.addMarker(markerOptions)
+     .then((marker: Marker) => {
+        marker.showInfoWindow();
+      });
+   }
   }
 
 
