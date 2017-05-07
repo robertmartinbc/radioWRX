@@ -84,6 +84,8 @@ import { AngularFireModule } from 'angularfire2';
 import { AuthService } from '../services/auth';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { GoogleMaps, GoogleMap, GoogleMapsEvent, LatLng, CameraPosition, MarkerOptions, Marker } from '@ionic-native/google-maps';
+
 // Initialize Firebase database for RadioWRX
 const configRadioWRX = {
   apiKey: "AIzaSyCJ3HKc5Ti34FyORcTomcqVodN-TP58bOs",
@@ -274,6 +276,7 @@ const cloudSettings: CloudSettings = {
     StatusBar,
     SplashScreen,
     Geolocation,
+    GoogleMaps,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Data,
     AuthService

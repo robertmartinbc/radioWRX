@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, ModalController, AlertController } from 'ionic-angular';
 import { SignInModalPage } from '../sign-in-modal/sign-in-modal';
 import { FansViewBandsPortfolioPage } from '../fans-view-bands-portfolio/fans-view-bands-portfolio';
+import { GoogleMaps, GoogleMap, GoogleMapsEvent, LatLng, CameraPosition, MarkerOptions, Marker } from '@ionic-native/google-maps';
 
 import * as firebase from 'firebase';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
@@ -52,7 +53,7 @@ export class FansViewBandsEventsPage {
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire,
-  public modalCtrl: ModalController, public alertCtrl: AlertController) {
+  public modalCtrl: ModalController, public alertCtrl: AlertController, private googleMaps: GoogleMaps) {
 
   //Check to see if user is logged in
   var _self = this;
@@ -141,6 +142,39 @@ export class FansViewBandsEventsPage {
   });
   alert.present();
 }
+
+  // Load map only after view is initialized
+  ngAfterViewInit() {
+   this.loadMap();
+  }
+
+  loadMap() {
+   // make sure to create following structure in your view.html file
+   // and add a height (for example 100%) to it, else the map won't be visible
+   // <ion-content>
+   //  <div #map id="map" style="height:100%;"></div>
+   // </ion-content>
+
+   // create a new map by passing HTMLElement
+   let element: HTMLElement = document.getElementById('map');
+
+   let map: GoogleMap = this.googleMaps.create(element);
+
+   // listen to MAP_READY event
+   // You must wait for this event to fire before adding something to the map or modifying it in anyway
+   map.one(GoogleMapsEvent.MAP_READY).then(() => console.log('Map is ready!'));
+
+   // create LatLng object
+   let ionic: LatLng = new LatLng(43.0741904,-89.3809802);
+
+   // create CameraPosition
+   let position: CameraPosition = {
+     target: ionic,
+     zoom: 18,
+     tilt: 30
+   };
+  }
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FansViewBandsEventsPage');
