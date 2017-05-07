@@ -17,7 +17,7 @@
 
 <!-- Create Holder for list of available tickets -->
 <ion-content>
-  <ion-grid *ngFor="let event of events | async" (click)="goToEventView(event)">
+  <ion-grid class="standard-grid-padding maximum-grid-width" *ngFor="let event of events | async" (click)="goToEventView(event)">
     <ion-row class="inner-header-style">
       <ion-col col-1 class="style-header-icons">
         <ion-icon name="film"></ion-icon>

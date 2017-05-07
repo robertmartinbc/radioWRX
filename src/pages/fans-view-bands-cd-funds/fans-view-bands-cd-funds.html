@@ -1,7 +1,12 @@
-<ion-header>
+<ion-header color="light">
 
-  <ion-navbar>
+  <ion-navbar color="light">
     <ion-title>CD Funds</ion-title>
+    <ion-buttons end>
+      <button *ngIf='!this.isLoggedIn' color="danger" class="style-sign-in-button" ion-button (click)="presentSignInModal()" clear end>Sign In</button>
+      <!--<button *ngIf='this.isLoggedIn' color="danger" class="style-sign-in-button" ion-button (click)="signOut()" clear end>Sign Out</button>-->
+      <button *ngIf='this.isLoggedIn' color="danger" class="style-sign-in-button" ion-button (click)="signOut()" clear end><ion-icon name="menu"></ion-icon></button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -40,66 +45,48 @@
         </div>
       </ion-col>
     </ion-row>
-    <ion-row class="style-placeholder">
-      <ion-col col-12>
-        <p class="service-header-text">Select Package</p>
-        <ion-row class="style-placeholder">
-          <ion-col col-4>
-            <button ion-button outline block color="danger">
-              $20
-            </button>
-          </ion-col>
-          <ion-col col-4>
-            <button ion-button outline block color="danger">
-              $50
-            </button>
-          </ion-col>
-          <ion-col col-4>
-            <button ion-button outline block color="danger">
-              $100
-            </button>
-          </ion-col>
-        </ion-row>
-        <ion-row class="style-placeholder">
-          <ion-col col-4>
-            <button ion-button outline block color="danger">
-              $250
-            </button>
-          </ion-col>
-          <ion-col col-4>
-            <button ion-button outline block color="danger">
-              $500
-            </button>
-          </ion-col>
-          <ion-col col-4>
-            <button ion-button outline block color="danger">
-              $1000
-            </button>
-          </ion-col>
-        </ion-row>
-        <ion-row class="style-placeholder">
-          <ion-col col-4>
-          </ion-col>
-          <ion-col col-4>
-            <button ion-button outline block color="danger">
-              $8000
-            </button>
-          </ion-col>
-          <ion-col col-4>
-          </ion-col>
-        </ion-row>
-        <ion-row class="style-placeholder">
-          <p>What's included:</p>
-        </ion-row>
-        <ion-row class="style-footer">
-          <ion-col col-12>
-          </ion-col>
-        </ion-row>
-      </ion-col>
-    </ion-row>
     <ion-row class="style-footer">
       <ion-col col-12>
       </ion-col>
     </ion-row>
+  </ion-grid>
+  <ion-grid class="standard-grid-padding maximum-grid-width">
+    <ion-row class="header-style">
+      <ion-col col-1 class="style-header-icons">
+        <ion-icon name="cube"></ion-icon>
+      </ion-col>
+      <ion-col col-10>
+        <p class="header-text">Available Packages</p>
+      </ion-col>
+      <ion-col col-1>
+      </ion-col>
+    </ion-row>
+      <ion-row class="style-placeholder">
+        <ion-col col-12>
+          <ion-list>
+            <ion-item>
+              <ion-label color="danger">Select Package</ion-label>
+              <ion-select color="danger" [(ngModel)]="purchasedcdfunds.selectedPackage">
+                <ion-option value="20">$20</ion-option>
+                <ion-option value="50">$50</ion-option>
+                <ion-option value="100">$100</ion-option>
+                <ion-option value="250">$250</ion-option>
+                <ion-option value="500">$500</ion-option>
+                <ion-option value="1000">$1000</ion-option>
+                <ion-option value="800">$8000</ion-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      <ion-row class="style-placeholder">
+        <ion-col col-12>
+          <button ion-button outline block color="danger" (click)="submit()">Confirm Funding</button>
+        </ion-col>
+      </ion-row>
+      <ion-row class="style-footer">
+        <ion-col col-12>
+        </ion-col>
+      </ion-row>
   </ion-grid>
 </ion-content>

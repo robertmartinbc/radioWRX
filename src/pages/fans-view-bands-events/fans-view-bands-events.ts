@@ -47,6 +47,8 @@ export class FansViewBandsEventsPage {
   eventZip: string = this.navParams.get('eventZip');
   eventStartTime: string = this.navParams.get('eventStartTime');
   eventStartDate: string = this.navParams.get('eventStartDate');
+  eventId: string = this.navParams.get('$key');
+
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire,
@@ -124,7 +126,7 @@ export class FansViewBandsEventsPage {
     }
 
   submit() {
-    //this.album.userId = firebase.auth().currentUser.uid;
+    this.purchasedtickets.userId = firebase.auth().currentUser.uid;
     this.af.database.list('/purchasedtickets').push(this.purchasedtickets);
     this.purchasedtickets = new PurchasedTickets();
     this.navCtrl.pop(FansViewBandsPortfolioPage);

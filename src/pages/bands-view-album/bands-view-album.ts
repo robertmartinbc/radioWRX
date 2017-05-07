@@ -58,7 +58,7 @@ export class BandsViewAlbumPage {
     });
   }
 
-  goToEditSongsDetails(songItem) {
+  goToEditSongsDetails() {
     this.navCtrl.push(EditBandsSongsDetailsPage, {
       editSongTitle: this.songTitle
     });

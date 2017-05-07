@@ -13,6 +13,8 @@ import { BandsViewBandsByFansPage } from '../bands-view-bands-by-fans/bands-view
 import { BandsViewBandsPrivatePartyPage } from '../bands-view-bands-private-party/bands-view-bands-private-party';
 import { BandsViewBandsCDFundsPage } from '../bands-view-bands-cd-funds/bands-view-bands-cd-funds';
 import { BandsViewBandsEventsPage } from '../bands-view-bands-events/bands-view-bands-events';
+
+import * as firebase from 'firebase';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
@@ -53,6 +55,30 @@ export class BandsViewBandsProfilePage {
     this.cdfunds = af.database.list('/cdfunds')
     this.privateparty = af.database.list('/privateparty')
     this.songs = af.database.list('/songs')
+
+
+    //FIX ME - needs further attention. Can read the user Id
+    //but how dow we now use it to create a user profile that
+    //is specific to the authenticated user. And is this required
+    //for each page. Surely we can just put it somewhere once when
+    //the app loads.
+
+    var user = firebase.auth().currentUser;
+    var name, email, photoUrl, uid, emailVerified;
+
+      firebase.auth().onAuthStateChanged(function(user) {
+      if (user != null) {
+        name = user.displayName;
+        email = user.email;
+        photoUrl = user.photoURL;
+        emailVerified = user.emailVerified;
+        uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
+                         // this value to authenticate with your backend server, if
+                         // you have one. Use User.getToken() instead.
+        console.log(uid);
+        console.log(email);
+      }
+    });
 
 //FIX ME User queries to show data only for specific band ID
     /*firebase.auth().onAuthStateChanged(function(user) {

@@ -32,6 +32,8 @@ export class RadioPage {
   events: FirebaseListObservable<any>
   isLoggedIn: boolean = false;
 
+  user: string = this.navParams.get('user');
+
   //Set up some audio.
   myTracks: any[];
   allTracks: any[];
@@ -55,12 +57,30 @@ export class RadioPage {
       preload: 'metadata' // tell the plugin to preload metadata such as duration for this track,  set to 'none' to turn off
     }];
 
+
     var _self = this;
     firebase.auth().onAuthStateChanged(function(user) {
       if (user)
         _self.isLoggedIn=true;
       else
         _self.isLoggedIn=false;
+    });
+
+    var user = firebase.auth().currentUser;
+    var name, email, photoUrl, uid, emailVerified;
+
+      firebase.auth().onAuthStateChanged(function(user) {
+      if (user != null) {
+        name = user.displayName;
+        email = user.email;
+        photoUrl = user.photoURL;
+        emailVerified = user.emailVerified;
+        uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
+                         // this value to authenticate with your backend server, if
+                         // you have one. Use User.getToken() instead.
+        console.log(uid);
+        console.log(email);
+      }
     });
 
     this.albums = af.database.list('/albums')

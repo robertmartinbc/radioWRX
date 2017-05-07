@@ -14,7 +14,7 @@
 
 <ion-content>
     <ion-row class="style-placeholder">
-      <ion-grid>
+      <ion-grid class="standard-grid-padding maximum-grid-width">
         <ion-row class="inner-header-style">
           <ion-col col-1 class="style-header-icons">
             <ion-icon name="film"></ion-icon>
@@ -42,8 +42,9 @@
               <p>{{ eventVenue }}</p>
               <p>{{ eventTown }}</p>
               <p>{{ eventZip }}</p>
-              <p>Doors: {{ eventStartTime }}</p>
+              <p>{{ eventStartTime }}</p>
               <p>{{ eventStartDate }}</p>
+              <p>{{ eventId }}</p>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -78,7 +79,7 @@
             <p class="header-text">Tickets Required</p>
           </ion-col>
           <ion-col col-2 class="style-header-icons" (click)="showIntegrity()">
-            <ion-icon name="help"></ion-icon>
+            <ion-icon ios="ios-help" md="md-help"></ion-icon>
           </ion-col>
         </ion-row>
         <ion-row class="style-placeholder">
@@ -101,7 +102,7 @@
             <p class="total-text">Total: $</p>
           </ion-col>
           <ion-col col-6 class="total-ticket-amount">
-            <ion-input type="text" [(ngModel)]="purchasedtickets.totalTicketAmount"></ion-input>
+            <ion-input type="text" [(ngModel)]="purchasedtickets.totalTicketAmount" readonly></ion-input>
           </ion-col>
         </ion-row>
         <ion-row class="style-placeholder">
