@@ -622,6 +622,19 @@ p {
   background-color: red;
 }
 
-.style-tab-buttons {
-  color: #f53d3d !important;
+.style-package-options {
+  border-radius: 6px;
+  border: 1px solid #f53d3d;
+  padding: 10px;
+}
+
+.package-options-header {
+  font-size: 14px;
+  text-align: center;
+}
+
+.package-options-text {
+  font-size: 12px;
+  text-align: justify;
+  white-space: nowrap !important;
 }
