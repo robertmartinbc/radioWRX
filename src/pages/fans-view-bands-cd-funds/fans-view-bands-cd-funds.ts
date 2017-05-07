@@ -39,7 +39,8 @@ export class FansViewBandsCDFundsPage {
   }
 
   //FIX ME - Value is only being read from one element.
-  //Needs to be different for each item.
+  //Needs to be different for each item. Add validation
+  //to shipping form as well
   choosePackage() {
     this.selectedPackage = document.getElementById('selectedPackageAmount').innerHTML;
     this.selectedPackageText = document.getElementById('selectedPackageText').innerHTML;
