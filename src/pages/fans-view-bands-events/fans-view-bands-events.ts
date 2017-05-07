@@ -143,10 +143,10 @@ export class FansViewBandsEventsPage {
   alert.present();
 }
 
-  // Load map only after view is initialized
-  ngAfterViewInit() {
-   this.loadMap();
-  }
+// Load map only after view is initialized
+ngAfterViewInit() {
+ this.loadMap();
+}
 
   loadMap() {
    // make sure to create following structure in your view.html file
@@ -173,6 +173,7 @@ export class FansViewBandsEventsPage {
      zoom: 18,
      tilt: 30
    };
+
    // move the map's camera to position
    map.moveCamera(position);
 
@@ -182,13 +183,11 @@ export class FansViewBandsEventsPage {
      title: 'Ionic'
    };
 
-   const marker: Marker = map.addMarker(markerOptions)
+   map.addMarker(markerOptions)
      .then((marker: Marker) => {
         marker.showInfoWindow();
       });
    }
-  }
-
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FansViewBandsEventsPage');
