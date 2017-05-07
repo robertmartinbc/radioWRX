@@ -93,7 +93,7 @@ export class RadioPage {
     //Parameters for Artists Carosusel
     this.viewer.speed = 750;
     this.viewer.pager = true;
-    this.viewer.slidesPerView = 3;
+    this.viewer.slidesPerView = 2;
 
     //Parameters for Video Carousel
     this.viewer1.speed = 750;

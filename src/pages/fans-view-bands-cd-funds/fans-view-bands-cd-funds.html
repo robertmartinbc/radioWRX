@@ -61,12 +61,53 @@
       <ion-col col-1>
       </ion-col>
     </ion-row>
-    <ion-row *ngFor="let package of cdfundspackage | async" class="style-placeholder" (click)="choosePackage(package)">
+    <ion-row *ngFor="let package of cdfundspackage | async" class="style-placeholder" (click)="choosePackage()">
       <ion-col col-12>
-          <div class="style-package-options">
-            <p class="package-options-header">${{package.selectedPackage}}</p>
-            <p class="package-options-text">{{package.selectedPackageDescription}}</p>
-          </div>
+        <div class="style-package-options">
+          <p id="selectedPackageAmount" class="package-options-header">{{package.selectedPackage}}</p>
+          <p id="selectedPackageText" class="package-options-text">{{package.selectedPackageDescription}}</p>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-input class="hide-shit" [(ngModel)]="purchasedcdfunds.selectedPackage"></ion-input>
+    <ion-input class="hide-shit" [(ngModel)]="purchasedcdfunds.selectedPackageMessage"></ion-input>
+    <ion-row class="style-footer">
+      <ion-col col-12>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="standard-grid-padding maximum-grid-width">
+    <ion-row class="header-style">
+      <ion-col col-1 class="style-header-icons">
+        <ion-icon name="send"></ion-icon>
+      </ion-col>
+      <ion-col col-10>
+        <p class="header-text">Shipping Details</p>
+      </ion-col>
+      <ion-col col-1>
+      </ion-col>
+    </ion-row>
+    <ion-row class="style-placeholder">
+      <ion-col col-12>
+        <p class="shipping-text">Please provide shipping details below</p>
+        <ion-list>
+          <ion-item>
+            <ion-label stacked color="primary">Street Address</ion-label>
+            <ion-input type="text" [(ngModel)]="purchasedcdfunds.streetAddress" placeholder="Example: 10 Downing Street" clearInput></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label stacked color="primary">City</ion-label>
+            <ion-input type="text" [(ngModel)]="purchasedcdfunds.cdFundsCity" placeholder="Example: London" clearInput></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label stacked color="primary">Country</ion-label>
+            <ion-input type="text" [(ngModel)]="purchasedcdfunds.cdFundsCountry" placeholder="Example: England" clearInput></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label stacked color="primary">Zip/Postal Code</ion-label>
+            <ion-input type="text" [(ngModel)]="purchasedcdfunds.cdFundsZip" placeholder="Example: SW1 2AA" clearInput></ion-input>
+          </ion-item>
+        </ion-list>
       </ion-col>
     </ion-row>
     <ion-row class="style-placeholder">

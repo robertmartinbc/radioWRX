@@ -12,7 +12,7 @@ class PurchasedCDFunds {
   cdFundsCity: string
   cdFundsCountry: string
   cdFundsZip: string
-  cdFundImage: string
+  cdFundsImage: string
   userId: string
   bandId: string
 }
@@ -24,6 +24,10 @@ class PurchasedCDFunds {
 
 export class FansViewBandsCDFundsPage {
 
+  //test: any;
+  selectedPackage: any;
+  selectedPackageText: any;
+
   cdfundspackage: FirebaseListObservable<any>
 
   purchasedcdfunds: PurchasedCDFunds = new PurchasedCDFunds()
@@ -34,10 +38,19 @@ export class FansViewBandsCDFundsPage {
 
   }
 
-  choosePackage(item) {
-    alert(item);
-    //FIX ME - Get value of package option and insert into input field
-    //to write back to database for purchase of CD Funds.
+  //FIX ME - Value is only being read from one element.
+  //Needs to be different for each item.
+  choosePackage() {
+    this.selectedPackage = document.getElementById('selectedPackageAmount').innerHTML;
+    this.selectedPackageText = document.getElementById('selectedPackageText').innerHTML;
+    this.purchasedcdfunds.selectedPackage = this.selectedPackage;
+    this.purchasedcdfunds.selectedPackageMessage = this.selectedPackageText;
+    console.log("-------");
+    console.log(this.selectedPackage);
+    console.log(this.selectedPackageText);
+    console.log("AAAAAAAAAAHHHHH")
+    console.log(this.purchasedcdfunds.selectedPackage);
+    console.log(this.purchasedcdfunds.selectedPackageMessage);
   }
 
   submit() {
