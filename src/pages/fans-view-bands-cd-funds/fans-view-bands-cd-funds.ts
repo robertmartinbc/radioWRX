@@ -35,7 +35,7 @@ export class FansViewBandsCDFundsPage {
   }
 
   choosePackage(item) {
-    alert(this.package.selectedPackage);
+    alert(item);
     //FIX ME - Get value of package option and insert into input field
     //to write back to database for purchase of CD Funds.
   }
