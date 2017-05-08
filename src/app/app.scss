@@ -646,14 +646,15 @@ p {
   text-align: center;
 }
 
-.sebm-google-map-container {
-  height: 100%;
-  border-radius: 6px;
-}
-
 .event-text {
   font-size: 16px;
   color: #000000;
   opacity: 0.8;
   text-overflow: ellipsis;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
 }

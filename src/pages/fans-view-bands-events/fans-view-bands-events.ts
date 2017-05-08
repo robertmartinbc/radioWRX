@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController, NavParams, ModalController, AlertController } from 'ionic-angular';
 import { SignInModalPage } from '../sign-in-modal/sign-in-modal';
 import { FansViewBandsPortfolioPage } from '../fans-view-bands-portfolio/fans-view-bands-portfolio';
 
 import * as firebase from 'firebase';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
+
+declare var google;
 
 class PurchasedTickets {
   eventBandName: string
@@ -30,10 +32,27 @@ class PurchasedTickets {
 
 export class FansViewBandsEventsPage {
 
-  //FIX ME - Need to convert zip code and postal carousel-header-text
-  //to longitude and latitude.
-  lat: number = 51.678418;
-  lng: number = 7.809007;
+  @ViewChild('map') mapElement: ElementRef;
+  map: any;
+
+  ionViewDidLoad(){
+    this.loadMap();
+    console.log('ionViewDidLoad FansViewBandsEventsPage');
+  }
+
+    loadMap(){
+
+      let latLng = new google.maps.LatLng(-34.9290, 138.6010);
+
+      let mapOptions = {
+        center: latLng,
+        zoom: 15,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      }
+
+      this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+
+    }
 
   //Declare variables to calculate total ticket price.
   totalTicketsRequired;
@@ -145,10 +164,6 @@ export class FansViewBandsEventsPage {
     buttons: ['OK']
   });
   alert.present();
-}
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad FansViewBandsEventsPage');
   }
 
 }
