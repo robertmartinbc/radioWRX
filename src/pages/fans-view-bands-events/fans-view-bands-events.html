@@ -37,15 +37,13 @@
           <ion-col col-5>
             <img src="https://api.appery.io/rest/1/db/files/5518394be4b085114003daf6/7f241c97-d10f-4350-9e74-b5eb5e3709cb.thisdayburns.jpg" class="style-radio-image">
           </ion-col>
-          <ion-col col-7>
-            <ion-item no-lines class="profile-text">
-              <p>{{ eventVenue }}</p>
-              <p>{{ eventTown }}</p>
-              <p>{{ eventZip }}</p>
-              <p>{{ eventStartTime }}</p>
-              <p>{{ eventStartDate }}</p>
-              <p>{{ eventId }}</p>
-            </ion-item>
+          <ion-col col-7 class="event-text">
+              <p class="event-text">{{ eventVenue }}</p>
+              <p class="event-text">{{ eventTown }}</p>
+              <p class="event-text">{{ eventZip }}</p>
+              <p class="event-text">{{ eventStartTime }}</p>
+              <p class="event-text">{{ eventStartDate }}</p>
+              <p class="hide-shit">{{ eventId }}</p>
           </ion-col>
         </ion-row>
         <ion-row class="style-placeholder">
@@ -61,8 +59,9 @@
           <ion-col col-1>
           </ion-col>
           <ion-col col-7>
-            <div #map id="map" style="height:100%;"></div>
-            Map will go in here
+            <sebm-google-map [latitude]="lat" [longitude]="lng">
+              <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
+            </sebm-google-map>
           </ion-col>
         </ion-row>
         <ion-row>

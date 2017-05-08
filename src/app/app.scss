@@ -185,7 +185,6 @@ p {
   font-size: 12px;
   margin: 0;
   color: #000000;
-  opacity: 0.5;
 }
 
 //Set ellipsis text
@@ -626,6 +625,7 @@ p {
   border-radius: 6px;
   border: 1px solid #f53d3d;
   padding: 10px;
+
 }
 
 .package-options-header {
@@ -644,4 +644,16 @@ p {
   opacity: 0.8;
   padding: 10px;
   text-align: center;
+}
+
+.sebm-google-map-container {
+  height: 100%;
+  border-radius: 6px;
+}
+
+.event-text {
+  font-size: 16px;
+  color: #000000;
+  opacity: 0.8;
+  text-overflow: ellipsis;
 }
