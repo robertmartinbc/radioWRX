@@ -30,6 +30,8 @@ class PurchasedTickets {
 
 export class FansViewBandsEventsPage {
 
+  //FIX ME - Need to convert zip code and postal carousel-header-text
+  //to longitude and latitude.
   lat: number = 51.678418;
   lng: number = 7.809007;
 
