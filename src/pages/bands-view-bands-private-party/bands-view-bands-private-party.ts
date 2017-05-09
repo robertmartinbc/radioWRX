@@ -1,6 +1,7 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
+import { GoogleMaps } from '@ionic-native/google-maps';
 import { AngularFire } from 'angularfire2';
 import { EditBandsPrivatePartyDetailsPage } from '../edit-bands-private-party-details/edit-bands-private-party-details';
 
@@ -41,7 +42,8 @@ declare var google;
   public editLocation: any;
   public editFee: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire,
+  public googleMaps: GoogleMaps) {}
 
   goToEditPrivateParty() {
     this.navCtrl.push(EditBandsPrivatePartyDetailsPage, {

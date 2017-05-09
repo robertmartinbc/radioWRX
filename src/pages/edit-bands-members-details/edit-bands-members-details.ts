@@ -2,12 +2,18 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
-/*
-  Generated class for the EditBandsMembersDetails page.
+class Member {
+  memberName: string
+  memberBiography: string
+  vocals: boolean
+  guitar
+  bass
+  drums
+  piano
+  id: string
+  userId: string
+}
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-edit-bands-members-details',
   templateUrl: 'edit-bands-members-details.html'

@@ -99,8 +99,8 @@ export class FansViewBandsPortfolioPage {
   }
 
 
-
-//Create toasts to advise customers to register to access features
+  //FIX ME - Toasts not working as they should.
+  /*//Create toasts to advise customers to register to access features
   showBandsByFansToast() {
     var _self = this;
     firebase.auth().onAuthStateChanged(function(user) {
@@ -127,6 +127,7 @@ export class FansViewBandsPortfolioPage {
         if (user) {
           _self.isLoggedIn=true;
           _self.navCtrl.push(FansViewBandsPrivatePartyPage);
+          return;
         }
         else {
           _self.isLoggedIn=false
@@ -138,6 +139,7 @@ export class FansViewBandsPortfolioPage {
             });
             toast.present();
           }
+          return;
         });
       }
 
@@ -179,7 +181,7 @@ export class FansViewBandsPortfolioPage {
       cssClass: 'style-toast',
     });
     toast.present();
-  }
+  }*/
 
   /*fansViewBandsByFans = FansViewBandsByFansPage;
   fansViewBandsCDFunds = FansViewBandsCDFundsPage;

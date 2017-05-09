@@ -1,6 +1,7 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController, NavParams, ModalController, AlertController } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
+import { GoogleMaps } from '@ionic-native/google-maps';
 import { SignInModalPage } from '../sign-in-modal/sign-in-modal';
 import { FansViewBandsPortfolioPage } from '../fans-view-bands-portfolio/fans-view-bands-portfolio';
 
@@ -77,7 +78,8 @@ export class FansViewBandsEventsPage {
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire,
-  public modalCtrl: ModalController, public alertCtrl: AlertController, public geolocation: Geolocation) {
+  public modalCtrl: ModalController, public alertCtrl: AlertController, public geolocation: Geolocation,
+  public googleMaps: GoogleMaps) {
 
   //Check to see if user is logged in
   var _self = this;
