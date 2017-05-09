@@ -66,7 +66,7 @@ export class RadioPage {
         _self.isLoggedIn=false;
     });
 
-    var user = firebase.auth().currentUser;
+    /*var user = firebase.auth().currentUser;
     var name, email, photoUrl, uid, emailVerified;
 
       firebase.auth().onAuthStateChanged(function(user) {
@@ -81,7 +81,7 @@ export class RadioPage {
         console.log(uid);
         console.log(email);
       }
-    });
+    });*/
 
     this.albums = af.database.list('/albums')
     this.members = af.database.list('/members')
@@ -138,10 +138,11 @@ export class RadioPage {
   }
 
   signOut(){
-    // FIXME: Consider when some wrong occur with signOut by firebase
+    // FIXME: Consider when some wrong occur with signOut by firebase.
+    //Also showing toast
     this.isLoggedIn=false;
     firebase.auth().signOut().then(function() {
-      alert('Sign out success.');
+      //alert('Sign out success.');
     }, function(error) {
       alert('Error to sign out.');
     });

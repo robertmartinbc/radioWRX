@@ -1,7 +1,12 @@
-<ion-header>
+<ion-header color="light">
 
-  <ion-navbar>
+  <ion-navbar color="light">
     <ion-title>View Album</ion-title>
+      <ion-buttons end>
+        <button *ngIf='!this.isLoggedIn' color="danger" class="style-sign-in-button" ion-button (click)="presentSignInModal()" clear end>Sign In</button>
+        <!--<button *ngIf='this.isLoggedIn' color="danger" class="style-sign-in-button" ion-button (click)="signOut()" clear end>Sign Out</button>-->
+        <button *ngIf='this.isLoggedIn' color="danger" class="style-sign-in-button" ion-button (click)="signOut()" clear end><ion-icon name="menu"></ion-icon></button>
+      </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -9,12 +14,20 @@
 
 <ion-content>
   <ion-grid class="standard-grid-padding maximum-grid-width">
-    <ion-row>
+    <ion-row class="header-style">
+      <ion-col col-1>
+      </ion-col>
+      <ion-col col-10>
+        <p class="header-text">{{ albumTitle }}</p>
+      </ion-col>
+      <ion-col col-1>
+      </ion-col>
+    </ion-row>
+    <ion-row class="style-placeholder">
       <ion-col col-6>
         <img src="https://api.appery.io/rest/1/db/files/5518394be4b085114003daf6/7f241c97-d10f-4350-9e74-b5eb5e3709cb.thisdayburns.jpg" class="style-radio-image">
       </ion-col>
       <ion-col col-6>
-        <p>{{ albumTitle }}</p>
         <p>{{ albumYearReleased }}</p>
         <p>{{ albumDuration }}</p>
         <p>{{ albumTotalSongs }}</p>
@@ -22,13 +35,13 @@
         <p>{{ albumId }}</p>
       </ion-col>
     </ion-row>
-    <ion-row>
+    <ion-row class="style-placeholder">
       <ion-col col-8>
       </ion-col>
       <ion-col col-4>
       </ion-col>
     </ion-row>
-    <ion-row *ngFor="let song of songs | async" class="remove-padding style-songs-list">
+    <ion-row *ngFor="let song of songs | async" class="remove-padding style-songs-list style-placeholder">
       <ion-col col-1 class="remove-padding">
         <button ion-button clear small class="remove-padding">
           {{ song.songNumber }}.
@@ -43,6 +56,11 @@
         <button ion-button clear small class="remove-padding" color="danger">
           <ion-icon name="md-play"></ion-icon>
         </button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="style-footer">
+      <ion-col col-12>
+        <p>Copyright &copy; {{albumTitle}}</p>
       </ion-col>
     </ion-row>
   </ion-grid>

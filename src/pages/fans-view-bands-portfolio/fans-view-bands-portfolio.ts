@@ -99,31 +99,51 @@ export class FansViewBandsPortfolioPage {
   }
 
 
-/*
+
 //Create toasts to advise customers to register to access features
   showBandsByFansToast() {
-    let toast = this.toastCtrl.create({
-      message: 'You need to become a registered RadioWRX customer to access Bands By Fans Features!',
-      duration: 4000,
-      position: 'middle',
-      cssClass: 'style-toast',
-    });
-    toast.present();
-  }
+    var _self = this;
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        _self.isLoggedIn=true;
+        _self.navCtrl.push(FansViewBandsByFansPage);
+      }
+      else {
+        _self.isLoggedIn=false
+          let toast = _self.toastCtrl.create({
+            message: 'You need to become a registered RadioWRX customer to access Bands By Fans Features!',
+            duration: 4000,
+            position: 'middle',
+            cssClass: 'style-toast',
+          });
+          toast.present();
+        }
+      });
+    }
 
-  showPrivatePartyToast() {
-    let toast = this.toastCtrl.create({
-      message: 'You need to become a registered RadioWRX customer to access Private Party Features!',
-      duration: 4000,
-      position: 'middle',
-      cssClass: 'style-toast',
-    });
-    toast.present();
-  }
+    showPrivatePartyToast() {
+      var _self = this;
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          _self.isLoggedIn=true;
+          _self.navCtrl.push(FansViewBandsPrivatePartyPage);
+        }
+        else {
+          _self.isLoggedIn=false
+            let toast = _self.toastCtrl.create({
+              message: 'You need to become a registered RadioWRX customer to access Private Party Features!',
+              duration: 4000,
+              position: 'middle',
+              cssClass: 'style-toast',
+            });
+            toast.present();
+          }
+        });
+      }
 
   showCDFundsToast() {
     let toast = this.toastCtrl.create({
-      message: 'You need to become a registered RadioWRX customer to access Private Party Features!',
+      message: 'You need to become a registered RadioWRX customer to access CD Funds Features!',
       duration: 4000,
       position: 'middle',
       cssClass: 'style-toast',
@@ -160,14 +180,12 @@ export class FansViewBandsPortfolioPage {
     });
     toast.present();
   }
-*/
 
-
-  fansViewBandsByFans = FansViewBandsByFansPage;
+  /*fansViewBandsByFans = FansViewBandsByFansPage;
   fansViewBandsCDFunds = FansViewBandsCDFundsPage;
   fansViewBandsMembers = FansViewBandsMembersPage;
   fansViewBandsPrivateParty = FansViewBandsPrivatePartyPage;
-  fansViewBandsEvents = FansViewBandsEventsPage;
+  fansViewBandsEvents = FansViewBandsEventsPage;*/
 
 
 

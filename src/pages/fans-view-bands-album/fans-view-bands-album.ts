@@ -1,19 +1,18 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ModalController } from 'ionic-angular';
+import { SignInModalPage } from '../sign-in-modal/sign-in-modal';
 
+import * as firebase from 'firebase';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
-/*
-  Generated class for the FansViewBandsAlbum page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-fans-view-bands-album',
   templateUrl: 'fans-view-bands-album.html'
 })
+
 export class FansViewBandsAlbumPage {
+
+  isLoggedIn: boolean = false;
 
   songs: FirebaseListObservable<any>
 
@@ -23,8 +22,32 @@ export class FansViewBandsAlbumPage {
   albumYearReleased: string = this.navParams.get('albumYearReleased');
   albumTotalSongs: string = this.navParams.get('albumTotalSongs');
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire,
+  public modalCtrl: ModalController) {
+
     this.songs = af.database.list('/songs')
+
+    //Check to see if user is logged in
+    var _self = this;
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user)
+        _self.isLoggedIn=true;
+      else
+        _self.isLoggedIn=false;
+    });
+  }
+
+  //Present Sign Modal for RadioWRX User
+  presentSignInModal() {
+    var _self = this;
+    let modal = this.modalCtrl.create(SignInModalPage);
+    modal.present();
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user)
+        _self.isLoggedIn=true;
+      else
+        _self.isLoggedIn=false;
+    });
   }
 
   ionViewDidLoad() {

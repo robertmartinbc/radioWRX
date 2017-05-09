@@ -1,5 +1,6 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController, NavParams, ModalController, AlertController } from 'ionic-angular';
+import { Geolocation } from '@ionic-native/geolocation';
 import { SignInModalPage } from '../sign-in-modal/sign-in-modal';
 import { FansViewBandsPortfolioPage } from '../fans-view-bands-portfolio/fans-view-bands-portfolio';
 
@@ -40,19 +41,19 @@ export class FansViewBandsEventsPage {
     console.log('ionViewDidLoad FansViewBandsEventsPage');
   }
 
-    loadMap(){
+  loadMap(){
 
-      let latLng = new google.maps.LatLng(-34.9290, 138.6010);
+    let latLng = new google.maps.LatLng(-34.9290, 138.6010);
 
-      let mapOptions = {
-        center: latLng,
-        zoom: 15,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-      }
-
-      this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
-
+    let mapOptions = {
+      center: latLng,
+      zoom: 15,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
     }
+
+    this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+
+  }
 
   //Declare variables to calculate total ticket price.
   totalTicketsRequired;
@@ -76,7 +77,7 @@ export class FansViewBandsEventsPage {
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire,
-  public modalCtrl: ModalController, public alertCtrl: AlertController) {
+  public modalCtrl: ModalController, public alertCtrl: AlertController, public geolocation: Geolocation) {
 
   //Check to see if user is logged in
   var _self = this;

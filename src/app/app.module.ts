@@ -84,7 +84,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AuthService } from '../services/auth';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AgmCoreModule } from 'angular2-google-maps/core';
+//import { AgmCoreModule } from 'angular2-google-maps/core';
 
 // Initialize Firebase database for RadioWRX
 const configRadioWRX = {
@@ -195,9 +195,6 @@ const cloudSettings: CloudSettings = {
     CloudModule.forRoot(cloudSettings),
     IonicAudioModule.forRoot(),
     AngularFireModule.initializeApp(configRadioWRX),
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDuDwk29k2mesSlHexinr0WPJ3HEuAfGfY'
-    })
     //AngularFireModule.initializeApp(configMobileWRX),
   ],
   bootstrap: [IonicApp],
