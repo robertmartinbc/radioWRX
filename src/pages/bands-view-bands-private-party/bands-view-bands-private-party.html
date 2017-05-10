@@ -1,6 +1,6 @@
-<ion-header>
+<ion-header color="light">
 
-  <ion-navbar>
+  <ion-navbar color="light">
     <ion-title>Private Party</ion-title>
   </ion-navbar>
 
@@ -14,27 +14,145 @@
         <ion-icon name="home"></ion-icon>
       </ion-col>
       <ion-col col-10>
-        <p class="header-text">Private Party</p>
+        <p class="header-text">My Private Party</p>
       </ion-col>
       <ion-col col-1>
-        <button class="position-add-button" ion-button icon-only color="light" clear small (click)="goToEditPrivateParty()">
-          <ion-icon name="md-create"></ion-icon>
-        </button>
       </ion-col>
     </ion-row>
     <ion-row class="style-placeholder">
       <ion-col col-12>
-        <p>Below is the price you have set to hold a Private Party for your fans.
-        The map details the radius from your home base and how far you are willing
-        to travel to perform</p>
-        <p>{{ location }}</p>
-        <p>{{ fee }}</p>
-        <div #map id="map"></div>
-      </ion-col>
-    </ion-row>
-    <ion-row class="style-placeholder">
-      <ion-col col-12>
-        <div #map id="map"></div>
+        <div>
+          <ion-segment color="danger" [(ngModel)]="parties">
+            <ion-segment-button value="upcoming">
+              Upcoming
+            </ion-segment-button>
+            <ion-segment-button value="past">
+              Performed
+            </ion-segment-button>
+            <ion-segment-button value="canceled">
+              Canceled
+            </ion-segment-button>
+          </ion-segment>
+        </div>
+        <br>
+        <div [ngSwitch]="parties">
+          <ion-list *ngSwitchCase="'upcoming'">
+            <!--<ion-item>
+              <ion-thumbnail item-left>
+                <img src="img/thumbnail-puppy-1.jpg">
+              </ion-thumbnail>
+              <p>Hello</p>
+            </ion-item>-->
+            <ion-row *ngFor="let party of privateparty | async" (click)="goToViewUpcomingEvent(privateparty)">
+              <ion-col col-12>
+                <ion-row class="inner-header-style remove-padding">
+                  <ion-col col-1 class="style-header-icons">
+                    <ion-icon name="home"></ion-icon>
+                  </ion-col>
+                  <ion-col col-10>
+                    <p class="header-text"></p>
+                  </ion-col>
+                  <ion-col col-1>
+                  </ion-col>
+                </ion-row>
+                <ion-row class="style-placeholder">
+                  <ion-col col-3>
+                    <img src="https://api.appery.io/rest/1/db/files/5518394be4b085114003daf6/7f241c97-d10f-4350-9e74-b5eb5e3709cb.thisdayburns.jpg" class="style-radio-image">
+                  </ion-col>
+                  <ion-col col-6>
+                    <p class="ticket-text ellipsis-text">Upcoming Parties</p>
+                    <p class="party-text">{{party.fee}}</p>
+                  </ion-col>
+                  <ion-col col-3>
+                    <ion-icon name="arrow-forward" class="style-account-menu-nav-icon"></ion-icon>
+                  </ion-col>
+                </ion-row>
+                <ion-row class="style-footer">
+                  <ion-col col-12>
+                  </ion-col>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </ion-list>
+
+          <ion-list *ngSwitchCase="'past'">
+            <!--<ion-item>
+              <ion-thumbnail item-left>
+                <img src="img/thumbnail-kitten-1.jpg">
+              </ion-thumbnail>
+              <p>Help</p>
+            </ion-item>-->
+            <ion-row *ngFor="let party of privateparty | async" (click)="goToViewAttendedEvent(party)">
+              <ion-col col-12>
+              <ion-row class="inner-header-style remove-padding">
+                <ion-col col-1 class="style-header-icons">
+                  <ion-icon name="home"></ion-icon>
+                </ion-col>
+                <ion-col col-10>
+                  <p class="header-text"></p>
+                </ion-col>
+                <ion-col col-1>
+                </ion-col>
+              </ion-row>
+              <ion-row class="style-placeholder">
+                <ion-col col-3>
+                  <img src="https://api.appery.io/rest/1/db/files/5518394be4b085114003daf6/7f241c97-d10f-4350-9e74-b5eb5e3709cb.thisdayburns.jpg" class="style-radio-image">
+                </ion-col>
+                <ion-col col-6>
+                  <p class="ticket-text ellipsis-text">Performed Parties</p>
+                  <p class="party-text">{{party.fee}}</p>
+                </ion-col>
+                <ion-col col-3>
+                  <ion-icon name="arrow-forward" class="style-account-menu-nav-icon"></ion-icon>
+                </ion-col>
+              </ion-row>
+              <ion-row class="style-footer">
+                <ion-col col-12>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            </ion-row>
+          </ion-list>
+
+          <ion-list *ngSwitchCase="'canceled'">
+            <ion-row *ngFor="let party of privateparty | async" (click)="goToViewCanceledEvent(party)">
+              <ion-col col-12>
+              <ion-row class="inner-header-style remove-padding">
+                <ion-col col-1 class="style-header-icons">
+                  <ion-icon name="home"></ion-icon>
+                </ion-col>
+                <ion-col col-10>
+                  <p class="header-text"></p>
+                </ion-col>
+                <ion-col col-1>
+                </ion-col>
+              </ion-row>
+              <ion-row class="style-placeholder">
+                <ion-col col-3>
+                  <img src="https://api.appery.io/rest/1/db/files/5518394be4b085114003daf6/7f241c97-d10f-4350-9e74-b5eb5e3709cb.thisdayburns.jpg" class="style-radio-image">
+                </ion-col>
+                <ion-col col-6>
+                  <p class="ticket-text ellipsis-text">Canceled Parties</p>
+                  <p class="party-text">{{party.fee}}</p>
+                </ion-col>
+                <ion-col col-3>
+                  <ion-icon name="arrow-forward" class="style-account-menu-nav-icon"></ion-icon>
+                </ion-col>
+              </ion-row>
+              <ion-row class="style-footer">
+                <ion-col col-12>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            </ion-row>
+            <!--<ion-item>
+              <ion-thumbnail item-left>
+                <img src="img/thumbnail-kitten-1.jpg">
+              </ion-thumbnail>
+              <p>Hallo</p>
+            </ion-item>-->
+          </ion-list>
+        </div>
       </ion-col>
     </ion-row>
     <ion-row class="style-footer">

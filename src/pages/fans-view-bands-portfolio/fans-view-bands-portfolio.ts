@@ -100,7 +100,7 @@ export class FansViewBandsPortfolioPage {
 
 
   //FIX ME - Toasts not working as they should.
-  /*//Create toasts to advise customers to register to access features
+  //Create toasts to advise customers to register to access features
   showBandsByFansToast() {
     var _self = this;
     firebase.auth().onAuthStateChanged(function(user) {
@@ -181,7 +181,7 @@ export class FansViewBandsPortfolioPage {
       cssClass: 'style-toast',
     });
     toast.present();
-  }*/
+  }
 
   /*fansViewBandsByFans = FansViewBandsByFansPage;
   fansViewBandsCDFunds = FansViewBandsCDFundsPage;

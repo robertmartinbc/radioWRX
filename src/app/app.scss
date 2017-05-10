@@ -660,6 +660,20 @@ p {
 
 #map {
   width: 100%;
-  height: 100%;
+  height: 150px;
   border-radius: 10px;
+}
+
+.party-details-text {
+  font-size: 14px;
+  text-align: justify;
+  opacity: 0.8;
+  padding: 10px;
+}
+
+.party-text {
+  font-size: 24px;
+  color: #f53d3d;
+  text-align: center;
+  padding: 10px;
 }
