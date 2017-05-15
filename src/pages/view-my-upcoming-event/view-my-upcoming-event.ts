@@ -1,5 +1,5 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { GoogleMaps } from '@ionic-native/google-maps';
 import { Geolocation } from '@ionic-native/geolocation';
 import { QRRCodeComponent } from 'angualr2-qrcode';
@@ -52,7 +52,7 @@ export class ViewMyUpcomingEvent {
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire,
-  public googleMaps: GoogleMaps) {
+  public googleMaps: GoogleMaps, public alertCtrl: AlertController) {
   }
 
 }
