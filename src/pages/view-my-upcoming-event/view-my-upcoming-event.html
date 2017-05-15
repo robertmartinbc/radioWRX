@@ -17,7 +17,7 @@
         <ion-icon name="film"></ion-icon>
       </ion-col>
       <ion-col col-10>
-        <p class="header-text">{{eventTitle}}</p>
+        <p class="header-text">{{redeemedEventTitle}}</p>
       </ion-col>
       <ion-col col-1 class="style-header-icons" (click)="redemptionOptions()">
         <ion-icon name="help"></ion-icon>
@@ -25,11 +25,11 @@
     </ion-row>
     <ion-row class="style-placeholder">
       <ion-col col-6>
-        <p class="event-text ellipsis-text">{{ eventBandVenue }}</p>
-        <p class="event-text ellipsis-text">{{ eventBandTown }}</p>
-        <p class="event-text ellipsis-text">{{ eventBandZip }}</p>
-        <p class="event-text ellipsis-text">{{ eventBandStartTime }}</p>
-        <p class="event-text ellipsis-text">{{ eventBandStartDate }}</p>
+        <p class="event-text ellipsis-text">{{ redeemedBandVenue }}</p>
+        <p class="event-text ellipsis-text">{{ redeemedBandTown }}</p>
+        <p class="event-text ellipsis-text">{{ redeemedBandZip }}</p>
+        <p class="event-text ellipsis-text">{{ redeemedBandStartTime }}</p>
+        <p class="event-text ellipsis-text">{{ redeemedBandStartDate }}</p>
         <div class="hide-shit">
           <ion-input type="text" [(ngModel)]="redeemedtickets.redeemedEventTitle" value="{{eventTitle}}"></ion-input>
           <ion-input type="text" [(ngModel)]="redeemedtickets.redeemedBandVenue" value="{{eventBandVenue}}"></ion-input>
