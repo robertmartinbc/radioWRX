@@ -1,18 +1,126 @@
-<!--
-  Generated template for the MyPrivateParty page.
+<ion-header color="light">
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>myPrivateParty</ion-title>
+  <ion-navbar color="light">
+    <ion-title>My Private Party</ion-title>
+    <ion-buttons end>
+      <button ion-button color="danger" clear><ion-icon name="menu"></ion-icon></button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+  <ion-grid class="standard-grid-padding maximum-grid-width">
+    <ion-row class="header-style">
+      <ion-col col-1 class="style-header-icons">
+        <ion-icon name="disc"></ion-icon>
+      </ion-col>
+      <ion-col col-10>
+        <p class="header-text">My Private Party</p>
+      </ion-col>
+      <ion-col col-1>
+      </ion-col>
+    </ion-row>
+    <ion-row class="style-placeholder">
+      <ion-col col-12>
+        <div>
+          <ion-segment color="danger" [(ngModel)]="privateParty">
+            <ion-segment-button value="present">
+              Present
+            </ion-segment-button>
+            <ion-segment-button value="past">
+              Past
+            </ion-segment-button>
+          </ion-segment>
+        </div>
+        <br>
+        <div [ngSwitch]="privateParty">
+          <ion-list *ngSwitchCase="'present'">
+            <!--<ion-item>
+              <ion-thumbnail item-left>
+                <img src="img/thumbnail-puppy-1.jpg">
+              </ion-thumbnail>
+              <p>Hello</p>
+            </ion-item>-->
+            <ion-row *ngFor="let party of privateparty | async" (click)="goToViewPresentPrivateParty(party)">
+              <ion-col col-12>
+                <ion-row class="inner-header-style remove-padding">
+                  <ion-col col-1 class="style-header-icons">
+                    <ion-icon name="disc"></ion-icon>
+                  </ion-col>
+                  <ion-col col-10>
+                    <p class="header-text">Private Party</p>
+                  </ion-col>
+                  <ion-col col-1>
+                  </ion-col>
+                </ion-row>
+                <ion-row class="style-placeholder">
+                  <ion-col col-3>
+                    <img src="https://api.appery.io/rest/1/db/files/5518394be4b085114003daf6/7f241c97-d10f-4350-9e74-b5eb5e3709cb.thisdayburns.jpg" class="style-radio-image">
+                  </ion-col>
+                  <ion-col col-6>
+                    <p class="ticket-text ellipsis-text">Present Private Party</p>
+                    <p class="ticket-text ellipsis-text">{{party.fee}}</p>
+                    <p class="ticket-text ellipsis-text">{{party.zipcode}}</p>
+                  </ion-col>
+                  <ion-col col-3>
+                    <ion-icon name="arrow-forward" class="style-account-menu-nav-icon"></ion-icon>
+                  </ion-col>
+                </ion-row>
+                <ion-row class="style-footer">
+                  <ion-col col-12>
+                  </ion-col>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </ion-list>
 
+          <ion-list *ngSwitchCase="'past'">
+            <!--<ion-item>
+              <ion-thumbnail item-left>
+                <img src="img/thumbnail-kitten-1.jpg">
+              </ion-thumbnail>
+              <p>Help</p>
+            </ion-item>-->
+            <ion-row *ngFor="let party of privateparty | async" (click)="goToViewPastPrivateParty(party)">
+              <ion-col col-12>
+              <ion-row class="inner-header-style remove-padding">
+                <ion-col col-1 class="style-header-icons">
+                  <ion-icon name="disc"></ion-icon>
+                </ion-col>
+                <ion-col col-10>
+                  <p class="header-text">Private Party</p>
+                </ion-col>
+                <ion-col col-1>
+                </ion-col>
+              </ion-row>
+              <ion-row class="style-placeholder">
+                <ion-col col-3>
+                  <img src="https://api.appery.io/rest/1/db/files/5518394be4b085114003daf6/7f241c97-d10f-4350-9e74-b5eb5e3709cb.thisdayburns.jpg" class="style-radio-image">
+                </ion-col>
+                <ion-col col-6>
+                  <p class="ticket-text ellipsis-text">Past Private Party</p>
+                  <p class="ticket-text ellipsis-text">{{party.fee}}</p>
+                  <p class="ticket-text ellipsis-text">{{party.zipcode}}</p>
+                </ion-col>
+                <ion-col col-3>
+                  <ion-icon name="arrow-forward" class="style-account-menu-nav-icon"></ion-icon>
+                </ion-col>
+              </ion-row>
+              <ion-row class="style-footer">
+                <ion-col col-12>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            </ion-row>
+          </ion-list>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="style-footer">
+      <ion-col col-12>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

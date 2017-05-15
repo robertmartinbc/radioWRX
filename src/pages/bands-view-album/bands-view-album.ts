@@ -5,12 +5,6 @@ import { EditBandsSongsDetailsPage } from '../edit-bands-songs-details/edit-band
 import { EditBandsAlbumDetailsPage } from '../edit-bands-album-details/edit-bands-album-details';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
-/*
-  Generated class for the BandsViewAlbum page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-bands-view-album',
   templateUrl: 'bands-view-album.html'

@@ -11,21 +11,23 @@ import { ViewMyCanceledEvent} from '../view-my-canceled-event/view-my-canceled-e
 })
 export class MyTicketsPage {
 
-  events: FirebaseListObservable<any>
+  purchasedtickets: FirebaseListObservable<any>
 
-  eventTitle = this.navParams.get('eventTitle');
-  eventVenue = this.navParams.get('eventVenue');
-  eventAvailableTickets = this.navParams.get('eventAvailableTickets');
-  eventTown = this.navParams.get('eventTown');
-  eventZip = this.navParams.get('eventZip');
-  eventStartDate = this.navParams.get('eventStartDate');
-  eventStartTime = this.navParams.get('eventStartTime');
+  eventTitle: string = this.navParams.get('eventTitle');
+  eventBandVenue: string = this.navParams.get('eventBandVenue');
+  totalTicketsRequired: string = this.navParams.get('totalTicketsRequired');
+  eventTown: string = this.navParams.get('eventTown');
+  eventBandZip: string = this.navParams.get('eventBandZip');
+  eventBandStartDate: string = this.navParams.get('eventBandStartDate');
+  eventBandStartTime: string = this.navParams.get('eventBandStartTime');
+  ticketId: string = this.navParams.get('$key');
+
 
   tickets: string = "upcoming";
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {
 
-    this.events = af.database.list('/events')
+    this.purchasedtickets = af.database.list('/purchasedtickets')
 
   }
 

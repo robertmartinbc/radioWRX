@@ -1,7 +1,10 @@
-<ion-header>
+<ion-header color="light">
 
-  <ion-navbar>
-    <ion-title>My Upcoming Event</ion-title>
+  <ion-navbar color="light">
+    <ion-title>Upcoming Event</ion-title>
+    <ion-buttons end>
+      <button ion-button color="danger" clear><ion-icon name="menu"></ion-icon></button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -11,13 +14,46 @@
   <ion-grid class="standard-grid-padding maximum-grid-width">
     <ion-row class="header-style">
       <ion-col col-1 class="style-header-icons">
-        <ion-icon name="disc"></ion-icon>
+        <ion-icon name="film"></ion-icon>
       </ion-col>
       <ion-col col-10>
-        <p class="header-text">My Upcoming Event</p>
+        <p class="header-text">{{eventTitle}}</p>
       </ion-col>
       <ion-col col-1>
       </ion-col>
+    </ion-row>
+    <ion-row class="style-placeholder">
+      <ion-col col-6>
+        <p class="ticket-text ellipsis-text">{{ eventBandVenue }}</p>
+        <p class="ticket-text ellipsis-text">{{ eventBandTown }}</p>
+        <p class="ticket-text ellipsis-text">{{ eventBandZip }}</p>
+        <p class="ticket-text ellipsis-text">{{ eventBandStartTime }}</p>
+        <p class="ticket-text ellipsis-text">{{ eventBandStartDate }}</p>
+        <p class="ticket-text ellipsis-text">{{ ticketId }}</p>
+      </ion-col>
+      <ion-col col-6>
+        <div #map id="map" class="style-map"></div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="style-placeholder">
+      <ion-col col-3>
+        <p>Admit: {{totalTicketsRequired}}</p>
+      </ion-col>
+      <ion-col col-6>
+      </ion-col>
+      <ion-col col-3>
+        <button ion-button outline color="danger" block small>Redeem</button>
+      </ion-col>
+      <ion-row>
+        <ion-col col-12>
+          <h1>QR Code will go here.</h1>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          <p class="ticket-text">{{ticketId}}</p>
+        </ion-col>
+      </ion-row>
     </ion-row>
     <ion-row class="style-footer">
       <ion-col col-12>

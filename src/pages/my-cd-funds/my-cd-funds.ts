@@ -4,12 +4,6 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { ViewMyPastCDFundsPage } from '../view-my-past-cd-funds/view-my-past-cd-funds';
 import { ViewMyPresentCDFundsPage } from '../view-my-present-cd-funds/view-my-present-cd-funds';
 
-/*
-  Generated class for the MyCDFunds page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-my-cd-funds',
   templateUrl: 'my-cd-funds.html'
