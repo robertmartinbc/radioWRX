@@ -80,6 +80,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
 import { IonicAudioModule } from 'ionic-audio';
+import { QRCodeModule } from 'angular2-qrcode'
 
 import { AngularFireModule } from 'angularfire2';
 import { AuthService } from '../services/auth';
@@ -195,6 +196,7 @@ const cloudSettings: CloudSettings = {
     IonicModule.forRoot(MyApp),
     CloudModule.forRoot(cloudSettings),
     IonicAudioModule.forRoot(),
+    QRCodeModule,
     AngularFireModule.initializeApp(configRadioWRX),
     //AngularFireModule.initializeApp(configMobileWRX),
   ],
