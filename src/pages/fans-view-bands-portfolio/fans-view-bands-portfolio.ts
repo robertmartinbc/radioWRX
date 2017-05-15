@@ -144,13 +144,14 @@ export class FansViewBandsPortfolioPage {
       }
 
   showCDFundsToast() {
-    let toast = this.toastCtrl.create({
+    this.navCtrl.push(FansViewBandsCDFundsPage);
+    /*let toast = this.toastCtrl.create({
       message: 'You need to become a registered RadioWRX customer to access CD Funds Features!',
       duration: 4000,
       position: 'middle',
       cssClass: 'style-toast',
     });
-    toast.present();
+    toast.present();*/
   }
 
   showEventsToast() {
