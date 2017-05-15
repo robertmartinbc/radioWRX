@@ -32,6 +32,13 @@
         <p class="event-text ellipsis-text">{{ eventBandStartDate }}</p>
         <div class="hide-shit">
           <ion-input type="text" [(ngModel)]="redeemedtickets.redeemedEventTitle" value="{{eventTitle}}"></ion-input>
+          <ion-input type="text" [(ngModel)]="redeemedtickets.redeemedBandVenue" value="{{eventBandVenue}}"></ion-input>
+          <ion-input type="text" [(ngModel)]="redeemedtickets.redeemedBandTown" value="{{eventBandTown}}"></ion-input>
+          <ion-input type="text" [(ngModel)]="redeemedtickets.redeemedBandZip" value="{{eventBandZip}}"></ion-input>
+          <ion-input type="text" [(ngModel)]="redeemedtickets.redeemedBandStartTime" value="{{eventBandStartTime}}"></ion-input>
+          <ion-input type="text" [(ngModel)]="redeemedtickets.redeemedBandStartDate" value="{{eventStartDate}}"></ion-input>
+          <ion-input type="text" [(ngModel)]="redeemedtickets.redeemedBandStartDate" value="{{eventStartDate}}"></ion-input>
+          <ion-input type="text" [(ngModel)]="redeemedtickets.redeemedTickets" value="{{totalTicketsRequired}}"></ion-input>
         </div>
       </ion-col>
       <ion-col col-6>

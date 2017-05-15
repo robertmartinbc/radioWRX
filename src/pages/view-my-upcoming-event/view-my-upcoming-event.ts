@@ -22,6 +22,7 @@ redeemedTicketAmount: string
 redeemedBandImage: string
 redeemedBandStartDate: string
 redeemedBandStartTime: string
+redeemedTicketId: string
 userId: string
 bandId: string
 eventId
@@ -60,13 +61,13 @@ export class ViewMyUpcomingEvent {
   }
 
     redeemedEventTitle: string = this.navParams.get('eventTitle');
-    eventBandVenue: string = this.navParams.get('eventBandVenue');
-    totalTicketsRequired: string = this.navParams.get('totalTicketsRequired');
-    eventBandTown: string = this.navParams.get('eventBandTown');
-    eventBandZip: string = this.navParams.get('eventBandZip');
-    eventBandStartDate: string = this.navParams.get('eventBandStartDate');
-    eventBandStartTime: string = this.navParams.get('eventBandStartTime');
-    ticketId: string = this.navParams.get('$key');
+    redeemedBandVenue: string = this.navParams.get('eventBandVenue');
+    redeemedTickets: string = this.navParams.get('totalTicketsRequired');
+    redeemedBandTown: string = this.navParams.get('eventBandTown');
+    redeemedBandZip: string = this.navParams.get('eventBandZip');
+    redeemedBandStartDate: string = this.navParams.get('eventBandStartDate');
+    redeemedBandStartTime: string = this.navParams.get('eventBandStartTime');
+    redeemedTicketId: string = this.navParams.get('$key');
 
     redeemedtickets: RedeemTicket = new RedeemTicket()
 
@@ -100,6 +101,14 @@ export class ViewMyUpcomingEvent {
           handler: () => {
             console.log('Agree clicked');
             //alert("You just redeemed this ticket!");
+            this.redeemedtickets.redeemedEventTitle = this.redeemedEventTitle;
+            this.redeemedtickets.redeemedBandVenue = this.redeemedBandVenue;
+            this.redeemedtickets.redeemedTickets = this.redeemedTickets;
+            this.redeemedtickets.redeemedBandTown = this.redeemedBandTown;
+            this.redeemedtickets.redeemedBandZip = this.redeemedBandZip;
+            this.redeemedtickets.redeemedBandStartDate = this.redeemedBandStartDate;
+            this.redeemedtickets.redeemedBandStartTime = this.redeemedBandStartTime;
+            this.redeemedtickets.redeemedTicketId = this.redeemedTicketId;
             this.redeemedtickets.userId = firebase.auth().currentUser.uid;
             this.af.database.list('/redeemedtickets').push(this.redeemedtickets);
             this.redeemedtickets = new RedeemTicket();
