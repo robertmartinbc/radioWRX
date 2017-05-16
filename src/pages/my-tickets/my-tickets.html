@@ -63,7 +63,6 @@
                     <img src="https://api.appery.io/rest/1/db/files/5518394be4b085114003daf6/7f241c97-d10f-4350-9e74-b5eb5e3709cb.thisdayburns.jpg" class="style-radio-image">
                   </ion-col>
                   <ion-col col-6>
-                    <p class="ticket-text ellipsis-text">Upcoming Tickets</p>
                     <p class="ticket-text ellipsis-text">{{ticket.ticketId}}</p>
                     <p class="ticket-text ellipsis-text">{{ticket.eventBandVenue}}</p>
                     <p class="ticket-text ellipsis-text">{{ticket.eventBandTown}}</p>
@@ -91,16 +90,17 @@
               </ion-thumbnail>
               <p>Help</p>
             </ion-item>-->
-            <ion-row *ngFor="let event of events | async" (click)="goToViewAttendedEvent(event)">
+            <ion-row *ngFor="let attended of redeemedtickets | async" (click)="goToViewAttendedEvent(attended)">
               <ion-col col-12>
               <ion-row class="inner-header-style remove-padding">
                 <ion-col col-1 class="style-header-icons">
                   <ion-icon name="film"></ion-icon>
                 </ion-col>
                 <ion-col col-10>
-                  <p class="header-text">{{event.eventTitle}}</p>
+                  <p class="header-text">{{attended.redeemedEventTitle}}</p>
                 </ion-col>
-                <ion-col col-1>
+                <ion-col col-1 class="style-header-icons">
+                  <ion-icon name="checkmark"></ion-icon>
                 </ion-col>
               </ion-row>
               <ion-row class="style-placeholder">
@@ -108,12 +108,11 @@
                   <img src="https://api.appery.io/rest/1/db/files/5518394be4b085114003daf6/7f241c97-d10f-4350-9e74-b5eb5e3709cb.thisdayburns.jpg" class="style-radio-image">
                 </ion-col>
                 <ion-col col-6>
-                  <p class="ticket-text ellipsis-text">Attended Tickets</p>
-                  <p class="ticket-text ellipsis-text">{{event.eventVenue}}</p>
-                  <p class="ticket-text ellipsis-text">{{event.eventTown}}</p>
-                  <p class="ticket-text ellipsis-text">{{event.eventZip}}</p>
-                  <p class="ticket-text ellipsis-text">{{event.eventStartDate}}</p>
-                  <p class="ticket-text ellipsis-text">{{event.eventStartTime}}</p>
+                  <p class="ticket-text ellipsis-text">{{attended.redeemedBandVenue}}</p>
+                  <p class="ticket-text ellipsis-text">{{attended.redeemedBandTown}}</p>
+                  <p class="ticket-text ellipsis-text">{{attended.redeemedBandZip}}</p>
+                  <p class="ticket-text ellipsis-text">{{attended.redeemedBandStartDate}}</p>
+                  <p class="ticket-text ellipsis-text"></p>
                 </ion-col>
                 <ion-col col-3>
                   <ion-icon name="arrow-forward" class="style-account-menu-nav-icon"></ion-icon>

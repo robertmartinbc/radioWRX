@@ -60,9 +60,6 @@ export class ViewMyUpcomingEvent {
 
   }
 
-    eventTitle: string = this.navParams.get('eventTitle');
-    eventBandVenue: string = this.navParams.get('eventBandVenue');
-
     redeemedEventTitle: string = this.navParams.get('eventTitle');
     redeemedBandVenue: string = this.navParams.get('eventBandVenue');
     redeemedTickets: string = this.navParams.get('totalTicketsRequired');

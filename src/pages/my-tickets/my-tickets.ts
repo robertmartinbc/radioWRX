@@ -12,6 +12,7 @@ import { ViewMyCanceledEvent} from '../view-my-canceled-event/view-my-canceled-e
 export class MyTicketsPage {
 
   purchasedtickets: FirebaseListObservable<any>
+  redeemedtickets: FirebaseListObservable<any>
 
   eventTitle: string = this.navParams.get('eventTitle');
   eventBandVenue: string = this.navParams.get('eventBandVenue');
@@ -22,12 +23,19 @@ export class MyTicketsPage {
   eventBandStartTime: string = this.navParams.get('eventBandStartTime');
   ticketId: string = this.navParams.get('$key');
 
+  redeemedEventTitle: string = this.navParams.get('redeemedEventTitle');
+  redeemedBandVenue: string = this.navParams.get('redeemedBandVenue');
+  redeemedBandTown: string = this.navParams.get('redeemedBandTown');
+  redeemedBandZip: string = this.navParams.get('redeemedBandZip');
+  redeemedBandStartDate: string = this.navParams.get('redeemedBandStartDate');
+
 
   tickets: string = "upcoming";
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {
 
     this.purchasedtickets = af.database.list('/purchasedtickets')
+    this.redeemedtickets = af.database.list('/redeemedtickets')
 
   }
 
