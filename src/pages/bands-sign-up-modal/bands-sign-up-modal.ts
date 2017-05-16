@@ -1,21 +1,15 @@
 import * as firebase from 'firebase';
 import { Component } from '@angular/core';
-import { NavController, NavParams, ViewController, ModalController } from 'ionic-angular';
+import { NavController, NavParams, ViewController, ModalController, LoadingController, AlertController } from 'ionic-angular';
 import { BandsSignInModalPage } from '../bands-sign-in-modal/bands-sign-in-modal';
 import { AuthProviders, AuthMethods, AngularFire, FirebaseListObservable } from 'angularfire2';
-import { LoadingController, AlertController } from "ionic-angular";
 import { AuthService } from '../../services/auth';
 
-/*
-  Generated class for the BandsSignUpModal page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-bands-sign-up-modal',
   templateUrl: 'bands-sign-up-modal.html'
 })
+
 export class BandsSignUpModalPage {
 
   //Set variables for Firebase authentication Sign Up New User
@@ -29,7 +23,9 @@ export class BandsSignUpModalPage {
     public viewCtrl: ViewController, public modalCtrl: ModalController,
     public af: AngularFire, private loadingCtrl: LoadingController,
     private alertCtrl: AlertController, public authService: AuthService) {
+
     this.fireAuth = firebase.auth();
+
   }
 
   onSignUp(af, db) {

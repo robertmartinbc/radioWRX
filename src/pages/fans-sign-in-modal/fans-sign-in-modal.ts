@@ -1,21 +1,48 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ViewController, ModalController } from 'ionic-angular';
+import { NavController, NavParams, ViewController, ModalController, AlertController, LoadingController } from 'ionic-angular';
 import { FansSignUpModalPage } from '../fans-sign-up-modal/fans-sign-up-modal';
 import { BandsViewBandsProfilePage } from '../bands-view-bands-profile/bands-view-bands-profile';
-/*
-  Generated class for the FansSignInModal page.
+import { AuthProviders, AuthMethods, AngularFire } from 'angularfire2';
+import { AuthService } from '../../services/auth';
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-fans-sign-in-modal',
   templateUrl: 'fans-sign-in-modal.html'
 })
+
 export class FansSignInModalPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, public modalCtrl: ModalController) {}
-  bandsViewBandsProfile = BandsViewBandsProfilePage;
+  email: string;
+  password: string;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController,
+  public modalCtrl: ModalController, public loadingCtrl: LoadingController, public af: AngularFire,
+  public alertCtrl: AlertController, private authService: AuthService) {}
+
+  //bandsViewBandsProfile = BandsViewBandsProfilePage;
+
+  //Sign in user and check to see if there is existing account and present error
+  onSignIn() {
+    const loading = this.loadingCtrl.create({
+    content: 'Signing you in...'
+  });
+  loading.present()
+    this.authService.signin(this.email, this.password)
+    .then(data => {
+      loading.dismiss()
+    })
+    .catch(error => {
+      loading.dismiss();
+      const alert = this.alertCtrl.create ({
+        title: 'Signin failed!',
+        message: error.message,
+        buttons: ['Ok']
+      })
+      alert.present();
+    });
+    this.viewCtrl.dismiss();
+  }
+
   dismiss() {
     this.viewCtrl.dismiss();
   }

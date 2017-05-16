@@ -1,23 +1,20 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController, ModalController, AlertController, LoadingController } from 'ionic-angular';
 import { BandsSignUpModalPage } from '../bands-sign-up-modal/bands-sign-up-modal';
+import { BandsViewBandsProfilePage } from '../bands-view-bands-profile/bands-view-bands-profile';
 import { AuthProviders, AuthMethods, AngularFire } from 'angularfire2';
 import { AuthService } from '../../services/auth';
 
-/*
-  Generated class for the BandsSignInModal page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-bands-sign-in-modal',
   templateUrl: 'bands-sign-in-modal.html'
 })
 
 export class BandsSignInModalPage {
+
   email: string;
   password: string;
+
   constructor(public navCtrl: NavController, public navParams: NavParams,
   public viewCtrl: ViewController, public modalCtrl: ModalController,
   public af: AngularFire, private loadingCtrl: LoadingController, private alertCtrl: AlertController,
@@ -32,6 +29,7 @@ export class BandsSignInModalPage {
     this.authService.signin(this.email, this.password)
     .then(data => {
       loading.dismiss()
+      this.navCtrl.push(BandsViewBandsProfilePage)
     })
     .catch(error => {
       loading.dismiss();

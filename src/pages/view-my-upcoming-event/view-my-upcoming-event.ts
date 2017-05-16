@@ -36,6 +36,7 @@ declare var google;
   selector: 'page-view-my-upcoming-event',
   templateUrl: 'view-my-upcoming-event.html',
 })
+
 export class ViewMyUpcomingEvent {
 
   @ViewChild('map') mapElement: ElementRef;

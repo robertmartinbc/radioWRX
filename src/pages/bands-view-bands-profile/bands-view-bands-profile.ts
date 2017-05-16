@@ -13,6 +13,7 @@ import { BandsViewBandsByFansPage } from '../bands-view-bands-by-fans/bands-view
 import { BandsViewBandsPrivatePartyPage } from '../bands-view-bands-private-party/bands-view-bands-private-party';
 import { BandsViewBandsCDFundsPage } from '../bands-view-bands-cd-funds/bands-view-bands-cd-funds';
 import { BandsViewBandsEventsPage } from '../bands-view-bands-events/bands-view-bands-events';
+import { RadioPage } from '../radio/radio';
 
 import * as firebase from 'firebase';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
@@ -42,9 +43,19 @@ export class BandsViewBandsProfilePage {
   privateparty: FirebaseListObservable<any>
   songs: FirebaseListObservable<any>
 
+  isLoggedIn: boolean = false;
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire,
   public toastCtrl: ToastController) {
+
+    var _self = this;
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user)
+        _self.isLoggedIn=true;
+      else
+        _self.isLoggedIn=false;
+    });
 
 
     this.albums = af.database.list('/albums')
@@ -179,6 +190,18 @@ export class BandsViewBandsProfilePage {
   //Go to view events page and pass events data
   goToBandsEventView(item) {
     this.navCtrl.push(BandsViewBandsEventsPage, item);
+  }
+
+  signMeOut(){
+    // FIXME: Consider when some wrong occur with signOut by firebase.
+    //Also showing toast
+    this.isLoggedIn=false;
+    firebase.auth().signOut().then(function() {
+      //alert('Sign out success.');
+      //this.navCtrl.push(RadioPage);
+    }, function(error) {
+      alert('Error to sign out.');
+    });
   }
 
 }
