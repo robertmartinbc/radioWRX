@@ -16,6 +16,10 @@ declare var google;
 
 export class FansViewBandsPrivatePartyPage {
 
+  privateparty: FirebaseListObservable<any>
+
+  fee: string = this.navParams.get('fee');
+
   @ViewChild('map') mapElement: ElementRef;
   map: any;
 
@@ -42,6 +46,8 @@ export class FansViewBandsPrivatePartyPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,
   public formBuilder: FormBuilder, public googleMaps: GoogleMaps,
   public af: AngularFire) {
+
+    this.privateparty = af.database.list('/privateparty')
 
     this.partyDetails = this.formBuilder.group({
       name: ['', Validators.required],
