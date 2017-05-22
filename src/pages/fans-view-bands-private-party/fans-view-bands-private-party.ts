@@ -1,5 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { Geolocation } from '@ionic-native/geolocation';
+import { GoogleMaps } from '@ionic-native/google-maps';
+import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+
+import * as firebase from 'firebase';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
+
+declare var google;
 
 @Component({
   selector: 'page-fans-view-bands-private-party',
@@ -8,10 +16,42 @@ import { NavController, NavParams } from 'ionic-angular';
 
 export class FansViewBandsPrivatePartyPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  @ViewChild('map') mapElement: ElementRef;
+  map: any;
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad FansViewBandsPrivatePartyPage');
+  ionViewDidLoad(){
+    this.loadMap();
+    console.log('ionViewDidLoad FansViewBandsEventsPage');
   }
 
+  loadMap(){
+
+    let latLng = new google.maps.LatLng(-34.9290, 138.6010);
+
+    let mapOptions = {
+      center: latLng,
+      zoom: 15,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+
+    this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+
+  }
+  public partyDetails: FormGroup;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+  public formBuilder: FormBuilder, public googleMaps: GoogleMaps,
+  public af: AngularFire) {
+
+    this.partyDetails = this.formBuilder.group({
+      name: ['', Validators.required],
+      streetAddress: ['', Validators.required],
+      zipCode: ['', Validators.required],
+      telNumber: ['', Validators.required]
+    });
+  }
+
+  logForm() {
+    console.log(this.partyDetails.value)
+  }
 }

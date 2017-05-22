@@ -194,11 +194,11 @@ export class BandsViewBandsProfilePage {
 
   signMeOut(){
     // FIXME: Consider when some wrong occur with signOut by firebase.
-    //Also showing toast
+    //Also showing toast and returning to root page.
     this.isLoggedIn=false;
     firebase.auth().signOut().then(function() {
       //alert('Sign out success.');
-      //this.navCtrl.push(RadioPage);
+      //this.rootPage.push(RadioPage);
     }, function(error) {
       alert('Error to sign out.');
     });

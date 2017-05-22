@@ -10,8 +10,8 @@
 <ion-content>
   <ion-grid class="standard-grid-padding maximum-grid-width">
     <ion-row class="header-style">
-      <ion-col col-1>
-        <ion-icon name="home" class="style-pause-button"></ion-icon>
+      <ion-col col-1 class="style-header-icons">
+        <ion-icon name="home"></ion-icon>
       </ion-col>
       <ion-col col-10>
         <p class="header-text">Private Party</p>
@@ -19,9 +19,41 @@
       <ion-col col-1>
       </ion-col>
     </ion-row>
+    <ion-row col-12 class="style-placeholder party-details-text">
+      <p>This band will perform a private party at your request.
+        Below is the amount they require to perform and the radius
+        of the geographical area they will service</p>
+    </ion-row>
+    <ion-row class="style-placeholder">
+      <ion-col col-6>
+        Amount here
+      </ion-col>
+      <ion-col col-6>
+        <div #map id="map" class="style-map"></div>
+
+      </ion-col>
+    </ion-row>
     <ion-row class="style-placeholder">
       <ion-col col-12>
-        <p class="dummy-text">Private Party data will go here</p>
+        <form [formGroup]="partyDetails" (ngSubmit)="logForm()">
+          <ion-item>
+            <ion-label stacked>Name</ion-label>
+            <ion-input type="text" placeholder="Name" formControlName="name"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label stacked>Street Address</ion-label>
+            <ion-input type="text" placeholder="Street Address" formControlName="streetAddress"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label stacked>Zip/Postal Code</ion-label>
+            <ion-input type="text" placeholder="Zip/Postal Code" formControlName="zipCode"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label stacked>Telephone Nmber</ion-label>
+            <ion-input type="text" placeholder="Telephone Number" formControlName="telNumber"></ion-input>
+          </ion-item>
+          <button ion-button type="submit" [disabled]="!partyDetails.valid" block outline color="danger">Submit</button>
+        </form>
       </ion-col>
     </ion-row>
     <ion-row class="style-footer">
