@@ -25,12 +25,19 @@
         of the geographical area they will service</p>
     </ion-row>
     <ion-row class="style-placeholder">
+      <br>
+    </ion-row>
+    <ion-row class="style-placeholder">
       <ion-col col-6>
-        <p class="private-party-amount">$400</p>
+        <p class="private-party-amount">{{fee}}</p>
       </ion-col>
       <ion-col col-6>
         <div #map id="map" class="style-map"></div>
-
+      </ion-col>
+    </ion-row>
+    <ion-row class="style-placeholder">
+      <ion-col col-12>
+        <p class="party-details-text">Please provide your contact details below.</p>
       </ion-col>
     </ion-row>
     <ion-row class="style-placeholder">

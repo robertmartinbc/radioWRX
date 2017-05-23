@@ -26,6 +26,7 @@ export class FansViewBandsPrivatePartyPage {
   ionViewDidLoad(){
     this.loadMap();
     console.log('ionViewDidLoad FansViewBandsEventsPage');
+    console.log(this.fee);
   }
 
   loadMap(){
