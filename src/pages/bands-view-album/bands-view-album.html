@@ -50,14 +50,19 @@
           {{song.songNumber}}
         </button>
       </ion-col>
-      <ion-col col-10 class="remove-padding">
+      <ion-col col-9 class="remove-padding">
         <button ion-button clear small class="remove-padding">
           {{song.songTitle}}
         </button>
       </ion-col>
       <ion-col col-1 class="remove-padding">
-        <button ion-button clear small class="remove-padding" color="danger" (click)="presentActionSheet()">
-          <ion-icon name="more"></ion-icon>
+        <button ion-button clear small class="remove-padding" color="danger" (click)="goToEditSongsDetails()">
+          <ion-icon name="md-create"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col col-1 class="remove-padding">
+        <button ion-button clear small class="remove-padding" color="danger" (click)="presentDeleteOption()">
+          <ion-icon name="trash"></ion-icon>
         </button>
       </ion-col>
     </ion-row>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ActionSheetController } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { RegisterBandsSongsDetailsPage } from '../register-bands-songs-details/register-bands-songs-details';
 import { EditBandsSongsDetailsPage } from '../edit-bands-songs-details/edit-bands-songs-details';
 import { EditBandsAlbumDetailsPage } from '../edit-bands-album-details/edit-bands-album-details';
@@ -36,7 +36,7 @@ export class BandsViewAlbumPage {
   songTitle: string = this.navParams.get('songTitle');
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire,
-  public actionSheetCtrl: ActionSheetController) {
+  public alertCtrl: AlertController) {
 
     this.songs = af.database.list('/songs')
     this.albums = af.database.list('/albums')
@@ -60,38 +60,33 @@ export class BandsViewAlbumPage {
     alert(this.editSongTitle);
   }
 
+  presentDeleteOption() {
+    let confirm = this.alertCtrl.create({
+      title: 'Delete Song?',
+      message: 'Do you really want to delete this song? All associated data will be lost and is not retrievable after deletion.',
+      buttons: [
+        {
+          text: 'Oops!',
+          handler: () => {
+            console.log('Oops! clicked');
+          }
+        },
+        {
+          text: 'Delete',
+          handler: () => {
+            console.log('Delete clicked');
+          }
+        }
+      ]
+    });
+    confirm.present();
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad BandsViewAlbumPage');
   }
 
   registerBandsSongsDetails = RegisterBandsSongsDetailsPage;
   //editBandsSongsDetails = EditBandsSongsDetailsPage;
-
-  presentActionSheet() {
-    let actionSheet = this.actionSheetCtrl.create({
-      title: 'Modify Song',
-      buttons: [
-        {
-          text: 'Edit',
-          handler: () => {
-            console.log('Edit clicked');
-          }
-        },{
-          text: 'Delete',
-          role: 'destructive',
-          handler: () => {
-            console.log('Delete clicked');
-          }
-        },{
-          text: 'Cancel',
-          role: 'cancel',
-          handler: () => {
-            console.log('Cancel clicked');
-          }
-        }
-      ]
-    });
-    actionSheet.present();
-  }
 
 }
