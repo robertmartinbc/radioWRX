@@ -41,7 +41,7 @@
       <ion-col col-4>
       </ion-col>
     </ion-row>
-    <ion-row *ngFor="let song of songs | async" class="remove-padding style-songs-list style-placeholder">
+    <ion-row *ngFor="let song of songs | async" class="remove-padding style-songs-list style-placeholder" (click)="testClick()">
       <ion-col col-1 class="remove-padding">
         <button ion-button clear small class="remove-padding">
           {{ song.songNumber }}.
@@ -54,7 +54,7 @@
       </ion-col>
       <ion-col col-1 class="remove-padding">
         <button ion-button clear small class="remove-padding" color="danger">
-          <ion-icon name="md-play"></ion-icon>
+          <ion-icon name="more"></ion-icon>
         </button>
       </ion-col>
     </ion-row>

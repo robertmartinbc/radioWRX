@@ -1,5 +1,6 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { FansViewBandsPortfolioPage } from '../fans-view-bands-portfolio/fans-view-bands-portfolio';
 import { Geolocation } from '@ionic-native/geolocation';
 import { GoogleMaps } from '@ionic-native/google-maps';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
@@ -8,6 +9,14 @@ import * as firebase from 'firebase';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 declare var google;
+
+class RequestedPrivateParty {
+  name: string;
+  streetAddress: string;
+  zipCode: string;
+  telNumber: string;
+  userId: string;
+}
 
 @Component({
   selector: 'page-fans-view-bands-private-party',
@@ -26,7 +35,7 @@ export class FansViewBandsPrivatePartyPage {
   ionViewDidLoad(){
     this.loadMap();
     console.log('ionViewDidLoad FansViewBandsEventsPage');
-    console.log(this.fee);
+    //console.log(this.fee);
   }
 
   loadMap(){
@@ -42,6 +51,9 @@ export class FansViewBandsPrivatePartyPage {
     this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
 
   }
+
+  requestedprivateparty: RequestedPrivateParty = new RequestedPrivateParty()
+
   public partyDetails: FormGroup;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
@@ -50,6 +62,7 @@ export class FansViewBandsPrivatePartyPage {
 
     this.privateparty = af.database.list('/privateparty')
 
+    //FIX ME - No clue as to how we write this data to the database.
     this.partyDetails = this.formBuilder.group({
       name: ['', Validators.required],
       streetAddress: ['', Validators.required],
@@ -59,6 +72,11 @@ export class FansViewBandsPrivatePartyPage {
   }
 
   logForm() {
-    console.log(this.partyDetails.value)
+    this.requestedprivateparty.userId = firebase.auth().currentUser.uid;
+    this.requestedprivateparty = this.partyDetails.value;
+    this.af.database.list('/requestedprivateparty').push(this.requestedprivateparty);
+    //this.requestedprivateparty = new RequestedPrivateParty();
+    this.navCtrl.push(FansViewBandsPortfolioPage);
+    console.log(this.requestedprivateparty);
   }
 }

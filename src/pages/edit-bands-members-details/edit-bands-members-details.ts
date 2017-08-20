@@ -31,4 +31,10 @@ export class EditBandsMembersDetailsPage {
     console.log(this.editMemberName);
   }
 
+/*
+  deleteBandMember() {
+    this.af("/members/").remove().$key;
+  }
+  */
+
 }

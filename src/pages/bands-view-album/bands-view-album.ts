@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ActionSheetController } from 'ionic-angular';
 import { RegisterBandsSongsDetailsPage } from '../register-bands-songs-details/register-bands-songs-details';
 import { EditBandsSongsDetailsPage } from '../edit-bands-songs-details/edit-bands-songs-details';
 import { EditBandsAlbumDetailsPage } from '../edit-bands-album-details/edit-bands-album-details';
@@ -35,7 +35,8 @@ export class BandsViewAlbumPage {
 
   songTitle: string = this.navParams.get('songTitle');
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire,
+  public actionSheetCtrl: ActionSheetController) {
 
     this.songs = af.database.list('/songs')
     this.albums = af.database.list('/albums')
@@ -65,5 +66,32 @@ export class BandsViewAlbumPage {
 
   registerBandsSongsDetails = RegisterBandsSongsDetailsPage;
   //editBandsSongsDetails = EditBandsSongsDetailsPage;
+
+  presentActionSheet() {
+    let actionSheet = this.actionSheetCtrl.create({
+      title: 'Modify Song',
+      buttons: [
+        {
+          text: 'Edit',
+          handler: () => {
+            console.log('Edit clicked');
+          }
+        },{
+          text: 'Delete',
+          role: 'destructive',
+          handler: () => {
+            console.log('Delete clicked');
+          }
+        },{
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        }
+      ]
+    });
+    actionSheet.present();
+  }
 
 }

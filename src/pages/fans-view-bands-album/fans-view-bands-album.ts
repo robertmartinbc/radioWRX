@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ModalController } from 'ionic-angular';
+import { NavController, NavParams, ModalController, ActionSheetController } from 'ionic-angular';
 import { SignInModalPage } from '../sign-in-modal/sign-in-modal';
 
 import * as firebase from 'firebase';
@@ -16,6 +16,8 @@ export class FansViewBandsAlbumPage {
 
   songs: FirebaseListObservable<any>
 
+  songTitle: string = this.navParams.get('songTitle');
+
   albumTitle: string = this.navParams.get('albumTitle');
   albumDuration: string = this.navParams.get('albumDuration');
   albumGenre: string = this.navParams.get('albumGenre');
@@ -23,9 +25,10 @@ export class FansViewBandsAlbumPage {
   albumTotalSongs: string = this.navParams.get('albumTotalSongs');
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire,
-  public modalCtrl: ModalController) {
+  public modalCtrl: ModalController, public actionSheetCtrl: ActionSheetController) {
 
-    this.songs = af.database.list('/songs')
+    this.songs = af.database.list('/songs');
+    //this.songTitle = this.navParams.get('songTitle');
 
     //Check to see if user is logged in
     var _self = this;
@@ -50,8 +53,45 @@ export class FansViewBandsAlbumPage {
     });
   }
 
+  /*presentActionSheet() {
+    let actionSheet = this.actionSheetCtrl.create({
+      title: 'Modify your album',
+      buttons: [
+        {
+          text: 'Delete',
+          role: 'destructive',
+          handler: () => {
+            console.log('Delete clicked');
+            let songTitle: string = song.SongTitle;
+            //this.songTitle = this.navParams.get('songTitle');
+            //console.log(this.songTitle);
+          }
+        },{
+          text: 'Archive',
+          handler: () => {
+            console.log('Archive clicked');
+          }
+        },{
+          text: 'Cancel',
+          role: 'destructive',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        }
+      ]
+    });
+    actionSheet.present();
+  }
+*/
   ionViewDidLoad() {
     console.log('ionViewDidLoad FansViewBandsAlbumPage');
+  }
+
+  testClick() {
+    console.log("This has been clicked!");
+    //this.songTitle = this.navParams.get('songTitle');
+    console.log(this.songTitle);
+
   }
 
 }
