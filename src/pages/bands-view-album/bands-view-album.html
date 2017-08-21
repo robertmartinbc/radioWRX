@@ -44,7 +44,7 @@
         </button>
       </ion-col>
     </ion-row>
-    <ion-row *ngFor="let song of songs | async" class="remove-padding" class="style-placeholder">
+    <ion-row *ngFor="let item of songData; let i = index; let song of songs | async" class="remove-padding" class="style-placeholder">
       <ion-col col-1 class="remove-padding">
         <button ion-button clear small class="remove-padding">
           {{song.songNumber}}
@@ -61,7 +61,7 @@
         </button>
       </ion-col>
       <ion-col col-1 class="remove-padding">
-        <button ion-button clear small class="remove-padding" color="danger" (click)="presentDeleteOption()">
+        <button ion-button clear small class="remove-padding" color="danger" (click)="deleteSong(i)">
           <ion-icon name="trash"></ion-icon>
         </button>
       </ion-col>

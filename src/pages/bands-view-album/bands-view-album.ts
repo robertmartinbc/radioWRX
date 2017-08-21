@@ -35,9 +35,16 @@ export class BandsViewAlbumPage {
 
   songTitle: string = this.navParams.get('songTitle');
 
+  songData = []
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire,
   public alertCtrl: AlertController) {
 
+    this.af.database.list('/songs'). subscribe(_data => {
+      this.songData = _data;
+
+      console.log(this.songData);
+    })
     this.songs = af.database.list('/songs')
     this.albums = af.database.list('/albums')
   }
@@ -60,6 +67,10 @@ export class BandsViewAlbumPage {
     alert(this.editSongTitle);
   }
 
+  deleteSong(i) {
+    this.af.database.list('/songs').remove(this.songData[i].$key);
+  }
+
   presentDeleteOption() {
     let confirm = this.alertCtrl.create({
       title: 'Delete Song?',
@@ -75,6 +86,8 @@ export class BandsViewAlbumPage {
           text: 'Delete',
           handler: () => {
             console.log('Delete clicked');
+            //alert("This was deleted!");
+
           }
         }
       ]
