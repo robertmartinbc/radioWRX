@@ -1,6 +1,6 @@
 {
   "name": "RadioWRX",
-  "app_id": "282bfc18",
-  "v2": true,
-  "typescript": true
+  "app_id": "783aee75",
+  "integrations": {},
+  "type": "ionic-angular"
 }
