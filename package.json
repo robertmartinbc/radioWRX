@@ -52,5 +52,16 @@
       "locator": "ios"
     }
   ],
-  "description": "radioWRX: An Ionic project"
+  "description": "radioWRX: An Ionic project",
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-ionic": {
+        "APP_ID": "74f4416f",
+        "CHANNEL_NAME": "Master",
+        "UPDATE_METHOD": "background",
+        "UPDATE_API": "https://api.ionicjs.com",
+        "MAX_STORE": "2"
+      }
+    }
+  }
 }
