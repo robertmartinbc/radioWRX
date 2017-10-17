@@ -1,12 +1,12 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { GoogleMaps } from '@ionic-native/google-maps';
-import { Geolocation } from '@ionic-native/geolocation';
-import { QRRCodeComponent } from 'angualr2-qrcode';
+//import { Geolocation } from '@ionic-native/geolocation';
+//import { QRRCodeComponent } from 'angualr2-qrcode';
 import { MyTicketsPage } from '../my-tickets/my-tickets';
 
 import * as firebase from 'firebase';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFire } from 'angularfire2';
 
 //FIX-ME How do we read the relevant data into a QR Code?
 

@@ -3,7 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { MySongsPage } from '../my-songs/my-songs';
 import { MyArtistsPage } from '../my-artists/my-artists';
 import { MyPlaylistsPage } from '../my-playlists/my-playlists';
-import { FansViewBandsAlbumPage } from '../fans-view-bands-album/fans-view-bands-album';
+//import { FansViewBandsAlbumPage } from '../fans-view-bands-album/fans-view-bands-album';
 import { ViewMyAlbum } from '../view-my-album/view-my-album';
 
 import { AngularFire, FirebaseListObservable } from 'angularfire2';

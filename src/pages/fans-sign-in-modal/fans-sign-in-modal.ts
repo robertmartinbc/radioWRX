@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController, ModalController, AlertController, LoadingController } from 'ionic-angular';
 import { FansSignUpModalPage } from '../fans-sign-up-modal/fans-sign-up-modal';
-import { BandsViewBandsProfilePage } from '../bands-view-bands-profile/bands-view-bands-profile';
-import { AuthProviders, AuthMethods, AngularFire } from 'angularfire2';
+//import { BandsViewBandsProfilePage } from '../bands-view-bands-profile/bands-view-bands-profile';
+import { AngularFire } from 'angularfire2';
 import { AuthService } from '../../services/auth';
 
 @Component({

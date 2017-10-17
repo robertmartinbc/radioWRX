@@ -1,10 +1,10 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { GoogleMaps } from '@ionic-native/google-maps';
-import { Geolocation } from '@ionic-native/geolocation';
+//import { Geolocation } from '@ionic-native/geolocation';
 
-import * as firebase from 'firebase';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+//import * as firebase from 'firebase';
+import { AngularFire } from 'angularfire2';
 
 declare var google;
 

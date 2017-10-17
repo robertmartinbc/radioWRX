@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { MyAlbumsPage } from '../my-albums/my-albums';
-import { MySongsPage } from '../my-songs/my-songs';
-import { MyPlaylistsPage } from '../my-playlists/my-playlists';
+//import { MyAlbumsPage } from '../my-albums/my-albums';
+//import { MySongsPage } from '../my-songs/my-songs';
+//import { MyPlaylistsPage } from '../my-playlists/my-playlists';
 import { ViewMyArtist } from '../view-my-artist/view-my-artist';
 import { AngularFire, FirebaseListObservable } from 'angularfire2'
 

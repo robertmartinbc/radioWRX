@@ -2,7 +2,7 @@ import * as firebase from 'firebase';
 import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController, ModalController, AlertController, LoadingController } from 'ionic-angular';
 import { FansSignInModalPage } from '../fans-sign-in-modal/fans-sign-in-modal';
-import { AuthProviders, AuthMethods, AngularFire, FirebaseListObservable  } from 'angularfire2';
+import { AngularFire, FirebaseListObservable  } from 'angularfire2';
 import { AuthService } from '../../services/auth';
 
 @Component({
@@ -13,7 +13,7 @@ import { AuthService } from '../../services/auth';
 export class FansSignUpModalPage {
 
   //Set variables for Firebase authentication Sign Up New User
-  private data: any;
+  //private data: any;
   public fireAuth: any;
   public email: string;
   public password: string;

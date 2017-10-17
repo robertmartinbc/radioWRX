@@ -9,7 +9,7 @@ import { MusicPage } from '../music/music';
 import { AccountPage } from '../account/account';
 import { BandsViewBandsProfilePage } from '../bands-view-bands-profile/bands-view-bands-profile';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
-import * as firebase from 'firebase';
+//import * as firebase from 'firebase';
 
 @Component({
   templateUrl: 'tabs.html'
