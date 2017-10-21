@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { AngularFire } from 'angularfire2';
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
 import { EditBandsByFansDetailsPage } from '../edit-bands-by-fans-details/edit-bands-by-fans-details';
 
 @Component({
@@ -19,7 +20,7 @@ export class BandsViewBandsByFansPage {
   public editTicketPrice: any;
   public editTicketsRequired: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFireDatabase) {}
 
   goToEditBandsByFans() {
     this.navCtrl.push(EditBandsByFansDetailsPage, {

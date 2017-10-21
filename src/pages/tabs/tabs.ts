@@ -8,8 +8,10 @@ import { TicketsPage } from '../tickets/tickets';
 import { MusicPage } from '../music/music';
 import { AccountPage } from '../account/account';
 import { BandsViewBandsProfilePage } from '../bands-view-bands-profile/bands-view-bands-profile';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+
 import * as firebase from 'firebase';
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -26,7 +28,7 @@ export class TabsPage {
 
   userProfile: FirebaseListObservable<any>
 
-  constructor(public af: AngularFire) {
+  constructor(public af: AngularFireDatabase) {
 
     // TODO: Show RootPage for users and BandsViewBandsProfilePage to a Band user
     // FIXME: userProfile.kind is undefinned

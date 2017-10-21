@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { BandsViewBandsProfilePage } from '../bands-view-bands-profile/bands-view-bands-profile';
-import { AngularFire } from 'angularfire2';
+
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
 
 //Create class for a new Bands By Fans Request
 class BandsByFans {
@@ -23,11 +25,11 @@ class BandsByFans {
 })
 export class RegisterBandsByFansDetailsPage {
   bandsbyfans: BandsByFans = new BandsByFans()
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFireDatabase) {}
 
   submit() {
     //this.album.userId = firebase.auth().currentUser.uid;
-    this.af.database.list('/bandsbyfans').push(this.bandsbyfans)
+    this.af.list('/bandsbyfans').push(this.bandsbyfans)
     this.bandsbyfans = new BandsByFans()
     this.navCtrl.pop(BandsViewBandsProfilePage)
   }

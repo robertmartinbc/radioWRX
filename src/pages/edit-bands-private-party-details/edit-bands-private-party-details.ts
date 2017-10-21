@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
 
 /*
   Generated class for the EditBandsPrivatePartyDetails page.
@@ -18,7 +19,7 @@ export class EditBandsPrivatePartyDetailsPage {
   editLocation: string = this.navParams.get('editLocation');
   editFee: string = this.navParams.get('editFee');
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFireDatabase) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EditBandsPrivatePartyDetailsPage');

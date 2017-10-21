@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, ModalController } from 'ionic-angular';
 import { SignInModalPage } from '../sign-in-modal/sign-in-modal';
 
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
+
 import * as firebase from 'firebase';
 
 @Component({
@@ -12,7 +15,8 @@ export class FansViewBandsMembersPage {
 
   isLoggedIn: boolean = false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController,
+  public af: AngularFireDatabase) {
 
     //Check to see if user is logged in
     var _self = this;

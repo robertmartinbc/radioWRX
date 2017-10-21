@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
 import { EditBandsMembersDetailsPage } from '../edit-bands-members-details/edit-bands-members-details';
 
 /*
@@ -24,7 +25,7 @@ export class BandsViewBandsMembersPage {
   public editMemberName: any;
   public editMemberBiography: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFireDatabase) {}
 
   goToEditBandsMembers() {
     this.navCtrl.push(EditBandsMembersDetailsPage, {

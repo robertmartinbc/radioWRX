@@ -6,7 +6,8 @@ import { SignInModalPage } from '../sign-in-modal/sign-in-modal';
 import { FansViewBandsPortfolioPage } from '../fans-view-bands-portfolio/fans-view-bands-portfolio';
 
 import * as firebase from 'firebase';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
 
 declare var google;
 
@@ -77,7 +78,7 @@ export class FansViewBandsEventsPage {
 
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire,
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFireDatabase,
   public modalCtrl: ModalController, public alertCtrl: AlertController, public geolocation: Geolocation,
   public googleMaps: GoogleMaps) {
 
@@ -154,7 +155,7 @@ export class FansViewBandsEventsPage {
 
   submit() {
     this.purchasedtickets.userId = firebase.auth().currentUser.uid;
-    this.af.database.list('/purchasedtickets').push(this.purchasedtickets);
+    this.af.list('/purchasedtickets').push(this.purchasedtickets);
     this.purchasedtickets = new PurchasedTickets();
     this.navCtrl.pop(FansViewBandsPortfolioPage);
   }

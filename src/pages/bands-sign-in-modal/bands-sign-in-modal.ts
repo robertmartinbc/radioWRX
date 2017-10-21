@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController, ModalController, AlertController, LoadingController } from 'ionic-angular';
 import { BandsSignUpModalPage } from '../bands-sign-up-modal/bands-sign-up-modal';
 import { BandsViewBandsProfilePage } from '../bands-view-bands-profile/bands-view-bands-profile';
-import { AuthProviders, AuthMethods, AngularFire } from 'angularfire2';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { FirebaseListObservable, AngularFireDatabase  } from 'angularfire2/database-deprecated';
 import { AuthService } from '../../services/auth';
 
 @Component({
@@ -17,7 +19,7 @@ export class BandsSignInModalPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
   public viewCtrl: ViewController, public modalCtrl: ModalController,
-  public af: AngularFire, private loadingCtrl: LoadingController, private alertCtrl: AlertController,
+  public af: AngularFireDatabase, private loadingCtrl: LoadingController, private alertCtrl: AlertController,
   private authService: AuthService) {}
 
   //Sign in user and check to see if there is existing account and present error
@@ -42,7 +44,7 @@ export class BandsSignInModalPage {
     });
     this.viewCtrl.dismiss();
   }
-
+  /*
   //Login code for Bands using Twitter
   twitterlogin(){
     this.af.auth.login({
@@ -74,6 +76,7 @@ export class BandsSignInModalPage {
         this.navCtrl.pop();
       })
     }
+    */
     dismiss() {
       this.viewCtrl.dismiss();
     }

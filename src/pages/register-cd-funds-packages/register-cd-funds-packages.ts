@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { RegisterBandsCDFundsDetailsPage } from '../register-bands-cd-funds-details/register-bands-cd-funds-details';
-import { AngularFire } from 'angularfire2';
+
+import * as firebase from 'firebase';
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
 
 //Create class for a new CD Funds Package creation
 class CDFundsPackage {
@@ -18,12 +21,12 @@ export class RegisterCDFundsPackages {
 
   cdfundspackage: CDFundsPackage = new CDFundsPackage()
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFireDatabase) {
   }
 
   submit() {
     //this.cdfundspackage.userId = firebase.auth().currentUser.uid;
-    this.af.database.list('/cdfundspackage').push(this.cdfundspackage);
+    this.af.list('/cdfundspackage').push(this.cdfundspackage);
     this.cdfundspackage = new CDFundsPackage();
     this.navCtrl.pop(RegisterBandsCDFundsDetailsPage);
   }

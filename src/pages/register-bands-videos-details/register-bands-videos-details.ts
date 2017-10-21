@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { AngularFire } from 'angularfire2';
+
+import * as firebase from 'firebase';
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
 
 /*
   Generated class for the RegisterBandsVideosDetails page.
@@ -22,11 +25,11 @@ class Video {
 })
 export class RegisterBandsVideosDetailsPage {
   video: Video = new Video()
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFireDatabase) {}
 
   submit() {
     this.video.userId = firebase.auth().currentUser.uid;
-    this.af.database.list('/videos').push(this.video)
+    this.af.list('/videos').push(this.video)
     this.video = new Video()
     this.navCtrl.pop(RegisterBandsVideosDetailsPage)
   }

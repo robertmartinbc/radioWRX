@@ -3,7 +3,8 @@ import { NavController, NavParams, ModalController, ActionSheetController } from
 import { SignInModalPage } from '../sign-in-modal/sign-in-modal';
 
 import * as firebase from 'firebase';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
 
 @Component({
   selector: 'page-fans-view-bands-album',
@@ -24,10 +25,10 @@ export class FansViewBandsAlbumPage {
   albumYearReleased: string = this.navParams.get('albumYearReleased');
   albumTotalSongs: string = this.navParams.get('albumTotalSongs');
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire,
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFireDatabase,
   public modalCtrl: ModalController, public actionSheetCtrl: ActionSheetController) {
 
-    this.songs = af.database.list('/songs');
+    this.songs = af.list('/songs');
     //this.songTitle = this.navParams.get('songTitle');
 
     //Check to see if user is logged in

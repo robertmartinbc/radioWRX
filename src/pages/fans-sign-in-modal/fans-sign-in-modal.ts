@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController, ModalController, AlertController, LoadingController } from 'ionic-angular';
 import { FansSignUpModalPage } from '../fans-sign-up-modal/fans-sign-up-modal';
 import { BandsViewBandsProfilePage } from '../bands-view-bands-profile/bands-view-bands-profile';
-import { AuthProviders, AuthMethods, AngularFire } from 'angularfire2';
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
 import { AuthService } from '../../services/auth';
 
 @Component({
@@ -16,7 +17,7 @@ export class FansSignInModalPage {
   password: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController,
-  public modalCtrl: ModalController, public loadingCtrl: LoadingController, public af: AngularFire,
+  public modalCtrl: ModalController, public loadingCtrl: LoadingController, public af: AngularFireDatabase,
   public alertCtrl: AlertController, private authService: AuthService) {}
 
   //bandsViewBandsProfile = BandsViewBandsProfilePage;

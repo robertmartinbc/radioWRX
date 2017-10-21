@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
+
 import { ViewMyUpcomingEvent} from '../view-my-upcoming-event/view-my-upcoming-event';
 import { ViewMyAttendedEvent} from '../view-my-attended-event/view-my-attended-event';
 import { ViewMyCanceledEvent} from '../view-my-canceled-event/view-my-canceled-event';
@@ -32,10 +34,10 @@ export class MyTicketsPage {
 
   tickets: string = "upcoming";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFireDatabase) {
 
-    this.purchasedtickets = af.database.list('/purchasedtickets')
-    this.redeemedtickets = af.database.list('/redeemedtickets')
+    this.purchasedtickets = af.list('/purchasedtickets')
+    this.redeemedtickets = af.list('/redeemedtickets')
 
   }
 

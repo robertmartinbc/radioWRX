@@ -3,7 +3,8 @@ import { NavController, NavParams } from 'ionic-angular';
 import { FansViewBandsPortfolioPage } from '../fans-view-bands-portfolio/fans-view-bands-portfolio';
 
 import * as firebase from 'firebase';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
 
 class PurchasedCDFunds {
   selectedPackage: string
@@ -32,9 +33,9 @@ export class FansViewBandsCDFundsPage {
 
   purchasedcdfunds: PurchasedCDFunds = new PurchasedCDFunds()
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFireDatabase) {
 
-    this.cdfundspackage = af.database.list('/cdfundspackage')
+    this.cdfundspackage = af.list('/cdfundspackage')
 
   }
 
@@ -56,7 +57,7 @@ export class FansViewBandsCDFundsPage {
 
   submit() {
     this.purchasedcdfunds.userId = firebase.auth().currentUser.uid;
-    this.af.database.list('/purchasedcdfunds').push(this.purchasedcdfunds)
+    this.af.list('/purchasedcdfunds').push(this.purchasedcdfunds)
     this.purchasedcdfunds = new PurchasedCDFunds()
     this.navCtrl.pop(FansViewBandsPortfolioPage)
   }

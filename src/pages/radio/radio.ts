@@ -6,7 +6,9 @@ import { ViewAllTrendingArtistsPage } from '../view-all-trending-artists/view-al
 import { ViewAllTrendingVideosPage } from '../view-all-trending-videos/view-all-trending-videos';
 import { ViewAllTrendingEventsPage } from '../view-all-trending-events/view-all-trending-events';
 import { SignInModalPage } from '../sign-in-modal/sign-in-modal';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
+
 import * as firebase from 'firebase';
 import { AudioProvider } from 'ionic-audio';
 
@@ -39,7 +41,7 @@ export class RadioPage {
   allTracks: any[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController,
-  public viewCtrl: ViewController, public af: AngularFire, private _audioProvider: AudioProvider) {
+  public viewCtrl: ViewController, public af: AngularFireDatabase, private _audioProvider: AudioProvider) {
 
     //Build an array of some tracks.
     this.myTracks = [{
@@ -83,10 +85,10 @@ export class RadioPage {
       }
     });*/
 
-    this.albums = af.database.list('/albums')
-    this.members = af.database.list('/members')
-    this.videos = af.database.list('/videos')
-    this.events = af.database.list('/events')
+    this.albums = af.list('/albums')
+    this.members = af.list('/members')
+    this.videos = af.list('/videos')
+    this.events = af.list('/events')
   }
 
   ngAfterViewInit() {

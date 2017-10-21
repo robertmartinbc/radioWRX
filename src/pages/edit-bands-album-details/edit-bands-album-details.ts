@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
 
 @Component({
   selector: 'page-edit-bands-album-details',
@@ -17,7 +18,7 @@ export class EditBandsAlbumDetailsPage {
   editAlbumUPCCode: string = this.navParams.get('editAlbumUPCCode');
   editAlbumGenre: string = this.navParams.get('editAlbumGenre');
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFireDatabase) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EditBandsAlbumDetailsPage');

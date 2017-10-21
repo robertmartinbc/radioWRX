@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
 
 class Member {
   memberName: string
@@ -24,7 +25,7 @@ export class EditBandsMembersDetailsPage {
   editMemberName: string = this.navParams.get('editMemberName');
   editMemberBiography: string = this.navParams.get('editMemberBiography');
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFireDatabase) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EditBandsMembersDetailsPage');

@@ -2,8 +2,10 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, ModalController, ViewController } from 'ionic-angular';
 import { FansViewBandsEventsPage } from '../fans-view-bands-events/fans-view-bands-events';
 import { SignInModalPage } from '../sign-in-modal/sign-in-modal';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+
 import * as firebase from 'firebase';
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
 
 @Component({
   selector: 'page-tickets',
@@ -20,10 +22,10 @@ export class TicketsPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
   public modalCtrl: ModalController, public viewCtrl: ViewController,
-  public af: AngularFire) {
+  public af: AngularFireDatabase) {
 
     //Initiate the events database
-    this.events = af.database.list('/events')
+    this.events = af.list('/events')
 
     //Set variable for state of User to check if logged in or out.
     var _self = this;

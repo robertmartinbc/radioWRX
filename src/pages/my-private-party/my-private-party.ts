@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
+
 import { NavController, NavParams } from 'ionic-angular';
 import { ViewMyPastPrivatePartyPage } from '../view-my-past-private-party/view-my-past-private-party';
 import { ViewMyPresentPrivatePartyPage } from '../view-my-present-private-party/view-my-present-private-party';
@@ -15,9 +17,9 @@ export class MyPrivatePartyPage {
 
   privateParty: string = "present";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFireDatabase) {
 
-    this.privateparty = af.database.list('/privateparty')
+    this.privateparty = af.list('/privateparty')
 
   }
 

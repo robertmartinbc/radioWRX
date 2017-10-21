@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
 
 
 @Component({
@@ -19,9 +20,9 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
     console.log('ionViewDidLoad BandsViewBandsPrivatePartyPage');
   }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFireDatabase) {
 
-    this.privateparty = af.database.list('/privateparty')
+    this.privateparty = af.list('/privateparty')
 
   }
 

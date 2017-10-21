@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
 import { EditBandsCDFundsDetailsPage } from '../edit-bands-cd-funds-details/edit-bands-cd-funds-details'
 import { RegisterCDFundsPackages } from '../register-cd-funds-packages/register-cd-funds-packages'
 
@@ -18,9 +19,9 @@ export class BandsViewBandsCDFundsPage {
   public editTargetDate: any;
   public editTargetAmount: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFireDatabase) {
 
-    this.cdfundspackage = af.database.list('/cdfundspackage')
+    this.cdfundspackage = af.list('/cdfundspackage')
 
   }
 

@@ -3,7 +3,8 @@ import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { RegisterBandsSongsDetailsPage } from '../register-bands-songs-details/register-bands-songs-details';
 import { EditBandsSongsDetailsPage } from '../edit-bands-songs-details/edit-bands-songs-details';
 import { EditBandsAlbumDetailsPage } from '../edit-bands-album-details/edit-bands-album-details';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFireModule} from 'angularfire2';
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
 
 @Component({
   selector: 'page-bands-view-album',
@@ -35,11 +36,11 @@ export class BandsViewAlbumPage {
 
   songTitle: string = this.navParams.get('songTitle');
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire,
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFireDatabase,
   public alertCtrl: AlertController) {
 
-    this.songs = af.database.list('/songs')
-    this.albums = af.database.list('/albums')
+    this.songs = af.list('/songs')
+    this.albums = af.list('/albums')
   }
 
   goToEditAlbumDetails() {

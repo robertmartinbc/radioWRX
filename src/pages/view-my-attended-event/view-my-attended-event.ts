@@ -4,7 +4,8 @@ import { GoogleMaps } from '@ionic-native/google-maps';
 import { Geolocation } from '@ionic-native/geolocation';
 
 import * as firebase from 'firebase';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
 
 declare var google;
 
@@ -47,7 +48,7 @@ export class ViewMyAttendedEvent {
   redeemedTicketId: string = this.navParams.get('redeemedTicketId');
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire,
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFireDatabase,
   public googleMaps: GoogleMaps) {
   }
 }

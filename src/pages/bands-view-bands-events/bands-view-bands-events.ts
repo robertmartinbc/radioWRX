@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { AngularFire } from 'angularfire2';
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
 import { EditBandsEventsDetailsPage } from '../edit-bands-events-details/edit-bands-events-details';
 
 
@@ -29,7 +30,7 @@ export class BandsViewBandsEventsPage {
   public editEventStartDate: any;
   public editEventStartTime: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFireDatabase) {}
 
   goToEditBandsEvent() {
     this.navCtrl.push(EditBandsEventsDetailsPage, {

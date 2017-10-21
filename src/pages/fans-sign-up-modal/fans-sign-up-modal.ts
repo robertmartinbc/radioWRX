@@ -2,7 +2,8 @@ import * as firebase from 'firebase';
 import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController, ModalController, AlertController, LoadingController } from 'ionic-angular';
 import { FansSignInModalPage } from '../fans-sign-in-modal/fans-sign-in-modal';
-import { AuthProviders, AuthMethods, AngularFire, FirebaseListObservable  } from 'angularfire2';
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
 import { AuthService } from '../../services/auth';
 
 @Component({
@@ -20,7 +21,7 @@ export class FansSignUpModalPage {
   public profiles: FirebaseListObservable<any>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController,
-  public modalCtrl: ModalController, public loadingCtrl: LoadingController, public af: AngularFire,
+  public modalCtrl: ModalController, public loadingCtrl: LoadingController, public af: AngularFireDatabase,
   public authService: AuthService, private alertCtrl: AlertController) {
 
     this.fireAuth = firebase.auth();

@@ -6,7 +6,9 @@ import { MyPlaylistsPage } from '../my-playlists/my-playlists';
 import { FansViewBandsAlbumPage } from '../fans-view-bands-album/fans-view-bands-album';
 import { ViewMyAlbum } from '../view-my-album/view-my-album';
 
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
+
 
 @Component({
   selector: 'page-my-albums',
@@ -22,9 +24,9 @@ export class MyAlbumsPage {
   albumYearReleased: string = this.navParams.get('albumYearReleased');
   albumTotalSongs: string = this.navParams.get('albumTotalSongs');
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFireDatabase) {
 
-    this.albums = af.database.list('/albums')
+    this.albums = af.list('/albums')
   }
   artistsPage = MyArtistsPage;
   songsPage = MySongsPage;

@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { BandsViewAlbumPage } from '../bands-view-album/bands-view-album';
 
-import { AngularFire } from 'angularfire2';
+import * as firebase from 'firebase';
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
 
 //Create class for a song
 class Song {
@@ -32,12 +34,12 @@ class Song {
 export class RegisterBandsSongsDetailsPage {
 
   song: Song = new Song()
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFireDatabase) {}
 
   addSong() {
     this.song.userId = firebase.auth().currentUser.uid;
     //this.album.id = ;
-    this.af.database.list('/songs').push(this.song)
+    this.af.list('/songs').push(this.song)
     this.song = new Song()
     this.navCtrl.pop(BandsViewAlbumPage)
   }

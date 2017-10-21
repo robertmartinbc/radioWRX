@@ -3,7 +3,8 @@ import { NavController, NavParams } from 'ionic-angular';
 import { FansViewBandsPortfolioPage } from '../fans-view-bands-portfolio/fans-view-bands-portfolio';
 
 import * as firebase from 'firebase';
-import { AngularFire } from 'angularfire2';
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
 
 //Create class for a purchase of Bands By Fans request
 class PurchaseBandsByFans {
@@ -30,7 +31,7 @@ export class FansViewBandsByFansPage {
   ticketPrice: number = 30;
   purchasebandsbyfans: PurchaseBandsByFans = new PurchaseBandsByFans()
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFireDatabase) {}
 
   //Set value of tickets required and total ticket amount to be purchased.
 
@@ -58,7 +59,7 @@ export class FansViewBandsByFansPage {
 
   submit() {
     this.purchasebandsbyfans.userId = firebase.auth().currentUser.uid;
-    this.af.database.list('/purchasebandsbyfans').push(this.purchasebandsbyfans)
+    this.af.list('/purchasebandsbyfans').push(this.purchasebandsbyfans)
     this.purchasebandsbyfans = new PurchaseBandsByFans()
     this.navCtrl.pop(FansViewBandsPortfolioPage)
   }

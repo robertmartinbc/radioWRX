@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+
+import * as firebase from 'firebase';
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
 
 @IonicPage()
 @Component({
@@ -17,9 +20,9 @@ export class ViewMyAlbum {
   albumYearReleased: string = this.navParams.get('albumYearReleased');
   albumTotalSongs: string = this.navParams.get('albumTotalSongs');
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFireDatabase) {
 
-    this.songs = af.database.list('/songs')
+    this.songs = af.list('/songs')
   }
 
   ionViewDidLoad() {

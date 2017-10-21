@@ -83,6 +83,10 @@ import { IonicAudioModule } from 'ionic-audio';
 import { QRCodeModule } from 'angular2-qrcode'
 
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { FirebaseListObservable } from 'angularfire2/database-deprecated';
 import { AuthService } from '../services/auth';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -198,6 +202,8 @@ const cloudSettings: CloudSettings = {
     IonicAudioModule.forRoot(),
     QRCodeModule,
     AngularFireModule.initializeApp(configRadioWRX),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
     //AngularFireModule.initializeApp(configMobileWRX),
   ],
   bootstrap: [IonicApp],

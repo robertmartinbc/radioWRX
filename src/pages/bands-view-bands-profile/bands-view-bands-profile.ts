@@ -16,7 +16,8 @@ import { BandsViewBandsEventsPage } from '../bands-view-bands-events/bands-view-
 import { RadioPage } from '../radio/radio';
 
 import * as firebase from 'firebase';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
 
 @Component({
   selector: 'page-bands-view-bands-profile',
@@ -46,7 +47,7 @@ export class BandsViewBandsProfilePage {
   isLoggedIn: boolean = false;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire,
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFireDatabase,
   public toastCtrl: ToastController) {
 
     var _self = this;
@@ -58,14 +59,14 @@ export class BandsViewBandsProfilePage {
     });
 
 
-    this.albums = af.database.list('/albums')
-    this.members = af.database.list('/members')
-    this.videos = af.database.list('/videos')
-    this.events = af.database.list('/events')
-    this.bandsbyfans = af.database.list('/bandsbyfans')
-    this.cdfunds = af.database.list('/cdfunds')
-    this.privateparty = af.database.list('/privateparty')
-    this.songs = af.database.list('/songs')
+    this.albums = af.list('/albums')
+    this.members = af.list('/members')
+    this.videos = af.list('/videos')
+    this.events = af.list('/events')
+    this.bandsbyfans = af.list('/bandsbyfans')
+    this.cdfunds = af.list('/cdfunds')
+    this.privateparty = af.list('/privateparty')
+    this.songs = af.list('/songs')
 
 
     //FIX ME - needs further attention. Can read the user Id

@@ -6,7 +6,9 @@ import { GoogleMaps } from '@ionic-native/google-maps';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 
 import * as firebase from 'firebase';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
+
 
 declare var google;
 
@@ -58,9 +60,9 @@ export class FansViewBandsPrivatePartyPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
   public formBuilder: FormBuilder, public googleMaps: GoogleMaps,
-  public af: AngularFire) {
+  public af: AngularFireDatabase) {
 
-    this.privateparty = af.database.list('/privateparty')
+    this.privateparty = af.list('/privateparty')
 
     //FIX ME - No clue as to how we write this data to the database.
     this.partyDetails = this.formBuilder.group({
@@ -74,7 +76,7 @@ export class FansViewBandsPrivatePartyPage {
   logForm() {
     this.requestedprivateparty.userId = firebase.auth().currentUser.uid;
     this.requestedprivateparty = this.partyDetails.value;
-    this.af.database.list('/requestedprivateparty').push(this.requestedprivateparty);
+    this.af.list('/requestedprivateparty').push(this.requestedprivateparty);
     //this.requestedprivateparty = new RequestedPrivateParty();
     this.navCtrl.push(FansViewBandsPortfolioPage);
     console.log(this.requestedprivateparty);

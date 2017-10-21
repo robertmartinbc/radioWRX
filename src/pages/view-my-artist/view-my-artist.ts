@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ViewMyAlbum } from '../view-my-album/view-my-album';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+
+import * as firebase from 'firebase';
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
 
 @IonicPage()
 @Component({
@@ -14,9 +17,9 @@ export class ViewMyArtist {
 
   albumTitle: string = this.navParams.get('albumTitle');
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFireDatabase) {
 
-    this.albums = af.database.list('/albums');
+    this.albums = af.list('/albums');
 
   }
 

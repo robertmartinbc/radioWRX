@@ -4,7 +4,8 @@ import { MyAlbumsPage } from '../my-albums/my-albums';
 import { MyArtistsPage } from '../my-artists/my-artists';
 import { MyPlaylistsPage } from '../my-playlists/my-playlists';
 
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
 
 @Component({
   selector: 'page-my-songs',
@@ -16,9 +17,9 @@ export class MySongsPage {
 
   songTitle: string = this.navParams.get('songTitle');
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFireDatabase) {
 
-    this.songs = af.database.list('/songs')
+    this.songs = af.list('/songs')
 
   }
   albumsPage = MyAlbumsPage;

@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+
+import * as firebase from 'firebase';
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
 
 @Component({
   selector: 'page-view-my-present-cd-funds',
@@ -18,10 +21,10 @@ export class ViewMyPresentCDFundsPage {
   eventStartDate = this.navParams.get('eventStartDate');
   eventStartTime = this.navParams.get('eventStartTime');
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFireDatabase) {
 
-    this.events = af.database.list('/events')
-    
+    this.events = af.list('/events')
+
   }
 
   ionViewDidLoad() {

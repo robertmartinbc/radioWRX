@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { AngularFire } from 'angularfire2';
+
+import * as firebase from 'firebase';
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
+
 
 /*
   Generated class for the RegisterBandsEventsDetails page.
@@ -28,11 +32,11 @@ class Event {
 })
 export class RegisterBandsEventsDetailsPage {
   event: Event = new Event()
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFireDatabase) {}
 
   submit() {
     this.event.userId = firebase.auth().currentUser.uid;
-    this.af.database.list('/events').push(this.event)
+    this.af.list('/events').push(this.event)
     this.event = new Event()
     this.navCtrl.pop(RegisterBandsEventsDetailsPage)
   }

@@ -6,7 +6,8 @@ import { QRRCodeComponent } from 'angualr2-qrcode';
 import { MyTicketsPage } from '../my-tickets/my-tickets';
 
 import * as firebase from 'firebase';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
 
 //FIX-ME How do we read the relevant data into a QR Code?
 
@@ -72,7 +73,7 @@ export class ViewMyUpcomingEvent {
 
     redeemedtickets: RedeemTicket = new RedeemTicket()
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire,
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFireDatabase,
   public googleMaps: GoogleMaps, public alertCtrl: AlertController) {
   }
 
@@ -111,7 +112,7 @@ export class ViewMyUpcomingEvent {
             this.redeemedtickets.redeemedBandStartTime = this.redeemedBandStartTime;
             this.redeemedtickets.redeemedTicketId = this.redeemedTicketId;
             this.redeemedtickets.userId = firebase.auth().currentUser.uid;
-            this.af.database.list('/redeemedtickets').push(this.redeemedtickets);
+            this.af.list('/redeemedtickets').push(this.redeemedtickets);
             this.redeemedtickets = new RedeemTicket();
             this.navCtrl.pop(MyTicketsPage);
             let alert = this .alertCtrl.create({

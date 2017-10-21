@@ -9,7 +9,8 @@ import { FansViewBandsAlbumPage } from '../fans-view-bands-album/fans-view-bands
 import { SignInModalPage } from '../sign-in-modal/sign-in-modal';
 
 import * as firebase from 'firebase';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
 
 @Component({
   selector: 'page-fans-view-bands-portfolio',
@@ -33,7 +34,7 @@ export class FansViewBandsPortfolioPage {
   albumTitle: string = this.navParams.get('albumTitle');
   albumDuration: string = this.navParams.get('albumDuration');
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire,
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFireDatabase,
   public toastCtrl: ToastController, public modalCtrl: ModalController) {
 
     //Check to see if user is logged in
@@ -45,10 +46,10 @@ export class FansViewBandsPortfolioPage {
         _self.isLoggedIn=false;
     });
 
-    this.albums = af.database.list('/albums')
-    this.members = af.database.list('/members')
-    this.videos = af.database.list('/videos')
-    this.events = af.database.list('/events')
+    this.albums = af.list('/albums')
+    this.members = af.list('/members')
+    this.videos = af.list('/videos')
+    this.events = af.list('/events')
   }
 
   ngAfterViewInit() {

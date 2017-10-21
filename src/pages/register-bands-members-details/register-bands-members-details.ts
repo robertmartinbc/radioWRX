@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { AngularFire } from 'angularfire2';
+
+import * as firebase from 'firebase';
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
+
 
 class Member {
   memberName: string
@@ -20,11 +24,11 @@ class Member {
 })
 export class RegisterBandsMembersDetailsPage {
   member: Member = new Member()
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFireDatabase) {}
 
   submit(){
     this.member.userId = firebase.auth().currentUser.uid;
-    this.af.database.list('/members').push(this.member)
+    this.af.list('/members').push(this.member)
     this.member = new Member()
     this.navCtrl.pop(RegisterBandsMembersDetailsPage)
   }

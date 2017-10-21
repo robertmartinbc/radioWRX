@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { BandsViewBandsProfilePage } from '../bands-view-bands-profile/bands-view-bands-profile';
-import { AngularFire } from 'angularfire2';
+
+import * as firebase from 'firebase';
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
 
 class PrivateParty {
   zipcode: string
@@ -20,11 +23,11 @@ class PrivateParty {
 })
 export class RegisterBandsPrivatePartyDetailsPage {
   privateparty: PrivateParty = new PrivateParty()
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFireDatabase) {}
 
   submit() {
     //this.privateparty.userId = firebase.auth().currentUser.uid;
-    this.af.database.list('/privateparty').push(this.privateparty);
+    this.af.list('/privateparty').push(this.privateparty);
     this.privateparty = new PrivateParty();
     this.navCtrl.pop(BandsViewBandsProfilePage);
   }

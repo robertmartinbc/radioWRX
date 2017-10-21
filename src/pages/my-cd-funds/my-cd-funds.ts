@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFireModule } from 'angularfire2';
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
+
 import { ViewMyPastCDFundsPage } from '../view-my-past-cd-funds/view-my-past-cd-funds';
 import { ViewMyPresentCDFundsPage } from '../view-my-present-cd-funds/view-my-present-cd-funds';
 
@@ -18,9 +20,9 @@ export class MyCDFundsPage {
 
   cdFunds: string = "present";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFireDatabase) {
 
-  this.cdfunds = af.database.list('/cdfunds')
+  this.cdfunds = af.list('/cdfunds')
 
   }
 
