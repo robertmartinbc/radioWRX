@@ -3,8 +3,13 @@ import { NavController, NavParams } from 'ionic-angular';
 import { BandsViewAlbumPage } from '../bands-view-album/bands-view-album';
 
 import * as firebase from 'firebase';
+<<<<<<< HEAD
 import { AngularFireModule } from 'angularfire2';
 import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
+=======
+
+import { AngularFire } from 'angularfire2';
+>>>>>>> ed53e018352edb8e447e2bddf46b19e78b786550
 
 //Create class for a song
 class Song {

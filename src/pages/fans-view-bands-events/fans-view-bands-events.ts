@@ -6,8 +6,12 @@ import { SignInModalPage } from '../sign-in-modal/sign-in-modal';
 import { FansViewBandsPortfolioPage } from '../fans-view-bands-portfolio/fans-view-bands-portfolio';
 
 import * as firebase from 'firebase';
+<<<<<<< HEAD
 import { AngularFireModule } from 'angularfire2';
 import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
+=======
+import { AngularFire } from 'angularfire2';
+>>>>>>> ed53e018352edb8e447e2bddf46b19e78b786550
 
 declare var google;
 

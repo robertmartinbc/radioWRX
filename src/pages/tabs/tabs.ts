@@ -8,10 +8,15 @@ import { TicketsPage } from '../tickets/tickets';
 import { MusicPage } from '../music/music';
 import { AccountPage } from '../account/account';
 import { BandsViewBandsProfilePage } from '../bands-view-bands-profile/bands-view-bands-profile';
+<<<<<<< HEAD
 
 import * as firebase from 'firebase';
 import { AngularFireModule } from 'angularfire2';
 import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
+=======
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
+//import * as firebase from 'firebase';
+>>>>>>> ed53e018352edb8e447e2bddf46b19e78b786550
 
 @Component({
   templateUrl: 'tabs.html'

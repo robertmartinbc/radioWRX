@@ -13,7 +13,7 @@ import { BandsViewBandsByFansPage } from '../bands-view-bands-by-fans/bands-view
 import { BandsViewBandsPrivatePartyPage } from '../bands-view-bands-private-party/bands-view-bands-private-party';
 import { BandsViewBandsCDFundsPage } from '../bands-view-bands-cd-funds/bands-view-bands-cd-funds';
 import { BandsViewBandsEventsPage } from '../bands-view-bands-events/bands-view-bands-events';
-import { RadioPage } from '../radio/radio';
+//import { RadioPage } from '../radio/radio';
 
 import * as firebase from 'firebase';
 import { AngularFireModule } from 'angularfire2';
@@ -75,6 +75,7 @@ export class BandsViewBandsProfilePage {
     //for each page. Surely we can just put it somewhere once when
     //the app loads.
 
+    /*
     var user = firebase.auth().currentUser;
     var name, email, photoUrl, uid, emailVerified;
 
@@ -91,7 +92,7 @@ export class BandsViewBandsProfilePage {
         console.log(email);
       }
     });
-
+    */
 //FIX ME User queries to show data only for specific band ID
     /*firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
