@@ -36,26 +36,18 @@ export class BandsViewAlbumPage {
 
   songTitle: string = this.navParams.get('songTitle');
 
-<<<<<<< HEAD
+  songData = []
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFireDatabase,
   public alertCtrl: AlertController) {
 
-    this.songs = af.list('/songs')
-    this.albums = af.list('/albums')
-=======
-  songData = []
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire,
-  public alertCtrl: AlertController) {
-
-    this.af.database.list('/songs'). subscribe(_data => {
+    this.af.list('/songs'). subscribe(_data => {
       this.songData = _data;
 
       console.log(this.songData);
     })
-    this.songs = af.database.list('/songs')
-    this.albums = af.database.list('/albums')
->>>>>>> ed53e018352edb8e447e2bddf46b19e78b786550
+    this.songs = af.list('/songs')
+    this.albums = af.list('/albums')
   }
 
   goToEditAlbumDetails() {
@@ -77,7 +69,7 @@ export class BandsViewAlbumPage {
   }
 
   deleteSong(i) {
-    this.af.database.list('/songs').remove(this.songData[i].$key);
+    this.af.list('/songs').remove(this.songData[i].$key);
   }
 
   presentDeleteOption() {

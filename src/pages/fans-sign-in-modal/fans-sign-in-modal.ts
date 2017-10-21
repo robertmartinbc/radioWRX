@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController, ModalController, AlertController, LoadingController } from 'ionic-angular';
 import { FansSignUpModalPage } from '../fans-sign-up-modal/fans-sign-up-modal';
-<<<<<<< HEAD
+
 import { BandsViewBandsProfilePage } from '../bands-view-bands-profile/bands-view-bands-profile';
 import { AngularFireModule } from 'angularfire2';
 import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
-=======
+
 //import { BandsViewBandsProfilePage } from '../bands-view-bands-profile/bands-view-bands-profile';
-import { AngularFire } from 'angularfire2';
->>>>>>> ed53e018352edb8e447e2bddf46b19e78b786550
 import { AuthService } from '../../services/auth';
 
 @Component({

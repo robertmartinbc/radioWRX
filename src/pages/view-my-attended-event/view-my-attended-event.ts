@@ -3,14 +3,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { GoogleMaps } from '@ionic-native/google-maps';
 //import { Geolocation } from '@ionic-native/geolocation';
 
-<<<<<<< HEAD
-import * as firebase from 'firebase';
 import { AngularFireModule } from 'angularfire2';
 import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
-=======
 //import * as firebase from 'firebase';
-import { AngularFire } from 'angularfire2';
->>>>>>> ed53e018352edb8e447e2bddf46b19e78b786550
+
 
 declare var google;
 

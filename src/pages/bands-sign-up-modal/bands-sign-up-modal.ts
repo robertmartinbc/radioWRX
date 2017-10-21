@@ -2,13 +2,9 @@ import * as firebase from 'firebase';
 import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController, ModalController, LoadingController, AlertController } from 'ionic-angular';
 import { BandsSignInModalPage } from '../bands-sign-in-modal/bands-sign-in-modal';
-<<<<<<< HEAD
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { FirebaseListObservable, AngularFireDatabase  } from 'angularfire2/database-deprecated';
-=======
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
->>>>>>> ed53e018352edb8e447e2bddf46b19e78b786550
 import { AuthService } from '../../services/auth';
 
 @Component({

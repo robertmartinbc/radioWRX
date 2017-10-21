@@ -1,10 +1,10 @@
 {
   "name": "RadioWRX",
-<<<<<<< HEAD
+
   "app_id": "282bfc18",
-=======
+
   "app_id": "783aee75",
->>>>>>> ed53e018352edb8e447e2bddf46b19e78b786550
+
   "integrations": {},
   "type": "ionic-angular"
 }

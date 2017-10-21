@@ -6,12 +6,8 @@ import { GoogleMaps } from '@ionic-native/google-maps';
 import { MyTicketsPage } from '../my-tickets/my-tickets';
 
 import * as firebase from 'firebase';
-<<<<<<< HEAD
 import { AngularFireModule } from 'angularfire2';
 import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
-=======
-import { AngularFire } from 'angularfire2';
->>>>>>> ed53e018352edb8e447e2bddf46b19e78b786550
 
 //FIX-ME How do we read the relevant data into a QR Code?
 
